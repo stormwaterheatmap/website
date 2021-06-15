@@ -1,14 +1,14 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'StormwaterHeatmap.org',
+  tagline: 'Explore your watersheds. Get data, generate reports, and make informed decisions.',
+  url: 'https://www.stormwaterheatmap.dev',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'stormwaterheatmap', // Usually your GitHub org/user name.
+  projectName: 'website', // Usually your repo name.
   themeConfig: {
     colorMode: {
     defaultMode: 'light',
@@ -17,7 +17,7 @@ module.exports = {
       // Useful if you want to support a single color mode
       disableSwitch: true},
     navbar: {
-      title: 'stormwaterheatmap.org',
+      title: 'StormwaterHeatmap.org',
       logo: {
         alt: 'TNC Logo',
         src: 'img/logo.svg',
@@ -28,7 +28,7 @@ module.exports = {
           position: 'left',
           label: 'Analyze Watersheds',
           items: [ 
-            {label: 'Anayze Single Watershed', 
+            {label: 'Analyze Single Watershed', 
           to: "react_page"}, 
             {label: 'Compare Watersheds '}
           ]
@@ -51,11 +51,11 @@ module.exports = {
             {label: 'All About Stormwater'}
           ]
         },
-        {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
-        },
+        // {
+        //   href: 'https://github.com/facebook/docusaurus',
+        //   label: 'GitHub',
+        //   position: 'right',
+        // },
       ],
     },
     footer: {
@@ -65,43 +65,35 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
+              label: 'API Reference',
+              to: '/docs/intro',
+            },
+            {
+              label: 'Technical Reference',
+              to: '/docs/intro',
+            },
+            {
+              label: 'Github', 
               to: '/docs/intro',
             },
           ],
         },
         {
-          title: 'Community',
+          title: 'About',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Contact', 
+              to: '/docs/intro',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
+              label: 'License & Terms', 
+              to: '/docs/intro',
+            }
           ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
-          ],
-        },
+        }
+
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Geosyntec Consultants Inc. and The Nature Conservancy. Built with Docusaurus.`,
     },
   },
   presets: [

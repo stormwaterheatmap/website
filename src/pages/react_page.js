@@ -16,7 +16,7 @@ function Hello() {
   <div class="aspect-ratio__inner-wrapper">
         <iframe class="ee_embed" 
         // width="100%" height="800"  */}
-        src="https://stormwaterheatmap.users.earthengine.app/view/watershed-inspector"
+        src="https://stormwaterheatmap.users.earthengine.app/view/placeholder"
          frameborder="0" ></iframe>
   </div>
 </div>

@@ -10,6 +10,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
+  --ifm-navbar-height: 6rem; 
+  --ifm-navbar__items-height: 5rem; 
+  --ifm-navbar-background-color: #fafafa; 
   --ifm-color-primary: #3da237;
   --ifm-color-primary-dark: #379231;
   --ifm-color-primary-darker: #348a2f;
@@ -29,7 +32,7 @@
 }
 .navbar__title {
   font-family:'Merriweather';
-  font-style: italic;
+  /* font-style: italic; */
 }
 .navbar {
   font-family:'Merriweather';

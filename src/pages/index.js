@@ -29,7 +29,7 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
+      title={`${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
         
       {/* <HomepageHeader /> */}
@@ -41,7 +41,7 @@ export default function Home() {
   <div class="aspect-ratio__inner-wrapper">
         <iframe class="ee_embed" 
         // width="100%" height="800"  */}
-        src="https://stormwaterheatmap.users.earthengine.app/view/layerdisplay"
+        src="https://stormwaterheatmap.users.earthengine.app/view/placeholder"
          frameborder="0" ></iframe>
   </div>
 </div>
