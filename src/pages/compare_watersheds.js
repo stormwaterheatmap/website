@@ -1,9 +1,9 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 
-function placeholder_page() {
+function compare_ws() {
   return (
-    <Layout title="placeholder_page">
+    <Layout title="placeholder">
       <div
         style={{
           display: 'flex',
@@ -26,4 +26,4 @@ function placeholder_page() {
   );
 }
 
-export default placeholder_page;
+export default compare_ws;

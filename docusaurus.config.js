@@ -30,7 +30,8 @@ module.exports = {
           items: [ 
             {label: 'Analyze Single Watershed', 
           to: "react_page"}, 
-            {label: 'Compare Watersheds '}
+            {label: 'Compare Watersheds',
+             to: "compare_watersheds"}, 
           ]
         },
         {
