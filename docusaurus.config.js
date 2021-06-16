@@ -11,16 +11,19 @@ module.exports = {
   projectName: 'website', // Usually your repo name.
   themeConfig: {
     colorMode: {
-    defaultMode: 'light',
+    defaultMode: 'dark',
 
       // Hides the switch in the navbar
       // Useful if you want to support a single color mode
-      disableSwitch: true},
+      disableSwitch: false},
     navbar: {
+      hideOnScroll: true,
       title: 'StormwaterHeatmap.org',
       logo: {
+        // height: '100px', 
         alt: 'TNC Logo',
         src: 'img/logo.svg',
+        srcDark: 'img/logo_dark.svg'
       },
       items: [
       
