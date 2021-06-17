@@ -4,7 +4,7 @@ module.exports = {
   tagline: 'Explore your watersheds. Get data, generate reports, and make informed decisions.',
   url: 'https://www.stormwaterheatmap.dev',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'stormwaterheatmap', // Usually your GitHub org/user name.
@@ -50,7 +50,8 @@ module.exports = {
           position: 'right',
           label: 'About',
           items: [ 
-            {label: 'Documentation'}, 
+            {label: 'Documentation',
+            to: "docs/Technical%20Reference/abstract"}, 
             {label: 'User Vignettes'}, 
             {label: 'All About Stormwater'}
           ]
@@ -74,7 +75,7 @@ module.exports = {
             },
             {
               label: 'Technical Reference',
-              to: '/docs/intro',
+              to: '/docs/Technical%20Reference/intro',
             },
             {
               label: 'Github', 
@@ -122,4 +123,7 @@ module.exports = {
       },
     ],
   ],
+
+
+
 };
