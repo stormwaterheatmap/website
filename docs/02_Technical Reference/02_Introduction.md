@@ -1,10 +1,8 @@
 ---
 id: intro
-title: Introduction 
-sidebar_location: 2
+title: Overview 
+sidebar_location: 1
 ---
-# What is Stormwater?
-
 One of the primary terrestrial pressures on the Salish Sea estuarine and marine environment is urban stormwater runoff. When rainfall runs across hard, impervious surfaces, rather than soaking into the soil, it picks up and delivers toxic contaminants directly to nearby streams, rivers, and eventually the Salish Sea. In fact, for most toxic substances, surface runoff is the largest contributing source of loading to Puget Sound (Washington State Department of Ecology [2011](references.html#ref-WashingtonStateDepartmentofEcology2011)).
 
 Unfortunately, the Salish Sea’s relationship with stormwater effluent is no outlier; stormwater is the fastest growing cause of surface water impairment in the United States as urbanization transitions forested and other natural landscapes to hard, impervious surfaces (United States Environmental Protection Agency [2019](references.html#ref-USEPA2019)). Given that the Salish Sea is expected to house another 5 million people by 2040, stormwater interventions will be necessary in order to break the relationship between urbanization and stormwater-caused ecological degradation.

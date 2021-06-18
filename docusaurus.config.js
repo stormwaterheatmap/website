@@ -51,7 +51,7 @@ module.exports = {
           label: 'About',
           items: [ 
             {label: 'Documentation',
-            to: "docs/Technical%20Reference/abstract"}, 
+            to: "docs/intro"}, 
             {label: 'User Vignettes'}, 
             {label: 'All About Stormwater'}
           ]
@@ -71,7 +71,7 @@ module.exports = {
           items: [
             {
               label: 'API Reference',
-              to: '/docs/intro',
+              to: '/docs/API/page1',
             },
             {
               label: 'Technical Reference',
