@@ -11,25 +11,36 @@ module.exports = {
   projectName: 'website', // Usually your repo name.
   themeConfig: {
     colorMode: {
-    defaultMode: 'dark',
+      defaultMode: 'light',
 
       // Hides the switch in the navbar
       // Useful if you want to support a single color mode
-      disableSwitch: false},
+      disableSwitch: true},
+      announcementBar: {
+        id: 'support_us', // Any value that will identify this message.
+        content:
+          'We are looking to revamp our docs, please fill <a target="_blank" rel="noopener noreferrer" href="#">this survey</a>',
+        backgroundColor: '#fafbfc', // Defaults to `#fff`.
+        textColor: '#091E42', // Defaults to `#000`.
+        isCloseable: true, // Defaults to `true`.
+      },
     navbar: {
+      // style: 'dark',
+      
       hideOnScroll: true,
       title: 'StormwaterHeatmap.org',
       logo: {
         // height: '100px', 
         alt: 'TNC Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo_dark.svg', //'img/logo.svg',
         srcDark: 'img/logo_dark.svg'
       },
       items: [
       
-        {
+        {color: 'yellow',
           position: 'left',
           label: 'Analyze Watersheds',
+          
           items: [ 
             {label: 'Analyze Single Watershed', 
           to: "react_page"}, 
@@ -63,8 +74,8 @@ module.exports = {
         // },
       ],
     },
-    footer: {
-      style: 'dark',
+    footer: { 
+      // style: 'dark',
       links: [
         {
           title: 'Docs',
@@ -98,7 +109,7 @@ module.exports = {
         }
 
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Geosyntec Consultants Inc. and The Nature Conservancy. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Geosyntec Consultants, Inc. <br> Built with Docusaurus.`,
     },
   },
   presets: [
@@ -107,15 +118,15 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
+          // Please change this to your repo.https://github.com/stormwaterheatmap/website.git
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://github.com/stormwaterheatmap/website/tree/main/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+            'https://github.com/stormwaterheatmap/website/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

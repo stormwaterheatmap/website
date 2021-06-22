@@ -17,11 +17,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Bentham&family=Martel:wght@400;600;700;800;900&display=swap');
 
 :root {
-  /* --ifm-navbar-height: 10rem;  */
-  /* --ifm-navbar__items-height: 10rem;  */
-  /* --ifm-navbar-background-color: #fafafa;  */
-  /* --ifm-dropdown-background-color:#396245; */
-  --ifm-color-primary: #3da237;
+   /* --ifm-navbar-height: 10rem;   */
+  --ifm-navbar__items-height: 10rem; 
+  --ifm-navbar__items-color: yellow; 
+   /* --ifm-dropdown-background-color:#396245; */
+  --ifm-color-primary: #3da237;  
+  --ifm-navbar-background-color: #3c3c3c;  
+  /* --ifm-font-color: red;    */
+  --ifm-navbar-link-color: white;
+  /* --ifm-dropdown-link-color: purple;  */
+  --ifm-footer-background-color: #3c3c3c; 
+  --ifm-footer-color: white;
+  --ifm-footer-link-color: white; 
+  /*var(--ifm-color-emphasis-700); */
+  --ifm-footer-link-hover-color: inherit; 
+  --ifm-footer-items-color: #3c3c3c;
   --ifm-color-primary-dark: #379231;
   --ifm-color-primary-darker: #348a2f;
   --ifm-color-primary-darkest: #2b7126;
@@ -39,19 +49,21 @@
     margin-right: 0.5rem;
 }
   html[data-theme='dark'] {
-    --ifm-color-primary: #6bff95;
-    /* --ifm-color-primary: #5fa272; */
-    --ifm-color-primary-dark: #559266;
-    /* --ifm-color-primary-darker: #508a61; */
-    /* --ifm-color-primary-darkest: #427250; */
-    --ifm-color-primary-light: #6fab80;
-    --ifm-color-primary-lighter: #77b087;
-    --ifm-color-primary-lightest: #b0d1ba;
-    --ifm-navbar-background-color: #3c3c3c;  
-    --ifm-dropdown-background-color:#396245; 
-    /* --ifm-dropdown-background-color-secondary:#396245;  */
-    /* any other colors you wish to overwrite */
-  }
+    /* --ifm-footer-background-color: #3c3c3c;  */
+    --ifm-footer-links-color: white; 
+    /* --ifm-navbar-background-color: #3c3c3c; 
+    --ifm-color-primary-dark: #3c3c3c;
+    --ifm-color-primary-darker: #348a2f;
+    --ifm-color-primary-darkest: #2b7126;
+    --ifm-color-primary-light: #43b23d;
+    --ifm-color-primary-lighter: #46ba3f;
+    --ifm-color-primary-lightest: #5bc555;
+    --ifm-code-font-size: 95%; */
+    
+    /* /* any other colors you wish to overwrite  */
+    }  
+    
+ 
 
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
@@ -59,8 +71,24 @@
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
 }
-.navbar__title {
+
+.navbar__items {
+  color:blueviolet!important;
+  /* color:blue !important;  */
+  /* background-color: blue; */
+  font-size: 0.8rem;
+  /* font-variant-caps: unicase; */
+  /* font-variant: petite-caps; */
+  /* font-stretch: wider; */
+  font-weight: bold;
+  text-transform: uppercase;  
+}
+
+.navbar__title {  
   font-family: 'Martel', serif;
+  color: white;  
+  /* text-emphasis-color: blue; */
+  /* color: red; */
   /* font-family:'Merriweather', sans-serif; */
   text-transform: capitalize;
   font-weight: 700;  
@@ -69,22 +97,22 @@
   letter-spacing: -0.03rem;
    /* font-style: italic;  */
 }
+
 /* Header Dropdown Menu */
 .dropdown__link {
   /* font-family:'Noto Sans', sans-serif; */
   text-transform: capitalize;
   font-weight: 500; 
   font-size: inherit;
-  font-size: 13px;
+  /* font-size: 13px; */
+  /* color: rgb(0, 255, 128) !important; */
 }
 
-.navbar .navbar__items {
-   
-  font-size: 13px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
 
+
+.navbar__link--active{
+color:rgb(30, 255, 0) !important;
+}
 
 .aspect-ratio--16x9 {
   width: 100%;
