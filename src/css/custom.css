@@ -18,12 +18,20 @@
 
 :root {
    /* --ifm-navbar-height: 10rem;   */
-  /* --ifm-navbar__items-height: 10rem;  */
-  /* --ifm-navbar-background-color: #3c3c3c;   */
-  /* --ifm-dropdown-background-color:#396245; */
-  /* --ifm-color-primary: #999090;   */
-  --ifm-navbar-background-color: #3c3c3c; 
+  --ifm-navbar__items-height: 10rem; 
+  --ifm-navbar__items-color: yellow; 
+   /* --ifm-dropdown-background-color:#396245; */
+  --ifm-color-primary: #3da237;  
+  --ifm-navbar-background-color: #3c3c3c;  
   /* --ifm-font-color: red;    */
+  --ifm-navbar-link-color: white;
+  /* --ifm-dropdown-link-color: purple;  */
+  --ifm-footer-background-color: #3c3c3c; 
+  --ifm-footer-color: white;
+  --ifm-footer-link-color: white; 
+  /*var(--ifm-color-emphasis-700); */
+  --ifm-footer-link-hover-color: inherit; 
+  --ifm-footer-items-color: #3c3c3c;
   --ifm-color-primary-dark: #379231;
   --ifm-color-primary-darker: #348a2f;
   --ifm-color-primary-darkest: #2b7126;
@@ -41,17 +49,20 @@
     margin-right: 0.5rem;
 }
   html[data-theme='dark'] {
-    --ifm-navbar-background-color: #3c3c3c; 
+    /* --ifm-footer-background-color: #3c3c3c;  */
+    --ifm-footer-links-color: white; 
+    /* --ifm-navbar-background-color: #3c3c3c; 
     --ifm-color-primary-dark: #3c3c3c;
     --ifm-color-primary-darker: #348a2f;
     --ifm-color-primary-darkest: #2b7126;
     --ifm-color-primary-light: #43b23d;
     --ifm-color-primary-lighter: #46ba3f;
     --ifm-color-primary-lightest: #5bc555;
-    --ifm-code-font-size: 95%;
+    --ifm-code-font-size: 95%; */
     
     /* /* any other colors you wish to overwrite  */
-   }   
+    }  
+    
  
 
 .docusaurus-highlight-code-line {
@@ -60,6 +71,19 @@
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
 }
+
+.navbar__items {
+  color:blueviolet!important;
+  /* color:blue !important;  */
+  /* background-color: blue; */
+  font-size: 0.8rem;
+  /* font-variant-caps: unicase; */
+  /* font-variant: petite-caps; */
+  /* font-stretch: wider; */
+  font-weight: bold;
+  text-transform: uppercase;  
+}
+
 .navbar__title {  
   font-family: 'Martel', serif;
   color: white;  
@@ -84,16 +108,7 @@
   /* color: rgb(0, 255, 128) !important; */
 }
 
-.navbar__items {
-  /* color:blue !important;  */
-  /* background-color: blue; */
-  font-size: 0.8rem;
-  /* font-variant-caps: unicase; */
-  /* font-variant: petite-caps; */
-  /* font-stretch: wider; */
-  font-weight: bold;
-  text-transform: uppercase;  
-}
+
 
 .navbar__link--active{
 color:rgb(30, 255, 0) !important;

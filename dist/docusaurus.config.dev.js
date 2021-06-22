@@ -20,8 +20,19 @@ module.exports = {
       // Useful if you want to support a single color mode
       disableSwitch: true
     },
+    announcementBar: {
+      id: 'support_us',
+      // Any value that will identify this message.
+      content: 'We are looking to revamp our docs, please fill <a target="_blank" rel="noopener noreferrer" href="#">this survey</a>',
+      backgroundColor: '#fafbfc',
+      // Defaults to `#fff`.
+      textColor: '#091E42',
+      // Defaults to `#000`.
+      isCloseable: true // Defaults to `true`.
+
+    },
     navbar: {
-      style: 'dark',
+      // style: 'dark',
       hideOnScroll: true,
       title: 'StormwaterHeatmap.org',
       logo: {
@@ -32,6 +43,7 @@ module.exports = {
         srcDark: 'img/logo_dark.svg'
       },
       items: [{
+        color: 'yellow',
         position: 'left',
         label: 'Analyze Watersheds',
         items: [{
@@ -70,7 +82,7 @@ module.exports = {
       ]
     },
     footer: {
-      style: 'dark',
+      // style: 'dark',
       links: [{
         title: 'Docs',
         items: [{
@@ -93,7 +105,7 @@ module.exports = {
           to: '/docs/intro'
         }]
       }],
-      copyright: "Copyright © ${new Date().getFullYear()} Geosyntec Consultants Inc. & The Nature Conservancy.  Built with Docusaurus."
+      copyright: "Copyright \xA9 ".concat(new Date().getFullYear(), " Geosyntec Consultants, Inc. <br> Built with Docusaurus.")
     }
   },
   presets: [['@docusaurus/preset-classic', {
