@@ -5,11 +5,11 @@
 We produced a high spatial resolution 7-class land cover dataset of the
 Puget Sound trough below 1,500 meters elevation using a hybrid of
 automated classification and manual data overlays (Table 1). Here, the
-Puget Sound trough is defined as the areas of Washington state which
+Puget Sound trough is defined as the areas of Washington State which
 drain into the Puget Sound or Straight of Juan de Fuca. This hybrid
 approach allowed us to produce a highly accurate land cover dataset
 appropriate for our stormwater modeling and using already available
-resources (data, software, computation, and personnel.) In Google Earth
+resources (data, software, computation, and personnel). In Google Earth
 Engine (Gorelick et al., 2017), we created a six-class 1-meter land
 cover layer using the Naïve Bayes classifier (Google, 2019) and then
 used overlay decision rules to combine that layer with a 10-m land cover
@@ -26,6 +26,7 @@ Table 1. The number IDs and label names of the seven classes in the
 final land cover dataset.
 
 <table>
+<center>
 <thead>
 <tr class="header">
 <th><em>Class ID</em></th>
@@ -62,6 +63,7 @@ final land cover dataset.
 <td>Impervious Roofs</td>
 </tr>
 </tbody>
+</center>
 </table>
 
 ## Land Cover Development
@@ -89,27 +91,25 @@ collected over 2009 to 2019. The eleven composited bands included:
     arc-second) (U.S. Geological Survey, 2015).
 -   GNDVI: Green Normalized Difference Vegetation Index calculated with
     NAIP imagery as:
-
-$$
-\\frac{\\left(NIR-Green\\right)}{\\left(NIR\\ +\\ Green\\right)}
-$$
+<div class="figure">
+<center>
+<img src="\img\NIRGreen.png" alt="NIR Green Equation" width="150"/>
+</center>
+</div>
 
 -   MSAVI: Modified Soil Adjusted Vegetation Index calculated with NAIP
     imagery as:
-
-$$
-\\frac{\\left(2\\cdot NIR+1\\right)-\\sqrt{\\left(2\\cdot NIR+1\\right)^2-8\\left(NIR-RED\\right)}}{2}
-$$
-
+<div class="figure">
+<center>
+<img src="\img\NIRRed.JPG" alt="NIR Red Equation" width="500"/>
+</center>
+</div>
 -   Binary MSAVI: a Boolean selection of MSAVI where:
-
-$$
-Bin\_{MSAVI} =
-\\begin{cases}
-    1, & 0.5\\ \\le\\ \\ MSAVI\\ &lt;0.9\\\\
-    0,              & \\text{otherwise}
-\\end{cases}
-$$
+<div class="figure">
+<center>
+<img src="\img\MSAVI.png" alt="MSAVI Equation" width="400"/>
+</center>
+</div>
 
 -   Green: Green NAIP band.
 -   Blue: Blue NAIP band.
@@ -123,7 +123,7 @@ Vegetated and impervious areas mapped well, but dirt/barren and water
 were inconsistent and often mistaken for each other or for impervious.
 
 To improve the labels in those inconsistent locations, we used a
-decision rule and replacement approach using NOAA\`;s 10-meter CCAP land
+decision rule and replacement approach using NOAA`s 10-meter CCAP land
 cover dataset (NOAA C-CAP, 2018a), which covers western Washington
 including the Puget Sound. While this dataset tested high in accuracy
 already, 10-meters is not an adequate spatial resolution to inform many
@@ -137,7 +137,7 @@ classes from the 1-m classification with the 10-m CCAP. We also used the
 CCAP water and dirt classes to help clean up shoreline areas using a
 10-m focal maximum algorithm to grow the class landward. The decision
 and replacement approach is as follows for each 1-m pixel, where label
-ID numbers are listed in Table 1 above
+ID numbers are listed in Table 1 above.
 
 **Classification Psuedocode**
 
@@ -196,7 +196,7 @@ the validation points data with the following process:
 
 2.  Relabel names to six classes:
 
-    1.  `FinalFineVegetation` & `FinalFineVegetation` →
+    1.  `FinalFineVegetation` & `FinalFineVegetation` →         
         `Fine Vegetation`
     2.  `FinalMedium` → `Medium Vegetation`
     3.  `FinalCoarseVegetation` → `Coarse Vegetation`
@@ -237,357 +237,12 @@ and Four-class (Table 2).
 -   The **Four-class** derivative includes only the Fine Vegetation,
     Coarse Vegetation, Water, and Impervious (Built) classes.
 
-<!-- <table>
-<caption>
-Accuracy and kappa statistics for three derivatives of the seven-class
-land cover product.
-</caption>
-<thead>
-<tr>
-<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
-</th>
-<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
-
-Impervious
-
-</th>
-<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
-
-Six Classes
-
-</th>
-<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
-
-Four Classes
-
-</th>
-</tr>
-<tr>
-<th style="text-align:left;">
-County
-</th>
-<th style="text-align:right;">
-Accuracy
-</th>
-<th style="text-align:right;">
-Kappa
-</th>
-<th style="text-align:right;">
-Accuracy
-</th>
-<th style="text-align:right;">
-Kappa
-</th>
-<th style="text-align:right;">
-Accuracy
-</th>
-<th style="text-align:right;">
-Kappa
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-Clallam
-</td>
-<td style="text-align:right;">
-0.985
-</td>
-<td style="text-align:right;">
-0.947
-</td>
-<td style="text-align:right;">
-0.702
-</td>
-<td style="text-align:right;">
-0.631
-</td>
-<td style="text-align:right;">
-0.915
-</td>
-<td style="text-align:right;">
-0.885
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Island
-</td>
-<td style="text-align:right;">
-0.987
-</td>
-<td style="text-align:right;">
-0.942
-</td>
-<td style="text-align:right;">
-0.537
-</td>
-<td style="text-align:right;">
-0.447
-</td>
-<td style="text-align:right;">
-0.912
-</td>
-<td style="text-align:right;">
-0.877
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jefferson
-</td>
-<td style="text-align:right;">
-0.977
-</td>
-<td style="text-align:right;">
-0.931
-</td>
-<td style="text-align:right;">
-0.698
-</td>
-<td style="text-align:right;">
-0.629
-</td>
-<td style="text-align:right;">
-0.911
-</td>
-<td style="text-align:right;">
-0.880
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-King
-</td>
-<td style="text-align:right;">
-0.971
-</td>
-<td style="text-align:right;">
-0.898
-</td>
-<td style="text-align:right;">
-0.635
-</td>
-<td style="text-align:right;">
-0.567
-</td>
-<td style="text-align:right;">
-0.929
-</td>
-<td style="text-align:right;">
-0.904
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Kitsap
-</td>
-<td style="text-align:right;">
-0.976
-</td>
-<td style="text-align:right;">
-0.923
-</td>
-<td style="text-align:right;">
-0.725
-</td>
-<td style="text-align:right;">
-0.655
-</td>
-<td style="text-align:right;">
-0.946
-</td>
-<td style="text-align:right;">
-0.926
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Lewis
-</td>
-<td style="text-align:right;">
-1.000
-</td>
-<td style="text-align:right;">
-1.000
-</td>
-<td style="text-align:right;">
-0.612
-</td>
-<td style="text-align:right;">
-0.443
-</td>
-<td style="text-align:right;">
-0.964
-</td>
-<td style="text-align:right;">
-0.934
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Mason
-</td>
-<td style="text-align:right;">
-0.977
-</td>
-<td style="text-align:right;">
-0.919
-</td>
-<td style="text-align:right;">
-0.686
-</td>
-<td style="text-align:right;">
-0.612
-</td>
-<td style="text-align:right;">
-0.926
-</td>
-<td style="text-align:right;">
-0.897
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Pierce
-</td>
-<td style="text-align:right;">
-0.973
-</td>
-<td style="text-align:right;">
-0.912
-</td>
-<td style="text-align:right;">
-0.626
-</td>
-<td style="text-align:right;">
-0.548
-</td>
-<td style="text-align:right;">
-0.888
-</td>
-<td style="text-align:right;">
-0.848
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-San Juan
-</td>
-<td style="text-align:right;">
-0.976
-</td>
-<td style="text-align:right;">
-0.899
-</td>
-<td style="text-align:right;">
-0.591
-</td>
-<td style="text-align:right;">
-0.511
-</td>
-<td style="text-align:right;">
-0.829
-</td>
-<td style="text-align:right;">
-0.771
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Skagit
-</td>
-<td style="text-align:right;">
-0.983
-</td>
-<td style="text-align:right;">
-0.926
-</td>
-<td style="text-align:right;">
-0.655
-</td>
-<td style="text-align:right;">
-0.585
-</td>
-<td style="text-align:right;">
-0.911
-</td>
-<td style="text-align:right;">
-0.880
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Snohomish
-</td>
-<td style="text-align:right;">
-0.958
-</td>
-<td style="text-align:right;">
-0.860
-</td>
-<td style="text-align:right;">
-0.646
-</td>
-<td style="text-align:right;">
-0.581
-</td>
-<td style="text-align:right;">
-0.926
-</td>
-<td style="text-align:right;">
-0.901
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Thurston
-</td>
-<td style="text-align:right;">
-0.975
-</td>
-<td style="text-align:right;">
-0.919
-</td>
-<td style="text-align:right;">
-0.641
-</td>
-<td style="text-align:right;">
-0.573
-</td>
-<td style="text-align:right;">
-0.906
-</td>
-<td style="text-align:right;">
-0.875
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Whatcom
-</td>
-<td style="text-align:right;">
-0.987
-</td>
-<td style="text-align:right;">
-0.944
-</td>
-<td style="text-align:right;">
-0.637
-</td>
-<td style="text-align:right;">
-0.566
-</td>
-<td style="text-align:right;">
-0.869
-</td>
-<td style="text-align:right;">
-0.823
-</td>
-</tr>
-</tbody>
-</table> -->
+<div class="figure">
+<center>
+<figcaption>Table 2.1: Accuracy and kappa statistics for three derivatives of the seven-class land cover product.</figcaption>
+<img src="\img\kappatable.JPG" alt="Kappa Table" width="600"/>
+</center>
+</div>
 
 While the Impervious and Four-class derivatives test extremely well with
 both Accuracy and Kappa statistics, the Six-class derivative tests
