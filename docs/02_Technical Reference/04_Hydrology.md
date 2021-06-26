@@ -5,7 +5,7 @@
 
 This document provides an overview of hydrology simulation methods and results for the Puget Sound Stormwater heatmap. Continuous hydrology simulation  was performed using regional pre-calibrated parameters. Batched simulations were run for combinations of land cover, soils, and slopes across the Puget Sound domain. Results are stored in a cloud-based database.  It is intended to be used in conjunction with data derived from the stormwaterheatmap or other geospatial data sources to quickly model rainfall-runoff relationships across Puget Sound.
 
-## Modeling approach
+## Modeling Approach
 The hydrologic modeling approach was developed to replicate as much as feasible, commonly applied continuous simulation hydrologic analysis for stormwater in Puget Sound. Ecology developed guidance for continuous simulation modeling as described in the Stormwater Manual for Western Washington (Department of Ecology, 2014).  
 
 This guidance calls for the application of continuous simulation models based on the Hydrologic Simulation Program Fortran (HSPF). HSPF is a lumped-parameter rainfall-runoff model developed by the USGS and EPA. HSPF is generally used to perform analysis on hydrologic processes related to effects of land cover, interception, surface ponding and soil moisture retention. Although maintenance development of HSPF has not occurred since 1997, it is currently distributed by EPA under the Better Assessment Science Integrating Point and Non-point Sources (BASINS) analysis system. In Western Washington, application of HSPF to stormwater design is routinely performed through the Western Washington Hydrology Model (WWHM), a Windows-based graphical user interface program with built-in meteorologic data and modules specific to stormwater analysis.  
@@ -131,12 +131,237 @@ Results were verified by comparing simulations to measured streamflow for a gage
 Daily streamflow data for the Madsen Creek watershed was provided by <a href="https://green2.kingcounty.gov/hydrology/SummaryDataGraphs.aspx?G_ID=98">King County</a> for the period 1991-2010. We delineated the watershed above the gaging site using the USGS NHDPLus flow-conditioned raster (Moore et al., 2019). 
 Using this watershed boundary, we extracted HRUs and associated areas from the stormwater heatmap HRU layer on Google Earth Engine. HRU results and areas are shown in Table 3.1.
 
-<div class="figure">
-<center>
-<p class="caption">Table 3.1: Summary of HRUs and areas in Madsen Creek Watershed</p>
-<img src="/img/hru_table.png" alt="Summary of HRUs in Madsen Creek Watershed" width="800" />
-</center>
-</div>
+<table>
+<caption> Table 3.1. Summary of HRUs and areas in Madsen Creek Watershed</caption>
+ <thead>
+  <tr>
+   <th> hruName </th>
+    <th> sq.m </th>
+    <th> acres </th>
+    <th> soil </th>
+    <th> land cover </th>
+    <th> slope </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+    <td> hru000 </td>
+    <td> 2432168.00 </td>
+    <td> 601.001891 </td>
+    <td> A/B </td>
+    <td> forest </td>
+    <td> flat </td>
+  </tr>
+  <tr>
+    <td> hru001 </td>
+    <td> 1228910.00 </td>
+    <td> 303.670347 </td>
+    <td> A/B </td>
+    <td> forest </td>
+    <td> moderate </td>
+  </tr>
+  <tr>
+    <td> hru002 </td>
+    <td> 743614.00 </td>
+    <td> 183.751019 </td>
+    <td> A/B </td>
+    <td> forest </td>
+    <td> steep </td>
+  </tr>
+  <tr>
+    <td> hru010 </td>
+    <td> 556435.10 </td>
+    <td> 137.498118 </td>
+    <td> A/B </td>
+    <td> pasture </td>
+    <td> flat </td>
+  </tr>
+  <tr>
+    <td> hru011 </td>
+    <td> 153862.00 </td>
+    <td> 38.020137 </td>
+    <td> A/B </td>
+    <td> pasture </td>
+    <td> moderate </td>
+  </tr>
+  <tr>
+    <td> hru012 </td>
+    <td> 24682.16 </td>
+    <td> 6.099095 </td>
+    <td> A/B </td>
+    <td> pasture </td>
+    <td> steep </td>
+  </tr>
+  <tr>
+    <td> hru020 </td>
+    <td> 909390.80 </td>
+    <td> 224.715351 </td>
+    <td> A/B </td>
+    <td> lawn </td>
+    <td> flat </td>
+  </tr>
+  <tr>
+    <td> hru021 </td>
+    <td> 230017.00 </td>
+    <td> 56.838437 </td>
+    <td> A/B </td>
+    <td> lawn </td>
+    <td> moderate </td>
+  </tr>
+  <tr>
+    <td> hru022 </td>
+    <td> 17757.89 </td>
+    <td> 4.388070 </td>
+    <td> A/B </td>
+    <td> lawn </td>
+    <td> steep </td>
+  </tr>
+  <tr>
+    <td> hru100 </td>
+    <td> 93139.05 </td>
+    <td> 23.015160 </td>
+    <td> C </td>
+    <td> forest </td>
+    <td> flat </td>
+  </tr>
+  <tr>
+    <td> hru101 </td>
+    <td> 9888.50 </td>
+    <td> 2.443502 </td>
+    <td> C </td>
+    <td> forest </td>
+    <td> moderate </td>
+  </tr>
+  <tr>
+    <td> hru102 </td>
+    <td> 6064.56 </td>
+    <td> 1.498585 </td>
+    <td> C </td>
+    <td> forest </td>
+    <td> steep </td>
+  </tr>
+  <tr>
+    <td> hru110 </td>
+    <td> 13569.95 </td>
+    <td> 3.353207 </td>
+    <td> C </td>
+    <td> pasture </td>
+    <td> flat </td>
+  </tr>
+  <tr>
+    <td> hru111 </td>
+    <td> 2032.37 </td>
+    <td> 0.502208 </td>
+    <td> C </td>
+    <td> pasture </td>
+    <td> moderate </td>
+  </tr>
+  <tr>
+    <td> hru112 </td>
+    <td> 230.02 </td>
+    <td> 0.056840 </td>
+    <td> C </td>
+    <td> pasture </td>
+    <td> steep </td>
+  </tr>
+  <tr>
+    <td> hru120 </td>
+    <td> 118094.30 </td>
+    <td> 29.181745 </td>
+    <td> C </td>
+    <td> lawn </td>
+    <td> flat </td>
+  </tr>
+  <tr>
+    <td> hru121 </td>
+    <td> 7885.95 </td>
+    <td> 1.948661 </td>
+    <td> C </td>
+    <td> lawn </td>
+    <td> moderate </td>
+  </tr>
+  <tr>
+    <td> hru122 </td>
+    <td> 243.56 </td>
+    <td> 0.060185 </td>
+    <td> C </td>
+    <td> lawn </td>
+    <td> steep </td>
+  </tr>
+  <tr>
+    <td> hru200 </td>
+    <td> 90542.94 </td>
+    <td> 22.373647 </td>
+    <td> D </td>
+    <td> forest </td>
+    <td> flat </td>
+  </tr>
+  <tr>
+    <td> hru201 </td>
+    <td> 3724.20 </td>
+    <td> 0.920269 </td>
+    <td> D </td>
+    <td> forest </td>
+    <td> moderate </td>
+  </tr>
+  <tr>
+    <td> hru210 </td>
+    <td> 22074.19 </td>
+    <td> 5.454652 </td>
+    <td> D </td>
+    <td> pasture </td>
+    <td> flat </td>
+  </tr>
+  <tr>
+    <td> hru211 </td>
+    <td> 1212.49 </td>
+    <td> 0.299612 </td>
+    <td> D </td>
+    <td> pasture </td>
+    <td> moderate </td>
+  </tr>
+  <tr>
+    <td> hru220 </td>
+    <td> 42232.11 </td>
+    <td> 10.435781 </td>
+    <td> D </td>
+    <td> lawn </td>
+    <td> flat </td>
+  </tr>
+  <tr>
+    <td> hru221 </td>
+    <td> 2335.62 </td>
+    <td> 0.577145 </td>
+    <td> D </td>
+    <td> lawn </td>
+    <td> moderate </td>
+  </tr>
+  <tr>
+    <td> hru250 </td>
+    <td> 1477833.00 </td>
+    <td> 365.180393 </td>
+    <td> D </td>
+    <td> impervious </td>
+    <td> flat </td>
+  </tr>
+  <tr>
+    <td> hru251 </td>
+    <td> 320216.80 </td>
+    <td> 79.127303 </td>
+    <td> D </td>
+    <td> impervious </td>
+    <td> moderate </td>
+  </tr>
+  <tr>
+    <td> hru252 </td>
+    <td> 25874.91 </td>
+    <td> 6.393828 </td>
+    <td> D </td>
+    <td> impervious </td>
+    <td> steep </td>
+  </tr>
+</tbody>
+</table>
 
 Modeling results were then queried and aggregated from the BigQuery dataset as described in Appendix B. The same HRU values were also run in WWHM for comparison. Both the WWHM and BigQuery results were truncated to have the same period of record as the streamflow data. Only the surface runoff and interflow components were used in this analysis. 
 

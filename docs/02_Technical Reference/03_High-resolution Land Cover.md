@@ -237,12 +237,151 @@ and Four-class (Table 2).
 -   The **Four-class** derivative includes only the Fine Vegetation,
     Coarse Vegetation, Water, and Impervious (Built) classes.
 
-<div class="figure">
-<center>
-<figcaption>Table 2.1: Accuracy and kappa statistics for three derivatives of the seven-class land cover product.</figcaption>
-<img src="\img\kappatable.JPG" alt="Kappa Table" width="600"/>
-</center>
-</div>
+<table>
+<caption>
+Table 2.1. Accuracy and kappa statistics for three derivatives of the seven-class
+land cover product.
+</caption>
+<thead>
+
+<tr>
+<th></th>
+<th colspan="2">Impervious</th>
+<th colspan="2">Six Classes</th>
+<th colspan="2">Four Classes</th>
+</tr>
+
+<tr>
+<th>County</th>
+<th>Accuracy</th>
+<th>Kappa</th>
+<th>Accuracy</th>
+<th>Kappa</th>
+<th>Accuracy</th>
+<th>Kappa</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Clallam</td>
+<td>0.985</td>
+<td>0.947</td>
+<td>0.702</td>
+<td>0.631</td>
+<td>0.915</td>
+<td>0.885</td>
+</tr>
+<tr>
+<td>Island</td>
+<td>0.987</td>
+<td>0.942</td>
+<td>0.537</td>
+<td>0.447</td>
+<td>0.912</td>
+<td>0.877</td>
+</tr>
+<tr>
+<td>Jefferson</td>
+<td>0.977</td>
+<td>0.931</td>
+<td>0.698</td>
+<td>0.629</td>
+<td>0.911</td>
+<td>0.880</td>
+</tr>
+<tr>
+<td>King</td>
+<td>0.971</td>
+<td>0.898</td>
+<td>0.635</td>
+<td>0.567</td>
+<td>0.929</td>
+<td>0.904</td>
+</tr>
+<tr>
+<td>Kitsap</td>
+<td>0.976</td>
+<td>0.923</td>
+<td>0.725</td>
+<td>0.655</td>
+<td>0.946</td>
+<td>0.926</td>
+</tr>
+<tr>
+<td>Lewis</td>
+<td>1.000</td>
+<td>1.000</td>
+<td>0.612</td>
+<td>0.443</td>
+<td>0.964</td>
+<td>0.934</td>
+</tr>
+<tr>
+<td>Mason</td>
+<td>0.977</td>
+<td>0.919</td>
+<td>0.686</td>
+<td>0.612</td>
+<td>0.926</td>
+<td>0.897</td>
+</tr>
+<tr>
+<td>Pierce</td>
+<td>0.973</td>
+<td>0.912</td>
+<td>0.626</td>
+<td>0.548</td>
+<td>0.888</td>
+<td>0.848</td>
+</tr>
+<tr>
+<td>San Juan</td>
+<td>0.976</td>
+<td>0.899</td>
+<td>0.591</td>
+<td>0.511</td>
+<td>0.829</td>
+<td>0.771</td>
+</tr>
+<tr>
+<td>Skagit</td>
+<td>0.983</td>
+<td>0.926</td>
+<td>0.655</td>
+<td>0.585</td>
+<td>0.911</td>
+<td>0.880</td>
+</tr>
+<tr>
+<td>Snohomish</td>
+<td>0.958</td>
+<td>0.860</td>
+<td>0.646</td>
+<td>0.581</td>
+<td>0.926</td>
+<td>0.901</td>
+</tr>
+<tr>
+<td>Thurston</td>
+<td>0.975</td>
+<td>0.919</td>
+<td>0.641</td>
+<td>0.573</td>
+<td>0.906</td>
+<td>0.875</td>
+</tr>
+<tr>
+<td>Whatcom</td>
+<td>0.987</td>
+<td>0.944</td>
+<td>0.637</td>
+<td>0.566</td>
+<td>0.869</td>
+<td>0.823</td>
+</tr>
+</tbody>
+</table>
 
 While the Impervious and Four-class derivatives test extremely well with
 both Accuracy and Kappa statistics, the Six-class derivative tests
