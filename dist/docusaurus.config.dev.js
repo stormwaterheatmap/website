@@ -2,7 +2,7 @@
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'StormwaterHeatmap.org',
+  title: 'Explore your watersheds. Get data, generate reports, and make informed decisions',
   tagline: 'Explore your watersheds. Get data, generate reports, and make informed decisions.',
   url: 'https://www.stormwaterheatmap.dev',
   baseUrl: '/',
@@ -21,29 +21,32 @@ module.exports = {
       disableSwitch: true
     },
     announcementBar: {
-      id: 'support_us',
+      id: 'tag',
       // Any value that will identify this message.
-      content: 'We are looking to revamp our docs, please fill <a target="_blank" rel="noopener noreferrer" href="#">this survey</a>',
-      backgroundColor: '#fafbfc',
+      content: 'Explore your watersheds. Get data, generate reports, and make informed decisions',
+      //'We are looking to revamp our docs, please fill <a target="_blank" rel="noopener noreferrer" href="#">this survey</a>',
+      backgroundColor: '#4D6059',
       // Defaults to `#fff`.
-      textColor: '#091E42',
+      textColor: 'white',
       // Defaults to `#000`.
-      isCloseable: true // Defaults to `true`.
+      isCloseable: false // Defaults to `true`.
 
     },
     navbar: {
       // style: 'dark',
       hideOnScroll: true,
-      title: 'StormwaterHeatmap.org',
+      title: 'StormwaterHeatmap.Org',
+      //fontWeight: 400,
+      //fontWeight: 'bold',
       logo: {
         // height: '100px', 
         alt: 'TNC Logo',
-        src: 'img/logo_dark.svg',
+        src: 'img/logo copy.svg',
         //'img/logo.svg',
-        srcDark: 'img/logo_dark.svg'
+        srcDark: 'img/favicon.ico'
       },
       items: [{
-        color: 'yellow',
+        //color: 'yellow',
         position: 'left',
         label: 'Analyze Watersheds',
         items: [{
@@ -64,7 +67,7 @@ module.exports = {
           label: 'Bulk Download/API'
         }]
       }, {
-        position: 'right',
+        position: 'left',
         label: 'About',
         items: [{
           label: 'Documentation',
@@ -74,12 +77,12 @@ module.exports = {
         }, {
           label: 'All About Stormwater'
         }]
-      } // {
-      //   href: 'https://github.com/facebook/docusaurus',
-      //   label: 'GitHub',
-      //   position: 'right',
-      // },
-      ]
+      }, {
+        position: 'right',
+        href: 'https://github.com/stormwaterheatmap',
+        className: 'header-github-link',
+        'aria-label': 'GitHub repository'
+      }]
     },
     footer: {
       // style: 'dark',

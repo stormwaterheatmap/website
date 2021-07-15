@@ -7,9 +7,11 @@
 
 /* You can override the default Infima variables here. */
 
+
+
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Noto+Sans+TC:wght@500;700&family=Noto+Sans:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bentham&display=swap');
@@ -36,7 +38,7 @@
   --ifm-color-primary-darker: #348a2f;
   --ifm-color-primary-darkest: #2b7126;
   --ifm-color-primary-light: #43b23d;
-  --ifm-color-primary-lighter: #46ba3f;
+  --ifm-color-primary-lighter: #0a1b09;
   --ifm-color-primary-lightest: #5bc555;
   --ifm-code-font-size: 95%;
   /* --ifm-font-family-base: 'Montserrat', sans-serif; */
@@ -44,9 +46,9 @@
 
 
   .navbar__logo {
-    height: 2.5rem;
+    height: 1.8rem;
     /* width: 200px; */
-    margin-right: 0.5rem;
+    margin-right: 0.2rem;
 }
   html[data-theme='dark'] {
     /* --ifm-footer-background-color: #3c3c3c;  */
@@ -73,7 +75,7 @@
 }
 
 .navbar__items {
-  color:blueviolet!important;
+  /* color:blueviolet!important; */
   /* color:blue !important;  */
   /* background-color: blue; */
   font-size: 0.8rem;
@@ -85,16 +87,15 @@
 }
 
 .navbar__title {  
-  font-family: 'Martel', serif;
+  font-family: 'Raleway', serif;
   color: white;  
   /* text-emphasis-color: blue; */
   /* color: red; */
-  /* font-family:'Merriweather', sans-serif; */
-  text-transform: capitalize;
-  font-weight: 700;  
-  font-size: 0.9rem;
-  margin-right: 1rem;
-  letter-spacing: -0.03rem;
+  text-transform: none;
+  font-weight: 300;  
+  font-size: 1.2rem; 
+  margin-right: 2rem; 
+  margin-bottom: 0.21rem;
    /* font-style: italic;  */
 }
 
@@ -133,4 +134,22 @@ color:rgb(30, 255, 0) !important;
 .ee_embed {
   width: 100%;
   height: 100%;
+}
+
+.header-github-link:hover {
+  opacity: 0.6;
+}
+
+.header-github-link:before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
+    no-repeat;
+}
+
+html[data-theme='dark'] .header-github-link:before {
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
+    no-repeat;
 }
