@@ -63,9 +63,10 @@ module.exports = {
           position: 'left',
           label: 'About',
           items: [ 
-            {label: 'Documentation',
-            to: "docs/intro"}, 
-            {label: 'User Vignettes'}, 
+            // {label: 'Documentation',
+            // to: "pages/intro"}, 
+            {label: 'User Vignettes', 
+            to: "User_Vignettes"}, 
             {label: 'All About Stormwater'}
           ]
         },
