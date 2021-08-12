@@ -69,12 +69,11 @@ module.exports = {
       }, {
         position: 'left',
         label: 'About',
-        items: [{
-          label: 'Documentation',
-          to: "docs/intro"
-        }, {
-          label: 'User Case Stories',
-          to: "user_vignettes"
+        items: [// {label: 'Documentation',
+        // to: "pages/intro"}, 
+        {
+          label: 'User Vignettes',
+          to: "User_Vignettes"
         }, {
           label: 'All About Stormwater'
         }]
