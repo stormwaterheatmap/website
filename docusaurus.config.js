@@ -65,7 +65,8 @@ module.exports = {
           items: [ 
             {label: 'Documentation',
             to: "docs/intro"}, 
-            {label: 'User Vignettes'}, 
+            {label: 'User Case Stories', 
+            to: "user_vignettes"}, 
             {label: 'All About Stormwater'}
           ]
         },

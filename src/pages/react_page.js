@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import backgroundImg from '@site/static/img/lid.png';
 
 function placeholder_page() {
   return (
@@ -9,6 +10,7 @@ function placeholder_page() {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
+          backgroundImage:  "url(" + backgroundImg + ")", 
         //   height: '50vh',
           fontSize: '20px',
         }}>
