@@ -5,15 +5,7 @@ import backgroundImg from '@site/static/img/lid.png';
 function placeholder_page() {
   return (
     <Layout title="Analyze Single Watershed">
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundImage:  "url(" + backgroundImg + ")", 
-        //   height: '50vh',
-          fontSize: '20px',
-        }}>
+      <div>
 
 
 

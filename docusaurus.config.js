@@ -45,9 +45,9 @@ module.exports = {
           
           items: [ 
             {label: 'Analyze Single Watershed', 
-          to: "react_page"}, 
+          to: "single_watershed"}, 
             {label: 'Compare Watersheds',
-             to: "Compare Watersheds"}, 
+             to: "compare_watersheds"}, 
           ]
         },
         {
@@ -66,7 +66,7 @@ module.exports = {
             // {label: 'Documentation',
             // to: "pages/intro"}, 
             {label: 'User Stories', 
-            to: "User Stories"}, 
+            to: "user_stories"}, 
             {label: 'All About Stormwater'}
           ]
         },
