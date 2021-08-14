@@ -54,7 +54,7 @@ module.exports = {
           to: "react_page"
         }, {
           label: 'Compare Watersheds',
-          to: "compare_watersheds"
+          to: "Compare Watersheds"
         }]
       }, {
         position: 'left',
@@ -72,8 +72,8 @@ module.exports = {
         items: [// {label: 'Documentation',
         // to: "pages/intro"}, 
         {
-          label: 'User Vignettes',
-          to: "User_Vignettes"
+          label: 'User Stories',
+          to: "User Stories"
         }, {
           label: 'All About Stormwater'
         }]

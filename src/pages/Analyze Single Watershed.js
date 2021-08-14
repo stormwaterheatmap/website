@@ -4,7 +4,7 @@ import backgroundImg from '@site/static/img/lid.png';
 
 function placeholder_page() {
   return (
-    <Layout title="placeholder_page">
+    <Layout title="Analyze Single Watershed">
       <div
         style={{
           display: 'flex',
