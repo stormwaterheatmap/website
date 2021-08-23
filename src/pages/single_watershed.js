@@ -14,7 +14,7 @@ function placeholder_page() {
   <div class="aspect-ratio__inner-wrapper">
         <iframe class="ee_embed" 
          width="100%" height="800"  
-         src="https://stormwaterheatmap.users.earthengine.app/view/watershed-inspector"
+         src="https://stormwaterheatmap.users.earthengine.app/view/singlewatershed"
           frameborder="0" >
             </iframe> 
    </div> 

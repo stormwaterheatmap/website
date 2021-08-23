@@ -93,7 +93,7 @@ module.exports = {
           to: '/docs/API/page1'
         }, {
           label: 'Technical Reference',
-          to: '/docs/Technical%20Reference/intro'
+          to: 'docs/Technical%20Reference/overview'
         }, {
           label: 'Github',
           to: '/docs/intro'
