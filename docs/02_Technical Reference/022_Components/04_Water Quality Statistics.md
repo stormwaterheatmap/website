@@ -1,3 +1,10 @@
+---
+title: "Water Quality Statistics"
+output:
+  github_document:
+    pandoc_args: --webtex
+---
+
 We developed a series of linear mixed effects models to estimate concentrations for constituents of concern (COCs) in Puget Sound urban stormwater. Spatial covariates in the models included various landscape predictors, rainfall, and in some models, percent land use (commercial, industrial, residential).
 
 # Data Sources
@@ -148,9 +155,7 @@ For each watershed contained in the S8 dataset, potentially relevant landscape d
 
 ## Pre-processing of spatial data
 
-In order to use the landscape data at an appropriate scale across the study area, spatial predictors were stacked and then convolved with a 100-meter gaussian kernel. This resulted in a "fuzzy" this word is unclear to me – it makes me dubious that the predictors will be
-sufficient to identify correlations with chemicals of concern in
-watersheds predictors that could apply across dataset boundaries. These values were then extracted for each monitored watershed.
+In order to use the landscape data at an appropriate scale across the study area, spatial predictors were stacked and then convolved with a 100-meter gaussian kernel. This resulted in a "fuzzy" this word is unclear to me -- it makes me dubious that the predictors will be sufficient to identify correlations with chemicals of concern in watersheds predictors that could apply across dataset boundaries. These values were then extracted for each monitored watershed.
 
 Prior to use, spatial data were plotted and visually assessed for outliers (Fig. 4.3). Square-root transformation was performed on spatial data sets with outliers that were higher than the rest of the predictor's values: popn, slope, CO2_res, CO2_com, CO2_road, CO2_nonroad, CO2_tot. The devAge spatial predictor had a low data outlier; devAge values were squared to address the low outlier. Figure 4.4 shows the spatial data following transformation.
 
