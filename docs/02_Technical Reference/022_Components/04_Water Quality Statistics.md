@@ -48,7 +48,7 @@ replicates, and removed one data point for Nitrite-Nitrate that was an
 obvious outlier (an order of magnitude higher than the rest of the
 data). Figure 4.1 shows data before removal of the outlier.
 
-![]((media\image1.png)
+![]((media/image1.png)
 
 Figure 1 All observations with outlier in place for Nitrite-Nitrate
 
@@ -82,7 +82,7 @@ transformed distribution, and log-transformed distribution were visually
 analyzed. For all COC’s, log-transformation was deemed an appropriate
 data transformation prior to model analysis (Fig. 4.2).
 
-![](media\image2.png) 
+![](media/image2.png) 
 
 Figure 2 Quantile-quantile plots of COCs using a natural-log (ln) scale.
 Red line shows the QQ-line.
@@ -184,11 +184,11 @@ outlier; devAge values were squared to address the low outlier. Figure
 Prior to use in models, spatial data sets were scaled and centered using
 the mean and standard deviation from the 14 watersheds in this study.
 
-![](media\image3.png) 
+![](media/image3.png) 
 
 **Figure 4.3** Raw spatial data
 
-![](media\image4.png) 
+![](media/image4.png) 
 
 **Figure 4.4** Spatial data following transformation
 
@@ -333,7 +333,7 @@ intURB\_IND, totRES, grass, greenery, impervious, nodev, traffic,
 sqrt\_popn, pm25\_na, sqrt\_CO2\_tot, sqrt\_CO2\_com, sqrt\_CO2\_road,
 sqrt\_CO2\_nonroad, devAge2, roof\_intURB\_IND (Fig 4.5).
 
-![](media\image5.png) 
+![](media/image5.png) 
 
 Figure 3 Strong predictors for copper, showing linear model fit (blue
 line) for the relationship between ln-transformed copper concentration
@@ -354,7 +354,7 @@ are estimated by the model.
 
  var(*ε*<sub>ijk</sub>) = σ<sup>2</sup><sub>j</sub>  (δ<sub>1</sub>- \|rain<sub>ik</sub>\|<sup>δ<sup>2</sup></sup> )<sup>2</sup>
 
-![](media\image6.png) 
+![](media/image6.png) 
 
 Figure 4 Normalized residuals from beyond-optimal model, with no
 variance structure (left), and with the best fit variance structure
@@ -388,12 +388,12 @@ values in blues and purples. This interaction shows that, when pm2.5
 values are high, increasing amounts of rainfall result in a dilution of
 copper in stormwater.
 
-![](media\image7.png) 
+![](media/image7.png) 
 
 Figure 5 Single-predictor plots for copper, fit of the Landscape
 Predictor Model to each predictor in turn.
 
-![](media\image8.png) 
+![](media/image8.png) 
 
 Figure 6 Plot showing the interaction between rain and pm25_na that is
 present in the best fit model. In areas with high pm25_na values,
@@ -410,7 +410,7 @@ Density Residential – LDR) each have only two watershed representatives
 in our study. This results in good model fit to the data, but not
 necessarily for all watersheds in Puget Sound area.
 
-![](media\image9.png) 
+![](media/image9.png) 
 
 Figure 7 Copper model residuals for the Null Model, Categorical Land Use
 Model, and Landscape Predictor Models. Each bar represents one
@@ -421,9 +421,9 @@ copper models. For the Categorical Landuse Model, the baseline landuse
 is LDR; all other land use categories are adjustments from the baseline.
 Final coefficient values for linear mix
 
-![](media\image10.png) 
+![](media/image10.png) 
 
-![](media\image11.png) 
+![](media/image11.png) 
 
 Figure 8 Model coefficients for the Null Model (green), Categorical Land
 Use Model (blue), and Landscape Predictor Model (red).
@@ -437,7 +437,7 @@ sqrt\_CO2\_road, devAge2 (Fig 4.11). Paved was added to the list because
 it was a strong predictor for an older version of the model, and paved
 areas are associated with elevated TSS in stormwater.
 
-![](media\image12.png) 
+![](media/image12.png) 
 
 Figure 9 Strong predictors for TSS, showing linear model fit (blue line)
 for the relationship between ln-transformed TSS concentration and each
@@ -462,7 +462,7 @@ location *i* and date *k*. The parameters δ is estimated by the model.
 
 ```model equation  here```
 
-![](media\image13.png) 
+![](media/image13.png) 
 
 Figure 10 Normalized residuals from beyond-optimal model, with no
 variance structure (left), and with the best fit variance structure
@@ -489,7 +489,7 @@ the most suitable for covering the entire area of the stormwater
 heatmap. Figure 4.13 shows the model fit for each individual predictor,
 plotted against data points.
 
-![](media\image14.png) 
+![](media/image14.png) 
 
 **Figure 4.13** Single-predictor plots for TSS, showing fit of the
 Landscape Predictor Model to each predictor.
@@ -500,7 +500,7 @@ Landscape Predictor Model can be visualized through residuals (Fig.
 value is for the Landscape Predictor Model, indicating best fit to the
 TSS data of these three models.
 
-![](media\image15.png) 
+![](media/image15.png) 
 
 Figure 11 TSS model residuals for the Null Model, Categorical Land Use
 Model, and Landscape Predictor Models. Each bar represents one
@@ -511,9 +511,9 @@ TSS models. For the Categorical Landuse Model, the baseline landuse is
 LDR; all other land use categories are adjustments from the baseline.
 Final coefficient values for linear mixed effects
 
-![](media\image16.png) 
+![](media/image16.png) 
 
-![](media\image17.png) 
+![](media/image17.png) 
 
 Figure 12 Model coefficients for the Null Model (green), Categorical
 Land Use Model (blue), and Landscape Predictor Model (red).
@@ -527,7 +527,7 @@ sqrt\_CO2\_road and devAge2 (Fig 4.16). Paved and grass were added to
 the list because they were strong predictors for an older version of the
 model, and both are associated with elevated phosphorus in stormwater.
 
-![](media\image18.png) 
+![](media/image18.png) 
 
 Figure 13 Strong predictors for phosphorus, showing linear model fit
 (blue line) for the relationship between ln-transformed phosphorus
@@ -573,7 +573,7 @@ models were fitted with ML). As a result, we selected the first model.
 Figure 4.18 shows the model fit for each individual predictor, plotted
 against data points.
 
-![](media\image20.png) 
+![](media/image20.png) 
 
 Figure 15 Single-predictor plots for phosphorus, showing fit of the
 Landscape Predictor Model to each predictor.
@@ -584,7 +584,7 @@ Landscape Predictor Model can be visualized through residuals (Fig.
 value is for the Landscape Predictor Model, indicating best fit to the
 phosphorus data of these three models.
 
-![](media\image21.png) 
+![](media/image21.png) 
 
 Figure 16 Phosphorus model residuals for the Null Model, Categorical
 Land Use Model, and Landscape Predictor Models. Each bar represents one
@@ -596,12 +596,12 @@ landuse is LDR; all other land use categories are adjustments from the
 baseline. Final coefficient values for linear mixed effects models are
 based on fitting with REML
 
-![](media\image22.png) 
+![](media/image22.png) 
 
 Table 5 Model coefficients for the Null Model (green), Categorical Land
 Use Model (blue), and Landscape Predictor Model (red).
 
-![](media\image23.png) 
+![](media/image23.png) 
 
 **Citation:**
 
