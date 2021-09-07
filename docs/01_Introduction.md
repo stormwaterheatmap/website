@@ -4,6 +4,7 @@ title: "Background"
 sidebar_location: 1
 ---
 
+# Stormwater Heatmap Background
 Each year, 370 billion gallons of untreated stormwater enters Puget Sound's streams, rivers, lakes, and marine waters. Untreated stormwater carries a soup of pollutants generated on the land surface and concentrated into waterways from a decentralized network of roads, aging and over-burdened sewer pipes, and impervious, urbanized landscapes. 
 
 As the leading contributor of toxic pollutants to Puget Sound waters, untreated stormwater runoff is a key ecological problem that has harmed virtually all urban and urbanizing streams and rivers, as well as the waters of Puget Sound.  As a result, the abundance, health, and survival of aquatic and marine species has declined at all levels of the food web, including the region's iconic orca whales. Human health is also suffering as we live out our lives adjacent to near-ubiquitous pollution.  Communities of color are most at risk, here and around the world, of living near contaminated air, water, and soil.
