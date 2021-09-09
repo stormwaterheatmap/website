@@ -50,7 +50,7 @@ data). Figure 4.1 shows data before removal of the outlier.
 
 ![]((media/image1.png)
 
-Figure 1 All observations with outlier in place for Nitrite-Nitrate
+**Figure 4.1** All observations with outlier in place for Nitrite-Nitrate
 
 ### Censored (Non-Detect) Data
 
@@ -60,7 +60,7 @@ each non-detect value. All COCs had a very small percentage of data that
 were non-detect (2% or less); non-detect values were substituted with
 one-half of the reporting limit.
 
-Table 1 Percentage of data points that were left-censored (non-detect)
+**Table 4.1** Percentage of data points that were left-censored (non-detect)
 for each chemical of concern
 
 | Chemical of Concern    | Censored Data Percentage | Notes                                                                                                                                                                                                                                           |
@@ -84,7 +84,7 @@ data transformation prior to model analysis (Fig. 4.2).
 
 ![](media/image2.png) 
 
-Figure 2 Quantile-quantile plots of COCs using a natural-log (ln) scale.
+**Figure 4.2** Quantile-quantile plots of COCs using a natural-log (ln) scale.
 Red line shows the QQ-line.
 
 ## Spatial Data
@@ -102,12 +102,8 @@ these into land use and landscape data.
 
 In order to employ a consistent analysis across different monitored
 watersheds we extracted land use data from the Washington Department of
-Commerce Land Use data set ~~Ecology’s 2010 Statewide Land use data
-set~~\[2\]. ~~Ecology generated the coverage from digital county tax
-parcel layers using Department of Revenue (DOR) two digit land use codes
-(see; WAC 458-53-030, Stratification of assessment rolls - real
-property).~~ Land use classes (also listed in the table in section
-4.2.2) include:
+Commerce Land Use data set (CITATION). Land use classes (also listed in Table
+4.2) include:
 
 - Intensive urban (includes commercial areas, apartment buildings)
 
@@ -129,7 +125,9 @@ land use classes:
 ### Landscape Data
 
 For each watershed contained in the S8 dataset, potentially relevant
-landscape data were extracted from the following sources:
+landscape data were extracted from the following sources (Table 4.2):
+
+**Table 4.2**: Sources of landscape spatial predictor data used to develop statistical models.
 
 | **Layer**                             | **ID**            | **Source**                                                                       |
 |---------------------------------------|-------------------|----------------------------------------------------------------------------------|
@@ -167,10 +165,10 @@ landscape data were extracted from the following sources:
 
 In order to use the landscape data at an appropriate scale across the
 study area, spatial predictors were stacked and then convolved with a
-100-meter gaussian kernel. This resulted in a “fuzzy” this word is
+100-meter gaussian kernel. **This resulted in a “fuzzy” this word is
 unclear to me – it makes me dubious that the predictors will be
 sufficient to identify correlations with chemicals of concern in
-watersheds predictors that could apply across dataset boundaries. These
+watersheds predictors that could apply across dataset boundaries.** These
 values were then extracted for each monitored watershed.
 
 Prior to use, spatial data were plotted and visually assessed for
@@ -197,7 +195,7 @@ the mean and standard deviation from the 14 watersheds in this study.
 Daily rainfall data were obtained from the DayMet website operated by
 NASA (<https://daymet.ornl.gov/>). Daily data were obtained for years
 2009 to 2013, and cumulative one day, three day, and seven day, 14-day,
-21-day and 28-day antecedant precipitation were calculated for each
+21-day and 28-day antecedent precipitation were calculated for each
 sampling date. For example, for a sampling date of March 22, cumulative
 three-day precipitation would include precipitation occurring on March
 20, 21 and 22. For each COC, *ln*-transformed chemical concentrations
