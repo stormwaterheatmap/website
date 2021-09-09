@@ -602,6 +602,7 @@ Use Model (blue), and Landscape Predictor Model (red).
 ![](media/image23.png) 
 
 **Figure 4.20** 
+
 **Citation:**
 
 Zuur AF, Ieno EN, Walker NJ, Saveliev AA, Smith GM. 2009. Mixed Effects
@@ -614,6 +615,4 @@ County (outside of the Puget Sound region) and Port of Seattle (too
 different from all other Puget Sound watersheds).
 
 \[2\] See:
-<a href="<https://fortress.wa.gov/ecy/gispublic/DataDownload/ECY_CAD_Landuse2010>" class="uri"><del>https://fortress.wa.gov/ecy/gispublic/DataDownload/ECY_CAD_Landuse2010</del></a>~~.
-htm~~ for more information \*\*\* NOTE \*\*\* this needs to be updated
-for commerce data!
+<a href="<https://fortress.wa.gov/ecy/gispublic/DataDownload/ECY_CAD_Landuse2010>" class="uri"><del>https://fortress.wa.gov/ecy/gispublic/DataDownload/ECY_CAD_Landuse2010</del></a>~ ***NOTE*** This needs to be updated to reflect the commerce data
