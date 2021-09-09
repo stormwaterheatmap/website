@@ -102,7 +102,7 @@ these into land use and landscape data.
 
 In order to employ a consistent analysis across different monitored
 watersheds we extracted land use data from the Washington Department of
-Commerce Land Use data set (CITATION). Land use classes (also listed in Table
+Commerce Land Use data set (<a href="<https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project/" class="uri"><del>https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project</del></a>). Land use classes (also listed in Table
 4.2) include:
 
 - Intensive urban (includes commercial areas, apartment buildings)
@@ -615,4 +615,4 @@ County (outside of the Puget Sound region), Port of Seattle (too
 different from all other Puget Sound watersheds), and Pierce County High and Low Density Residential (outfall data was collected in a stream rather than at an outfall).
 
 \[2\] See:
-<a href="<https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project/" class="uri"><del>https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project</del></a>~
+<a href="<https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project/" class="uri"><del>https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project</del></a>
