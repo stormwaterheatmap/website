@@ -601,7 +601,7 @@ Use Model (blue), and Landscape Predictor Model (red).
 
 ![](media/image23.png) 
 
-**Figure 4.20** 
+**Figure 4.20** Model coefficients for the Null Model (green), Categorical Land Use Model (blue), and Landscape Predictor Model (red).
 
 **Citation:**
 
