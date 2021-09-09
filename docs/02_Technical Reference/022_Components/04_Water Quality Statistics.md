@@ -611,8 +611,8 @@ Models and Extensions in Ecology with R. New York (NY): Springer
 \[1\] Phase I Permittees include: cities of Tacoma and Seattle; King,
 Snohomish, Pierce and Clark counties; Ports of Tacoma and Seattle. For
 this study, all data were used with the exception of those from Clark
-County (outside of the Puget Sound region) and Port of Seattle (too
-different from all other Puget Sound watersheds).
+County (outside of the Puget Sound region), Port of Seattle (too
+different from all other Puget Sound watersheds), and Pierce County High and Low Density Residential (outfall data was collected in a stream rather than at an outfall).
 
 \[2\] See:
-<a href="<https://fortress.wa.gov/ecy/gispublic/DataDownload/ECY_CAD_Landuse2010>" class="uri"><del>https://fortress.wa.gov/ecy/gispublic/DataDownload/ECY_CAD_Landuse2010</del></a>~ ***NOTE*** This needs to be updated to reflect the commerce data
+<a href="<https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project/" class="uri"><del>https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project</del></a>~
