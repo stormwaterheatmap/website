@@ -73,3 +73,6 @@ WDFW. 2011. “Toxic Contaminants in Harbor Seal (Phoca vitulina) Pups from Puge
 William Hobbs, Brandi Lubliner, Nataniel Kale, and Evan Newell. 2015. “Western Washington NPDES Phase I Stormwater Permit Final S8 . D Data Characterization.” 15.
 
 Yang, Limin, Suming Jin, Patrick Danielson, Collin Homer, Leila Gass, Stacie M Bender, Adam Case, et al. 2018. “A new generation of the United States National Land Cover Database: Requirements, research priorities, design, and implementation strategies.” <i> ISPRS Journal of Photogrammetry and Remote Sensing </i> 146: 108–23.
+
+Zuur AF, Ieno EN, Walker NJ, Saveliev AA, Smith GM. 2009. Mixed Effects
+Models and Extensions in Ecology with R. New York (NY): Springer
