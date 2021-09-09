@@ -209,7 +209,7 @@ and phosphorus, while 1-day precipitation was selected for TSS.
 Model selection was performed using the methodology of Zuur et
 al. (2009), as outlined in the steps below.
 
-### Select strong potential predictors
+### Step 1. Select strong potential predictors
 
 The initial step was to find a suitable set of potential predictors for
 the COC in question. Single-predictor linear models were constructed for
@@ -221,14 +221,14 @@ points to fall roughly along the best fit model line. If prior knowledge
 indicated the importance of certain predictors, those were also included
 in the set of candidate predictors.
 
-### Control for collinearity
+### Step 2. Control for collinearity
 
 To prevent using highly correlated landscape parameters together in
 statistical models, we calculated the correlation coefficient for each
 pair of landscape predictors. Highly correlated landscape parameters
 (correlation coefficient ≥ 0.85) were not used together in any models.
 
-### Control for heterogeneity (heteroskedasticity)
+### Step 3. Control for heterogeneity (heteroskedasticity)
 
 Once a strong set of potential predictors was found, we constructed a
 generalized least squares (gls) model in R, using all potential
@@ -243,7 +243,7 @@ and precipitation as variance covariates. Variance structure for each
 COC was selected as that of the model with the lowest Akaike information
 criterion (AIC) value.
 
-### Find the proper random effects structure
+### Step 4. Find the proper random effects structure
 
 Next, we used the beyond-optimal model with the correct variance
 structure to find the proper random effects structure. The
@@ -265,7 +265,7 @@ factors that could lead to unintended differences in COC results. These
 unintended differences can be captured in the random component of the
 model.
 
-### Check for temporal and spatial correlation
+### Step 5. Check for temporal and spatial correlation
 
 The beyond-optimal model with the correct variance structure and random
 effects structure was then examined for evidence of temporal and spatial
@@ -280,9 +280,9 @@ and spatially-explicit bubble plots of model residuals.
 All tests for temporal and spatial auto-correlation were repeated
 following selection of best-fit models.
 
-### Find the proper fixed effects structure
+### Step 6. Find the proper fixed effects structure
 
-We used the strong potential predictors from step 4.3.1 to generate a
+We used the strong potential predictors from step 1 to generate a
 set of fixed-effects formulae with combinations of one, two and three
 potential predictors. Predictors with high correlation coefficients
 (&gt;= 0.85) were not allowed to be in formulae together.
@@ -290,9 +290,9 @@ potential predictors. Predictors with high correlation coefficients
 Linear mixed effects models were applied in R using the nlme package. A
 set of models was generated using the fixed effects formulae, along with
 the best-fit random effects and variance structures identified in steps
-4.3.3 and 4.3.4. Models where the sign (+ or –) of the predictor
-coefficients did not match the coefficient signs from linear model from
-step 4.3.1 were discarded. Models were then sorted according to AIC
+3 and 4. Models where the sign (+ or –) of the predictor
+coefficients did not match the coefficient signs from the linear model from
+step 1 were discarded. Models were then sorted according to AIC
 value, and the top 20 models were examined for fit to individual
 predictors. Plots of residuals versus fitted values, agency, location,
 and predictors were also examined. Based on these data, one to three
@@ -333,7 +333,7 @@ sqrt\_CO2\_nonroad, devAge2, roof\_intURB\_IND (Fig 4.5).
 
 ![](media/image5.png) 
 
-Figure 3 Strong predictors for copper, showing linear model fit (blue
+**Figure 4.5** Strong predictors for copper, showing linear model fit (blue
 line) for the relationship between ln-transformed copper concentration
 and each predictor in turn.
 
@@ -354,7 +354,7 @@ are estimated by the model.
 
 ![](media/image6.png) 
 
-Figure 4 Normalized residuals from beyond-optimal model, with no
+**Figure 4.6**  Normalized residuals from beyond-optimal model, with no
 variance structure (left), and with the best fit variance structure
 (right).
 
@@ -388,12 +388,12 @@ copper in stormwater.
 
 ![](media/image7.png) 
 
-Figure 5 Single-predictor plots for copper, fit of the Landscape
+**Figure 4.7** Single-predictor plots for copper, fit of the Landscape
 Predictor Model to each predictor in turn.
 
 ![](media/image8.png) 
 
-Figure 6 Plot showing the interaction between rain and pm25_na that is
+**Figure 4.8** Plot showing the interaction between rain and pm25_na that is
 present in the best fit model. In areas with high pm25_na values,
 increasing amounts of rain result in a dilution of copper in stormwater
 
@@ -410,11 +410,11 @@ necessarily for all watersheds in Puget Sound area.
 
 ![](media/image9.png) 
 
-Figure 7 Copper model residuals for the Null Model, Categorical Land Use
+**Figure 4.9** Copper model residuals for the Null Model, Categorical Land Use
 Model, and Landscape Predictor Models. Each bar represents one
 watershed, with colors representing agencies.
 
-Table 2 Coefficient values (standard error in parenthesis) for the three
+**Table 4.3** Coefficient values (standard error in parenthesis) for the three
 copper models. For the Categorical Landuse Model, the baseline landuse
 is LDR; all other land use categories are adjustments from the baseline.
 Final coefficient values for linear mix
@@ -423,7 +423,7 @@ Final coefficient values for linear mix
 
 ![](media/image11.png) 
 
-Figure 8 Model coefficients for the Null Model (green), Categorical Land
+**Figure 4.10** Model coefficients for the Null Model (green), Categorical Land
 Use Model (blue), and Landscape Predictor Model (red).
 
 ### Total Suspended Solids
@@ -437,7 +437,7 @@ areas are associated with elevated TSS in stormwater.
 
 ![](media/image12.png) 
 
-Figure 9 Strong predictors for TSS, showing linear model fit (blue line)
+**Figure 4.11** Strong predictors for TSS, showing linear model fit (blue line)
 for the relationship between ln-transformed TSS concentration and each
 predictor in turn. Although it wasn’t as compelling on its own, the
 predictor paved was added to the list of strong predictors because it
@@ -462,7 +462,7 @@ location *i* and date *k*. The parameters δ is estimated by the model.
 
 ![](media/image13.png) 
 
-Figure 10 Normalized residuals from beyond-optimal model, with no
+**Figure 4.12** Normalized residuals from beyond-optimal model, with no
 variance structure (left), and with the best fit variance structure
 (right).
 
@@ -500,11 +500,11 @@ TSS data of these three models.
 
 ![](media/image15.png) 
 
-Figure 11 TSS model residuals for the Null Model, Categorical Land Use
+**Figure 4.14** TSS model residuals for the Null Model, Categorical Land Use
 Model, and Landscape Predictor Models. Each bar represents one
 watershed, with colors representing agencies.
 
-Table 3 Coefficient values (standard error in parenthesis) for the three
+**Table 4.4** Coefficient values (standard error in parenthesis) for the three
 TSS models. For the Categorical Landuse Model, the baseline landuse is
 LDR; all other land use categories are adjustments from the baseline.
 Final coefficient values for linear mixed effects
@@ -513,7 +513,7 @@ Final coefficient values for linear mixed effects
 
 ![](media/image17.png) 
 
-Figure 12 Model coefficients for the Null Model (green), Categorical
+**Figure 4.15** Model coefficients for the Null Model (green), Categorical
 Land Use Model (blue), and Landscape Predictor Model (red).
 
 ### Phosphorus
@@ -527,7 +527,7 @@ model, and both are associated with elevated phosphorus in stormwater.
 
 ![](media/image18.png) 
 
-Figure 13 Strong predictors for phosphorus, showing linear model fit
+**Figure 4.16** Strong predictors for phosphorus, showing linear model fit
 (blue line) for the relationship between ln-transformed phosphorus
 concentration and each predictor in turn. Although they weren’t
 compelling on their own, the predictors grass and paved were added to
@@ -573,7 +573,7 @@ against data points.
 
 ![](media/image20.png) 
 
-Figure 15 Single-predictor plots for phosphorus, showing fit of the
+**Figure 4.18** Single-predictor plots for phosphorus, showing fit of the
 Landscape Predictor Model to each predictor.
 
 Comparisons between the Null Model, Categorical Land Use Model, and
@@ -584,23 +584,24 @@ phosphorus data of these three models.
 
 ![](media/image21.png) 
 
-Figure 16 Phosphorus model residuals for the Null Model, Categorical
+**Figure 4.19** Phosphorus model residuals for the Null Model, Categorical
 Land Use Model, and Landscape Predictor Models. Each bar represents one
 watershed, with colors representing agencies.
 
-Table 4 Coefficient values (standard error in parenthesis) for the three
+**Table 4.5** Coefficient values (standard error in parenthesis) for the three
 phosphorus models. For the Categorical Landuse Model, the baseline
 landuse is LDR; all other land use categories are adjustments from the
 baseline. Final coefficient values for linear mixed effects models are
-based on fitting with REML
+based on fitting with REML.
 
 ![](media/image22.png) 
 
-Table 5 Model coefficients for the Null Model (green), Categorical Land
+**Table 4.5** Model coefficients for the Null Model (green), Categorical Land
 Use Model (blue), and Landscape Predictor Model (red).
 
 ![](media/image23.png) 
 
+**Figure 4.20** 
 **Citation:**
 
 Zuur AF, Ieno EN, Walker NJ, Saveliev AA, Smith GM. 2009. Mixed Effects
