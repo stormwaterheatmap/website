@@ -1,5 +1,9 @@
 "use strict";
 
+var _ref;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Explore your watersheds. Get data, generate reports, and make informed decisions',
@@ -10,21 +14,17 @@ module.exports = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'stormwaterheatmap',
-  // Usually your GitHub org/user name.
   projectName: 'website',
-  // Usually your repo name.
   themeConfig: {
     colorMode: {
       defaultMode: 'light',
       // Hides the switch in the navbar
-      // Useful if you want to support a single color mode
       disableSwitch: true
     },
     announcementBar: {
       id: 'tag',
       // Any value that will identify this message.
       content: 'Explore your watersheds. Get data, generate reports, and make informed decisions',
-      //'We are looking to revamp our docs, please fill <a target="_blank" rel="noopener noreferrer" href="#">this survey</a>',
       backgroundColor: '#4D6059',
       // Defaults to `#fff`.
       textColor: 'white',
@@ -33,20 +33,22 @@ module.exports = {
 
     },
     navbar: {
-      // style: 'dark',
       hideOnScroll: true,
       title: 'StormwaterHeatmap.Org',
-      //fontWeight: 400,
-      //fontWeight: 'bold',
       logo: {
         // height: '100px', 
         alt: 'TNC Logo',
-        src: 'img/logo copy.svg',
-        //'img/logo.svg',
+        src: 'img/logo_dark.svg',
         srcDark: 'img/favicon.ico'
       },
+
+      /*
+      ///navbar items 
+      */
       items: [{
-        //color: 'yellow',
+        position: 'left',
+        label: 'View Data Layers'
+      }, {
         position: 'left',
         label: 'Analyze Watersheds',
         items: [{
@@ -64,29 +66,55 @@ module.exports = {
         }, {
           label: 'Get Timeseries Data'
         }, {
-          label: 'Bulk Download/API'
+          label: 'Bulk Download'
         }]
-      }, {
-        position: 'left',
+      }, //Right side menu items 
+      //Background 
+      {
         label: 'About',
-        items: [// {label: 'Documentation',
-        // to: "pages/intro"}, 
-        {
-          label: 'User Stories',
-          to: "user_stories"
-        }, {
-          label: 'All About Stormwater'
-        }]
-      }, {
         position: 'right',
-        href: 'https://github.com/stormwaterheatmap',
-        className: 'header-github-link',
-        'aria-label': 'GitHub repository'
+        //type: 'dropdown'
+        //  items: [
+        //        {
+        //navbar doc link 
+        to: 'docs/all_about_stormwater' // label: 'Background'
+
+      }, //]
+      //    },
+      //   }]},
+      // Documentation 
+      {
+        label: 'Documentation',
+        items: [{
+          label: "Technical Reference",
+          type: 'doc',
+          docId: 'overview'
+        }, {
+          label: 'API Reference',
+          type: 'doc',
+          docId: 'page1'
+        }, {
+          label: 'Github Repo',
+          href: 'https://github.com/stormwaterheatmap'
+        }]
+      }, //         // className: 'header-github-link',
+      //         // 'aria-label': 'GitHub repository',
+      //       }
+      //       ],
+      //     },
+      {
+        //User Stories 
+        position: 'right',
+        label: 'User Stories',
+        to: "user_stories"
       }]
     },
     footer: {
-      // style: 'dark',
-      links: [{
+      logo: {
+        src: 'img/logo_dark.svg'
+      },
+      copyright: "Copyright \xA9 ".concat(new Date().getFullYear(), " The Nature Conservancy."),
+      links: [(_ref = {
         title: 'Docs',
         items: [{
           label: 'API Reference',
@@ -98,17 +126,13 @@ module.exports = {
           label: 'Github',
           to: '/docs/intro'
         }]
+      }, _defineProperty(_ref, "title", 'About'), _defineProperty(_ref, "items", [{
+        label: 'Contact',
+        to: '/docs/intro'
       }, {
-        title: 'About',
-        items: [{
-          label: 'Contact',
-          to: '/docs/intro'
-        }, {
-          label: 'License & Terms',
-          to: '/docs/intro'
-        }]
-      }],
-      copyright: "Copyright \xA9 ".concat(new Date().getFullYear(), " Geosyntec Consultants, Inc. <br> Built with Docusaurus.")
+        label: 'License & Terms',
+        href: 'https://www.conservationgateway.org/Pages/Terms-of-Use.aspx'
+      }]), _ref)]
     }
   },
   presets: [['@docusaurus/preset-classic', {
@@ -117,11 +141,11 @@ module.exports = {
       // Please change this to your repo.https://github.com/stormwaterheatmap/website.git
       editUrl: 'https://github.com/stormwaterheatmap/website/tree/main/'
     },
-    blog: {
-      showReadingTime: true,
-      // Please change this to your repo.
-      editUrl: 'https://github.com/stormwaterheatmap/website/edit/main/'
-    },
+    // blog: {
+    //   showReadingTime: true,
+    //   // Please change this to your repo.
+    //   editUrl: 'https://github.com/stormwaterheatmap/website/edit/main/',
+    // },
     theme: {
       customCss: require.resolve('./src/css/custom.css')
     }
