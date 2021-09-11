@@ -23,9 +23,7 @@ function App() {
     </div>
   </div>
 </div>
-    Hi 
     </div>
-
     </Layout>
   );
 }
