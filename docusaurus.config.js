@@ -19,7 +19,7 @@ module.exports = {
       title: 'StormwaterHeatmap.Org',
       logo: {
         alt: 'TNC Logo',
-        src: 'img/logo_dark.svg',
+        src: 'img/tnc-logo-white.svg',
         srcDark: 'img/favicon.ico'
       },
       items: [{
@@ -83,7 +83,7 @@ module.exports = {
     },
     footer: {
       logo: {
-        src: 'img/logo_dark.svg'
+        src: 'img/tnc-logo-white.svg'
       },
       copyright: `Copyright © ${new Date().getFullYear()} The Nature Conservancy.`,
       links: [{

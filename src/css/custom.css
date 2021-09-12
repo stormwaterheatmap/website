@@ -12,7 +12,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Noto+Sans+TC:wght@500;700&family=Noto+Sans:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bentham&display=swap');
 
@@ -29,8 +29,9 @@
   --ifm-navbar-link-color: white;
   /* --ifm-dropdown-link-color: purple;  */
   --ifm-footer-background-color: #3c3c3c; 
-  --ifm-footer-color: white;
-  --ifm-footer-link-color: white; 
+  --ifm-footer-color: #D9D8DA;
+  --ifm-menu-color: #D9D8DA;
+  --ifm-footer-link-color: D9D8DA; 
   /*var(--ifm-color-emphasis-700); */
   --ifm-footer-link-hover-color: inherit; 
   --ifm-footer-items-color: #3c3c3c;
@@ -46,19 +47,22 @@
 
 
   .navbar__logo {
-     /* max-height: 100%;   */
-    height: 2rem;
+    /* max-height: 100%;   */
+    /* height: 2rem; */
+    /* min-width: 96px; */
      /* padding: 0px; */
-    max-width: 40%;  
+    /* max-width: 40%;   */
     /* max-height: 100%;  */
     /* margin-right: -5rem; */
   
     /* height: 4rem;  */
     /* width: 100px;  
-    margin: 0px;
+  */
+    margin: 0px 35px 0px 3px;
     /* ;  
     */
-  }  
+  }   
+  
   
   html[data-theme='dark'] {
     /* --ifm-footer-background-color: #3c3c3c;  */
@@ -77,12 +81,14 @@
     
  
 
-.docusaurus-highlight-code-line {
+/* .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
-}
+} */
+
+
 
 .navbar__items {
   /* color:blueviolet!important; */
@@ -96,23 +102,23 @@
   text-transform: uppercase;  
 }
 
-.navbar__title {  
+.navbar__title {   
   
-  font-family: 'Raleway', serif;
+  font-family:'Merriweather', 'Gill Sans MT', 'Trebuchet MS'; 
   color: white;  
+  font-weight: 100;
   width: 300px; 
   
   /* text-emphasis-color: blue; */
   /* color: red; */
   text-transform: none;
-  font-weight: 300;  
-   font-size: 1rem;   
+  font-size: 0.9rem;   
   /* margin: -10px 0px 0px 0px;   */
   /* margin-bottom: 0.21rem; */
    /* font-style: italic;  
    
-   */
-  } 
+   */ 
+}
 /* Header Dropdown Menu */
 .dropdown__link {
   /* font-family:'Noto Sans', sans-serif; */
@@ -130,24 +136,34 @@ color:rgb(30, 255, 0) !important;
 } */
 
 .aspect-ratio--16x9 {
-  width: 100%;
-  height: 100%;
-  padding-bottom: 44.5%; 
-  /* margin-bottom: 20%; */
-  position: relative;
+  /* width: 100%; */
+  /* height: 100%; */
+  /* padding-bottom: 44.5%;  */
+  /* margin-bottom: 25%; */
+  /* position: relative; */
   /* position:absolute; */
+  /* padding-top: 0px; */
+  /* margin-top: 0px; */
    /* left: 0; right: 0; bottom: 0; top: 0px */
 }
+
+.navbar__toggle{
+  color: #D9D8DA;
+}
 .aspect-ratio__inner-wrapper {
-  position: absolute;
+  display: flex;
+  height: 80vh;
+  /* position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
+  left: 0; */
 }
 .ee_embed {
+  /* padding-top: 0px; */
+  /* margin-top: 60px; */
   width: 100%;
-  height: 100%;
+  /* height: 80%; */
 }
 
 .header-github-link:hover {
@@ -206,10 +222,10 @@ html[data-theme='dark'] .header-github-link:before {
 }
 
 
-img {
+/* img {
   object-fit: cover;
   width: 100%;
-}
+} */
 
 .hero{
   display: flex;

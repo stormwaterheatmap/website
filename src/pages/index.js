@@ -37,14 +37,14 @@ export default function Home() {
        
         {/* <HomepageFeatures */}
        
-        <div class="aspect-ratio--16x9">
+        {/* <div class="aspect-ratio--16x9"> */}
   <div class="aspect-ratio__inner-wrapper">
         <iframe class="ee_embed" 
         // width="100%" height="800"  */}
         src="https://stormwaterheatmap.users.earthengine.app/view/v1landing"
          frameborder="0" ></iframe>
   </div>
-</div>
+{/* </div> */}
 
       </main>
     </Layout>
