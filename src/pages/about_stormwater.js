@@ -83,7 +83,7 @@ function App() {
                         </p>
 <h1> Resources </h1>
                         
-                        <button class="button button--primary button--lg" href="docs/All%20About%20Stormwater%20Resources">
+                        <button class="button button--primary button--lg" href="/docs/All%20About%20Stormwater%20Resources">
                             Find out more
                         </button>
                     </div>
