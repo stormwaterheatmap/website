@@ -152,7 +152,8 @@ color:rgb(30, 255, 0) !important;
 }
 .aspect-ratio__inner-wrapper {
   display: flex;
-  height: 80vh;
+  min-height: 90vh;
+  /* height: 80vh; */
   /* position: absolute;
   top: 0;
   right: 0;

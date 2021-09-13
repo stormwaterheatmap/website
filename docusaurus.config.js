@@ -90,27 +90,36 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} The Nature Conservancy. ${"<br>"} 
       Developed by Geosyntec Consultants, Inc.` ,
       links: [{
-          title: 'Docs',
-          items: [{
-              label: 'API Reference',
-              to: '/docs/API/page1',
-            },
-            {
-              label: 'Technical Reference',
-              to: 'docs/Technical%20Reference/overview',
-            },
-            {
-              label: 'Github',
-              to: '/docs/intro',
-            },
-          ],
+        title: 'Docs', 
+        items: [
+          {label: 'Technical Reference',
+          to: 'docs/Technical%20Reference/overview'}, 
+          {label: 'API Reference',
+              to: '/docs/API/page1'},
+              {label: 'Github Repo',
+              href: 'https://github.com/stormwaterheatmap/'
+        }]
+      }, 
+          // title: 'Docs',
+          // items: [{
+          //     
+          //   },
+          //   {
+          //    ',
+          //   },
+          //   {
+          //     label: 'Github',
+          //     to: '/docs/intro',
+          //   },
+          // ],
 
-
+{
           title: 'About',
           items: [{
-              label: 'Contact',
-              to: '/docs/intro',
+              label: "All About Stormwater", 
+              to: "pages/about_stormwater"
             },
+            
             {
               label: 'License & Terms',
               href: 'https://www.conservationgateway.org/Pages/Terms-of-Use.aspx'
