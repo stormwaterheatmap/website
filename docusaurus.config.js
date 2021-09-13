@@ -1,4 +1,6 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
+
+
 module.exports = {
   title: 'Explore your watersheds. Get data, generate reports, and make informed decisions',
   tagline: 'Explore your watersheds. Get data, generate reports, and make informed decisions.',
@@ -85,7 +87,8 @@ module.exports = {
       logo: {
         src: 'img/tnc-logo-white.svg'
       },
-      copyright: `Copyright © ${new Date().getFullYear()} The Nature Conservancy.`,
+      copyright: `Copyright © ${new Date().getFullYear()} The Nature Conservancy. ${"<br>"} 
+      Developed by Geosyntec Consultants, Inc.` ,
       links: [{
           title: 'Docs',
           items: [{
