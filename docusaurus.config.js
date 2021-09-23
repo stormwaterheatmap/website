@@ -25,13 +25,13 @@ module.exports = {
         announcementBar: {
             id: 'announcementBar-dev', 
             
-            content: `🚧 This site is under development and testing. Please submit bug report` +
+            content: `🚧 This site is under development and testing. Please submit bug reports` +
             ` to our <a target="_blank" rel="noopener noreferrer" href="https://github.com/stormwaterheatmap/website">github repo.</a> ${linkout_svg}`,
 
             backgroundColor: '#003F35',
             // '#2b7126',
 
-            textColor: '#D9D8DA',
+            // textColor: '#D9D8DA',
             isCloseable: true
         },
         navbar: {
