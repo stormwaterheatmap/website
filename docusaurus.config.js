@@ -31,7 +31,7 @@ module.exports = {
             backgroundColor: '#003F35',
             // '#2b7126',
 
-            // textColor: '#D9D8DA',
+            textColor: '#D9D8DA',
             isCloseable: true
         },
         navbar: {
