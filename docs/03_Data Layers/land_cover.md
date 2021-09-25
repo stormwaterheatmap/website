@@ -3,7 +3,7 @@ Land Cover
 
 *1-meter resolution land cover classification*
 
-#### Description
+## Description
 
 This layer provides automatically-derived land cover classifications of
 the Puget Sound trough below 1,500 meters elevation. A six-class 1-meter
@@ -18,9 +18,9 @@ building rooftops polygons (Microsoft, 2019). Accuracy was validated
 accuracy with an observed land cover point dataset from the Washington
 Department of Fish & Wildlife (Pierce, Jr., 2015).
 
-#### Layer Access
+## Layer Access
 
-##### Earth Engine
+### Earth Engine
 
 To use this layer in Google Earth Engine, import the stormwaterheatmap
 public data library:
@@ -28,7 +28,9 @@ public data library:
     var data  = require('users/stormwaterheatmap/apps:data/public')
     layer = data.rasters["Land Cover"]
 
-#### Data
+## Visualization
+
+### Palette
 
 | Label                   | Raster value | Colors                                                                    |
 |:------------------------|:-------------|:--------------------------------------------------------------------------|
@@ -41,8 +43,8 @@ public data library:
 | Impervious              | 6            | ![\#adacb5](https://via.placeholder.com/15/adacb5/000000?text=+)`#adacb5` |
 | Impervious - Roofs      | 7            | ![\#d8d5db](https://via.placeholder.com/15/d8d5db/000000?text=+)`#d8d5db` |
 
-#### Source
+## Source
 
 The Nature Conservancy
 
-#### External Links
+## External Links

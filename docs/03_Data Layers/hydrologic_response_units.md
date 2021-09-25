@@ -1,16 +1,35 @@
 Hydrologic Response Units
 ================
 
-*Dimensionless index indicating level of flow control needed to match
-forest hydrology.*
+*Units of common soils, land cover, and slope used in continuous
+simulation modeling.*
 
-#### Description
+## Description
 
-NA
+Hydrologic response units (HRUs) are discretized landscape units based
+on common soils, land cover, and slope characteristics. The HRU approach
+provides a computationally efficient method of pre-computing hydrologic
+response for later use. Results for a particular watershed can be
+calculated by summing or averaging the results for individual HRUs.
 
-#### Layer Access
+Each combination of parameters was modeled in separate batched
+simulations. HRUs were designated by a three-digit number according to
+the following convention:
 
-##### Earth Engine
+-   **First digit:** Hydrologic Soil Group Number *(0 = A/B, 1 = C, 2 =
+    Saturated)*
+-   **Second digit:** Land cover *(0=Forest, 1=Pasture, 2=Lawn,
+    5=Impervious)*
+-   **Third Digit:** Slope *(0=Flat, 1=Mod, 2=Steep)*
+
+For example, a site with Type C soils, with forested land cover, on a
+moderate slope would be represented by `101`. This schema allowed for
+HRUs to be stored as an eight-bit unsigned integer on a Puget-Sound wide
+raster, minimizing storage size.
+
+## Layer Access
+
+### Earth Engine
 
 To use this layer in Google Earth Engine, import the stormwaterheatmap
 public data library:
@@ -18,7 +37,9 @@ public data library:
     var data  = require('users/stormwaterheatmap/apps:data/public')
     layer = data.rasters["Hydrologic Response Units"]
 
-#### Data
+## Visualization
+
+### Palette
 
 | Label                        | Raster value | Colors                                                                    |
 |:-----------------------------|:-------------|:--------------------------------------------------------------------------|
@@ -53,8 +74,8 @@ public data library:
 | Impervious, Moderate         | 251          | ![\#fdae6b](https://via.placeholder.com/15/fdae6b/000000?text=+)`#fdae6b` |
 | Impervious, Steep            | 252          | ![\#e6550d](https://via.placeholder.com/15/e6550d/000000?text=+)`#e6550d` |
 
-#### Source
+## Source
 
 The Nature Conservancy
 
-#### External Links
+## External Links

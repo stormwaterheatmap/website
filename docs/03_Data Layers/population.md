@@ -1,15 +1,15 @@
 Population
 ================
 
-*NA*
+*2010 Census, population total*
 
-#### Description
+## Description
 
-NA
+Total Population from the 2010 Census, reported by census block.
 
-#### Layer Access
+## Layer Access
 
-##### Earth Engine
+### Earth Engine
 
 To use this layer in Google Earth Engine, import the stormwaterheatmap
 public data library:
@@ -17,23 +17,33 @@ public data library:
     var data  = require('users/stormwaterheatmap/apps:data/public')
     layer = data.rasters["Population"]
 
-#### Data
+## Visualization
 
-| Label | Raster value | Colors                                                                    |
-|:------|:-------------|:--------------------------------------------------------------------------|
-| NA    | NA           | ![\#FFC5D4](https://via.placeholder.com/15/FFC5D4/000000?text=+)`#FFC5D4` |
-| NA    | NA           | ![\#FFB3D0](https://via.placeholder.com/15/FFB3D0/000000?text=+)`#FFB3D0` |
-| NA    | NA           | ![\#EF98B6](https://via.placeholder.com/15/EF98B6/000000?text=+)`#EF98B6` |
-| NA    | NA           | ![\#DE7C9C](https://via.placeholder.com/15/DE7C9C/000000?text=+)`#DE7C9C` |
-| NA    | NA           | ![\#CC6184](https://via.placeholder.com/15/CC6184/000000?text=+)`#CC6184` |
-| NA    | NA           | ![\#BB446C](https://via.placeholder.com/15/BB446C/000000?text=+)`#BB446C` |
-| NA    | NA           | ![\#A82255](https://via.placeholder.com/15/A82255/000000?text=+)`#A82255` |
-| NA    | NA           | ![\#672941](https://via.placeholder.com/15/672941/000000?text=+)`#672941` |
+### Palette
 
-#### Source
+| Raster value | Colors                                                                    |
+|:-------------|:--------------------------------------------------------------------------|
+| NA           | ![\#FFC5D4](https://via.placeholder.com/15/FFC5D4/000000?text=+)`#FFC5D4` |
+| NA           | ![\#FFB3D0](https://via.placeholder.com/15/FFB3D0/000000?text=+)`#FFB3D0` |
+| NA           | ![\#EF98B6](https://via.placeholder.com/15/EF98B6/000000?text=+)`#EF98B6` |
+| NA           | ![\#DE7C9C](https://via.placeholder.com/15/DE7C9C/000000?text=+)`#DE7C9C` |
+| NA           | ![\#CC6184](https://via.placeholder.com/15/CC6184/000000?text=+)`#CC6184` |
+| NA           | ![\#BB446C](https://via.placeholder.com/15/BB446C/000000?text=+)`#BB446C` |
+| NA           | ![\#A82255](https://via.placeholder.com/15/A82255/000000?text=+)`#A82255` |
+| NA           | ![\#672941](https://via.placeholder.com/15/672941/000000?text=+)`#672941` |
+
+### Color Ramp
+
+<img src="C:/Users/CNilsen/Documents/repos/heatmap_earthengine/layer_docs/population_files/figure-gfm/unnamed-chunk-9-1.png" width="340" />
+
+**Minimum:** 0 Total Population
+
+**Maximum:** 300 Total Population
+
+## Source
 
 2010 US Census Blocks
 
-#### External Links
+## External Links
 
 <a>https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2010/TGRSHP10SF1.pdf</a>

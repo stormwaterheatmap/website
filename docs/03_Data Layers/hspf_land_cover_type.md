@@ -1,17 +1,41 @@
 HSPF Land Cover Type
 ================
 
-#### Description
+*Land cover classified by categories used in HSPF/WWHM*
 
-NA
+## Description
 
-#### Source
+This layer provides land cover classifications corresponding to default
+categories used in the [Western Washington Hydrology
+Model.](https://ecology.wa.gov/Regulations-Permits/Guidance-technical-assistance/Stormwater-permittee-guidance-resources/Stormwater-manuals/Western-Washington-Hydrology-Model#latest)
 
-The Nature Conservancy
+Land cover was derived from the Nature Conservancy’s high-resolution
+land cover data set and remapped according to the table below:
 
-NA
+| Derived Land Cover                                             | HSPF Land cover class |
+|:---------------------------------------------------------------|:----------------------|
+| Fine Vegetation                                                | Grass                 |
+| Medium Vegetation                                              | Grass                 |
+| Coarse Vegetation                                              | Forest                |
+| Dirt/Barren                                                    | Grass                 |
+| Water                                                          | Water                 |
+| Impervious Other                                               | Impervious            |
+| Impervious Roofs (roofs were designated impervious/flat slope) | Impervious            |
+| NLCD Cropland                                                  | Pasture               |
 
-#### Data
+## Layer Access
+
+### Earth Engine
+
+To use this layer in Google Earth Engine, import the stormwaterheatmap
+public data library:
+
+    var data  = require('users/stormwaterheatmap/apps:data/public')
+    layer = data.rasters["HSPF Land Cover Type"]
+
+## Visualization
+
+### Palette
 
 | Label              | Raster value | Colors                                                                    |
 |:-------------------|:-------------|:--------------------------------------------------------------------------|
@@ -21,3 +45,9 @@ NA
 | Water              | 3            | ![\#b3caff](https://via.placeholder.com/15/b3caff/000000?text=+)`#b3caff` |
 | Impervious-roof    | 4            | ![\#844c8b](https://via.placeholder.com/15/844c8b/000000?text=+)`#844c8b` |
 | Impervious-nonRoof | 5            | ![\#ead1ff](https://via.placeholder.com/15/ead1ff/000000?text=+)`#ead1ff` |
+
+## Source
+
+The Nature Conservancy
+
+## External Links

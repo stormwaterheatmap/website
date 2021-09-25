@@ -3,7 +3,7 @@ Land Use
 
 *Department of Commerce Master Land Use Category*
 
-#### Description
+## Description
 
 The Puget Sound Mapping Project provides land-use designations of the
 urban areas that drain into Puget Sound. Data is derived from zoning and
@@ -129,9 +129,9 @@ jurisdictions have not created zoning designations. In addition,
 overlaps or gaps in maps along the boundary between jurisdictions may
 inhibit the ability to categorize these areas
 
-#### Layer Access
+## Layer Access
 
-##### Earth Engine
+### Earth Engine
 
 To use this layer in Google Earth Engine, import the stormwaterheatmap
 public data library:
@@ -139,7 +139,9 @@ public data library:
     var data  = require('users/stormwaterheatmap/apps:data/public')
     layer = data.rasters["Land Use"]
 
-#### Data
+## Visualization
+
+### Palette
 
 | Label                            | Raster value | Colors                                                                    |
 |:---------------------------------|:-------------|:--------------------------------------------------------------------------|
@@ -159,10 +161,10 @@ public data library:
 | Military                         | 13           | ![\#9FABA2](https://via.placeholder.com/15/9FABA2/000000?text=+)`#9FABA2` |
 | Mineral Resource Area            | 14           | ![\#BF93BE](https://via.placeholder.com/15/BF93BE/000000?text=+)`#BF93BE` |
 
-#### Source
+## Source
 
 Puget Sound Mapping Project
 
-#### External Links
+## External Links
 
 <a>https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project/</a>

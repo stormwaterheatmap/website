@@ -3,7 +3,7 @@ Age of Imperviousness
 
 *Impervious surface by estimated date of conversion*
 
-#### Description
+## Description
 
 This layer provides multi-temporal information on the presence of
 built-up surfaces derived from global Landsat satellite data collected
@@ -18,9 +18,9 @@ resolution for the stormwater heatmap, the source product was masked by
 [1-meter resolution imperviousness data](docs/) developed by the Nature
 Conservancy.
 
-#### Layer Access
+## Layer Access
 
-##### Earth Engine
+### Earth Engine
 
 To use this layer in Google Earth Engine, import the stormwaterheatmap
 public data library:
@@ -28,7 +28,9 @@ public data library:
     var data  = require('users/stormwaterheatmap/apps:data/public')
     layer = data.rasters["Age of Imperviousness"]
 
-#### Data
+## Visualization
+
+### Palette
 
 | Label       | Raster value | Colors                                                                    |
 |:------------|:-------------|:--------------------------------------------------------------------------|
@@ -37,11 +39,11 @@ public data library:
 | 1975–1990   | 5            | ![\#dfc27d](https://via.placeholder.com/15/dfc27d/000000?text=+)`#dfc27d` |
 | Before 1975 | 6            | ![\#a6611a](https://via.placeholder.com/15/a6611a/000000?text=+)`#a6611a` |
 
-#### Source
+## Source
 
 The Nature Conservancy; Columbia University, Center for International
 Earth Science Information Network
 
-#### External Links
+## External Links
 
 <a>http://doi.org/10.2905/jrc-ghsl-10007</a>
