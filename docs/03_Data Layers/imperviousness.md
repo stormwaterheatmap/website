@@ -30,7 +30,7 @@ public data library:
 
 ### Color Ramp
 
-<img src="C:/Users/CNilsen/Documents/repos/heatmap_earthengine/layer_docs/imperviousness_files/figure-gfm/unnamed-chunk-9-1.png" width="340" />
+<img src="imperviousness_files/figure-gfm/unnamed-chunk-9-1.png" width="340" />
 
 **Minimum:** 0 Percent
 
