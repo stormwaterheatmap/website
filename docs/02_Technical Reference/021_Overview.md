@@ -1,7 +1,7 @@
 ---
 id: overview
 title: Overview 
-sidebar_location: 2
+# sidebar_location: 2
 ---
 
 ## What is Stormwater? 

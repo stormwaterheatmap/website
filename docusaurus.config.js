@@ -7,17 +7,29 @@ const linkout_svg_footer =
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 
 module.exports = {
-    title: 'stormwaterheatmap.org',
-    tagline: 'Explore your watersheds. Get data, generate reports, and make informed decisions' +
+    title: 'stormwatdderheatmap.org{"\n"}new line',
+    tagline: 'Explore your watersheds. get data, and make informed decisions' +
             '.',
-    url: 'https://www.stormwaterheatmap.dev',
+    url: 'https://stormwaterheatmap.dev',
     baseUrl: '/',
     onBrokenLinks: 'warn',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
     organizationName: 'stormwaterheatmap',
     projectName: 'website',
+    // plugins: ['@docusaurus/plugin-google-gtag'],
+    
     themeConfig: {
+        gtag: {
+            // You can also use your "G-" Measurement ID here.
+            trackingID: 'G-NY607SJH9G',
+            // Optional fields.
+            anonymizeIP: false, // Should IPs be anonymized?
+          },
+
+
+
+        
         colorMode: {
             defaultMode: 'light',
             disableSwitch: true
@@ -69,10 +81,7 @@ module.exports = {
                         }, {
                             label: 'Get Timeseries Data',
                             to: '#'
-                        }, {
-                            label: 'Bulk Download',
-                            to: '#'
-                        }
+                        }, 
                     ]
                 }, {
                     label: 'About',
@@ -85,8 +94,8 @@ module.exports = {
                             label: 'Technical Reference',
                             to: 'docs/Technical Reference/overview'
                         }, {
-                            label: 'API Reference',
-                            to: 'docs/API/Page1'
+                            label: 'Layer Reference',
+                            to: 'docs/Data Layers/age_of_imperviousness'
                         }, {
                             label: 'Github Repo',
                             href: 'https://github.com/stormwaterheatmap'

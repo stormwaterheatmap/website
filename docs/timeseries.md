@@ -1,6 +1,10 @@
-# Appendix B - Instructions for Accessing Tabulated Hydrology Results via BigQuery
+---
+id: timeseries
+title: Time Series Data
+# sidebar_location: 2
+---
 
-## Tabulated Results via BigQuery
+## How to download time series data
 
 Tabulated hydrology results are available via <a href="https://cloud.google.com/bigquery">Google BigQuery</a>, a cloud-based relational database that includes a distributed SQL engine. The data are located on the ```tnc-data-v1``` <a href="https://console.cloud.google.com/bigquery?project=tnc-data-v1">data bucket</a> (sign-in required). The table is named ```tnc-data-v1:hydrology.gfdl```. BigQuery supports several client libraries. See https://cloud.google.com/bigquery/docs/reference/libraries for a list of supported clients libraries.
 

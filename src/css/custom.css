@@ -184,10 +184,28 @@ html[data-theme='dark'] .header-github-link:before {
     no-repeat;
 }
 
+.custom-tagline {
+  background-color: #2b7126;
+  /* #3c3c3c; */ 
+  color: #D9D8DA;
+  font-size: 0.8rem;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  /* font-style: italic; */
+  /* background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));  */
+  padding: 0em 0em 0 12em;
+  margin: 0px; 
+}
+
+.custom-tagline::before {
+  content: "Explore your watersheds. Get data. Make informed decisions."; /* Insert content that looks like bullets */
+}
+ 
+
 .alt-flexbox {
   display: flex;
   background-color: #0C0A0B;
-  color: #D9D8DA;
+  color: #d8dad8;
   /* background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
    background-size: cover;
   justify-content: top;

@@ -32,12 +32,12 @@ export default function Home() {
       title={`${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
         
-      {/* <HomepageHeader /> */}
+      
       <main>
        
-        {/* <HomepageFeatures */}
-       
-        {/* <div class="aspect-ratio--16x9"> */}
+      
+      <div class="custom-tagline">
+</div> 
   <div class="aspect-ratio__inner-wrapper">
         <iframe class="ee_embed" 
         // width="100%" height="800"  */}
