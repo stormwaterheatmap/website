@@ -7,7 +7,7 @@ const linkout_svg_footer =
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 
 module.exports = {
-    title: 'stormwatdderheatmap.org{"\n"}new line',
+    title: 'stormwatdderheatmap.org',
     tagline: 'Explore your watersheds. get data, and make informed decisions' +
             '.',
     url: 'https://stormwaterheatmap.dev',
@@ -15,7 +15,7 @@ module.exports = {
     onBrokenLinks: 'warn',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
-    organizationName: 'stormwaterheatmap',
+    organizationName: 'The Nature Conservancy',
     projectName: 'website',
     // plugins: ['@docusaurus/plugin-google-gtag'],
     
