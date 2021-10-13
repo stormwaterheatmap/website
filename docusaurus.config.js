@@ -7,9 +7,8 @@ const linkout_svg_footer =
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 
 module.exports = {
-    title: 'stormwatdderheatmap.org',
-    tagline: 'Explore your watersheds. get data, and make informed decisions' +
-            '.',
+    title: 'The Nature Conservancy StormwaterHeatmap',
+    tagline: 'Explore your watersheds. get data, and make informed decisions.',
     url: 'https://stormwaterheatmap.dev',
     baseUrl: '/',
     onBrokenLinks: 'warn',
@@ -139,11 +138,11 @@ module.exports = {
                     items: [
                         {
                             label: `All About Stormwater`,
-                            to: `pages/about_stormwater`
+                            to: `about_stormwater`
                         }, {
                             label: `License & Terms`, 
                             // ${linkout_svg_footer}`,
-                            href: `https://www.conservationgateway.org/Pages/Terms-of-Use.aspx`
+                            to: `docs/license`
                             
                         }
                     ]
