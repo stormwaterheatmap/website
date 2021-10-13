@@ -28,10 +28,6 @@ public data library:
 | 0            | ![\#10371c](https://via.placeholder.com/15/10371c/000000?text=+)`#10371c` |
 | 1            | ![\#f2298f](https://via.placeholder.com/15/f2298f/000000?text=+)`#f2298f` |
 
-### Color Ramp
-
-<img src="imperviousness_files/figure-gfm/unnamed-chunk-9-1.png" width="340" />
-
 **Minimum:** 0 Percent
 
 **Maximum:** 1 Percent

@@ -57,10 +57,6 @@ public data library:
 | NA           | ![\#422818](https://via.placeholder.com/15/422818/000000?text=+)`#422818` |
 | NA           | ![\#1A1A01](https://via.placeholder.com/15/1A1A01/000000?text=+)`#1A1A01` |
 
-### Color Ramp
-
-<img src="C:/Users/CNilsen/Documents/repos/heatmap_earthengine/layer_docs/flow_duration_index_files/figure-gfm/unnamed-chunk-9-1.png" width="340" />
-
 **Minimum:** 1 index
 
 **Maximum:** 10 index

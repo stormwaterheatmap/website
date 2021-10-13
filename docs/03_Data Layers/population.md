@@ -32,10 +32,6 @@ public data library:
 | NA           | ![\#A82255](https://via.placeholder.com/15/A82255/000000?text=+)`#A82255` |
 | NA           | ![\#672941](https://via.placeholder.com/15/672941/000000?text=+)`#672941` |
 
-### Color Ramp
-
-<img src="C:/Users/CNilsen/Documents/repos/heatmap_earthengine/layer_docs/population_files/figure-gfm/unnamed-chunk-9-1.png" width="340" />
-
 **Minimum:** 0 Total Population
 
 **Maximum:** 300 Total Population

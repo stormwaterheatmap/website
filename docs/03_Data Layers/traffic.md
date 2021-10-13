@@ -58,10 +58,6 @@ public data library:
 | NA           | ![\#FBB41A](https://via.placeholder.com/15/FBB41A/000000?text=+)`#FBB41A` |
 | NA           | ![\#FCFFA4](https://via.placeholder.com/15/FCFFA4/000000?text=+)`#FCFFA4` |
 
-### Color Ramp
-
-<img src="C:/Users/CNilsen/Documents/repos/heatmap_earthengine/layer_docs/traffic_files/figure-gfm/unnamed-chunk-9-1.png" width="340" />
-
 **Minimum:** 0 Average Annual Daily Trips (log)
 
 **Maximum:** 8 Average Annual Daily Trips (log)

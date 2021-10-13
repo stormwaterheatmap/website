@@ -39,10 +39,6 @@ public data library:
 | NA           | ![\#e78532](https://via.placeholder.com/15/e78532/000000?text=+)`#e78532` |
 | NA           | ![\#d92120](https://via.placeholder.com/15/d92120/000000?text=+)`#d92120` |
 
-### Color Ramp
-
-<img src="C:/Users/CNilsen/Documents/repos/heatmap_earthengine/layer_docs/slope_files/figure-gfm/unnamed-chunk-9-1.png" width="340" />
-
 **Minimum:** 0 Percent
 
 **Maximum:** 20 Percent

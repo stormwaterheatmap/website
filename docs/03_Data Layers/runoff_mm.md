@@ -56,10 +56,6 @@ public data library:
 | NA           | ![\#2B53A7](https://via.placeholder.com/15/2B53A7/000000?text=+)`#2B53A7` |
 | NA           | ![\#2444A0](https://via.placeholder.com/15/2444A0/000000?text=+)`#2444A0` |
 
-### Color Ramp
-
-<img src="C:/Users/CNilsen/Documents/repos/heatmap_earthengine/layer_docs/runoff_mm_files/figure-gfm/unnamed-chunk-9-1.png" width="340" />
-
 **Minimum:** 25 mm/year
 
 **Maximum:** 1016 mm/year

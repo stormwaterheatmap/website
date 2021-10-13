@@ -52,10 +52,6 @@ public data library:
 | NA           | ![\#e78532](https://via.placeholder.com/15/e78532/000000?text=+)`#e78532` |
 | NA           | ![\#d92120](https://via.placeholder.com/15/d92120/000000?text=+)`#d92120` |
 
-### Color Ramp
-
-<img src="C:/Users/CNilsen/Documents/repos/heatmap_earthengine/layer_docs/precipitation_in_files/figure-gfm/unnamed-chunk-9-1.png" width="340" />
-
 **Minimum:** 20 in/year
 
 **Maximum:** 120 in/year
