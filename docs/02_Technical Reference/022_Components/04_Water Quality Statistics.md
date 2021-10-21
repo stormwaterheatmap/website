@@ -429,7 +429,7 @@ Use Model (blue), and Landscape Predictor Model (red).
 ### Total Suspended Solids
 
 Based on linear models of *ln*-transformed TSS versus individual
-predictors, the strong predictors identified for copper include: totRES,
+predictors, the strong predictors identified for TSS include: totRES,
 traffic, sqrt\_popn, sqrt\_CO2\_res, sqrt\_CO2\_tot, sqrt\_CO2\_com,
 sqrt\_CO2\_road, devAge2 (Fig 4.11). Paved was added to the list because
 it was a strong predictor for an older version of the model, and paved
@@ -442,11 +442,6 @@ for the relationship between ln-transformed TSS concentration and each
 predictor in turn. Although it wasn’t as compelling on its own, the
 predictor paved was added to the list of strong predictors because it
 was a strong predictor in a previous model.
-
-Strong predictors for TSS, showing linear model fit (blue line) for the
-relationship between *ln*-transformed TSS concentration and each
-predictor in turn. Although it wasn’t as compelling on its own, the
-predictor paved was added to the list of strong
 
 The precipitation predictor used for TSS was 1-day cumulative
 precipitation. There was no evidence of seasonal patterns to TSS in
