@@ -5,8 +5,9 @@ Total Suspended Solids Concentration
 
 ## Description
 
-Predicted median total suspended solids concentration from stormwater
-sources.
+Predicted median annual total suspended solids (TSS) concentration ($\mu$/L) from stormwater
+sources. 
+Median annual TSS concentration predictions are based on ln-transformed observational TSS data and the following spatial predictors: blank and blank.  The best-fit model is: insert model equation here.  Observational data were obtained from the S8.D Municipal Stormwater Permit Outfall Data provided by the Washington Department of Ecology. Data included in the TSS model came from the following reporting agencies: King County, Pierce County, Snohomish County, Port of Tacoma, City of Tacoma, and City of Seattle. The best-fit model for TSS concentration is a random-intercept model where intercept of the linear model is allowed to shift up or down according to reporting agency.  TSS predictions for highways were capped at the highest level of traffic observed within the monitored watersheds, as we lack strong TSS-traffic relationships above that level with the Puget Sound region. 
 
 ## Layer Access
 
