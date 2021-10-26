@@ -438,7 +438,7 @@ areas are associated with elevated TSS in stormwater.
 ![](media/image12.png) 
 
 **Figure 4.11** Strong predictors for TSS, showing linear model fit (blue line)
-for the relationship between ln-transformed TSS concentration and each
+for the relationship between *ln*-transformed TSS concentration and each
 predictor in turn. Although it wasn’t as compelling on its own, the
 predictor paved was added to the list of strong predictors because it
 was a strong predictor in a previous model.
@@ -468,7 +468,8 @@ auto-correlation plots or variograms.
 
 With the variance structure and random components set, two possible
 models emerged to capture the fixed effects:
-```model equation  here```
+*ln*(TSS) ~ rain + traffic + paved <br>
+*ln*(TSS)~ rain + traffic + totRES <br>
 
 The AIC score for these two models was very close, with the first
 model’s AIC score slightly lower (AIC=1246.0 vs. 1246.5, when models
