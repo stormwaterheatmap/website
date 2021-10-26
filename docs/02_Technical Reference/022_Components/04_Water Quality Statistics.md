@@ -451,9 +451,10 @@ Residuals plotted against fitted values showed signs of slight
 heterogeneity (Fig 4.12, left plot). Of the variance structures tested,
 the best fit was for a combination of two variance structures, where
 residual variation differs by agency *j*, and also by rainfall at each
-location *i* and date *k*. The parameters δ is estimated by the model.
+location *i* and date *k*. The parameters δ is estimated by the model: <br>
 
-```model equation  here```
+var(εijk) = σ2j × e2δ × rainik <br>
+
 
 ![](media/image13.png) 
 
@@ -467,7 +468,7 @@ No signs of temporal or spatial auto-correlation were detected in
 auto-correlation plots or variograms.
 
 With the variance structure and random components set, two possible
-models emerged to capture the fixed effects:
+models emerged to capture the fixed effects:<br>
 *ln*(TSS) ~ rain + traffic + paved <br>
 *ln*(TSS)~ rain + traffic + totRES <br>
 
