@@ -513,6 +513,8 @@ Final coefficient values for linear mixed effects
 **Figure 4.15** Model coefficients for the Null Model (green), Categorical
 Land Use Model (blue), and Landscape Predictor Model (red).
 
+TSS predictions for highways were capped at the highest level of traffic observed within the monitored watersheds; without data for higher levels of traffic and coinciding TSS levels, we were unable to confirm the shape of the relationship curve and therefore determined it would be unwise to extrapolate the TSS-traffic relationships using traffic values that extend beyond the level of traffic measured within the monitored watersheds. After capping the traffic values, we compared our TSS predictions on highways to those available in the USGS Highway-Runoff Database, and verified that the values we generated for highways were reasonable.
+    
 ### Phosphorus
 
 Based on linear models of *ln*-transformed phosphorus versus individual
