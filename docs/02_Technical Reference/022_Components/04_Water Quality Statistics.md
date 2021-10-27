@@ -165,11 +165,7 @@ landscape data were extracted from the following sources (Table 4.2):
 
 In order to use the landscape data at an appropriate scale across the
 study area, spatial predictors were stacked and then convolved with a
-100-meter gaussian kernel. **This resulted in a “fuzzy” this word is
-unclear to me – it makes me dubious that the predictors will be
-sufficient to identify correlations with chemicals of concern in
-watersheds predictors that could apply across dataset boundaries.** These
-values were then extracted for each monitored watershed.
+100-meter gaussian kernel. These values were then extracted for each monitored watershed.
 
 Prior to use, spatial data were plotted and visually assessed for
 outliers (Fig. 4.3). Square-root transformation was performed on spatial
