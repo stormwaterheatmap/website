@@ -5,7 +5,7 @@ Total Suspended Solids Concentration
 
 ## Description
 
-Median annual total suspended solids (TSS) concentration (μg/l) from stormwater
+Median annual total suspended solids (TSS) concentration (μg/L) from stormwater
 sources. <br>
 
 Median annual TSS concentration predictions are based on *ln*-transformed observational data of TSS concentration, and the following spatial predictors: paved and traffic.  The best-fit model is: <br>
