@@ -422,6 +422,14 @@ Final coefficient values for linear mix
 **Figure 4.10** Model coefficients for the Null Model (green), Categorical Land
 Use Model (blue), and Landscape Predictor Model (red).
 
+The landscape predictor model for copper, used as the basis for the Stormwater Heatmap copper layer, is:
+
+*ln*(copper) = 2.24 – 0.14(rain) + 0.42(summer) + 0.35(traffic) + 0.56(devAge2) + 0.66(pm25_na) – 0.07(rain)(pm25_na)
+
+where rain is the 21-day cumulative precipitation, and summer is a factor with value = 1 for July, August, September, and value = 0 for all other months.  Note that all predictors (except summer) were first transformed if necessary (e.g. devAge was squared to make devAge2), then standardized prior to use. 
+
+
+
 ### Total Suspended Solids
 
 Based on linear models of *ln*-transformed TSS versus individual
@@ -448,7 +456,7 @@ heterogeneity (Fig 4.12, left plot). Of the variance structures tested,
 the best fit was for a combination of two variance structures, where
 residual variation differs by agency *j*, and also by rainfall at each
 location *i* and date *k*. The parameters δ is estimated by the model: <br>
-<br>```model equation  here```<br>
+<br>
 var(ε<sub>*ijk*</sub>) = σ<sup>2</sup><sub>j</sub> × *e*<sup>2δ × *rain<sub>ik*<br> <br>
 
 
@@ -464,7 +472,7 @@ No signs of temporal or spatial auto-correlation were detected in
 auto-correlation plots or variograms.
 
 With the variance structure and random components set, two possible
-models emerged to capture the fixed effects:<br>```model equation  here```<br>
+models emerged to capture the fixed effects:<br>
 *ln*(TSS) ~ rain + traffic + paved <br>
 *ln*(TSS)~ rain + traffic + totRES <br>
 
@@ -509,7 +517,13 @@ Final coefficient values for linear mixed effects
 **Figure 4.15** Model coefficients for the Null Model (green), Categorical
 Land Use Model (blue), and Landscape Predictor Model (red).
 
-TSS predictions for highways were capped at the highest level of traffic observed within the monitored watersheds; without data for higher levels of traffic and coinciding TSS levels, we were unable to confirm the shape of the relationship curve and therefore determined it would be unwise to extrapolate the TSS-traffic relationships using traffic values that extend beyond the level of traffic measured within the monitored watersheds. After capping the traffic values, we compared our TSS predictions on highways to those available in the USGS Highway-Runoff Database, and verified that the values we generated for highways were reasonable.
+The final TSS landscape predictor model used as the basis of the Stormwater heatmap TSS layer is:<br>
+    
+*ln*(TSS) = 10.17 + 0.14(rain) + 0.21(traffic) + 0.28(paved)<br>
+
+where rain is 1-day cumulative precipitation. Note that all predictors wre standardized prior to use. 
+    
+For visualization on the stormwater heaptmap, TSS predictions for highways were capped at the highest level of traffic observed within the monitored watersheds (see section 4.5 for details). Without data for higher levels of traffic and coinciding TSS levels, we were unable to confirm the shape of the relationship curve and therefore determined it would be unwise to extrapolate the TSS-traffic relationships using traffic values that extend beyond the level of traffic measured within the monitored watersheds. After capping the traffic values, we compared our TSS predictions on highways to those available in the USGS Highway-Runoff Database, and verified that the values we generated for highways were reasonable.
     
 ### Phosphorus
 
@@ -529,26 +543,23 @@ compelling on their own, the predictors grass and paved were added to
 the list of strong predictors because they were strong predictors in a
 previous model.
 
-Strong predictors for phosphorus, showing linear model fit (blue line)
-for the relationship between *ln*-transformed phosphorus concentration
-and each predictor in turn. Although they weren’t compelling on their
-own, the predictors grass and paved
-
 The precipitation predictor used for phosphorus was 21-day cumulative
 precipitation. In addition, evidence of higher phosphorus concentrations
-during summer lead us to add *summer* as a categorical predictor to the
+during summer led us to add *summer* as a categorical predictor to the
 phosphorus model (where *summer* = 1 during July, August, September, and
 *summer* = 0 for all other months).
 
 Residuals plotted against fitted values showed signs of slight
 heterogeneity (Fig 4.17, left plot). Of the variance structures tested,
-the best fit allows residual variation to differ by agency *j*.
-```model equation  here```
-Figure 14 Normalized residuals from beyond-optimal model, with no
+the best fit allows residual variation to differ by agency *j*:
+<br>
+     var(*ε*<sub>j</sub>) = σ<sup>2</sup><sub>j</sub> <br>
+    
+** Figure 4.17** 
+    
+ Figure 4.17 Normalized residuals from beyond-optimal model, with no
 variance structure (left), and with the best fit variance structure
 (right).
-
-**Figure 4.17**
 
 The best model for phosphorus is a random-intercept model, where the
 intercept of the linear model is allowed to shift up or down according
@@ -558,7 +569,8 @@ detected in auto-correlation plots or variograms.
 With the variance structure and random components set, two possible
 models emerged to capture the fixed effects:
 
-```model equation  here```
+    *ln*(phosphorous) ~ rain + summer + grass + paved + sqrt_CO<sub>2</sub>_road <br>
+    *ln*(phosphorous) ~ rain+ summer + grass + paved <br>
 
 The AIC score for these two models was close, with the first model’s AIC
 score lower than that of the second model (AIC=830.3 vs. 839.8, when
@@ -598,6 +610,21 @@ Use Model (blue), and Landscape Predictor Model (red).
 
 **Figure 4.20** Model coefficients for the Null Model (green), Categorical Land Use Model (blue), and Landscape Predictor Model (red).
 
+ The landscape predictor model for phosphorous, used as the basis for the Stormwater heatmap phosphorous layer, is: 
+*ln*(phosphorous) = 4.38- 0.09(rain) + 0.60(summer) +0.83(grass) + 0.97(paved) + 0.2(sqrt_CO<sub>2</sub>_road <br>
+where rain is 21-day cumulative precipitation, and summer isa  factor with value = 1 for July, August, and September, and value = 0 for all other months. Note that all predictors (except summer) were first transformed if necessary (the square root was taken of CO<sub>2</sub>_road to generate sqrt_CO<sub>2</sub>, then standardized prior to use.  
+ ### Total Zinc
+ ### Total Kjeldahl Nitrogen
+Table 4.5  Coefficient values (standard error in parenthesis) for the three phosphorus models.  
+
+Table 4.6  Comparison of parameter values generated by simplified linear models with and without methods to account for censored values. 
+
+## Translating Equations to the Stormwater heatmap
+The process of translating statistical equations for chemical contaminants to the Stormwater heatmap involved manipulation of the grid and equations.  
+### Convolving the Base Map
+
+
+    
 **Citation:**
 
 Zuur AF, Ieno EN, Walker NJ, Saveliev AA, Smith GM. 2009. Mixed Effects
@@ -611,3 +638,5 @@ different from all other Puget Sound watersheds), and Pierce County High and Low
 
 \[2\] See:
 <a href="<https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project/" class="uri"><del>https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project</del></a>
+    
+ USGS Highway Runoff DataBase.  Website visited 11/01/2021. https://www.usgs.gov/software/hrdb-highway-runoff-database-software-page  
