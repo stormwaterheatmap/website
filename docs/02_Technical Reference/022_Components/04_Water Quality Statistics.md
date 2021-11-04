@@ -451,9 +451,12 @@ Residuals plotted against fitted values showed signs of slight
 heterogeneity (Fig 4.12, left plot). Of the variance structures tested,
 the best fit was for a combination of two variance structures, where
 residual variation differs by agency *j*, and also by rainfall at each
-location *i* and date *k*. The parameters δ is estimated by the model: <br>
-<br>```model equation  here```<br>
-var(ε<sub>*ijk*</sub>) = σ<sup>2</sup><sub>j</sub> × *e*<sup>2δ × *rain<sub>ik*<br> <br>
+location *i* and date *k*. The parameters δ is estimated by the model: 
+
+```model equation  here```
+
+var(ε<sub>*ijk*</sub>) = σ<sup>2</sup><sub>j</sub> × *e*<sup>2δ × *rain<sub>ik*
+
 
 
 ![](media/image13.png) 
@@ -468,9 +471,9 @@ No signs of temporal or spatial auto-correlation were detected in
 auto-correlation plots or variograms.
 
 With the variance structure and random components set, two possible
-models emerged to capture the fixed effects:<br>```model equation  here```<br>
-*ln*(TSS) ~ rain + traffic + paved <br>
-*ln*(TSS)~ rain + traffic + totRES <br>
+models emerged to capture the fixed effects:<br></br>```model equation  here```
+*ln*(TSS) ~ rain + traffic + paved <br></br>
+*ln*(TSS)~ rain + traffic + totRES <br></br>
 
 The AIC score for these two models was very close, with the first
 model’s AIC score slightly lower (AIC=1246.0 vs. 1246.5, when models
