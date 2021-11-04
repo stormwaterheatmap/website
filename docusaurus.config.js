@@ -3,7 +3,8 @@ const linkout_svg =
 
 const linkout_svg_footer =
 '<svg width="10" height="10" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_3JMu"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>'
-
+const math = require('remark-math');
+const katex = require('rehype-katex');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 
 module.exports = {
@@ -156,6 +157,8 @@ module.exports = {
         [
             '@docusaurus/preset-classic', {
                 docs: {
+                    remarkPlugins: [math],
+                    rehypePlugins: [katex],
                     sidebarPath: require.resolve('./sidebars.js'),
                     // Please change this to your
                     // repo.https://github.com/stormwaterheatmap/website.git
@@ -165,8 +168,17 @@ module.exports = {
                 // editUrl: 'https://github.com/stormwaterheatmap/website/edit/main/', },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css')
-                }
-            }
-        ]
-    ]
+                }, 
+
+            }, 
+        ], 
+    ], 
+    stylesheets: [
+        {
+          href: 'https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css',
+          integrity:
+            'sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc',
+          crossorigin: 'anonymous',
+        },
+      ],
 };

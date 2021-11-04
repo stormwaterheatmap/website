@@ -82,7 +82,7 @@ transformed distribution, and log-transformed distribution were visually
 analyzed. For all COC’s, log-transformation was deemed an appropriate
 data transformation prior to model analysis (Fig. 4.2).
 
-![](media/image2.png) 
+![](media/image2.png)
 
 **Figure 4.2** Quantile-quantile plots of COCs using a natural-log (ln) scale.
 Red line shows the QQ-line.
@@ -102,7 +102,7 @@ these into land use and landscape data.
 
 In order to employ a consistent analysis across different monitored
 watersheds we extracted land use data from the Washington Department of
-Commerce Land Use data set (<a href="<https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project/" class="uri"><del>https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project</del></a>). Land use classes (also listed in Table
+Commerce Land Use data set (<a href="<<https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project>/" class="uri"><del>https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project</del></a>). Land use classes (also listed in Table
 4.2) include:
 
 - Intensive urban (includes commercial areas, apartment buildings)
@@ -178,11 +178,11 @@ outlier; devAge values were squared to address the low outlier. Figure
 Prior to use in models, spatial data sets were scaled and centered using
 the mean and standard deviation from the 14 watersheds in this study.
 
-![](media/image3.png) 
+![](media/image3.png)
 
 **Figure 4.3** Raw spatial data
 
-![](media/image4.png) 
+![](media/image4.png)
 
 **Figure 4.4** Spatial data following transformation
 
@@ -327,7 +327,7 @@ intURB\_IND, totRES, grass, greenery, impervious, nodev, traffic,
 sqrt\_popn, pm25\_na, sqrt\_CO2\_tot, sqrt\_CO2\_com, sqrt\_CO2\_road,
 sqrt\_CO2\_nonroad, devAge2, roof\_intURB\_IND (Fig 4.5).
 
-![](media/image5.png) 
+![](media/image5.png)
 
 **Figure 4.5** Strong predictors for copper, showing linear model fit (blue
 line) for the relationship between ln-transformed copper concentration
@@ -346,9 +346,15 @@ residual variation differs by agency *j*, and also by rainfall at each
 location *i* and date *k*. Parameters δ<sub>1</sub> and δ<sub>2</sub>
 are estimated by the model.
 
- var(*ε*<sub>ijk</sub>) = σ<sup>2</sup><sub>j</sub>  (δ<sub>1</sub>- \|rain<sub>ik</sub>\|<sup>δ<sup>2</sup></sup> )<sup>2</sup>
 
-![](media/image6.png) 
+
+$$
+
+var(ε_{ijk}) = \sigma^2_j  (\delta_1- |rain_{ik}|^{δ^2})^2
+
+$$
+
+![](media/image6.png)
 
 **Figure 4.6**  Normalized residuals from beyond-optimal model, with no
 variance structure (left), and with the best fit variance structure
@@ -362,9 +368,9 @@ detected in auto-correlation plots or variograms.
 With the variance structure and random components set, two possible
 models emerged to capture the fixed effects:
 
-![ln(copper) \~ rain + summer +traffic +totRES](https://latex.codecogs.com/png.latex?ln%28copper%29%20~%20rain%20%2B%20summer%20%2Btraffic%20%2BtotRES "ln(copper) ~ rain + summer +traffic +totRES")
+<!-- ![ln(copper) \~ rain + summer +traffic +totRES](https://latex.codecogs.com/png.latex?ln%28copper%29%20~%20rain%20%2B%20summer%20%2Btraffic%20%2BtotRES "ln(copper) ~ rain + summer +traffic +totRES")
 
-![ln(copper) \~ rain + summer + traffic + devAge2 + pm25\\\_na\\ +\\ \\left(rain\\ \\times pm25\\\_na\\right)](https://latex.codecogs.com/png.latex?ln%28copper%29%20~%20rain%20%2B%20summer%20%2B%20traffic%20%2B%20devAge2%20%2B%20pm25%5C_na%5C%20%2B%5C%20%5Cleft%28rain%5C%20%5Ctimes%20pm25%5C_na%5Cright%29 "ln(copper) ~ rain + summer + traffic + devAge2 + pm25\_na\ +\ \left(rain\ \times pm25\_na\right)")
+![ln(copper) \~ rain + summer + traffic + devAge2 + pm25\\\_na\\ +\\ \\left(rain\\ \\times pm25\\\_na\\right)](https://latex.codecogs.com/png.latex?ln%28copper%29%20~%20rain%20%2B%20summer%20%2B%20traffic%20%2B%20devAge2%20%2B%20pm25%5C_na%5C%20%2B%5C%20%5Cleft%28rain%5C%20%5Ctimes%20pm25%5C_na%5Cright%29 "ln(copper) ~ rain + summer + traffic + devAge2 + pm25\_na\ +\ \left(rain\ \times pm25\_na\right)") -->
 
 The first model’s AIC score was lower than that of the second model
 (AIC=743.4 vs. 750.5, when models were fitted with ML); however, the
@@ -382,12 +388,12 @@ values in blues and purples. This interaction shows that, when pm2.5
 values are high, increasing amounts of rainfall result in a dilution of
 copper in stormwater.
 
-![](media/image7.png) 
+![](media/image7.png)
 
 **Figure 4.7** Single-predictor plots for copper, fit of the Landscape
 Predictor Model to each predictor in turn.
 
-![](media/image8.png) 
+![](media/image8.png)
 
 **Figure 4.8** Plot showing the interaction between rain and pm25_na that is
 present in the best fit model. In areas with high pm25_na values,
@@ -404,7 +410,7 @@ Density Residential – LDR) each have only two watershed representatives
 in our study. This results in good model fit to the data, but not
 necessarily for all watersheds in Puget Sound area.
 
-![](media/image9.png) 
+![](media/image9.png)
 
 **Figure 4.9** Copper model residuals for the Null Model, Categorical Land Use
 Model, and Landscape Predictor Models. Each bar represents one
@@ -415,9 +421,9 @@ copper models. For the Categorical Landuse Model, the baseline landuse
 is LDR; all other land use categories are adjustments from the baseline.
 Final coefficient values for linear mix
 
-![](media/image10.png) 
+![](media/image10.png)
 
-![](media/image11.png) 
+![](media/image11.png)
 
 **Figure 4.10** Model coefficients for the Null Model (green), Categorical Land
 Use Model (blue), and Landscape Predictor Model (red).
@@ -426,9 +432,7 @@ The landscape predictor model for copper, used as the basis for the Stormwater H
 
 *ln*(copper) = 2.24 – 0.14(rain) + 0.42(summer) + 0.35(traffic) + 0.56(devAge2) + 0.66(pm25_na) – 0.07(rain)(pm25_na)
 
-where rain is the 21-day cumulative precipitation, and summer is a factor with value = 1 for July, August, September, and value = 0 for all other months.  Note that all predictors (except summer) were first transformed if necessary (e.g. devAge was squared to make devAge2), then standardized prior to use. 
-
-
+where rain is the 21-day cumulative precipitation, and summer is a factor with value = 1 for July, August, September, and value = 0 for all other months.  Note that all predictors (except summer) were first transformed if necessary (e.g. devAge was squared to make devAge2), then standardized prior to use.
 
 ### Total Suspended Solids
 
@@ -439,7 +443,7 @@ sqrt\_CO2\_road, devAge2 (Fig 4.11). Paved was added to the list because
 it was a strong predictor for an older version of the model, and paved
 areas are associated with elevated TSS in stormwater.
 
-![](media/image12.png) 
+![](media/image12.png)
 
 **Figure 4.11** Strong predictors for TSS, showing linear model fit (blue line)
 for the relationship between *ln*-transformed TSS concentration and each
@@ -448,6 +452,7 @@ predictor paved was added to the list of strong predictors because it
 was a strong predictor in a previous model.
 
 The precipitation predictor used for TSS was 1-day cumulative
+
 precipitation. There was no evidence of seasonal patterns to TSS in
 stormwater.
 
@@ -455,12 +460,16 @@ Residuals plotted against fitted values showed signs of slight
 heterogeneity (Fig 4.12, left plot). Of the variance structures tested,
 the best fit was for a combination of two variance structures, where
 residual variation differs by agency *j*, and also by rainfall at each
-location *i* and date *k*. The parameters δ is estimated by the model: <br>
-<br>
-var(ε<sub>*ijk*</sub>) = σ<sup>2</sup><sub>j</sub> × *e*<sup>2δ × *rain<sub>ik*<br> <br>
+location *i* and date *k*. The parameters δ is estimated by the model:
+
+$$ 
+
+var(\epsilon{ijk}) = \sigma^2_j(e^{2δrain_{ik}})
+
+$$ 
 
 
-![](media/image13.png) 
+![](media/image13.png)
 
 **Figure 4.12** Normalized residuals from beyond-optimal model, with no
 variance structure (left), and with the best fit variance structure
@@ -472,9 +481,17 @@ No signs of temporal or spatial auto-correlation were detected in
 auto-correlation plots or variograms.
 
 With the variance structure and random components set, two possible
-models emerged to capture the fixed effects:<br>
-*ln*(TSS) ~ rain + traffic + paved <br>
-*ln*(TSS)~ rain + traffic + totRES <br>
+models emerged to capture the fixed effects:
+$$
+
+\ln{TSS} \sim rain + traffic + paved
+
+$$ 
+
+$$
+\ln{TSS} \sim rain + traffic + totRES
+
+$$
 
 The AIC score for these two models was very close, with the first
 model’s AIC score slightly lower (AIC=1246.0 vs. 1246.5, when models
@@ -488,7 +505,7 @@ the most suitable for covering the entire area of the stormwater
 heatmap. Figure 4.13 shows the model fit for each individual predictor,
 plotted against data points.
 
-![](media/image14.png) 
+![](media/image14.png)
 
 **Figure 4.13** Single-predictor plots for TSS, showing fit of the
 Landscape Predictor Model to each predictor.
@@ -499,7 +516,7 @@ Landscape Predictor Model can be visualized through residuals (Fig.
 value is for the Landscape Predictor Model, indicating best fit to the
 TSS data of these three models.
 
-![](media/image15.png) 
+![](media/image15.png)
 
 **Figure 4.14** TSS model residuals for the Null Model, Categorical Land Use
 Model, and Landscape Predictor Models. Each bar represents one
@@ -510,21 +527,21 @@ TSS models. For the Categorical Landuse Model, the baseline landuse is
 LDR; all other land use categories are adjustments from the baseline.
 Final coefficient values for linear mixed effects
 
-![](media/image16.png) 
+![](media/image16.png)
 
-![](media/image17.png) 
+![](media/image17.png)
 
 **Figure 4.15** Model coefficients for the Null Model (green), Categorical
 Land Use Model (blue), and Landscape Predictor Model (red).
 
-The final TSS landscape predictor model used as the basis of the Stormwater heatmap TSS layer is:<br>
-    
-*ln*(TSS) = 10.17 + 0.14(rain) + 0.21(traffic) + 0.28(paved)<br>
+The final TSS landscape predictor model used as the basis of the Stormwater heatmap TSS layer is:
 
-where rain is 1-day cumulative precipitation. Note that all predictors wre standardized prior to use. 
-    
+*ln*(TSS) = 10.17 + 0.14(rain) + 0.21(traffic) + 0.28(paved)
+
+where rain is 1-day cumulative precipitation. Note that all predictors wre standardized prior to use.
+
 For visualization on the stormwater heaptmap, TSS predictions for highways were capped at the highest level of traffic observed within the monitored watersheds (see section 4.5 for details). Without data for higher levels of traffic and coinciding TSS levels, we were unable to confirm the shape of the relationship curve and therefore determined it would be unwise to extrapolate the TSS-traffic relationships using traffic values that extend beyond the level of traffic measured within the monitored watersheds. After capping the traffic values, we compared our TSS predictions on highways to those available in the USGS Highway-Runoff Database, and verified that the values we generated for highways were reasonable.
-    
+
 ### Phosphorus
 
 Based on linear models of *ln*-transformed phosphorus versus individual
@@ -534,7 +551,7 @@ sqrt\_CO2\_road and devAge2 (Fig 4.16). Paved and grass were added to
 the list because they were strong predictors for an older version of the
 model, and both are associated with elevated phosphorus in stormwater.
 
-![](media/image18.png) 
+![](media/image18.png)
 
 **Figure 4.16** Strong predictors for phosphorus, showing linear model fit
 (blue line) for the relationship between ln-transformed phosphorus
@@ -552,11 +569,11 @@ phosphorus model (where *summer* = 1 during July, August, September, and
 Residuals plotted against fitted values showed signs of slight
 heterogeneity (Fig 4.17, left plot). Of the variance structures tested,
 the best fit allows residual variation to differ by agency *j*:
-<br>
-     var(*ε*<sub>j</sub>) = σ<sup>2</sup><sub>j</sub> <br>
-    
-** Figure 4.17** 
-    
+
+     var(*ε*<sub>j</sub>) = σ<sup>2</sup><sub>j</sub>
+
+**Figure 4.17**
+
  Figure 4.17 Normalized residuals from beyond-optimal model, with no
 variance structure (left), and with the best fit variance structure
 (right).
@@ -569,8 +586,9 @@ detected in auto-correlation plots or variograms.
 With the variance structure and random components set, two possible
 models emerged to capture the fixed effects:
 
-    *ln*(phosphorous) ~ rain + summer + grass + paved + sqrt_CO<sub>2</sub>_road <br>
-    *ln*(phosphorous) ~ rain+ summer + grass + paved <br>
+    *ln*(phosphorous) ~ rain + summer + grass + paved + sqrt_CO<sub>2</sub>_road 
+
+    *ln*(phosphorous) ~ rain+ summer + grass + paved 
 
 The AIC score for these two models was close, with the first model’s AIC
 score lower than that of the second model (AIC=830.3 vs. 839.8, when
@@ -578,7 +596,7 @@ models were fitted with ML). As a result, we selected the first model.
 Figure 4.18 shows the model fit for each individual predictor, plotted
 against data points.
 
-![](media/image20.png) 
+![](media/image20.png)
 
 **Figure 4.18** Single-predictor plots for phosphorus, showing fit of the
 Landscape Predictor Model to each predictor.
@@ -589,7 +607,7 @@ Landscape Predictor Model can be visualized through residuals (Fig.
 value is for the Landscape Predictor Model, indicating best fit to the
 phosphorus data of these three models.
 
-![](media/image21.png) 
+![](media/image21.png)
 
 **Figure 4.19** Phosphorus model residuals for the Null Model, Categorical
 Land Use Model, and Landscape Predictor Models. Each bar represents one
@@ -601,30 +619,34 @@ landuse is LDR; all other land use categories are adjustments from the
 baseline. Final coefficient values for linear mixed effects models are
 based on fitting with REML.
 
-![](media/image22.png) 
+![](media/image22.png)
 
 **Table 4.5** Model coefficients for the Null Model (green), Categorical Land
 Use Model (blue), and Landscape Predictor Model (red).
 
-![](media/image23.png) 
+![](media/image23.png)
 
 **Figure 4.20** Model coefficients for the Null Model (green), Categorical Land Use Model (blue), and Landscape Predictor Model (red).
 
- The landscape predictor model for phosphorous, used as the basis for the Stormwater heatmap phosphorous layer, is: 
-*ln*(phosphorous) = 4.38- 0.09(rain) + 0.60(summer) +0.83(grass) + 0.97(paved) + 0.2(sqrt_CO<sub>2</sub>_road <br>
+ The landscape predictor model for phosphorous, used as the basis for the Stormwater heatmap phosphorous layer, is:
+*ln*(phosphorous) = 4.38- 0.09(rain) + 0.60(summer) +0.83(grass) + 0.97(paved) + 0.2(sqrt_CO<sub>2</sub>_road
+
 where rain is 21-day cumulative precipitation, and summer isa  factor with value = 1 for July, August, and September, and value = 0 for all other months. Note that all predictors (except summer) were first transformed if necessary (the square root was taken of CO<sub>2</sub>_road to generate sqrt_CO<sub>2</sub>, then standardized prior to use.  
- ### Total Zinc
- ### Total Kjeldahl Nitrogen
+
+### Total Zinc
+
+### Total Kjeldahl Nitrogen
+
 Table 4.5  Coefficient values (standard error in parenthesis) for the three phosphorus models.  
 
-Table 4.6  Comparison of parameter values generated by simplified linear models with and without methods to account for censored values. 
+Table 4.6  Comparison of parameter values generated by simplified linear models with and without methods to account for censored values.
 
 ## Translating Equations to the Stormwater heatmap
+
 The process of translating statistical equations for chemical contaminants to the Stormwater heatmap involved manipulation of the grid and equations.  
+
 ### Convolving the Base Map
 
-
-    
 **Citation:**
 
 Zuur AF, Ieno EN, Walker NJ, Saveliev AA, Smith GM. 2009. Mixed Effects
@@ -637,6 +659,6 @@ County (outside of the Puget Sound region), Port of Seattle (too
 different from all other Puget Sound watersheds), and Pierce County High and Low Density Residential (outfall data was collected in a stream rather than at an outfall).
 
 \[2\] See:
-<a href="<https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project/" class="uri"><del>https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project</del></a>
-    
- USGS Highway Runoff DataBase.  Website visited 11/01/2021. https://www.usgs.gov/software/hrdb-highway-runoff-database-software-page  
+<a href="<<https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project>/" class="uri"><del>https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project</del></a>
+
+ USGS Highway Runoff DataBase.  Website visited 11/01/2021. <https://www.usgs.gov/software/hrdb-highway-runoff-database-software-page>  
