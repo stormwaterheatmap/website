@@ -20,7 +20,7 @@ HSPF contains a number of specialized modules that are not used by WWHM. These i
 </div>
 
 ### Hydrologic Response Units 
-Modeling was performed on discretized landscape units based on common soils, land cover, and slope charcateristics known as hydrologic response units (HRUs). The HRU approach provides a computationally efficient method of pre-computing hydrolgic response for later use. Results for a particular watershed can be calculated by  summing or averaging the results for individual HRUs. 
+Modeling was performed on discretized landscape units based on common soils, land cover, and slope characteristics known as hydrologic response units (HRUs). The HRU approach provides a computationally efficient method of pre-computing hydrologic response for later use. Results for a particular watershed can be calculated by summing or averaging the results for individual HRUs. 
 
 Each combination of parameters was modeled in separate batched simulations. HRUs were designated by a three-digit number according to the following convention: 
 
