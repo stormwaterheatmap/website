@@ -20,12 +20,12 @@ module.exports = {
     // plugins: ['@docusaurus/plugin-google-gtag'],
 
     themeConfig: {
-        gtag: {
-            // You can also use your "G-" Measurement ID here.
-            trackingID: 'G-NY607SJH9G',
-            // Optional fields.
-            anonymizeIP: false, // Should IPs be anonymized?
-        },
+        // gtag: {
+        //     // You can also use your "G-" Measurement ID here.
+        //     trackingID: 'G-NY607SJH9G',
+        //     // Optional fields.
+        //     anonymizeIP: false, // Should IPs be anonymized?
+        // },
 
 
 
@@ -151,6 +151,12 @@ module.exports = {
                     // repo.https://github.com/stormwaterheatmap/website.git
                     editUrl: 'https://github.com/stormwaterheatmap/website/tree/main/'
                 },
+                gtag: {
+                    // You can also use your "G-" Measurement ID here.
+                    trackingID: 'G-NY607SJH9G',
+                    // Optional fields.
+                    anonymizeIP: false, // Should IPs be anonymized?
+                  },
                 // blog: {   showReadingTime: true,   // Please change this to your repo.
                 // editUrl: 'https://github.com/stormwaterheatmap/website/edit/main/', },
                 theme: {
