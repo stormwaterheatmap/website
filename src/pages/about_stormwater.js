@@ -1,5 +1,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
+
 function App() {
     return (
         <Layout>
@@ -82,10 +84,15 @@ function App() {
                             protecting the land and waters upon which all life depends.
                         </p>
 <h1> Resources </h1>
+                       
+<Link
+            className="button button--primary button--lg"
+            to="/docs/All%20About%20Stormwater%20Resources">
+            Find out more
+          </Link>
+                       
+                       
                         
-                        <button class="button button--primary button--lg" href="/docs/All%20About%20Stormwater%20Resources">
-                            Find out more
-                        </button>
                     </div>
                 </div>
                 <div class="item">
