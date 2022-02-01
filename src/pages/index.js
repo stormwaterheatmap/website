@@ -36,8 +36,8 @@ export default function Home() {
       <main>
        
       
-      <div class="custom-tagline">
-</div> 
+      {/* <div class="custom-tagline"> */}
+{/* </div>  */}
   <div class="aspect-ratio__inner-wrapper">
         <iframe class="ee_embed" 
         // width="100%" height="800"  */}

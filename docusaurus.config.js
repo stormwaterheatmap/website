@@ -48,7 +48,7 @@ module.exports = {
         },
         navbar: {
             hideOnScroll: true,
-            title: 'StormwaterHeatmap.Org',
+           // title: 'StormwaterHeatmap.Org',
             logo: {
                 alt: 'TNC Logo',
                 src: 'img/tnc-logo-white.svg',
@@ -57,7 +57,8 @@ module.exports = {
             items: [{
                 position: 'left',
                 label: 'View Data Layers',
-                to: "/"
+                to: "/",
+                // className: "header-github-link"
             }, {
                 position: 'left',
                 label: 'Analyze Watersheds',
