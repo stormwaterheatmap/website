@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Layout from '@theme/Layout';
-
+import Link from '@docusaurus/Link';
 
 
 function App() {  
@@ -16,11 +16,20 @@ function App() {
    
      
  Send us your story and photo!</p>
-    <div>
+ <Link
+            className="button button--primary button--lg"
+            to="mailto:courtney.baxter@tnc.org">
+            Share your story
+          </Link>
+
+
+
+              <div></div>
+    {/* <div>
       <button class="button button--secondary button--lg" href="mailto:courtney.baxter@tnc.org">
         Share your story
       </button>
-    </div>
+    </div> */}
   </div>
 </div>
     </div>
