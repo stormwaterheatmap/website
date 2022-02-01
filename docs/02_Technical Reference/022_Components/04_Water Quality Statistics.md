@@ -583,7 +583,8 @@ model, and both are associated with elevated phosphorus in stormwater.
 (blue line) for the relationship between ln-transformed phosphorus
 concentration and each predictor in turn. Although they weren’t
 compelling on their own, the predictors grass and paved were added to
-the list of strong predictors because they were strong predictors in a
+the list of strong predictors because they were strong predictor
+s in a
 previous model.
 
 The precipitation predictor used for phosphorus was 21-day cumulative
