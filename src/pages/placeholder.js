@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 
+
 function compare_ws() {
   return (
     <Layout title="placeholder">
