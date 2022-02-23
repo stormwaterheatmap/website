@@ -1,6 +1,6 @@
 # stormwaterheatmap.dev
 
-This is the development site for stomrwaterheatmap.org. This site builds automatically through [docusaurus](https://github.com/facebook/docusaurus) and [Hostman.](https://www.hostman.com)
+This is the development site for stomrwaterheatmap.org. This site builds automatically through [docusaurus](https://github.com/facebook/docusaurus) and [Render.](https://www.render.com)
 
 ## Bug reports
 Good bug reports are extremely helpful - thank you! 
