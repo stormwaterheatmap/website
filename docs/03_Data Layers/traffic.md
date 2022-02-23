@@ -37,7 +37,7 @@ them for geoprocessing.
 |:---------------------------------------|:---------------------------------|:---------------------|
 | 1                                      |Interstate                        |Major                 |
 | 2                                      |Other Freeway or Expressway       |Major                 |
-| 3                                      |Principle Arterial                |Minor                 |
+| 3                                      |Principal Arterial                |Minor                 |
 | 4                                      |Minor Arterial                    |Minor                 |
 | 5                                      |Major Collector                   |Minor                 |
 | 6                                      |Minor Collector                   |Minor                 |
