@@ -33,7 +33,8 @@ overlapping annual daily traffic values.
 
 **Table 1.** Highway functional classes (FHWA, 2013) and the groups we assigned 
 them for geoprocessing.
-| *Functional Class Code (US DOT, 2013)* | *Functional Class Name (US DOT)* |*Geoprocessing Group* |
+
+| Functional Class Code (US DOT, 2013) | Functional Class Name (US DOT) |Geoprocessing Group |
 |:---------------------------------------|:---------------------------------|:---------------------|
 | 1                                      |Interstate                        |Major                 |
 | 2                                      |Other Freeway or Expressway       |Major                 |
@@ -56,7 +57,7 @@ known Average Daily Traffic (also from the lines attribute table) to their neare
 road cell along the path of the road surface. We combined the two outputs by taking 
 the maximum value at any given cell location. 
 
-Minor and Local roads required a more complicated approach because the road lines 
+Minor and local roads required a more complicated approach because the road lines 
 dataset did not contain ADT, lane count,or lane width for most Local roads and 
 because those Local roads often exist in a grid network rather than simple point-
 to-point layout. We assumed those unattributed roads consisted of two lanes (one 
@@ -68,7 +69,7 @@ the next steps for allocating Average Daily Traffic to each cell. We created our
 final road surface area rasters by classifying all values of the distance values
 to zero.
 
-For Minor roads, we assigned Average Daily Traffic based on a point dataset of 
+For minor roads, we assigned average daily traffic based on a point dataset of 
 combined 2016 and 2018 traffic counts data to provide the most comprehensive coverage 
 we could assemble for the Puget Sound region. The 2016 points were created from the
 2016 road lines dataset at the mid-point of each road segment. The 2018 points data
@@ -86,16 +87,17 @@ the Local roads. We approached this with three assumptions:
     
 3.  Minimum average daily traffi con any road is ten trips. 
     
-With those assumptions, we calculated traffic dispersing through a Local road grid using 
+With those assumptions, we calculated traffic dispersing through a local road grid using 
 a distance decay function calibrated with estimated traffic values on familiar urban
 residential streets of north Tacoma, WA. With the Raster Calculator tool, we used two 
 newly created raster datasets as inputs in the distance decay function: 
 
-1.  An Initial (Maximum) ADT raster dataset was used in the function as a constant representing the initial (and maximum) value for the decay. We created this dataset using the Path Distance Allocation tool which assigns the ADT of the nearest Minor road to each given Local road cell. We represent this here as variable *a*.
+1.  An initial (maximum) ADT raster dataset was used in the function as a constant representing the initial (and maximum) value for the decay. We created this dataset using the Path Distance Allocation tool which assigns the ADT of the nearest Minor road to each given Local road cell. We represent this here as variable *a*.
     
 2.  A Distance raster dataset contains the distance at every Local road cell to its nearest Minor road cell,which was calculated with the Path Distance tool. We represent this here as variable d.The decay rate constant ris calculated as a function of the initial (maximum) ADT value a, written as:
-    
-     *r = f(a) = a * (11.03955 -0.007743235a + 0.000001332168a<sup>2</sup>)*
+    $$
+     r = f(a) = a * (11.03955 -0.007743235a + 0.000001332168a<sup>2</sup>)
+    $$
 
 This distance decay function outputs average daily traffic at each cell location, 
 written as: 
