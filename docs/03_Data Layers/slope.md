@@ -16,28 +16,55 @@ distributed in conformance with the North American Datum of 1983 (NAD
 83). All elevation values are referenced to the North American Vertical
 Datum of 1988 (NAVD 88).
 
-## Layer Access
+## Layer Access in Earth Engine
 
-### Earth Engine
+The javascript commands below can be used to access this layer within
+the [Google Earth Engine Code
+Editor](https://developers.google.com/earth-engine/guides/playground). A
+Google Earth Engine account is required.
 
-To use this layer in Google Earth Engine, import the stormwaterheatmap
-public data library:
+``` javascript
+// Import the layer data dictionary
+var data = require('users/stormwaterheatmap/apps:data/public')
 
-    var data  = require('users/stormwaterheatmap/apps:data/public')
-    layer = data.rasters["Slope"]
+// To view data dictionary, print to the console:
+print('Data:', data)
+
+//Get this layer from the layer data dictionary: 
+var layer_name = data.rasters["Slope"]
+```
+
+#### Viewing
+
+Individual objects contain all the info used in the stormwater heatmap.
+To add it to the map, add the layer object.
+
+``` javascript
+var display_image = layer_name.layer
+Map.addLayer(display_image)
+```
+
+#### Analysis
+
+To get the raw image data for analysis, access the `eeObject` key.
+
+``` javascript
+var raw_image = layer_name.layer.eeObject
+Map.addLayer(raw_image,{},'Slope')
+```
 
 ## Visualization
 
 ### Palette
 
-| Raster value | Colors                                                                    |
-|:-------------|:--------------------------------------------------------------------------|
-| NA           | ![\#3f60ae](https://via.placeholder.com/15/3f60ae/000000?text=+)`#3f60ae` |
-| NA           | ![\#539eb6](https://via.placeholder.com/15/539eb6/000000?text=+)`#539eb6` |
-| NA           | ![\#6db388](https://via.placeholder.com/15/6db388/000000?text=+)`#6db388` |
-| NA           | ![\#cab843](https://via.placeholder.com/15/cab843/000000?text=+)`#cab843` |
-| NA           | ![\#e78532](https://via.placeholder.com/15/e78532/000000?text=+)`#e78532` |
-| NA           | ![\#d92120](https://via.placeholder.com/15/d92120/000000?text=+)`#d92120` |
+| Colors                                                                    |
+|:--------------------------------------------------------------------------|
+| ![\#3f60ae](https://via.placeholder.com/15/3f60ae/000000?text=+)`#3f60ae` |
+| ![\#539eb6](https://via.placeholder.com/15/539eb6/000000?text=+)`#539eb6` |
+| ![\#6db388](https://via.placeholder.com/15/6db388/000000?text=+)`#6db388` |
+| ![\#cab843](https://via.placeholder.com/15/cab843/000000?text=+)`#cab843` |
+| ![\#e78532](https://via.placeholder.com/15/e78532/000000?text=+)`#e78532` |
+| ![\#d92120](https://via.placeholder.com/15/d92120/000000?text=+)`#d92120` |
 
 **Minimum:** 0 Percent
 

@@ -5,7 +5,7 @@ Total Suspended Solids Load
 
 ## Description
 
-Predicted annual median total suspended solids (TSS) load per unit area from
+Predicted annual median total suspended solids load per unit area from
 stormwater sources.
 
 ## Layer Access
