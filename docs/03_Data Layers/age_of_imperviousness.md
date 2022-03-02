@@ -1,7 +1,8 @@
 Age of Imperviousness
 ================
 
-*Impervious surface by estimated date of conversion*
+*Impervious surface by estimated date of conversion. Used to estimate
+level of current stormwater treatment.*
 
 ## Description
 
@@ -18,26 +19,52 @@ resolution for the stormwater heatmap, the source product was masked by
 [1-meter resolution imperviousness data](docs/) developed by the Nature
 Conservancy.
 
-## Layer Access
+## Layer Access in Earth Engine
 
-### Earth Engine
+The javascript commands below can be used to access this layer within
+the [Google Earth Engine Code
+Editor](https://developers.google.com/earth-engine/guides/playground). A
+Google Earth Engine account is required.
 
-To use this layer in Google Earth Engine, import the stormwaterheatmap
-public data library:
+``` javascript
+// Import the layer data dictionary
+var data = require('users/stormwaterheatmap/apps:data/public')
 
-    var data  = require('users/stormwaterheatmap/apps:data/public')
-    layer = data.rasters["Age of Imperviousness"]
+// To view data dictionary, print to the console:
+print('Data:', data)
+
+//Get this layer from the layer data dictionary: 
+var layer_name = data.rasters["Age of Imperviousness"]
+```
+
+#### Viewing
+
+Individual objects contain all the info used in the stormwater heatmap.
+To add it to the map, add the layer object.
+
+``` javascript
+var display_image = layer_name.layer
+Map.addLayer(display_image)
+```
+
+#### Analysis
+
+To get the raw image data for analysis, access the `eeObject` key.
+
+``` javascript
+var raw_image = layer_name.layer.eeObject
+Map.addLayer(raw_image,{},'Age of Imperviousness')
+```
 
 ## Visualization
 
 ### Palette
 
-| Label       | Raster value | Colors                                                                    |
-|:------------|:-------------|:--------------------------------------------------------------------------|
-| 2000–2014   | 3            | ![\#018571](https://via.placeholder.com/15/018571/000000?text=+)`#018571` |
-| 1990–2000   | 4            | ![\#80cdc1](https://via.placeholder.com/15/80cdc1/000000?text=+)`#80cdc1` |
-| 1975–1990   | 5            | ![\#dfc27d](https://via.placeholder.com/15/dfc27d/000000?text=+)`#dfc27d` |
-| Before 1975 | 6            | ![\#a6611a](https://via.placeholder.com/15/a6611a/000000?text=+)`#a6611a` |
+| Label                                        | Raster value | Colors                                                                 |
+|:---------------------------------------------|:-------------|:-----------------------------------------------------------------------|
+| 2000–2014 (stormwater likely treated)        | 3            | ![9e+73](https://via.placeholder.com/15/9e+73/000000?text=+)`9e+73`    |
+| 1990–2000 (some stormwater treatment)        | 4            | ![F0E442](https://via.placeholder.com/15/F0E442/000000?text=+)`F0E442` |
+| Before 1990 (likely no stormwater treatment) | 5            | ![CC6677](https://via.placeholder.com/15/CC6677/000000?text=+)`CC6677` |
 
 ## Source
 

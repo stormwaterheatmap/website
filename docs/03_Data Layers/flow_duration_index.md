@@ -28,34 +28,56 @@ is then applied to hru/grid combinations in the stormwater heatmap to
 produce a spatially explicit mapping of flow alteration.
 
 More information, including verification of results can be found in the
-\[technical reference.\](
+[technical reference.](/docs/Technical%20Reference/Components/Hydrology)
 
-## Layer Access
+## Layer Access in Earth Engine
 
-### Earth Engine
+The javascript commands below can be used to access this layer within
+the [Google Earth Engine Code
+Editor](https://developers.google.com/earth-engine/guides/playground). A
+Google Earth Engine account is required.
 
-To use this layer in Google Earth Engine, import the stormwaterheatmap
-public data library:
+``` javascript
+// Import the layer data dictionary
+var data = require('users/stormwaterheatmap/apps:data/public')
 
-    var data  = require('users/stormwaterheatmap/apps:data/public')
-    layer = data.rasters["Flow Duration Index"]
+// To view data dictionary, print to the console:
+print('Data:', data)
+
+//Get this layer from the layer data dictionary: 
+var layer_name = data.rasters["Flow Duration Index"]
+```
+
+#### Viewing
+
+Individual objects contain all the info used in the stormwater heatmap.
+To add it to the map, add the layer object.
+
+``` javascript
+var display_image = layer_name.layer
+Map.addLayer(display_image)
+```
+
+#### Analysis
+
+To get the raw image data for analysis, access the `eeObject` key.
+
+``` javascript
+var raw_image = layer_name.layer.eeObject
+Map.addLayer(raw_image,{},'Flow Duration Index')
+```
 
 ## Visualization
 
 ### Palette
 
-| Raster value | Colors                                                                    |
-|:-------------|:--------------------------------------------------------------------------|
-| NA           | ![\#FFFFCC](https://via.placeholder.com/15/FFFFCC/000000?text=+)`#FFFFCC` |
-| NA           | ![\#FBEC9A](https://via.placeholder.com/15/FBEC9A/000000?text=+)`#FBEC9A` |
-| NA           | ![\#F4CC68](https://via.placeholder.com/15/F4CC68/000000?text=+)`#F4CC68` |
-| NA           | ![\#ECA855](https://via.placeholder.com/15/ECA855/000000?text=+)`#ECA855` |
-| NA           | ![\#E48751](https://via.placeholder.com/15/E48751/000000?text=+)`#E48751` |
-| NA           | ![\#D2624D](https://via.placeholder.com/15/D2624D/000000?text=+)`#D2624D` |
-| NA           | ![\#A54742](https://via.placeholder.com/15/A54742/000000?text=+)`#A54742` |
-| NA           | ![\#73382F](https://via.placeholder.com/15/73382F/000000?text=+)`#73382F` |
-| NA           | ![\#422818](https://via.placeholder.com/15/422818/000000?text=+)`#422818` |
-| NA           | ![\#1A1A01](https://via.placeholder.com/15/1A1A01/000000?text=+)`#1A1A01` |
+| Colors                                                                 |
+|:-----------------------------------------------------------------------|
+| ![f0f9e8](https://via.placeholder.com/15/f0f9e8/000000?text=+)`f0f9e8` |
+| ![a8ddb5](https://via.placeholder.com/15/a8ddb5/000000?text=+)`a8ddb5` |
+| ![7bccc4](https://via.placeholder.com/15/7bccc4/000000?text=+)`7bccc4` |
+| ![43a2ca](https://via.placeholder.com/15/43a2ca/000000?text=+)`43a2ca` |
+| ![0868ac](https://via.placeholder.com/15/0868ac/000000?text=+)`0868ac` |
 
 **Minimum:** 1 index
 
