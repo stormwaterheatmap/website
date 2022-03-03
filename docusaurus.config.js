@@ -91,7 +91,14 @@ module.exports = {
                             to: '#'
                         }, 
                     ]
-                }, {
+                }, 
+                {
+                    position: 'left',
+                    
+                    label: 'Technical Reference',
+                            to: 'docs/Technical Reference/overview'
+                }, 
+                {
                     label: 'About',
                     position: 'right',
                     items: [
