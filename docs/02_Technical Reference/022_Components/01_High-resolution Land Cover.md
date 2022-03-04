@@ -1,4 +1,6 @@
-# High-resolution Land Cover
+# Land Cover
+
+*High-resolution Land Cover Development* 
 
 ## Overview
 

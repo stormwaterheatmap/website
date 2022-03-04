@@ -64,7 +64,7 @@ module.exports = {
             items: [
                 {
                     position: 'left',
-                    label: 'View Data Layers',
+                    label: '🏠 View Data Layers',
                     to: "/"
 
                 }, {
@@ -92,34 +92,47 @@ module.exports = {
                         }, 
                     ]
                 }, 
-                {
-                    position: 'left',
+                // {
+                //     position: 'left',
                     
-                    label: 'Technical Reference',
-                            to: 'docs/Technical Reference/overview'
-                }, 
+                //     label: 'Technical Reference',
+                //             to: 'docs/Technical Reference/overview'
+                // }, 
                 {
-                    label: 'About',
-                    position: 'right',
+                    label: 'Documentation',
+                    position: 'left',
                     items: [
                         {
-                            label: 'All About Stormwater',
-                            to: "about_stormwater"
-                        }, {
-                            label: 'Technical Reference',
-                            to: 'docs/Technical Reference/overview'
+                            label: 'Methodology',
+                            to: 'docs/category/methods'
                         }, {
                             label: 'Layer Reference',
-                            to: 'docs/Data Layers/age_of_imperviousness'
-                        }, {
+                            to: 'docs/category/DataLayers/'
+                        }, 
+                        {
+                            label: 'Resources',
+                            to: "docs/category/resources"
+                        },
+                        {
                             label: 'Github Repo',
                             href: 'https://github.com/stormwaterheatmap'
                         }
                     ]
                 }, {
                     position: 'right',
-                    label: 'User Stories',
-                    to: "user_stories"
+                    label: 'Contact',
+                    items: [
+                        {
+                            label: "Questions", 
+                            to: "markdown-page"
+                        },
+                        {
+                            label: "Share your Story", 
+                            to: "user_stories", 
+
+                        }
+
+                    ]
                 }
             ]
         },
@@ -127,7 +140,9 @@ module.exports = {
             logo: {
                 src: 'img/tnc-logo-white.svg'
             },
-            copyright: `Copyright © ${new Date().getFullYear()} The Nature Conservancy. ${ "<br>"} 
+            copyright: 
+
+            `Copyright © ${new Date().getFullYear()} The Nature Conservancy. ${ "<br>"} 
       Developed by Geosyntec Consultants, Inc.`,
             links: [
                 {

@@ -12,10 +12,12 @@ Unfortunately, the Salish Sea’s relationship with stormwater effluent is no ou
 
 Fortunately, researchers have uncovered a variety of successful techniques to reduce stormwater impairment of surface and receiving waters, including street sweeping, pervious pavement, and green stormwater infrastructure wherein stormwater is filtered by soil and plant mixtures on its way between the streets and the sea. These interventions are costly (~$65-132 billion is needed to restore Puget Sound to hydraulically function like a forest), but the costs of stormwater pollution are high as well: the sickening and deaths of Salish Sea organisms. Annual losses due to one contaminant (polycyclic aromatic hydrocarbon exposure) alone are estimated to be between $4.4 to $12.1 billion (King County [2014](references.html#ref-County2014); Washington State Department of Ecology and Washington Department of Health [2012](references.html#ref-WashingtonStateDepartmentofEcologyandWashingtonDepartmentofHealth2012)). 
 
-## Urban stormwater runoff is a two-fold problem, impacting the quantity of water pulsing off the land, as well as the quality of that water.
+:::info Urban stormwater runoff is a two-fold problem.  
+
+It impacts the quantity of water pulsing off the land, as well as the quality of that water.
 
 As a result of stormwater’s twin problems, urban watersheds and marine receiving waters suffer from “urban syndrome”- a condition that results in low abundance and survival of sensitive aquatic and coastal species (Walsh et al. [2005](references.html#ref-Walsh2005)). Virtually all urban streams and rivers in Puget sound have been harmed by stormwater pollution (Booth et al. [2004](references.html#ref-booth2004reviving)).
-
+:::
 
 ### Water Quantity
 

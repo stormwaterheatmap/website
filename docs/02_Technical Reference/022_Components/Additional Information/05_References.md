@@ -1,5 +1,7 @@
 # References
 
+*References used in the Stormwater Heatmap methodology.*
+
 Anan, Y; Kunito T, T Ikemoto, R Kubota, I Watanabe, S Tanabe, N Miyazaki, and E Petrov. 2002. “Elevated concentrations of trace elements in Caspian seals (Phoca caspia) found stranded during the mass mortality event in 2000.” <i>Environmental Contamination & Toxicology</i> 42: 354–62.
 
 Anderson, B, J Hunt, B Phillips, B Thompson, S Lowe, i K Tabersk, and R Carr. 2007. “Patterns and trends in sediment toxicity in the San Francisco Estuary.” <i>Environmental Research</i> 105: 145–55.
