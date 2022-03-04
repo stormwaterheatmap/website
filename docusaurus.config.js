@@ -64,7 +64,7 @@ module.exports = {
             items: [
                 {
                     position: 'left',
-                    label: 'View Data Layers',
+                    label: '🏠 View Data Layers',
                     to: "/"
 
                 }, {
@@ -79,47 +79,55 @@ module.exports = {
                             to: "compare_watersheds"
                         }
                     ]
-                }, {
-                    position: 'left',
-                    label: 'Get Data',
-                    items: [
-                        {
-                            label: 'Get Spatial Data', 
-                            to: 'get_spatial_data'
-                        }, {
-                            label: 'Get Timeseries Data',
-                            to: '#'
-                        }, 
-                    ]
                 }, 
-                {
-                    position: 'left',
+                // {
+                //     position: 'left',
                     
-                    label: 'Technical Reference',
-                            to: 'docs/Technical Reference/overview'
-                }, 
+                //     label: 'Technical Reference',
+                //             to: 'docs/Technical Reference/overview'
+                // }, 
                 {
-                    label: 'About',
-                    position: 'right',
+                    label: 'Documentation',
+                    position: 'left',
                     items: [
                         {
-                            label: 'All About Stormwater',
-                            to: "about_stormwater"
-                        }, {
-                            label: 'Technical Reference',
-                            to: 'docs/Technical Reference/overview'
+                            label: 'Methodology',
+                            to: 'docs/category/methods'
                         }, {
                             label: 'Layer Reference',
-                            to: 'docs/Data Layers/age_of_imperviousness'
-                        }, {
+                            to: 'docs/category/DataLayers/'
+                        }, 
+                        {
+                            label: 'Resources',
+                            to: "docs/category/resources"
+                        },
+                        {
                             label: 'Github Repo',
                             href: 'https://github.com/stormwaterheatmap'
                         }
                     ]
-                }, {
+                }, 
+                {
+                    position: 'left',
+                    label: 'Get Data',
+                    to: 'docs/get_data'
+                    
+                }, 
+                {
                     position: 'right',
-                    label: 'User Stories',
-                    to: "user_stories"
+                    label: 'Contact',
+                    items: [
+                        {
+                            label: "Get in touch", 
+                            to: "contact"
+                        },
+                        {
+                            label: "Share your Story", 
+                            to: "user_stories", 
+
+                        }
+
+                    ]
                 }
             ]
         },
@@ -127,42 +135,70 @@ module.exports = {
             logo: {
                 src: 'img/tnc-logo-white.svg'
             },
-            copyright: `Copyright © ${new Date().getFullYear()} The Nature Conservancy. ${ "<br>"} 
-      Developed by Geosyntec Consultants, Inc.`,
+            copyright: 
+            `Copyright © ${new Date().getFullYear()} The Nature Conservancy. ${ "<br>"} 
+      ${ "<small>"}Developed by Geosyntec Consultants, Inc.${"</small>"}`,
             links: [
                 {
-                    title: 'Docs',
+                    title: 'Documentation',
                     items: [
                         {
-                            label: 'Technical Reference',
-                            to: 'docs/Technical%20Reference/overview'
+                            label: 'Methodology',
+                            to: 'docs/category/methods'
                         }, {
-                            label: 'API Reference',
-                            to: '/docs/API/page1'
-                        }, {
-                            label: 'Github Repo',
-                            href: 'https://github.com/stormwaterheatmap/'
-                        }
+                            label: 'Layer Reference',
+                            to: '/docs/category/DataLayers/'
+                        }, 
                     ]
                 },
                 // title: 'Docs', items: [{
                 //
                 //   },   {    ',   },   {     label: 'Github',     to: '/docs/intro',   }, ],
 
-                {
-                    title: 'About',
+                // {title: "Contact",
+                //  items:[
+                //     {label: 'Contact form', to: 'docs/contact'}]}, 
+                {title: "Get Involved",
+
+                items: [
+                    {
+                        label: 'Contact us', 
+                        to: 'docs/contact'
+                    },
+                    {
+                        label: 'Github Repo',
+                        href: 'https://github.com/stormwaterheatmap/'
+                    }
+                ]
+            },
+
+                
+                {title: "Resources",
+                
+                    
                     items: [
+                        
                         {
-                            label: `All About Stormwater`,
+                            label: `Background`,
                             to: `about_stormwater`
-                        }, {
-                            label: `License & Terms`, 
+                        }, 
+                        {
+                            label: `Links`, 
                             // ${linkout_svg_footer}`,
-                            to: `docs/license`
-                            
-                        }
-                    ]
-                }
+                            to: `docs/links`
+                        },
+                    ]},
+                
+                {title: "More",
+                items:[
+                    {
+                        label: `License & Terms`, 
+                        // ${linkout_svg_footer}`,
+                        to: `docs/license`
+                        
+                    }
+
+                ]}
 
             ]
         }

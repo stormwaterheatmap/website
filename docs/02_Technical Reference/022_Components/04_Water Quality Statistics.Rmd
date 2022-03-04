@@ -71,36 +71,13 @@ substitution on linear mixed effects models generated suitable results.
 **Table 4.1** Percentage of data points that were left-censored
 (non-detect) for each chemical of concern
 
-+------------+------------+---------------------------------------+
-| C hemical  | C ensored  | Notes                                 |
-| of Concern | Data Per   |                                       |
-|            | centage    |                                       |
-+============+============+=======================================+
-| Total      | 0%         | 4 samples were field blanks           |
-| Copper     |            | misclassified as ND's. Censored data  |
-|            |            | percentage was calculated following   |
-|            |            | removal of these 4 field blanks.      |
-+------------+------------+---------------------------------------+
-| Total K    | 9.76%      |                                       |
-| jeldahl N  |            |                                       |
-| itrogen    |            |                                       |
-+------------+------------+---------------------------------------+
-| Total Pho  | 1.17%      | 3 samples with high results were      |
-| sphorus    |            | classified as ND's, but should have   |
-|            |            | been flagged as "estimated". Censored |
-|            |            | data percentage was calculated        |
-|            |            | following reclassification of these 3 |
-|            |            | data points.                          |
-+------------+------------+---------------------------------------+
-| Total Su   | 0.83%      |                                       |
-| spended    |            |                                       |
-| Solids     |            |                                       |
-+------------+------------+---------------------------------------+
-| Total Zinc | 0%         | 4 samples were field blanks           |
-|            |            | misclassified as ND's. Censored data  |
-|            |            | percentage was calculated following   |
-|            |            | removal of these 4 field blanks       |
-+------------+------------+---------------------------------------+
+| C hemical of Concern      | C ensored Data Per centage | Notes                                                                                                                                                                                        |
+|---------------------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Total Copper              | 0%                         | 4 samples were field blanks misclassified as ND's. Censored data percentage was calculated following removal of these 4 field blanks.                                                        |
+| Total K jeldahl N itrogen | 9.76%                      |                                                                                                                                                                                              |
+| Total Pho sphorus         | 1.17%                      | 3 samples with high results were classified as ND's, but should have been flagged as "estimated". Censored data percentage was calculated following reclassification of these 3 data points. |
+| Total Su spended Solids   | 0.83%                      |                                                                                                                                                                                              |
+| Total Zinc                | 0%                         | 4 samples were field blanks misclassified as ND's. Censored data percentage was calculated following removal of these 4 field blanks                                                         |
 
 ### Transformation of outfall data
 
@@ -161,106 +138,37 @@ landscape data were extracted from the following sources (Table 4.2):
 **Table 4.2**: Sources of landscape spatial predictor data used to
 develop statistical models.
 
-+---------------+---------------+----------------------------------+
-| **Layer**     | **ID**        | **Source**                       |
-+===============+===============+==================================+
-| urban         | urbRES        | Washington State Department of   |
-| residential   |               | Commerce, Puget Sound Mapping    |
-|               |               | Project                          |
-+---------------+---------------+----------------------------------+
-| rural         | ruRES         |                                  |
-| residential   |               |                                  |
-+---------------+---------------+----------------------------------+
-| total         | totRES        |                                  |
-| residential   |               |                                  |
-| (urban +      |               |                                  |
-| rural)        |               |                                  |
-+---------------+---------------+----------------------------------+
-| intensive     | intURB        |                                  |
-| urban         |               |                                  |
-+---------------+---------------+----------------------------------+
-| industrial    | IND           |                                  |
-+---------------+---------------+----------------------------------+
-| intensive     | intURB_IND    |                                  |
-| urban +       |               |                                  |
-| industrial    |               |                                  |
-+---------------+---------------+----------------------------------+
-| impervious    | impervious    |                                  |
-| surfaces      |               |                                  |
-+---------------+---------------+----------------------------------+
-| paved         | paved         |                                  |
-| surfaces      |               |                                  |
-+---------------+---------------+----------------------------------+
-| rooftop       | roofs         |                                  |
-| density       |               |                                  |
-+---------------+---------------+----------------------------------+
-| urban         | roof_urbRES   | rooftop density applied to       |
-| residential   |               | Washington State Department of   |
-| rooftops      |               | Commerce, Puget Sound Mapping    |
-|               |               | Project data                     |
-+---------------+---------------+----------------------------------+
-| total         | roof_totRES   |                                  |
-| residential   |               |                                  |
-| rooftops      |               |                                  |
-+---------------+---------------+----------------------------------+
-| intensive     | roof_intURB   |                                  |
-| urban         |               |                                  |
-| rooftops      |               |                                  |
-+---------------+---------------+----------------------------------+
-| intensive     | roo           |                                  |
-| urban +       | f_intURB_IND  |                                  |
-| industrial    |               |                                  |
-| rooftops      |               |                                  |
-+---------------+---------------+----------------------------------+
-| grass & low   | grass         |                                  |
-| vegetation    |               |                                  |
-+---------------+---------------+----------------------------------+
-| tree cover    | trees         |                                  |
-+---------------+---------------+----------------------------------+
-| total         | greenery      |                                  |
-| vegetative    |               |                                  |
-| cover         |               |                                  |
-+---------------+---------------+----------------------------------+
-| undeveloped   | nodev         |                                  |
-| areas         |               |                                  |
-+---------------+---------------+----------------------------------+
-| traffic       | traffic       |                                  |
-+---------------+---------------+----------------------------------+
-| population    | popn          |                                  |
-+---------------+---------------+----------------------------------+
-| particulate   | pm25_na       |                                  |
-| matter 2.5um  |               |                                  |
-+---------------+---------------+----------------------------------+
-| particulate   | partSA        |                                  |
-| surface area  |               |                                  |
-+---------------+---------------+----------------------------------+
-| NO2           | no2           |                                  |
-+---------------+---------------+----------------------------------+
-| carbon        | CO2_com       | Vulcan Carbon Dioxide Emissions  |
-| emissions,    |               | data set                         |
-| commercial    |               |                                  |
-+---------------+---------------+----------------------------------+
-| carbon        | CO2_res       |                                  |
-| emissions,    |               |                                  |
-| residential   |               |                                  |
-+---------------+---------------+----------------------------------+
-| carbon        | CO2_road      |                                  |
-| emissions,    |               |                                  |
-| road          |               |                                  |
-+---------------+---------------+----------------------------------+
-| carbon        | CO2_nonroad   |                                  |
-| emissions,    |               |                                  |
-| nonroad       |               |                                  |
-+---------------+---------------+----------------------------------+
-| carbon        | CO2_tot       |                                  |
-| emissions,    |               |                                  |
-| total         |               |                                  |
-+---------------+---------------+----------------------------------+
-| slope         | slope         |                                  |
-+---------------+---------------+----------------------------------+
-| age of        | devAge        | Calculated value based on year   |
-| development   |               | of development                   |
-+---------------+---------------+----------------------------------+
+| **Layer**                             | **ID**           | **Source**                                                                                           |
+|---------------------------------------|------------------|------------------------------------------------------------------------------------------------------|
+| urban residential                     | urbRES           | Washington State Department of Commerce, Puget Sound Mapping Project                                 |
+| rural residential                     | ruRES            |                                                                                                      |
+| total residential (urban + rural)     | totRES           |                                                                                                      |
+| intensive urban                       | intURB           |                                                                                                      |
+| industrial                            | IND              |                                                                                                      |
+| intensive urban + industrial          | intURB_IND       |                                                                                                      |
+| impervious surfaces                   | impervious       |                                                                                                      |
+| paved surfaces                        | paved            |                                                                                                      |
+| rooftop density                       | roofs            |                                                                                                      |
+| urban residential rooftops            | roof_urbRES      | rooftop density applied to Washington State Department of Commerce, Puget Sound Mapping Project data |
+| total residential rooftops            | roof_totRES      |                                                                                                      |
+| intensive urban rooftops              | roof_intURB      |                                                                                                      |
+| intensive urban + industrial rooftops | roo f_intURB_IND |                                                                                                      |
+| grass & low vegetation                | grass            |                                                                                                      |
+| tree cover                            | trees            |                                                                                                      |
+| total vegetative cover                | greenery         |                                                                                                      |
+| undeveloped areas                     | nodev            |                                                                                                      |
+| traffic                               | traffic          |                                                                                                      |
+| population                            | popn             |                                                                                                      |
+| particulate matter 2.5um              | pm25_na          |                                                                                                      |
+| particulate surface area              | partSA           |                                                                                                      |
+| NO2                                   | no2              |                                                                                                      |
+| carbon emissions, commercial          | CO2_com          | Vulcan Carbon Dioxide Emissions data set                                                             |
+| carbon emissions, residential         | CO2_res          |                                                                                                      |
+| carbon emissions, road                | CO2_road         |                                                                                                      |
+| carbon emissions, nonroad             | CO2_nonroad      |                                                                                                      |
+| carbon emissions, total               | CO2_tot          |                                                                                                      |
+| slope                                 | slope            |                                                                                                      |
+| age of development                    | devAge           | Calculated value based on year of development                                                        |
 
 ### Pre-processing of spatial data
 
