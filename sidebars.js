@@ -58,7 +58,7 @@
       link: {
         type: 'generated-index',
         title: 'Data Layers',
-        description: 'Learn about the most important Docusaurus concepts!',
+        description: 'Documentation of layer sources and information.',
         slug: '/category/DataLayers',
         keywords: ['guides']
        // image: '/img/docusaurus.png',
@@ -71,6 +71,8 @@
         "Data Layers/imperviousness",
         "Data Layers/land_cover",
         "Data Layers/land_use",
+        "Data Layers/pollutant_concentration",
+        "Data Layers/pollutant_load",
         "Data Layers/population_density",
         "Data Layers/precipitation",
         "Data Layers/runoff",

@@ -146,6 +146,17 @@ color:rgb(30, 255, 0) !important;
    /* left: 0; right: 0; bottom: 0; top: 0px */
 }
 
+
+.alt-iframe{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iframe{
+width: 200px;
+}
+
 .navbar__toggle{
   color: #D9D8DA;
 }

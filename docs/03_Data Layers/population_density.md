@@ -3,6 +3,10 @@ Population Density
 
 *2010 Census, population density*
 
+:::caution Deprecated
+Description to be updated 
+:::
+
 ## Description
 
 Population density from the 2010 census, reported by census block.
