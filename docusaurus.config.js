@@ -70,15 +70,16 @@ module.exports = {
                 }, {
                     position: 'left',
                     label: 'Analyze Watersheds',
-                    items: [
-                        {
-                            label: 'Analyze Single Watershed',
-                            to: "single_watershed"
-                        }, {
-                            label: 'Compare Watersheds',
-                            to: "compare_watersheds"
-                        }
-                    ]
+                    //items: [
+                        // {
+                        //     label: 'Analyze Single Watershed',
+                        //     
+                        to: "single_watershed"
+                        //}, {
+                    //         label: 'Compare Watersheds',
+                    //         to: "compare_watersheds"
+                    //     }
+                    // ]
                 }, 
                 // {
                 //     position: 'left',
