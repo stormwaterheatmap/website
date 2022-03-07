@@ -284,7 +284,7 @@ html[data-theme='dark'] .header-home-icon:before {
 }
 
 .hero__title{
-  margin-top: -15rem; 
+  /* margin-top: 15rem;  */
   padding: 0rem;
 
 
