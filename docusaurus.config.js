@@ -109,6 +109,11 @@ module.exports = {
                     ]
                 }, 
                 {
+                    label: 'Blog',
+                    position: 'left',
+                    to: 'blog'
+                }, 
+                {
                     position: 'left',
                     label: 'Get Data',
                     to: 'docs/get_data'
