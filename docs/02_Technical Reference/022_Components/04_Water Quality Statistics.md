@@ -1,8 +1,6 @@
 Water Quality Statistics
 ================
 
-# Water Quality Statistics
-
 We developed a series of linear mixed effects models to estimate
 concentrations for constituents of concern (COCs) in Puget Sound urban
 stormwater. Spatial covariates in the models included various landscape
