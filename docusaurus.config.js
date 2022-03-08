@@ -41,13 +41,13 @@ module.exports = {
         announcementBar: {
             id: 'announcementBar-dev', 
             
-            content: `🚧 This site is under development and testing. Please submit bug reports` +
-            ` to our <a target="_blank" rel="noopener noreferrer" href="https://github.com/stormwaterheatmap/website">github repo.</a> ${linkout_svg}`,
+            content: `🎉 <strong>New version launched!</strong> Read the post at  
+            <a target="_blank" rel="noopener noreferrer" href="https://www.washingtonnature.org/fieldnotes/creating-the-stormwater-heatmap-an-open-source-tool-to-track-pollution"> washingtonnature.org.</a> ${linkout_svg}`,
 
             backgroundColor: '#003F35',
             // '#2b7126',
 
-            textColor: '#D9D8DA',
+            textColor: '#ffffff',
             isCloseable: true
         },
         navbar: {
