@@ -48,5 +48,6 @@ Map.addLayer(display_image)
 To get the raw image data for analysis, access the eeObject key.
 
 ``` javascript
-var raw_image = layer_name.layer.eeObject Map.addLayer(raw_image,{},'Imperviousness')
+var raw_image = layer_name.layer.eeObject 
+Map.addLayer(raw_image,{},'Imperviousness')
 ```
