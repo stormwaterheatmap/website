@@ -31,7 +31,7 @@ var data = require('users/stormwaterheatmap/apps:data/public')
 print('Data:', data)
 
 //Get this layer from the layer data dictionary: 
-var layer_name = data.cocs[LayerName]
+var layer_name = data.pollutant_loading[LayerName]
 ```
 
 **Viewing**
