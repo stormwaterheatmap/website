@@ -47,8 +47,8 @@ module.exports = {
             backgroundColor: '#003F35',
             // '#2b7126',
 
-            textColor: '#ffffff',
-            isCloseable: true
+            textColor: '#f5f6f7',
+            isCloseable: false
         },
         navbar: {
             hideOnScroll: true,
