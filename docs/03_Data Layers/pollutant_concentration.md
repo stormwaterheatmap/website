@@ -4,7 +4,7 @@
 
 # Description
 
-Pollutant concentrations have been derived from a series of linear mixed-effects models using spatial covariates. Regressions were performed on outfall stormwater measurements from the Washington State Department of Ecology's S8.D Municipal Stormwater Permit Outfall Data. The stormwater outfall data is available via an open-data api at: [\<https://data.wa.gov/Natural-Resources-Environment/Municipal-Stormwater-> Permit-Outfall-Data/d958-q2ci.](https://data.wa.gov/Natural-Resources-Environment/Municipal-Stormwater-%20Permit-Outfall-Data/d958-q2ci.%20)
+Pollutant concentrations have been derived from a series of linear mixed-effects models using spatial covariates. Regressions were performed on outfall stormwater measurements from the Washington State Department of Ecology's S8.D Municipal Stormwater Permit Outfall Data. The stormwater outfall data is available via an open-data api at: [<https://data.wa.gov/Natural-Resources-Environment/Municipal-Stormwater-> Permit-Outfall-Data/d958-q2ci.](https://data.wa.gov/Natural-Resources-Environment/Municipal-Stormwater-%20Permit-Outfall-Data/d958-q2ci.%20)
 
 Heatmap layers have been developed for five constituents of concern:
 
@@ -15,6 +15,9 @@ Heatmap layers have been developed for five constituents of concern:
 -   Total Zinc
 
 For more details on methodology, see the [Water Quality Statistics documentation](/docs/Technical%20Reference/Components/Water%20Quality%20Statistics).
+
+# Units 
+Concentrations for all chemicals are provided in micrograms/liter (mcg/L) except for Total Suspended Solids, which is provided in milligrams/liter (mg/L). 
 
 # Layer Access in Earth Engine
 
@@ -28,7 +31,7 @@ var data = require('users/stormwaterheatmap/apps:data/public')
 print('Data:', data)
 
 //Get this layer from the layer data dictionary: 
-var layer_name = data.cocs[LayerName]
+var layer_name = data.pollutant_loading[LayerName]
 ```
 
 **Viewing**
@@ -45,5 +48,6 @@ Map.addLayer(display_image)
 To get the raw image data for analysis, access the eeObject key.
 
 ``` javascript
-var raw_image = layer_name.layer.eeObject Map.addLayer(raw_image,{},'Imperviousness')
+var raw_image = layer_name.layer.eeObject 
+Map.addLayer(raw_image,{},'Imperviousness')
 ```
