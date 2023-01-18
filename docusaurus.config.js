@@ -28,28 +28,22 @@ module.exports = {
         //     // Optional fields.
         //     anonymizeIP: false, // Should IPs be anonymized?
         // },
-
-
-
-
-
-        
         colorMode: {
             defaultMode: 'light',
-            disableSwitch: true
+            disableSwitch: false
         },
-        announcementBar: {
-            id: 'announcementBar-dev', 
+        // announcementBar: {
+        //     id: 'announcementBar-dev', 
             
-            content: `🎉 <strong>New version launched!</strong> Read the post at  
-            <a target="_blank" rel="noopener noreferrer" href="https://www.washingtonnature.org/fieldnotes/creating-the-stormwater-heatmap-an-open-source-tool-to-track-pollution"> washingtonnature.org.</a> ${linkout_svg}`,
+        //     content: `🎉 <strong>New version launched!</strong> Read the post at  
+        //     <a target="_blank" rel="noopener noreferrer" href="https://www.washingtonnature.org/fieldnotes/creating-the-stormwater-heatmap-an-open-source-tool-to-track-pollution"> washingtonnature.org.</a> ${linkout_svg}`,
 
-            backgroundColor: '#003F35',
-            // '#2b7126',
+        //     backgroundColor: '#003F35',
+        //     // '#2b7126',
 
-            textColor: '#f5f6f7',
-            isCloseable: false
-        },
+        //     textColor: '#f5f6f7',
+        //     isCloseable: false
+        // },
         navbar: {
             hideOnScroll: true,
 

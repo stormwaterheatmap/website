@@ -26,10 +26,11 @@
   --ifm-navbar-background-color: #3c3c3c;  
   /* --ifm-font-color: red;     */
   --ifm-navbar-link-color: #f5f6f7;
+  --ifm-menu-link-color: #3da237; 
   /* --ifm-dropdown-link-color: purple;  */
   --ifm-footer-background-color: #3c3c3c; 
   --ifm-footer-color: #f5f6f7;
-  --ifm-menu-color: #f5f6f7;
+  /* --ifm-menu-color: #f5f6f7; */ 
   --ifm-footer-link-color: #f5f6f7; 
   /*var(--ifm-color-emphasis-700); */
   --ifm-footer-link-hover-color: inherit; 
