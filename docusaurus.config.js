@@ -28,15 +28,9 @@ module.exports = {
         //     // Optional fields.
         //     anonymizeIP: false, // Should IPs be anonymized?
         // },
-
-
-
-
-
-        
         colorMode: {
             defaultMode: 'light',
-            disableSwitch: true
+            disableSwitch: false
         },
         // announcementBar: {
         //     id: 'announcementBar-dev', 
