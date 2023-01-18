@@ -52,7 +52,7 @@ module.exports = {
             logo: {
                 alt: 'TNC Logo',
                 src: 'img/tnc-logo-white.svg',
-                srcDark: 'img/favicon.ico'
+                srcDark: 'img/tnc-logo-white.svg'
             },
 
             items: [
