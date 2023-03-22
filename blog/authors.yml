@@ -8,12 +8,13 @@ ehowe:
   name: Emily Howe 
   title: The Nature Conservancy 
   image_url: https://raw.githubusercontent.com/stormwaterheatmap/website/main/static/img/emily_howe.jpeg
-  email: ehowe@tnc.org
+  email: emily.howe@tnc.org
   
 sbrunelle: 
   name: Sarah Brunelle 
-  title: The Nature Conservancy  
-  email: sbrunelle@tnc.org 
+  title: The Nature Conservancy 
+  image_url: https://github.com/stormwaterheatmap/website/blob/main/static/img/SarahBrunelle2021.jpg
+  email: sarah.brunelle@tnc.org 
 
 jrobertson: 
   name: Jamie Robertson 
