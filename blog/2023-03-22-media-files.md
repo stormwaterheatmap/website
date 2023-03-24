@@ -14,10 +14,10 @@ We are excited to share media attention that's been received for Version 1.0 of 
 - The Nature Conservancy in Washington: [Creating the Stormwater Heatmap: An Open-Source Tool to Track Pollution](https://www.washingtonnature.org/fieldnotes/creating-the-stormwater-heatmap-an-open-source-tool-to-track-pollution) by Grace Lee Kang
 - Washington Stormwater Center: [Stormwater Heatmap and Green Bridges](https://www.wastormwatercenter.org/stormwater-heatmap-and-green-bridges-video-updates-from-collaborator-the-nature-conservancy/) by Heidi Siegelbaum
 
-The Nature Conservancy in Washington "Introducing the Stormwater Heatmap" (Vimeo)
+The Nature Conservancy in Washington "[Introducing the Stormwater Heatmap](https://vimeo.com/710913341?embedded=true&source=vimeo_logo&owner=29951605)" (Vimeo)
 
 [![Introducing the Stormwater Heatmap](https://i.imgur.com/YC6Bsqq.png)](https://vimeo.com/710913341?embedded=true&source=vimeo_logo&owner=29951605)
 
-Geosyntec Consultants "Water and Natural Resources: Stormwater Heatmap | Christian Nilsen" (YouTube)
+Geosyntec Consultants "[Water and Natural Resources: Stormwater Heatmap | Christian Nilsen](https://www.youtube.com/watch?v=eao39Ba6g0o)" (YouTube)
 
 [![Water and Natural Resources: Stormwater Heatmap](https://i.imgur.com/jzfnJWh.png)](https://www.youtube.com/watch?v=eao39Ba6g0o)
