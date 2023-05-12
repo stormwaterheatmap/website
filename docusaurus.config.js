@@ -32,18 +32,18 @@ module.exports = {
             defaultMode: 'light',
             disableSwitch: false
         },
-        // announcementBar: {
-        //     id: 'announcementBar-dev', 
+        announcementBar: {
+            id: 'announcementBar-dev', 
             
-        //     content: `🎉 <strong>New version launched!</strong> Read the post at  
-        //     <a target="_blank" rel="noopener noreferrer" href="https://www.washingtonnature.org/fieldnotes/creating-the-stormwater-heatmap-an-open-source-tool-to-track-pollution"> washingtonnature.org.</a> ${linkout_svg}`,
+            content: `🎉 <strong>Full-Extent Data Layer Downloads Now Available!</strong> Read the post on our  
+            <a target="_blank" rel="noopener noreferrer" href="https://www.stormwaterheatmap.org/blog/feature-announcement-ago"> blog.</a> ${linkout_svg}`,
 
-        //     backgroundColor: '#003F35',
-        //     // '#2b7126',
+            backgroundColor: '#003F35',
+            // '#2b7126',
 
-        //     textColor: '#f5f6f7',
-        //     isCloseable: false
-        // },
+            textColor: '#f5f6f7',
+            isCloseable: false
+        },
         navbar: {
             hideOnScroll: true,
 
