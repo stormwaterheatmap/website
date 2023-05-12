@@ -35,14 +35,14 @@ module.exports = {
         announcementBar: {
             id: 'announcementBar-dev', 
             
-            content: `🎉 <strong>Full-Extent Data Layer Downloads Now Available!</strong> Read the post on our  
-            <a target="_blank" rel="noopener noreferrer" href="https://www.stormwaterheatmap.org/blog/feature-announcement-ago"> blog.</a> ${linkout_svg}`,
+            content: `Full-extent data layer downloads are now available via ArcGIS Online!</strong> Read more on our blog  
+            <a target="_blank" rel="noopener noreferrer" href="https://www.stormwaterheatmap.org/blog/feature-announcement-ago"> here.</a> ${linkout_svg}`,
 
             backgroundColor: '#003F35',
             // '#2b7126',
 
             textColor: '#f5f6f7',
-            isCloseable: false
+            isCloseable: true
         },
         navbar: {
             hideOnScroll: true,
