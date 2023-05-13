@@ -1,7 +1,7 @@
 ---
 title: ArcGIS Online Full-Extent Data Layer Downloads Now Available
 description: ArcGIS Online Data Layer Links
-authors: ehegeman
+authors: [ehegeman, sbrunelle]
 slug: feature-announcement-ago
 tags: [announcements, features]
 hide_table_of_contents: false
