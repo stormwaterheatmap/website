@@ -17,7 +17,20 @@ module.exports = {
     favicon: 'img/favicon.ico',
     organizationName: 'The Nature Conservancy',
     projectName: 'website',
-    // plugins: ['@docusaurus/plugin-google-gtag'],
+    plugins: [
+        ['@grnet/docusaurus-terminology', 
+        {
+               termsDir: './docs/terms',
+                docsDir: './docs/',
+                glossaryFilepath: './docs/glossary.md'
+               }]
+    ], 
+    //  ['@grnet/docusaurus-terminology', {
+    //     termsDir: './docs/terms',
+    //     docsDir: './docs/',
+    //     glossaryFilepath: './docs/glossary.md'
+    //   }
+    // ],
     
     themeConfig: {
 

@@ -22,6 +22,7 @@
     "@docusaurus/plugin-ideal-image": "^2.2.0",
     "@docusaurus/plugin-sitemap": "^2.2.0",
     "@docusaurus/preset-classic": "^2.2.0",
+    "@grnet/docusaurus-terminology": "^1.0.0-rc.1",
     "@mdx-js/react": "^1.6.21",
     "@svgr/webpack": "^6.5.1",
     "clsx": "^1.1.1",
