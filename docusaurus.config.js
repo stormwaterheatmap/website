@@ -18,23 +18,45 @@ module.exports = {
     organizationName: 'The Nature Conservancy',
     projectName: 'website',
     plugins: [
-        ['@grnet/docusaurus-terminology', 
-        {
-               termsDir: './docs/terms',
-                docsDir: './docs/',
-                glossaryFilepath: './docs/glossary.md'
-               }]
-    ], 
-    //  ['@grnet/docusaurus-terminology', {
-    //     termsDir: './docs/terms',
-    //     docsDir: './docs/',
-    //     glossaryFilepath: './docs/glossary.md'
-    //   }
-    // ],
-    
+        require.resolve('docusaurus-plugin-image-zoom'),
+            ['@docusaurus/plugin-ideal-image',
+            {
+              quality: 70,
+              max: 1030, // max resized image's size.
+              min: 640, // min resized image's size. if original is lower, use that size.
+              steps: 2, // the max number of images generated between min and max (inclusive)
+              disableInDev: false,
+            }
+          ]
+        ],
+
+    //     ['@grnet/docusaurus-terminology',
+    //     {
+    //            termsDir: './docs/terms',
+    //             docsDir: './docs/',
+    //             glossaryFilepath: './docs/glossary.md'
+    //            }],
+    //            [require.resolve('./src/pages/index.js'), { id: 'docusaurus-plugin-image-zoom' }]
+    //            //  ['@grnet/docusaurus-terminology', {
+    //                //     termsDir: './docs/terms',
+    //                //     docsDir: './docs/',
+    //                //     glossaryFilepath: './docs/glossary.md'
+    //                //   }
+    //                // ],
+
+    //             ],
     themeConfig: {
 
-
+            zoom: {
+              selector: '.markdown :not(em) > img',
+              config: {
+                // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
+                background: {
+                  light: 'rgb(50, 50, 50)',
+                  dark: 'rgb(50, 50, 50)'
+                }
+              }
+          },
         // gtag: {
         //     // You can also use your "G-" Measurement ID here.
         //     trackingID: 'G-NY607SJH9G',
@@ -46,9 +68,9 @@ module.exports = {
             disableSwitch: false
         },
         announcementBar: {
-            id: 'announcementBar-dev', 
-            
-            content: `<strong>Full-extent data layer downloads are now available via ArcGIS Online!</strong> Read more on our blog  
+            id: 'announcementBar-dev',
+
+            content: `<strong>Full-extent data layer downloads are now available via ArcGIS Online!</strong> Read more on our blog
             <a target="_blank" rel="noopener noreferrer" href="https://www.stormwaterheatmap.org/blog/feature-announcement-ago"> here.</a>${linkout_svg}`,
 
             backgroundColor: '#003F35',
@@ -80,20 +102,20 @@ module.exports = {
                     //items: [
                         // {
                         //     label: 'Analyze Single Watershed',
-                        //     
+                        //
                         to: "single_watershed"
                         //}, {
                     //         label: 'Compare Watersheds',
                     //         to: "compare_watersheds"
                     //     }
                     // ]
-                }, 
+                },
                 // {
                 //     position: 'left',
-                    
+
                 //     label: 'Technical Reference',
                 //             to: 'docs/Technical Reference/overview'
-                // }, 
+                // },
                 {
                     label: 'Documentation',
                     position: 'left',
@@ -104,7 +126,7 @@ module.exports = {
                         }, {
                             label: 'Layer Reference',
                             to: 'docs/category/DataLayers/'
-                        }, 
+                        },
                         {
                             label: 'Resources',
                             to: "docs/category/resources"
@@ -114,29 +136,29 @@ module.exports = {
                             href: 'https://github.com/stormwaterheatmap'
                         }
                     ]
-                }, 
+                },
                 {
                     label: 'Blog',
                     position: 'left',
                     to: 'blog'
-                }, 
+                },
                 {
                     position: 'left',
                     label: 'Get Data',
                     to: 'docs/get_data'
-                    
-                }, 
+
+                },
                 {
                     position: 'right',
                     label: 'Contact',
                     items: [
                         {
-                            label: "Get in touch", 
+                            label: "Get in touch",
                             to: "contact"
                         },
                         {
-                            label: "Share your Story", 
-                            to: "user_stories", 
+                            label: "Share your Story",
+                            to: "user_stories",
 
                         }
 
@@ -148,8 +170,8 @@ module.exports = {
             logo: {
                 src: 'img/tnc-logo-white.svg'
             },
-            copyright: 
-            `Copyright © ${new Date().getFullYear()} The Nature Conservancy. ${ "<br>"} 
+            copyright:
+            `Copyright © ${new Date().getFullYear()} The Nature Conservancy. ${ "<br>"}
       ${ "<small>"}Developed by Geosyntec Consultants, Inc.${"</small>"}`,
             links: [
                 {
@@ -161,7 +183,7 @@ module.exports = {
                         }, {
                             label: 'Layer Reference',
                             to: '/docs/category/DataLayers/'
-                        }, 
+                        },
                     ]
                 },
                 // title: 'Docs', items: [{
@@ -170,12 +192,12 @@ module.exports = {
 
                 // {title: "Contact",
                 //  items:[
-                //     {label: 'Contact form', to: 'docs/contact'}]}, 
+                //     {label: 'Contact form', to: 'docs/contact'}]},
                 {title: "Get Involved",
 
                 items: [
                     {
-                        label: 'Contact us', 
+                        label: 'Contact us',
                         to: 'docs/contact'
                     },
                     {
@@ -185,30 +207,30 @@ module.exports = {
                 ]
             },
 
-                
+
                 {title: "Resources",
-                
-                    
+
+
                     items: [
-                        
+
                         {
                             label: `Background`,
                             to: `about_stormwater`
-                        }, 
+                        },
                         {
-                            label: `Links`, 
+                            label: `Links`,
                             // ${linkout_svg_footer}`,
                             to: `docs/links`
                         },
                     ]},
-                
+
                 {title: "More",
                 items:[
                     {
-                        label: `License & Terms`, 
+                        label: `License & Terms`,
                         // ${linkout_svg_footer}`,
                         to: `docs/license`
-                        
+
                     }
 
                 ]}
@@ -238,11 +260,11 @@ module.exports = {
                 // editUrl: 'https://github.com/stormwaterheatmap/website/edit/main/', },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css')
-                }, 
+                },
 
-            }, 
-        ], 
-    ], 
+            },
+        ],
+    ],
     stylesheets: [
         {
           href: 'https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css',

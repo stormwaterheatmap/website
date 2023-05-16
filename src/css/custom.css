@@ -22,18 +22,18 @@
   /* --ifm-navbar__items-height: 10rem;  */
   /* --ifm-navbar__items-color: yellow;  */
   /* --ifm-dropdown-background-color:#396245; */
-  --ifm-color-primary: #3da237;  
-  --ifm-navbar-background-color: #3c3c3c;  
+  --ifm-color-primary: #3da237;
+  --ifm-navbar-background-color: #3c3c3c;
   /* --ifm-font-color: red;     */
   --ifm-navbar-link-color: #f5f6f7;
-  --ifm-menu-link-color: #3da237; 
+  --ifm-menu-link-color: #3da237;
   /* --ifm-dropdown-link-color: purple;  */
-  --ifm-footer-background-color: #3c3c3c; 
+  --ifm-footer-background-color: #3c3c3c;
   --ifm-footer-color: #f5f6f7;
-  /* --ifm-menu-color: #f5f6f7; */ 
-  --ifm-footer-link-color: #f5f6f7; 
+  /* --ifm-menu-color: #f5f6f7; */
+  --ifm-footer-link-color: #f5f6f7;
   /*var(--ifm-color-emphasis-700); */
-  --ifm-footer-link-hover-color: inherit; 
+  --ifm-footer-link-hover-color: inherit;
   /* --ifm-footer-items-color: #3c3c3c; */
   --ifm-color-primary-dark: #379231;
   --ifm-color-primary-darker: #348a2f;
@@ -54,20 +54,20 @@
     /* max-width: 40%;   */
     /* max-height: 100%;  */
     /* margin-right: -5rem; */
-  
+
     /* height: 4rem;  */
-    /* width: 100px;  
+    /* width: 100px;
   */
     margin: 0px 35px 0px 3px;
-    /* ;  
+    /* ;
     */
-  }   
-  
-  
+  }
+
+
   html[data-theme='dark'] {
     /* --ifm-footer-background-color: #3c3c3c;  */
-    --ifm-footer-links-color: white; 
-    /* --ifm-navbar-background-color: #3c3c3c; 
+    --ifm-footer-links-color: white;
+    /* --ifm-navbar-background-color: #3c3c3c;
     --ifm-color-primary-dark: #3c3c3c;
     --ifm-color-primary-darker: #348a2f;
     --ifm-color-primary-darkest: #2b7126;
@@ -75,11 +75,11 @@
     --ifm-color-primary-lighter: #46ba3f;
     --ifm-color-primary-lightest: #5bc555;
     --ifm-code-font-size: 95%; */
-    
+
     /* /* any other colors you wish to overwrite  */
-    }  
-    
- 
+    }
+
+
 
 /* .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
@@ -99,31 +99,31 @@
   /* font-variant: petite-caps; */
   /* font-stretch: wider; */
   font-weight: bold;
-  text-transform: uppercase;  
+  text-transform: uppercase;
 }
 
-.navbar__title {   
-  
-  font-family:'Merriweather', 'Gill Sans MT', 'Trebuchet MS'; 
-  color: white;  
+.navbar__title {
+
+  font-family:'Merriweather', 'Gill Sans MT', 'Trebuchet MS';
+  color: white;
   font-weight: 100;
-  width: 300px; 
-  
+  width: 300px;
+
   /* text-emphasis-color: blue; */
   /* color: red; */
   text-transform: none;
-  font-size: 0.9rem;   
+  font-size: 0.9rem;
   /* margin: -10px 0px 0px 0px;   */
   /* margin-bottom: 0.21rem; */
-   /* font-style: italic;  
-   
-   */ 
+   /* font-style: italic;
+
+   */
 }
 /* Header Dropdown Menu */
 .dropdown__link {
   /* font-family:'Noto Sans', sans-serif; */
   text-transform: capitalize;
-  font-weight: 500; 
+  font-weight: 500;
   font-size: inherit;
   /* font-size: 13px; */
   /* color: rgb(0, 255, 128) !important; */
@@ -208,13 +208,13 @@ html[data-theme='dark'] .header-github-link:before {
     no-repeat;
 }
 
-html[data-theme='dark'] .header-home-icon:before { 
+html[data-theme='dark'] .header-home-icon:before {
   background:url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.0"><path style="fill:#000" d="M25 9.094 7.281 25.374h5.563v15.532h24.312V25.375h5.563L25 9.094z"/></svg>')
 }
 
 .custom-tagline {
   background-color: #2b7126;
-  /* #3c3c3c; */ 
+  /* #3c3c3c; */
   color: #D9D8DA;
   font-size: 0.8rem;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -222,13 +222,13 @@ html[data-theme='dark'] .header-home-icon:before {
   /* font-style: italic; */
   /* background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));  */
   padding: 0em 0em 0 12em;
-  margin: 0px; 
+  margin: 0px;
 }
 
 .custom-tagline::before {
   content: "Explore your watersheds. Get data. Make informed decisions."; /* Insert content that looks like bullets */
 }
- 
+
 
 .alt-flexbox {
   display: flex;
@@ -240,7 +240,7 @@ html[data-theme='dark'] .header-home-icon:before {
   align-items: center;
   /* height:90vh; */
   padding: 30px;
-/*   
+/*
   flex-direction: row;
   */
   flex-wrap: wrap;
@@ -276,7 +276,7 @@ html[data-theme='dark'] .header-home-icon:before {
 .hero{
   display: flex;
   /* opacity: 0.5; */
-  background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+  background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
    url("/static/img/lid.png");
    background-size: cover;
   justify-content: top;
@@ -289,4 +289,8 @@ html[data-theme='dark'] .header-home-icon:before {
   padding: 0rem;
 
 
+}
+
+.blog_img{
+  width: 400px
 }
