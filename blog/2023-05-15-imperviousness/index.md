@@ -1,11 +1,11 @@
 ---
-slug: welcome
-title: 583 Square Miles of Imperviousness
+slug: Imperviousness
+title: 375,000 Acres of Imperviousness
 authors: [cnilsen]
 tags: [imagery, imperviousness]
 ---
 
-## 583 square miles!
+## 375,000 acres!
 
 That's how much impervious surface there is in the Puget Sound region, according to
 land cover data developed for the Puget Sound Stormwater Heatmap. These images show
@@ -42,7 +42,7 @@ The surge in stormwater runoff poses a range of challenges for local waterways. 
 
 > **There is enough impervious surface in Puget Sound to pave a four-lane highway circling the globe two and a half times!**
 
-The increased runoff from impervious surfaces also carries a cocktail of pollutants, including sediments, heavy metals, oils, pesticides, and nutrients. As the runoff transports these contaminants to local rivers and streams, it can degrade water quality, leading to water quality impacts like salmon mortality.
+The increased runoff from impervious surfaces also carries a cocktail of pollutants, including sediments, heavy metals, oils, pesticides, and nutrients. As the runoff transports these contaminants to rivers and marine waters, it can degrade water quality, leading to water quality impacts like salmon mortality.
 
 Mapping the spatial extent of imperviousness helps us understand  the distribution of stormwater-related challenges. This data is being used to better understand urban impacts to Puget Sound and to inform strategies to improve water quality and clean up our runoff.
 
