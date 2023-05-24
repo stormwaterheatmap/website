@@ -1,33 +1,33 @@
 cnilsen:
-  name: Christian Nilsen 
-  title: Geosyntec Consultants Inc.
+  name: Christian Nilsen
+  title: Geosyntec Consultants
   image_url: https://raw.githubusercontent.com/stormwaterheatmap/website/main/static/img/nilsen_headshot.jpeg #https://avatars.githubusercontent.com/u/4753248?v=4
   email: cnilsen@geosyntec.com
 
-ehegeman: 
-  name: Ericka Hegeman 
+ehegeman:
+  name: Ericka Hegeman
   title: University of Washington EarthLab
   image_url: https://raw.githubusercontent.com/stormwaterheatmap/website/main/static/img/ErickaHegeman.jpg
   email: erickah@uw.edu
-  
+
 ehowe:
-  name: Emily Howe 
-  title: The Nature Conservancy 
+  name: Emily Howe
+  title: The Nature Conservancy
   image_url: https://raw.githubusercontent.com/stormwaterheatmap/website/main/static/img/emily_howe.jpeg
   email: emily.howe@tnc.org
-  
+
 edusekjennings:
   name: Eva Dusek-Jennings
   title: Cheva Consulting LLC
   email: itseva@gmail.com
 
-jrobertson: 
-  name: Jamie Robertson 
-  title: The Nature Conservancy  
-  email: jrobertson@tnc.org 
+jrobertson:
+  name: Jamie Robertson
+  title: The Nature Conservancy
+  email: jrobertson@tnc.org
 
-sbrunelle: 
+sbrunelle:
   name: Sarah Brunelle (SB)
-  title: The Nature Conservancy 
+  title: The Nature Conservancy
   image_url: https://avatars.githubusercontent.com/u/23138126?v=4 #https://github.com/stormwaterheatmap/website/blob/main/static/img/SarahBrunelle2021.jpg
-  email: sarah.brunelle@tnc.org 
+  email: sarah.brunelle@tnc.org
