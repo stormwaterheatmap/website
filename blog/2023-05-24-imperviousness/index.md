@@ -48,11 +48,10 @@ Mapping the spatial extent of imperviousness helps us understand  the distributi
 
 ## Explore imperviousness in your neighborhood
 
-View the imperviousness layer on the Stormwater Heatmap
-[link to map]
+View the imperviousness layer on the [Stormwater Heatmap](https://www.stormwaterheatmap.org/)
 
-Find out how this layer was developed
-[link to methods]
+[Find out how this layer was developed](https://www.stormwaterheatmap.org/docs/Technical%20Reference/Components/High-resolution%20Land%20Cover)
+
 
 
 
