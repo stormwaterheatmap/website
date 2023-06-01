@@ -62,6 +62,12 @@ var raw_image = layer_name.layer.eeObject
 Map.addLayer(raw_image,{},'Runoff')
 ```
 
+## Layer Access in ArcGIS Online
+
+This data layer is available for download as a GeoTIFF file at a WGS 84 projection. The resolution represents the finest  available based on the source data. Please note that by clicking on the "download" link, the download will begin. File size is listed next to the layer name.
+
+Runoff (mm) (5.3 GB) [download](https://storage.googleapis.com/live_data_layers/rasters/Runoff_mm.tif)
+
 ## Visualization
 
 ### Palette
