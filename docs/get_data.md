@@ -9,7 +9,7 @@ All data is freely available under [an open source license](/docs/license).
 In Stormwater Heatmap Version 2.0, we plan to build out the "Get Data" functionality and we intend to make the "data extraction page" (linked below) more robust by including aggregated and time-series data in addition to the raster data that is already available. While we work on enhancing the website extraction interface, we have created a temporary solution to provide users with immediate access to these powerful data layers. We are excited to announce that we have made most of the Stormwater Heatmap data layers available for download at their full spatial extent and original resolution via ArcGIS Online! 
 :::
 
-# ArcGIS Online
+# Full-Extent Data Layer Downloads via ArcGIS Online
 
 The Nature Conservancy's Stormwater Heatmap data are available for download using the individual links below. The data can be viewed prior to downloading by visiting the [View Data Layers](https://www.stormwaterheatmap.org/) tab. Detailed information regarding how the datasets were developed, Google Earth Engine code links, and visualization details can also be found in the Documentation tab > [Layer Reference](https://www.stormwaterheatmap.org/docs/category/DataLayers/) section of the website. Please note that the pollution concentration data represent estimated modeled values that can be used to evaluate relative values across the region.
 
