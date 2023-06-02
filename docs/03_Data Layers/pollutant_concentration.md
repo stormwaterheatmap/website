@@ -53,11 +53,11 @@ var raw_image = layer_name.layer.eeObject
 Map.addLayer(raw_image,{},'Imperviousness')
 ```
 
-## Layer Access in ArcGIS Online
+## Layer Full-Extent Download
+
+Click the "download" link to initiate the download process. The data will download as a GeoTIFF file (the file size is listed beside the layer name) and a WGS 84 projection. The resolution is the finest available based on the source data.
 
 The pollution concentration data represent estimated modeled values that can be used to evaluate relative values across the region.
-
-These data layers are available for download as GeoTIFF files at a WGS 84 projection. The resolution values represent the finest available based on the source data. Please note that by clicking on the "download" link, the download will begin. File sizes are listed next to the layer names.
 
 1. Copper Concentration ug/L (1.6 GB) [download](https://storage.googleapis.com/live_data_layers/rasters/Total_Copper_Concentration.tif)
 2. Phosphorus Concentration ug/L (1.6 GB) [download](https://storage.googleapis.com/live_data_layers/rasters/Total_Phosphorus_Concentration.tif)
