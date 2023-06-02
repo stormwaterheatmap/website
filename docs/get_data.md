@@ -17,7 +17,7 @@ Review the data before downloading them by visiting the [View Data Layers](https
 
 Click the "download" link to initiate the download process for any given data layer. The data will download as a GeoTIFF file; the file size for each is listed beside the layer name. The projection for all files is WGS 84. The resolution varies by layer and represents the finest resolution available based on the respective source data. 
 
-Note that the pollution concentration data represent estimated modeled values that can be used to evaluate relative values across the region.
+The pollution concentration data represent estimated modeled values that can be used to evaluate relative values across the region.
 
 1. Age of Imperviousness (11.3 MB) [download](https://storage.googleapis.com/live_data_layers/rasters/Age_of_Imperviousness.tif)
 2. Flow Duration Index (2.3 MB) [download](https://storage.googleapis.com/live_data_layers/rasters/Flow_Duration_Index.tif)
