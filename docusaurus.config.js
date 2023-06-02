@@ -35,7 +35,7 @@ module.exports = {
         announcementBar: {
             id: 'announcementBar-dev', 
             
-            content: `<strong>Full-extent data layer downloads are now available via ArcGIS Online!</strong> Read more on our blog  
+            content: `<strong>Full-extent data layer downloads are now available!</strong> Read more on our blog  
             <a target="_blank" rel="noopener noreferrer" href="https://www.stormwaterheatmap.org/blog/feature-announcement-ago"> here.</a>${linkout_svg}`,
 
             backgroundColor: '#003F35',
