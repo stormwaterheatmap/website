@@ -63,9 +63,9 @@ var raw_image = layer_name.layer.eeObject
 Map.addLayer(raw_image,{},'Hydrologic Response Units')
 ```
 
-## Layer Access in ArcGIS Online
+## Layer Full-Extent Download
 
-This data layer is available for download as a GeoTIFF file at a WGS 84 projection. The resolution represents the finest  available based on the source data. Please note that by clicking on the "download" link, the download will begin. File size is listed next to the layer name.
+Click the "download" link to initiate the download process. The data will download as a GeoTIFF file (the file size is listed beside the layer name) and a WGS 84 projection. The resolution is the finest available based on the source data.
 
 Hydrologic Response Units (99.4 MB) [download](https://storage.googleapis.com/live_data_layers/rasters/Hydrologic_Response_Units.tif)
 
