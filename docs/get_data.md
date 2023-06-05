@@ -6,7 +6,7 @@ All data is freely available under [an open source license](/docs/license).
 ::: 
 
 :::note
-The plans for Stormwater Heatmap Version 2.0 include making the "data extraction page" (linked below) more robust by adding time-series and aggregated data - raster data are already available. While the team works to enhance the website extraction interface, we have created a workaround to provide users with immediate access to Stormwater Heatmap data as described in the "Full-Extent Data Layer Downloads" section on this page. Learn more about this update by reading the [ArcGIS Online Full-Extent Data Layer Downloads Now Available](https://www.stormwaterheatmap.org/blog/feature-announcement-ago) blog post.
+The "data extraction page" (linked below), which currently offers raster data, will be strengthened as part of Stormwater Heatmap Version 2.0 with the addition of time-series data and aggregated data. While the team works to enhance the website extraction interface, we have created a workaround to provide users with immediate access to Stormwater Heatmap data as described in the "Full-Extent Data Layer Downloads" section on this page. Learn more about this update by reading the [ArcGIS Online Full-Extent Data Layer Downloads Now Available](https://www.stormwaterheatmap.org/blog/feature-announcement-ago) blog post.
 :::
 
 # Full-Extent Data Layer Downloads
