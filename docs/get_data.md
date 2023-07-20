@@ -40,23 +40,3 @@ The pollution concentration data represent estimated modeled values that can be 
 19. Zinc Concentration ug/L (1.2 GB) [download](https://storage.googleapis.com/live_data_layers/rasters/Total_Zinc_Concentration.tif)
 
 The same information provided above is cross-posted to a page hosted on ArcGIS Online titled [Stormwaterheatmap.org Data Layers](https://tnc.maps.arcgis.com/home/item.html?id=01c5aecf684e4d739048acdcf8e898af). 
-
-:::info
-The remainder of this page is under development.
-:::
-
-# Data Types 
-
-Stormwater Heatmap Data are comprised of the following types:
-
-* ** Raster Data  - ** Description
-* ** Vector Data - ** Description
-* ** Timeseries Data - ** Description
-
-# Raster Data 
-
-Use the [Data Extraction Page](/get_spatial_data). 
-
-# Aggregated Data 
-
-# Time-Series Data 
