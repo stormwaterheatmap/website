@@ -55,11 +55,16 @@ var raw_image = layer_name.layer.eeObject
 Map.addLayer(raw_image,{},'Age of Imperviousness')
 ```
 
-## Layer Full-Extent Download
+<details>
+<summary>Download this layer</summary>
 
-Click the "download" link to initiate the download process. The data will download as a GeoTIFF file (the file size is listed beside the layer name) and a WGS 84 projection. The resolution is the finest available based on the source data.
+**Age of Imperviousness (11.3 MB)** [download](https://storage.googleapis.com/live_data_layers/rasters/Age_of_Imperviousness.tif)
 
-Age of Imperviousness (11.3 MB) [download](https://storage.googleapis.com/live_data_layers/rasters/Age_of_Imperviousness.tif)
+The data will download a full extent raster image as a GeoTIFF in the [EPSG:3857](https://epsg.io/3857) projection. 
+
+The resolution is the finest available based on the source data.
+</details>
+
 
 ## Visualization
 

@@ -45,18 +45,4 @@ The same information provided above is cross-posted to a page hosted on ArcGIS O
 The remainder of this page is under development.
 :::
 
-# Data Types 
 
-Stormwater Heatmap Data are comprised of the following types:
-
-* ** Raster Data  - ** Description
-* ** Vector Data - ** Description
-* ** Timeseries Data - ** Description
-
-# Raster Data 
-
-Use the [Data Extraction Page](/get_spatial_data). 
-
-# Aggregated Data 
-
-# Time-Series Data 
