@@ -105,7 +105,7 @@ these into land use and landscape data.
 In order to employ a consistent analysis across different monitored
 watersheds we extracted land use data from the Washington Department of
 Commerce Land Use: Puget Sound Mapping Project
-(<https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project>).
+(https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project).
 Land use classes (also listed in Table 4.2) include:
 
 -   Intensive urban (includes commercial areas, apartment buildings)
@@ -195,7 +195,7 @@ the mean and standard deviation from the 14 watersheds in this study.
 ### Precipitation Data
 
 Daily rainfall data were obtained from the DayMet website operated by
-NASA (<https://daymet.ornl.gov/>). Daily data were obtained for years
+NASA (https://daymet.ornl.gov/). Daily data were obtained for years
 2009 to 2013, and cumulative one day, three day, and seven day, 14-day,
 21-day and 28-day antecedent precipitation were calculated for each
 sampling date. For example, for a sampling date of March 22, cumulative
@@ -1093,26 +1093,26 @@ Hobbs, W., B. Lubliner, N. Kale, and E. Newell, 2015. Western Washington
 NPDES Phase 1 Stormwater Permit: Final Data Characterization 2009-2013.
 Washington State Department of Ecology, Olympia, WA. Publication No.
 15-03-001. Available online at:
-<https://fortress.wa.gov/ecy/publications/SummaryPages/1503001.html>
+https://fortress.wa.gov/ecy/publications/SummaryPages/1503001.html
 
 Lee, Lopaka, 2020. NADA: Nondetects and Data Analysis for Environmental
 Data. R package version 1.6-1.1. Available online at:
-<https://CRAN.R-project.org/package=NADA>
+https://CRAN.R-project.org/package=NADA
 
 Pinheiro J, Bates D, DebRoy S, Sarkar D, R Core Team, 2021. nlme: Linear
 and Nonlinear Mixed Effects Models. R package version 3.1-152. Available
-online at: <https://CRAN.R-project.org/package=nlme>
+online at: https://CRAN.R-project.org/package=nlme
 
 R Core Team, 2021. R: A language and environment for statistical
 computing. R Foundation for Statistical Computing, Vienna, Austria.
-Available online at: <https://www.R-project.org/>
+Available online at: https://www.R-project.org/
 
 U.S. Environmental Protection Agency, 2009, Statistical analysis of
 groundwater monitoring data at RCRA facilities, Unified guidance, EPA
 530-R-09-007.
 
 USGS Highway Runoff DataBase. Website visited 11/01/2021.
-<https://www.usgs.gov/software/hrdb-highway-runoff-database-software-page>
+https://www.usgs.gov/software/hrdb-highway-runoff-database-software-page
 
 Waschbusch, R.J., W.R. Selbig, and R.T. Bannerman, 1999. Sources of
 Phosphorus in Stormwater and Street Dirt from Two Urban Residential
