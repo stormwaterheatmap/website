@@ -104,8 +104,7 @@ these into land use and landscape data.
 
 In order to employ a consistent analysis across different monitored
 watersheds we extracted land use data from the Washington Department of
-Commerce Land Use: Puget Sound Mapping Project
-(<https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project>).
+Commerce Land Use: [Puget Sound Mapping Project](https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project).
 Land use classes (also listed in Table 4.2) include:
 
 -   Intensive urban (includes commercial areas, apartment buildings)
@@ -194,8 +193,8 @@ the mean and standard deviation from the 14 watersheds in this study.
 
 ### Precipitation Data
 
-Daily rainfall data were obtained from the DayMet website operated by
-NASA (<https://daymet.ornl.gov/>). Daily data were obtained for years
+Daily rainfall data were obtained from the [DayMet website operated by
+NASA](https://daymet.ornl.gov). Daily data were obtained for years
 2009 to 2013, and cumulative one day, three day, and seven day, 14-day,
 21-day and 28-day antecedent precipitation were calculated for each
 sampling date. For example, for a sampling date of March 22, cumulative
@@ -504,18 +503,21 @@ heterogeneity (Fig 4.12, top left plot). Of the variance structures
 tested, the best fit was for a combination of two variance structures,
 where residual variation differs by agency *j*, and also by rainfall at
 each location *i* and date *k*:
+Residuals plotted against fitted values showed signs of slight heterogeneity (Fig 4.12, top left plot). Of the variance structures tested, the best fit was for a combination of two variance structures, where residual variation differs by agency j, and also by rainfall at each location i and date k:
 
-$$
+$$\epsilon_{ijk} = \sigma^2_j * \exp^{2\delta * rain_{ik}}$$
+ 
+ 
+
+<!-- $$
 
 
 \epsilon_{ijk} = \sigma^2_j * \exp^{2\delta * rain_{ik}}
-$$
+$$ -->
 
 The second best fit allows residual variation to differ by agency j:
 
-$$
-\epsilon_j = \sigma^2_j
-$$
+$$\epsilon_j = \sigma^2_j$$
 
 Visual inspection of residuals generated using the two candidate
 variance structures did not indicate a strong benefit to using the more
@@ -1092,27 +1094,24 @@ Linear, Mixed Effects and Nonparametric Regression Models. Boca Raton
 Hobbs, W., B. Lubliner, N. Kale, and E. Newell, 2015. Western Washington
 NPDES Phase 1 Stormwater Permit: Final Data Characterization 2009-2013.
 Washington State Department of Ecology, Olympia, WA. Publication No.
-15-03-001. Available online at:
-<https://fortress.wa.gov/ecy/publications/SummaryPages/1503001.html>
+15-03-001. 
 
 Lee, Lopaka, 2020. NADA: Nondetects and Data Analysis for Environmental
-Data. R package version 1.6-1.1. Available online at:
-<https://CRAN.R-project.org/package=NADA>
+Data. R package version 1.6-1.1. 
 
 Pinheiro J, Bates D, DebRoy S, Sarkar D, R Core Team, 2021. nlme: Linear
-and Nonlinear Mixed Effects Models. R package version 3.1-152. Available
-online at: <https://CRAN.R-project.org/package=nlme>
+and Nonlinear Mixed Effects Models. R package version 3.1-152. 
 
 R Core Team, 2021. R: A language and environment for statistical
 computing. R Foundation for Statistical Computing, Vienna, Austria.
-Available online at: <https://www.R-project.org/>
+
 
 U.S. Environmental Protection Agency, 2009, Statistical analysis of
 groundwater monitoring data at RCRA facilities, Unified guidance, EPA
 530-R-09-007.
 
 USGS Highway Runoff DataBase. Website visited 11/01/2021.
-<https://www.usgs.gov/software/hrdb-highway-runoff-database-software-page>
+
 
 Waschbusch, R.J., W.R. Selbig, and R.T. Bannerman, 1999. Sources of
 Phosphorus in Stormwater and Street Dirt from Two Urban Residential

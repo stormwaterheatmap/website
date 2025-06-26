@@ -84,7 +84,7 @@ collected over 2009 to 2019. The eleven composited bands included:
 -   Texture: calculated from NAIP NIR band as entropy, or how expected a
     pixel value is in the context of nearby pixels, in this case using a
     radius of 12 meters. For more information, see
-    <https://developers.google.com/earth-engine/image_texture>.
+    [https://developers.google.com/earth-engine/image_texture](https://developers.google.com/earth-engine/image_texture).
 -   Land use: polygons (Washington State Department of Ecology, 2010)
     scaled to 1-meter.
 -   Elevation: the USGS National Elevation Dataset (⅓ arc-second) (U.S.

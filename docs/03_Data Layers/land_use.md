@@ -1,5 +1,10 @@
-Land Use
-================
+---
+id: land_use
+title: Land Use
+sidebar_label: Land Use
+---
+
+# Land Use
 
 *Department of Commerce Master Land Use Category*
 
@@ -55,8 +60,8 @@ and Very Large Lot Residential.
 These locations may or may not be designated as mineral resource areas
 under the state’s Growth Management Act. They are often open pit
 operations (like gravel pits and quarries) for construction materials
-and aggregate. See
-<http://www.commerce.wa.gov/serving-communities/growth-management/growthmanagement-topics/natural-resource-lands/>
+and aggregate. 
+See [Commerce Natural Resource Lands](https://www.commerce.wa.gov/serving-communities/growth-management/growthmanagement-topics/natural-resource-lands/)
 
 **Forest Lands**
 
@@ -65,7 +70,7 @@ locations that are privately held and intended for timber production.
 They may include some other land uses such as recreational areas and
 vacation homes. Subcategories include National Forest, Primary Forest
 Area and Other Forest Lands. See
-<http://www.commerce.wa.gov/servingcommunities/growth-management/growth-management-topics/natural-resource-lands/>
+See [Commerce Natural Resource Lands](https://www.commerce.wa.gov/servingcommunities/growth-management/growth-management-topics/natural-resource-lands/)
 
 **Agricultural Areas**
 
@@ -75,8 +80,8 @@ necessarily predominant) use. Agricultural uses include farms, ranches
 and dairies. Hobby farms and equestrian lots may also have a significant
 presence in these areas. Primary Agricultural Areas and Other Active
 Agriculture are the sub-categories contained within this master
-designation. See
-<http://www.commerce.wa.gov/serving-communities/growth-management/growthmanagement-topics/natural-resource-lands/>
+designation. 
+See [Commerce Natural Resource Lands](https://www.commerce.wa.gov/serving-communities/growth-management/growthmanagement-topics/natural-resource-lands/)
 
 **Active Open Space**
 
@@ -200,4 +205,4 @@ Puget Sound Mapping Project
 
 ## External Links
 
-<a>https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project/</a>
+[Puget Sound Mapping Project](https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project/)
