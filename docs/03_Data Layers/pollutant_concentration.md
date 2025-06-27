@@ -5,7 +5,8 @@ Pollutant Concentration
 
 ## Description
 
-Pollutant concentrations have been derived from a series of linear mixed-effects models using spatial covariates. Regressions were performed on outfall stormwater measurements from the Washington State Department of Ecology's S8.D Municipal Stormwater Permit Outfall Data. The stormwater outfall data is available via an open-data api at: [https://data.wa.gov/Natural-Resources-Environment/Municipal-Stormwater- Permit-Outfall-Data/d958-q2ci.](https://data.wa.gov/Natural-Resources-Environment/Municipal-Stormwater-%20Permit-Outfall-Data/d958-q2ci.%20)
+
+Pollutant concentrations have been derived from a series of linear mixed-effects models using spatial covariates. Regressions were performed on outfall stormwater measurements from the Washington State Department of Ecology's S8.D Municipal Stormwater Permit Outfall Data. The stormwater outfall data is available via an open-data api at: [https://data.wa.gov/Natural-Resources-Environment/Municipal-Stormwater-> Permit-Outfall-Data/d958-q2ci.](https://data.wa.gov/Natural-Resources-Environment/Municipal-Stormwater-%20Permit-Outfall-Data/d958-q2ci.%20)
 
 Heatmap layers have been developed for five constituents of concern:
 
@@ -15,7 +16,7 @@ Heatmap layers have been developed for five constituents of concern:
 -   Total Suspended Solids
 -   Total Zinc
 
-For more details on methodology, see the [Water Quality Statistics documentation](/docs/Technical%20Reference/Components/Water%20Quality%20Statistics).
+For more details on methodology, see the [Water Quality Statistics documentation](`/docs/Technical%20Reference/Components/Water%20Quality%20Statistics`).
 
 ## Units 
 Concentrations for all chemicals are provided in micrograms/liter (mcg/L) except for Total Suspended Solids, which is provided in milligrams/liter (mg/L). 

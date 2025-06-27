@@ -1,0 +1,49 @@
+---
+id: land_cover
+title: Land Cover
+description: >
+  1-meter resolution land cover classification
+sidebar_label: Land Cover
+tags: [categorical, stac]
+---
+
+import LayerDemo from "@site/src/components/LayerDemo";
+
+<LayerDemo layerKey="land_cover" />
+
+### Key Information
+
+| Field            | Value                         |
+| ---------------- | ----------------------------- |
+| **STAC ID**      | `land_cover`                  |
+| **Bounding Box** | `[-124.84,45.54,-116.91,49]`  |
+| **Datetime**     | Thu, 26 Jun 2025 00:00:00 GMT |
+| **Scale**        | 1 m                           |
+| **Data Type**    | Discrete (Categorical)        |
+| **Units**        | Land Cover Type               |
+
+### Providers
+
+| Name                   | URL | Roles    |
+| ---------------------- | --- | -------- |
+| The Nature Conservancy | —   | producer |
+
+### Assets
+
+This item contains the following assets:
+
+| Asset Key | Title                   | Media Type                                                 | Roles     |
+| --------- | ----------------------- | ---------------------------------------------------------- | --------- |
+| cog       | Cloud-Optimized GeoTIFF | `image/tiff; application=geotiff; profile=cloud-optimized` | data      |
+| thumbnail | Thumbnail Preview       | `image/png`                                                | thumbnail |
+
+**Category Labels**
+
+- No data
+- Grass/Low Vegetation
+- Shrub/Medium Vegetation
+- Trees/Forest
+- Bare soil
+- Water
+- Impervious
+- Impervious - Roofs
