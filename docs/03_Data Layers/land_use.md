@@ -69,8 +69,8 @@ Forest lands include areas located within National Forest as well as
 locations that are privately held and intended for timber production.
 They may include some other land uses such as recreational areas and
 vacation homes. Subcategories include National Forest, Primary Forest
-Area and Other Forest Lands. See
-See [Commerce Natural Resource Lands](https://www.commerce.wa.gov/servingcommunities/growth-management/growth-management-topics/natural-resource-lands/)
+Area and Other Forest Lands. See [Commerce Natural Resource Lands](https://www.commerce.wa.gov/servingcommunities/growth-management/growth-management-topics/natural-resource-lands/)
+
 
 **Agricultural Areas**
 

@@ -104,7 +104,10 @@ these into land use and landscape data.
 
 In order to employ a consistent analysis across different monitored
 watersheds we extracted land use data from the Washington Department of
+
 Commerce Land Use: [Puget Sound Mapping Project](https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project).
+=======
+
 Land use classes (also listed in Table 4.2) include:
 
 -   Intensive urban (includes commercial areas, apartment buildings)
@@ -193,8 +196,10 @@ the mean and standard deviation from the 14 watersheds in this study.
 
 ### Precipitation Data
 
+
 Daily rainfall data were obtained from the [DayMet website operated by
 NASA](https://daymet.ornl.gov). Daily data were obtained for years
+
 2009 to 2013, and cumulative one day, three day, and seven day, 14-day,
 21-day and 28-day antecedent precipitation were calculated for each
 sampling date. For example, for a sampling date of March 22, cumulative
@@ -1111,7 +1116,6 @@ groundwater monitoring data at RCRA facilities, Unified guidance, EPA
 530-R-09-007.
 
 USGS Highway Runoff DataBase. Website visited 11/01/2021.
-
 
 Waschbusch, R.J., W.R. Selbig, and R.T. Bannerman, 1999. Sources of
 Phosphorus in Stormwater and Street Dirt from Two Urban Residential

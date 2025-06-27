@@ -22,7 +22,20 @@ module.exports = {
     // plugins: ['@docusaurus/plugin-google-gtag'],
     
     themeConfig: {
-
+        metadata: [{name: 'Clarity', content: 'Microsoft Clarity'}],
+        headTags: [
+          {
+            tagName: 'script',
+            attributes: {
+              type: 'text/javascript',
+            },
+            innerHTML: `(function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/YOUR_PROJECT_ID";
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "YOUR_PROJECT_ID");`,
+          },
+        ],
 
         // gtag: {
         //     // You can also use your "G-" Measurement ID here.

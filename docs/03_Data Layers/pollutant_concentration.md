@@ -5,6 +5,7 @@ Pollutant Concentration
 
 ## Description
 
+
 Pollutant concentrations have been derived from a series of linear mixed-effects models using spatial covariates. Regressions were performed on outfall stormwater measurements from the Washington State Department of Ecology's S8.D Municipal Stormwater Permit Outfall Data. The stormwater outfall data is available via an open-data api at: [https://data.wa.gov/Natural-Resources-Environment/Municipal-Stormwater-> Permit-Outfall-Data/d958-q2ci.](https://data.wa.gov/Natural-Resources-Environment/Municipal-Stormwater-%20Permit-Outfall-Data/d958-q2ci.%20)
 
 Heatmap layers have been developed for five constituents of concern:
