@@ -22,3 +22,4 @@ yarn-error.log*
 
 package-lock.json
 src/pages/test_popup.js
+CLAUDE.md
