@@ -3,8 +3,10 @@ const linkout_svg =
 
 const linkout_svg_footer =
 '<svg width="10" height="10" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_3JMu"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>'
-const math = require('remark-math');
-const katex = require('rehype-katex');
+
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 
 module.exports = {
@@ -20,7 +22,20 @@ module.exports = {
     // plugins: ['@docusaurus/plugin-google-gtag'],
     
     themeConfig: {
-
+        metadata: [{name: 'Clarity', content: 'Microsoft Clarity'}],
+        headTags: [
+          {
+            tagName: 'script',
+            attributes: {
+              type: 'text/javascript',
+            },
+            innerHTML: `(function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/YOUR_PROJECT_ID";
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "YOUR_PROJECT_ID");`,
+          },
+        ],
 
         // gtag: {
         //     // You can also use your "G-" Measurement ID here.
@@ -208,8 +223,8 @@ module.exports = {
         [
             '@docusaurus/preset-classic', {
                 docs: {
-                    remarkPlugins: [math],
-                    rehypePlugins: [katex],
+                    remarkPlugins: [remarkMath],
+                    rehypePlugins: [rehypeKatex],
                     sidebarPath: require.resolve('./sidebars.js'),
                     // Please change this to your
                     // repo.https://github.com/stormwaterheatmap/website.git

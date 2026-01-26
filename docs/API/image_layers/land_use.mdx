@@ -1,0 +1,56 @@
+---
+id: land_use
+title: Land Use
+description: >
+  Department of Commerce Master Land Use Category
+sidebar_label: Land Use
+tags: [categorical, stac]
+---
+
+import LayerDemo from "@site/src/components/LayerDemo";
+
+<LayerDemo layerKey="land_use" />
+
+### Key Information
+
+| Field            | Value                         |
+| ---------------- | ----------------------------- |
+| **STAC ID**      | `land_use`                    |
+| **Bounding Box** | `[-124.84,45.54,-116.91,49]`  |
+| **Datetime**     | Thu, 26 Jun 2025 00:00:00 GMT |
+| **Scale**        | 5 m                           |
+| **Data Type**    | Discrete (Categorical)        |
+| **Units**        | Land Use type                 |
+
+### Providers
+
+| Name                        | URL                                                                                                                                                                                              | Roles    |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |
+| Puget Sound Mapping Project | [https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project/](https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project/) | producer |
+
+### Assets
+
+This item contains the following assets:
+
+| Asset Key | Title                   | Media Type                                                 | Roles     |
+| --------- | ----------------------- | ---------------------------------------------------------- | --------- |
+| cog       | Cloud-Optimized GeoTIFF | `image/tiff; application=geotiff; profile=cloud-optimized` | data      |
+| thumbnail | Thumbnail Preview       | `image/png`                                                | thumbnail |
+
+**Category Labels**
+
+- Undesignated
+- Agricultural
+- Tribal
+- Forest Lands
+- Intensive Urban
+- Rural Character Residential
+- Water
+- Right of Way
+- Active Open Space and Recreation
+- Urban Character Residential
+- Industrial
+- Public
+- Natural Preservation
+- Military
+- Mineral Resource Area

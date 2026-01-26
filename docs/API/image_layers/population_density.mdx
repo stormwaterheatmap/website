@@ -1,0 +1,38 @@
+---
+id: population_density
+title: Population Density
+description: >
+  2010 Census, population density
+sidebar_label: Population Density
+tags: [continuous, stac]
+---
+
+import LayerDemo from "@site/src/components/LayerDemo";
+
+<LayerDemo layerKey="population_density" />
+
+### Key Information
+
+| Field            | Value                         |
+| ---------------- | ----------------------------- |
+| **STAC ID**      | `population_density`          |
+| **Bounding Box** | `[-124.84,45.54,-116.91,49]`  |
+| **Datetime**     | Fri, 31 Dec 2010 23:59:59 GMT |
+| **Scale**        | 100 m                         |
+| **Data Type**    | Continuous                    |
+| **Units**        | Population per ha             |
+
+### Providers
+
+| Name                  | URL                                                                                                                                                                  | Roles    |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| 2010 US Census Blocks | [https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2010/TGRSHP10SF1.pdf](https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2010/TGRSHP10SF1.pdf) | producer |
+
+### Assets
+
+This item contains the following assets:
+
+| Asset Key | Title                   | Media Type                                                 | Roles     |
+| --------- | ----------------------- | ---------------------------------------------------------- | --------- |
+| cog       | Cloud-Optimized GeoTIFF | `image/tiff; application=geotiff; profile=cloud-optimized` | data      |
+| thumbnail | Thumbnail Preview       | `image/png`                                                | thumbnail |

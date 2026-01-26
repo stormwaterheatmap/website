@@ -1,0 +1,38 @@
+---
+id: traffic
+title: Traffic
+description: >
+  Mean Annual Average Daily Trips
+sidebar_label: Traffic
+tags: [continuous, stac]
+---
+
+import LayerDemo from "@site/src/components/LayerDemo";
+
+<LayerDemo layerKey="traffic" />
+
+### Key Information
+
+| Field            | Value                         |
+| ---------------- | ----------------------------- |
+| **STAC ID**      | `traffic`                     |
+| **Bounding Box** | `[-124.84,45.54,-116.91,49]`  |
+| **Datetime**     | Thu, 26 Jun 2025 00:00:00 GMT |
+| **Scale**        | 10 m                          |
+| **Data Type**    | Continuous                    |
+| **Units**        | Average Annual Daily Trips    |
+
+### Providers
+
+| Name                   | URL | Roles    |
+| ---------------------- | --- | -------- |
+| The Nature Conservancy | —   | producer |
+
+### Assets
+
+This item contains the following assets:
+
+| Asset Key | Title                   | Media Type                                                 | Roles     |
+| --------- | ----------------------- | ---------------------------------------------------------- | --------- |
+| cog       | Cloud-Optimized GeoTIFF | `image/tiff; application=geotiff; profile=cloud-optimized` | data      |
+| thumbnail | Thumbnail Preview       | `image/png`                                                | thumbnail |
