@@ -1,0 +1,45 @@
+---
+id: soils
+title: Soils
+description: >
+  Hydrologic Soil Group
+sidebar_label: Soils
+tags: [categorical, stac]
+---
+
+import LayerDemo from "@site/src/components/LayerDemo";
+
+<LayerDemo layerKey="soils" />
+
+### Key Information
+
+| Field            | Value                         |
+| ---------------- | ----------------------------- |
+| **STAC ID**      | `soils`                       |
+| **Bounding Box** | `[-124.84,45.54,-116.91,49]`  |
+| **Datetime**     | Thu, 26 Jun 2025 00:00:00 GMT |
+| **Scale**        | 5 m                           |
+| **Data Type**    | Discrete (Categorical)        |
+| **Units**        | Hydrologic Soil Group         |
+
+### Providers
+
+| Name                   | URL | Roles    |
+| ---------------------- | --- | -------- |
+| The Nature Conservancy | —   | producer |
+
+### Assets
+
+This item contains the following assets:
+
+| Asset Key | Title                   | Media Type                                                 | Roles     |
+| --------- | ----------------------- | ---------------------------------------------------------- | --------- |
+| cog       | Cloud-Optimized GeoTIFF | `image/tiff; application=geotiff; profile=cloud-optimized` | data      |
+| thumbnail | Thumbnail Preview       | `image/png`                                                | thumbnail |
+
+**Category Labels**
+
+- Outwash
+- Till
+- Saturated
+- Water

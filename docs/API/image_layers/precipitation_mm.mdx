@@ -1,0 +1,38 @@
+---
+id: precipitation_mm
+title: Precipitation (mm)
+description: >
+  Mean annual precipitation (1970-1999)
+sidebar_label: Precipitation (mm)
+tags: [continuous, stac]
+---
+
+import LayerDemo from "@site/src/components/LayerDemo";
+
+<LayerDemo layerKey="precipitation_mm" />
+
+### Key Information
+
+| Field            | Value                         |
+| ---------------- | ----------------------------- |
+| **STAC ID**      | `precipitation_mm`            |
+| **Bounding Box** | `[-124.84,45.54,-116.91,49]`  |
+| **Datetime**     | Fri, 31 Dec 1999 23:59:59 GMT |
+| **Scale**        | 2500 m                        |
+| **Data Type**    | Continuous                    |
+| **Units**        | mm/year                       |
+
+### Providers
+
+| Name               | URL                                                                                                                                                    | Roles    |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |
+| Salathé et al 2019 | [https://cig.uw.edu/our-work/applied-research/heavy-precip-and-stormwater/](https://cig.uw.edu/our-work/applied-research/heavy-precip-and-stormwater/) | producer |
+
+### Assets
+
+This item contains the following assets:
+
+| Asset Key | Title                   | Media Type                                                 | Roles     |
+| --------- | ----------------------- | ---------------------------------------------------------- | --------- |
+| cog       | Cloud-Optimized GeoTIFF | `image/tiff; application=geotiff; profile=cloud-optimized` | data      |
+| thumbnail | Thumbnail Preview       | `image/png`                                                | thumbnail |

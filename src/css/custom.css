@@ -290,3 +290,17 @@ html[data-theme='dark'] .header-home-icon:before {
 
 
 }
+
+/*
+  This CSS makes the navbar "flat" like in the Google docs example,
+  using a bottom border instead of a shadow.
+*/
+.navbar {
+  box-shadow: none;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}
+
+/* This ensures the border color adapts in dark mode */
+html[data-theme='dark'] .navbar {
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}

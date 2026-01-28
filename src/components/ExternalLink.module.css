@@ -1,0 +1,16 @@
+/* src/components/ExternalLink.module.css */
+.link {
+  /* This ensures the text and icon align nicely */
+  display: inline-flex;
+  align-items: center;
+}
+
+.icon {
+  margin-left: 0.3rem;
+  transition: transform 0.2s ease-out;
+}
+
+/* A little hover effect for the icon */
+.link:hover .icon {
+  transform: scale(1.2);
+}

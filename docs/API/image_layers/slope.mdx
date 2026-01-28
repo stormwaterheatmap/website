@@ -1,0 +1,38 @@
+---
+id: slope
+title: Slope
+description: >
+  Continuous ground surface slope in degrees
+sidebar_label: Slope
+tags: [continuous, stac]
+---
+
+import LayerDemo from "@site/src/components/LayerDemo";
+
+<LayerDemo layerKey="slope" />
+
+### Key Information
+
+| Field            | Value                         |
+| ---------------- | ----------------------------- |
+| **STAC ID**      | `slope`                       |
+| **Bounding Box** | `[-124.84,45.54,-116.91,49]`  |
+| **Datetime**     | Thu, 26 Jun 2025 00:00:00 GMT |
+| **Scale**        | 10 m                          |
+| **Data Type**    | Continuous                    |
+| **Units**        | Percent                       |
+
+### Providers
+
+| Name                                           | URL                                                                              | Roles    |
+| ---------------------------------------------- | -------------------------------------------------------------------------------- | -------- |
+| USGS National Elevation Dataset 1/3 Arc-Second | [https://nationalmap.gov/elevation.html](https://nationalmap.gov/elevation.html) | producer |
+
+### Assets
+
+This item contains the following assets:
+
+| Asset Key | Title                   | Media Type                                                 | Roles     |
+| --------- | ----------------------- | ---------------------------------------------------------- | --------- |
+| cog       | Cloud-Optimized GeoTIFF | `image/tiff; application=geotiff; profile=cloud-optimized` | data      |
+| thumbnail | Thumbnail Preview       | `image/png`                                                | thumbnail |
