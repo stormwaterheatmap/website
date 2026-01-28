@@ -65,12 +65,12 @@ Slope (9 GB) [download](https://storage.googleapis.com/live_data_layers/rasters/
 
 | Colors                                                                    |
 |:--------------------------------------------------------------------------|
-| ![\#3f60ae](https://via.placeholder.com/15/3f60ae/000000?text=+)`#3f60ae` |
-| ![\#539eb6](https://via.placeholder.com/15/539eb6/000000?text=+)`#539eb6` |
-| ![\#6db388](https://via.placeholder.com/15/6db388/000000?text=+)`#6db388` |
-| ![\#cab843](https://via.placeholder.com/15/cab843/000000?text=+)`#cab843` |
-| ![\#e78532](https://via.placeholder.com/15/e78532/000000?text=+)`#e78532` |
-| ![\#d92120](https://via.placeholder.com/15/d92120/000000?text=+)`#d92120` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#3f60ae"/></svg> `#3f60ae` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#539eb6"/></svg> `#539eb6` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#6db388"/></svg> `#6db388` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#cab843"/></svg> `#cab843` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#e78532"/></svg> `#e78532` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#d92120"/></svg> `#d92120` |
 
 **Minimum:** 0 Percent
 

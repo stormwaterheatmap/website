@@ -67,9 +67,9 @@ Age of Imperviousness (11.3 MB) [download](https://storage.googleapis.com/live_d
 
 | Label                                        | Raster value | Colors                                                                 |
 |:---------------------------------------------|:-------------|:-----------------------------------------------------------------------|
-| 2000–2014 (stormwater likely treated)        | 3            | ![9e+73](https://via.placeholder.com/15/9e+73/000000?text=+)`9e+73`    |
-| 1990–2000 (some stormwater treatment)        | 4            | ![F0E442](https://via.placeholder.com/15/F0E442/000000?text=+)`F0E442` |
-| Before 1990 (likely no stormwater treatment) | 5            | ![CC6677](https://via.placeholder.com/15/CC6677/000000?text=+)`CC6677` |
+| 2000–2014 (stormwater likely treated)        | 3            | <svg width="15" height="15"><rect width="15" height="15" fill="#9e73ff"/></svg> `#9e73ff` |
+| 1990–2000 (some stormwater treatment)        | 4            | <svg width="15" height="15"><rect width="15" height="15" fill="#F0E442"/></svg> `#F0E442` |
+| Before 1990 (likely no stormwater treatment) | 5            | <svg width="15" height="15"><rect width="15" height="15" fill="#CC6677"/></svg> `#CC6677` |
 
 ## Source
 

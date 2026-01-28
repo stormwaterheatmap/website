@@ -58,8 +58,8 @@ Imperviousness (2.8 MB) [download](https://storage.googleapis.com/live_data_laye
 
 | Colors                                                                    |
 |:--------------------------------------------------------------------------|
-| ![\#002564](https://via.placeholder.com/15/002564/000000?text=+)`#002564` |
-| ![\#fce644](https://via.placeholder.com/15/fce644/000000?text=+)`#fce644` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#002564"/></svg> `#002564` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#fce644"/></svg> `#fce644` |
 
 **Minimum:** 0 Percent
 

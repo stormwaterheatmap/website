@@ -178,21 +178,21 @@ Land Use (279.2MB) [download](https://storage.googleapis.com/live_data_layers/ra
 
 | Label                            | Raster value | Colors                                                                    |
 |:---------------------------------|:-------------|:--------------------------------------------------------------------------|
-| Undesignated                     | 0            | ![\#394B59](https://via.placeholder.com/15/394B59/000000?text=+)`#394B59` |
-| Agricultural                     | 1            | ![\#669C42](https://via.placeholder.com/15/669C42/000000?text=+)`#669C42` |
-| Tribal                           | 2            | ![\#EFD09E](https://via.placeholder.com/15/EFD09E/000000?text=+)`#EFD09E` |
-| Forest Lands                     | 3            | ![\#14774C](https://via.placeholder.com/15/14774C/000000?text=+)`#14774C` |
-| Intensive Urban                  | 4            | ![\#9E2B0E](https://via.placeholder.com/15/9E2B0E/000000?text=+)`#9E2B0E` |
-| Rural Character Residential      | 5            | ![\#F4A691](https://via.placeholder.com/15/F4A691/000000?text=+)`#F4A691` |
-| Water                            | 6            | ![\#2778AC](https://via.placeholder.com/15/2778AC/000000?text=+)`#2778AC` |
-| Right of Way                     | 7            | ![\#6E8387](https://via.placeholder.com/15/6E8387/000000?text=+)`#6E8387` |
-| Active Open Space and Recreation | 8            | ![\#8EB8B3](https://via.placeholder.com/15/8EB8B3/000000?text=+)`#8EB8B3` |
-| Urban Character Residential      | 9            | ![\#D17257](https://via.placeholder.com/15/D17257/000000?text=+)`#D17257` |
-| Industrial                       | 10           | ![\#7C497B](https://via.placeholder.com/15/7C497B/000000?text=+)`#7C497B` |
-| Public                           | 11           | ![\#554180](https://via.placeholder.com/15/554180/000000?text=+)`#554180` |
-| Natural Preservation             | 12           | ![\#66CDAB](https://via.placeholder.com/15/66CDAB/000000?text=+)`#66CDAB` |
-| Military                         | 13           | ![\#9FABA2](https://via.placeholder.com/15/9FABA2/000000?text=+)`#9FABA2` |
-| Mineral Resource Area            | 14           | ![\#BF93BE](https://via.placeholder.com/15/BF93BE/000000?text=+)`#BF93BE` |
+| Undesignated                     | 0            | <svg width="15" height="15"><rect width="15" height="15" fill="#394B59"/></svg> `#394B59` |
+| Agricultural                     | 1            | <svg width="15" height="15"><rect width="15" height="15" fill="#669C42"/></svg> `#669C42` |
+| Tribal                           | 2            | <svg width="15" height="15"><rect width="15" height="15" fill="#EFD09E"/></svg> `#EFD09E` |
+| Forest Lands                     | 3            | <svg width="15" height="15"><rect width="15" height="15" fill="#14774C"/></svg> `#14774C` |
+| Intensive Urban                  | 4            | <svg width="15" height="15"><rect width="15" height="15" fill="#9E2B0E"/></svg> `#9E2B0E` |
+| Rural Character Residential      | 5            | <svg width="15" height="15"><rect width="15" height="15" fill="#F4A691"/></svg> `#F4A691` |
+| Water                            | 6            | <svg width="15" height="15"><rect width="15" height="15" fill="#2778AC"/></svg> `#2778AC` |
+| Right of Way                     | 7            | <svg width="15" height="15"><rect width="15" height="15" fill="#6E8387"/></svg> `#6E8387` |
+| Active Open Space and Recreation | 8            | <svg width="15" height="15"><rect width="15" height="15" fill="#8EB8B3"/></svg> `#8EB8B3` |
+| Urban Character Residential      | 9            | <svg width="15" height="15"><rect width="15" height="15" fill="#D17257"/></svg> `#D17257` |
+| Industrial                       | 10           | <svg width="15" height="15"><rect width="15" height="15" fill="#7C497B"/></svg> `#7C497B` |
+| Public                           | 11           | <svg width="15" height="15"><rect width="15" height="15" fill="#554180"/></svg> `#554180` |
+| Natural Preservation             | 12           | <svg width="15" height="15"><rect width="15" height="15" fill="#66CDAB"/></svg> `#66CDAB` |
+| Military                         | 13           | <svg width="15" height="15"><rect width="15" height="15" fill="#9FABA2"/></svg> `#9FABA2` |
+| Mineral Resource Area            | 14           | <svg width="15" height="15"><rect width="15" height="15" fill="#BF93BE"/></svg> `#BF93BE` |
 
 ## Source
 

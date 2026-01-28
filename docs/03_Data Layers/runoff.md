@@ -74,13 +74,13 @@ Runoff (mm) (5.3 GB) [download](https://storage.googleapis.com/live_data_layers/
 
 | Colors                                                                 |
 |:-----------------------------------------------------------------------|
-| ![eafdfd](https://via.placeholder.com/15/eafdfd/000000?text=+)`eafdfd` |
-| ![9cd4da](https://via.placeholder.com/15/9cd4da/000000?text=+)`9cd4da` |
-| ![61a8c7](https://via.placeholder.com/15/61a8c7/000000?text=+)`61a8c7` |
-| ![427bb7](https://via.placeholder.com/15/427bb7/000000?text=+)`427bb7` |
-| ![3f4b96](https://via.placeholder.com/15/3f4b96/000000?text=+)`3f4b96` |
-| ![292851](https://via.placeholder.com/15/292851/000000?text=+)`292851` |
-| ![40613](https://via.placeholder.com/15/40613/000000?text=+)`40613`    |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#eafdfd"/></svg> `#eafdfd` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#9cd4da"/></svg> `#9cd4da` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#61a8c7"/></svg> `#61a8c7` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#427bb7"/></svg> `#427bb7` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#3f4b96"/></svg> `#3f4b96` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#292851"/></svg> `#292851` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#040613"/></svg> `#040613` |
 
 **Minimum:** 25 mm/year
 

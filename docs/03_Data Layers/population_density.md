@@ -60,14 +60,14 @@ Population Density (11.4 MB) [download](https://storage.googleapis.com/live_data
 
 | Colors                                                                    |
 |:--------------------------------------------------------------------------|
-| ![\#FFC5D4](https://via.placeholder.com/15/FFC5D4/000000?text=+)`#FFC5D4` |
-| ![\#FFB3D0](https://via.placeholder.com/15/FFB3D0/000000?text=+)`#FFB3D0` |
-| ![\#EF98B6](https://via.placeholder.com/15/EF98B6/000000?text=+)`#EF98B6` |
-| ![\#DE7C9C](https://via.placeholder.com/15/DE7C9C/000000?text=+)`#DE7C9C` |
-| ![\#CC6184](https://via.placeholder.com/15/CC6184/000000?text=+)`#CC6184` |
-| ![\#BB446C](https://via.placeholder.com/15/BB446C/000000?text=+)`#BB446C` |
-| ![\#A82255](https://via.placeholder.com/15/A82255/000000?text=+)`#A82255` |
-| ![\#672941](https://via.placeholder.com/15/672941/000000?text=+)`#672941` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#FFC5D4"/></svg> `#FFC5D4` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#FFB3D0"/></svg> `#FFB3D0` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#EF98B6"/></svg> `#EF98B6` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#DE7C9C"/></svg> `#DE7C9C` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#CC6184"/></svg> `#CC6184` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#BB446C"/></svg> `#BB446C` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#A82255"/></svg> `#A82255` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#672941"/></svg> `#672941` |
 
 **Minimum:** 0 Population per ha
 

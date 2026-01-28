@@ -72,9 +72,9 @@ Slope Categories (1.1 GB) [download](https://storage.googleapis.com/live_data_la
 
 | Label    | Raster value | Colors                                                                    |
 |:---------|:-------------|:--------------------------------------------------------------------------|
-| Flat     | 0            | ![\#009B9E](https://via.placeholder.com/15/009B9E/000000?text=+)`#009B9E` |
-| Moderate | 1            | ![\#F1F1F1](https://via.placeholder.com/15/F1F1F1/000000?text=+)`#F1F1F1` |
-| Steep    | 2            | ![\#C75DAB](https://via.placeholder.com/15/C75DAB/000000?text=+)`#C75DAB` |
+| Flat     | 0            | <svg width="15" height="15"><rect width="15" height="15" fill="#009B9E"/></svg> `#009B9E` |
+| Moderate | 1            | <svg width="15" height="15"><rect width="15" height="15" fill="#F1F1F1"/></svg> `#F1F1F1` |
+| Steep    | 2            | <svg width="15" height="15"><rect width="15" height="15" fill="#C75DAB"/></svg> `#C75DAB` |
 
 ## Source
 

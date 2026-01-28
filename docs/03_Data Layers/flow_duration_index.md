@@ -78,11 +78,11 @@ Flow Duration Index (2.3 MB) [download](https://storage.googleapis.com/live_data
 
 | Colors                                                                 |
 |:-----------------------------------------------------------------------|
-| ![f0f9e8](https://via.placeholder.com/15/f0f9e8/000000?text=+)`f0f9e8` |
-| ![a8ddb5](https://via.placeholder.com/15/a8ddb5/000000?text=+)`a8ddb5` |
-| ![7bccc4](https://via.placeholder.com/15/7bccc4/000000?text=+)`7bccc4` |
-| ![43a2ca](https://via.placeholder.com/15/43a2ca/000000?text=+)`43a2ca` |
-| ![0868ac](https://via.placeholder.com/15/0868ac/000000?text=+)`0868ac` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#f0f9e8"/></svg> `#f0f9e8` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#a8ddb5"/></svg> `#a8ddb5` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#7bccc4"/></svg> `#7bccc4` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#43a2ca"/></svg> `#43a2ca` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#0868ac"/></svg> `#0868ac` |
 
 **Minimum:** 1 index
 

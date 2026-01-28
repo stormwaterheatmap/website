@@ -183,24 +183,24 @@ Traffic (102.9 MB) [download](https://storage.googleapis.com/live_data_layers/ra
 
 | Colors                                                                 |
 |:-----------------------------------------------------------------------|
-| ![1A3399](https://via.placeholder.com/15/1A3399/000000?text=+)`1A3399` |
-| ![3B7CB8](https://via.placeholder.com/15/3B7CB8/000000?text=+)`3B7CB8` |
-| ![5EBAD1](https://via.placeholder.com/15/5EBAD1/000000?text=+)`5EBAD1` |
-| ![ABE5D4](https://via.placeholder.com/15/ABE5D4/000000?text=+)`ABE5D4` |
-| ![DEEAB4](https://via.placeholder.com/15/DEEAB4/000000?text=+)`DEEAB4` |
-| ![E0DD86](https://via.placeholder.com/15/E0DD86/000000?text=+)`E0DD86` |
-| ![CBB64D](https://via.placeholder.com/15/CBB64D/000000?text=+)`CBB64D` |
-| ![BF9D39](https://via.placeholder.com/15/BF9D39/000000?text=+)`BF9D39` |
-| ![B99333](https://via.placeholder.com/15/B99333/000000?text=+)`B99333` |
-| ![AF7E28](https://via.placeholder.com/15/AF7E28/000000?text=+)`AF7E28` |
-| ![AB7424](https://via.placeholder.com/15/AB7424/000000?text=+)`AB7424` |
-| ![A5691F](https://via.placeholder.com/15/A5691F/000000?text=+)`A5691F` |
-| ![9B5516](https://via.placeholder.com/15/9B5516/000000?text=+)`9B5516` |
-| ![964B12](https://via.placeholder.com/15/964B12/000000?text=+)`964B12` |
-| ![91400](https://via.placeholder.com/15/91400/000000?text=+)`91400`    |
-| ![8A3308](https://via.placeholder.com/15/8A3308/000000?text=+)`8A3308` |
-| ![842705](https://via.placeholder.com/15/842705/000000?text=+)`842705` |
-| ![7F1900](https://via.placeholder.com/15/7F1900/000000?text=+)`7F1900` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#1A3399"/></svg> `#1A3399` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#3B7CB8"/></svg> `#3B7CB8` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#5EBAD1"/></svg> `#5EBAD1` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#ABE5D4"/></svg> `#ABE5D4` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#DEEAB4"/></svg> `#DEEAB4` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#E0DD86"/></svg> `#E0DD86` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#CBB64D"/></svg> `#CBB64D` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#BF9D39"/></svg> `#BF9D39` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#B99333"/></svg> `#B99333` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#AF7E28"/></svg> `#AF7E28` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#AB7424"/></svg> `#AB7424` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#A5691F"/></svg> `#A5691F` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#9B5516"/></svg> `#9B5516` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#964B12"/></svg> `#964B12` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#914000"/></svg> `#914000` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#8A3308"/></svg> `#8A3308` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#842705"/></svg> `#842705` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#7F1900"/></svg> `#7F1900` |
 
 **Minimum:** 0 Average Annual Daily Trips (log)
 

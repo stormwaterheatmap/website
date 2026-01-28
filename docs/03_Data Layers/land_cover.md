@@ -67,14 +67,14 @@ Land Cover (2.4 GB) [download](https://storage.googleapis.com/live_data_layers/r
 
 | Label                   | Raster value | Colors                                                                    |
 |:------------------------|:-------------|:--------------------------------------------------------------------------|
-| No data                 | 0            | ![\#ffffff](https://via.placeholder.com/15/ffffff/000000?text=+)`#ffffff` |
-| Grass/Low Vegetation    | 1            | ![\#3ead63](https://via.placeholder.com/15/3ead63/000000?text=+)`#3ead63` |
-| Shrub/Medium Vegetation | 2            | ![\#96ca6e](https://via.placeholder.com/15/96ca6e/000000?text=+)`#96ca6e` |
-| Trees/Forest            | 3            | ![\#26532b](https://via.placeholder.com/15/26532b/000000?text=+)`#26532b` |
-| Bare soil               | 4            | ![\#a39171](https://via.placeholder.com/15/a39171/000000?text=+)`#a39171` |
-| Water                   | 5            | ![\#476b9d](https://via.placeholder.com/15/476b9d/000000?text=+)`#476b9d` |
-| Impervious              | 6            | ![\#adacb5](https://via.placeholder.com/15/adacb5/000000?text=+)`#adacb5` |
-| Impervious - Roofs      | 7            | ![\#d8d5db](https://via.placeholder.com/15/d8d5db/000000?text=+)`#d8d5db` |
+| No data                 | 0            | <svg width="15" height="15"><rect width="15" height="15" fill="#ffffff"/></svg> `#ffffff` |
+| Grass/Low Vegetation    | 1            | <svg width="15" height="15"><rect width="15" height="15" fill="#3ead63"/></svg> `#3ead63` |
+| Shrub/Medium Vegetation | 2            | <svg width="15" height="15"><rect width="15" height="15" fill="#96ca6e"/></svg> `#96ca6e` |
+| Trees/Forest            | 3            | <svg width="15" height="15"><rect width="15" height="15" fill="#26532b"/></svg> `#26532b` |
+| Bare soil               | 4            | <svg width="15" height="15"><rect width="15" height="15" fill="#a39171"/></svg> `#a39171` |
+| Water                   | 5            | <svg width="15" height="15"><rect width="15" height="15" fill="#476b9d"/></svg> `#476b9d` |
+| Impervious              | 6            | <svg width="15" height="15"><rect width="15" height="15" fill="#adacb5"/></svg> `#adacb5` |
+| Impervious - Roofs      | 7            | <svg width="15" height="15"><rect width="15" height="15" fill="#d8d5db"/></svg> `#d8d5db` |
 
 ## Source
 

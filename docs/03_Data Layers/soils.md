@@ -104,10 +104,10 @@ Soils (113.4 MB) [download](https://storage.googleapis.com/live_data_layers/rast
 
 | Label     | Raster value | Colors                                                                    |
 |:----------|:-------------|:--------------------------------------------------------------------------|
-| Outwash   | 1            | ![\#69995D](https://via.placeholder.com/15/69995D/000000?text=+)`#69995D` |
-| Till      | 2            | ![\#564138](https://via.placeholder.com/15/564138/000000?text=+)`#564138` |
-| Saturated | 3            | ![\#F06543](https://via.placeholder.com/15/F06543/000000?text=+)`#F06543` |
-| Water     | 4            | ![\#b3caff](https://via.placeholder.com/15/b3caff/000000?text=+)`#b3caff` |
+| Outwash   | 1            | <svg width="15" height="15"><rect width="15" height="15" fill="#69995D"/></svg> `#69995D` |
+| Till      | 2            | <svg width="15" height="15"><rect width="15" height="15" fill="#564138"/></svg> `#564138` |
+| Saturated | 3            | <svg width="15" height="15"><rect width="15" height="15" fill="#F06543"/></svg> `#F06543` |
+| Water     | 4            | <svg width="15" height="15"><rect width="15" height="15" fill="#b3caff"/></svg> `#b3caff` |
 
 ## Source
 

@@ -75,36 +75,36 @@ Hydrologic Response Units (99.4 MB) [download](https://storage.googleapis.com/li
 
 | Label                        | Raster value | Colors                                                                    |
 |:-----------------------------|:-------------|:--------------------------------------------------------------------------|
-| Outwash, Forest, Flat        | 0            | ![\#e5f5f9](https://via.placeholder.com/15/e5f5f9/000000?text=+)`#e5f5f9` |
-| Outwash, Forest, Moderate    | 1            | ![\#99d8c9](https://via.placeholder.com/15/99d8c9/000000?text=+)`#99d8c9` |
-| Outwash, Forest, Steep       | 2            | ![\#2ca25f](https://via.placeholder.com/15/2ca25f/000000?text=+)`#2ca25f` |
-| Outwash, Pasture, Flat       | 10           | ![\#e0ecf4](https://via.placeholder.com/15/e0ecf4/000000?text=+)`#e0ecf4` |
-| Outwash, Pasture, Moderate   | 11           | ![\#9ebcda](https://via.placeholder.com/15/9ebcda/000000?text=+)`#9ebcda` |
-| Outwash, Pasture, Steep      | 12           | ![\#8856a7](https://via.placeholder.com/15/8856a7/000000?text=+)`#8856a7` |
-| Outwash, Lawn , Flat         | 20           | ![\#e0f3db](https://via.placeholder.com/15/e0f3db/000000?text=+)`#e0f3db` |
-| Outwash, Lawn , Moderate     | 21           | ![\#a8ddb5](https://via.placeholder.com/15/a8ddb5/000000?text=+)`#a8ddb5` |
-| Outwash, Lawn , Steep        | 22           | ![\#43a2ca](https://via.placeholder.com/15/43a2ca/000000?text=+)`#43a2ca` |
-| Till, Forest, Flat           | 100          | ![\#ece7f2](https://via.placeholder.com/15/ece7f2/000000?text=+)`#ece7f2` |
-| Till, Forest, Moderate       | 101          | ![\#a6bddb](https://via.placeholder.com/15/a6bddb/000000?text=+)`#a6bddb` |
-| Till, Forest, Steep          | 102          | ![\#2b8cbe](https://via.placeholder.com/15/2b8cbe/000000?text=+)`#2b8cbe` |
-| Till, Pasture, Flat          | 110          | ![\#ece2f0](https://via.placeholder.com/15/ece2f0/000000?text=+)`#ece2f0` |
-| Till, Pasture, Moderate      | 111          | ![\#a6bddb](https://via.placeholder.com/15/a6bddb/000000?text=+)`#a6bddb` |
-| Till, Pasture, Steep         | 112          | ![\#1c9099](https://via.placeholder.com/15/1c9099/000000?text=+)`#1c9099` |
-| Till, Lawn , Flat            | 120          | ![\#e7e1ef](https://via.placeholder.com/15/e7e1ef/000000?text=+)`#e7e1ef` |
-| Till, Lawn , Moderate        | 121          | ![\#c994c7](https://via.placeholder.com/15/c994c7/000000?text=+)`#c994c7` |
-| Till, Lawn , Steep           | 122          | ![\#dd1c77](https://via.placeholder.com/15/dd1c77/000000?text=+)`#dd1c77` |
-| Saturated, Forest, Flat      | 200          | ![\#fde0dd](https://via.placeholder.com/15/fde0dd/000000?text=+)`#fde0dd` |
-| Saturated, Forest, Moderate  | 201          | ![\#fa9fb5](https://via.placeholder.com/15/fa9fb5/000000?text=+)`#fa9fb5` |
-| Saturated, Forest, Steep     | 202          | ![\#c51b8a](https://via.placeholder.com/15/c51b8a/000000?text=+)`#c51b8a` |
-| Saturated, Pasture, Flat     | 210          | ![\#edf8b1](https://via.placeholder.com/15/edf8b1/000000?text=+)`#edf8b1` |
-| Saturated, Pasture, Moderate | 211          | ![\#7fcdbb](https://via.placeholder.com/15/7fcdbb/000000?text=+)`#7fcdbb` |
-| Saturated, Pasture, Steep    | 212          | ![\#2c7fb8](https://via.placeholder.com/15/2c7fb8/000000?text=+)`#2c7fb8` |
-| Saturated, Lawn , Flat       | 220          | ![\#f7fcb9](https://via.placeholder.com/15/f7fcb9/000000?text=+)`#f7fcb9` |
-| Saturated, Lawn , Moderate   | 221          | ![\#addd8e](https://via.placeholder.com/15/addd8e/000000?text=+)`#addd8e` |
-| Saturated, Lawn , Steep      | 222          | ![\#31a354](https://via.placeholder.com/15/31a354/000000?text=+)`#31a354` |
-| Impervious, Flat             | 250          | ![\#fee6ce](https://via.placeholder.com/15/fee6ce/000000?text=+)`#fee6ce` |
-| Impervious, Moderate         | 251          | ![\#fdae6b](https://via.placeholder.com/15/fdae6b/000000?text=+)`#fdae6b` |
-| Impervious, Steep            | 252          | ![\#e6550d](https://via.placeholder.com/15/e6550d/000000?text=+)`#e6550d` |
+| Outwash, Forest, Flat        | 0            | <svg width="15" height="15"><rect width="15" height="15" fill="#e5f5f9"/></svg> `#e5f5f9` |
+| Outwash, Forest, Moderate    | 1            | <svg width="15" height="15"><rect width="15" height="15" fill="#99d8c9"/></svg> `#99d8c9` |
+| Outwash, Forest, Steep       | 2            | <svg width="15" height="15"><rect width="15" height="15" fill="#2ca25f"/></svg> `#2ca25f` |
+| Outwash, Pasture, Flat       | 10           | <svg width="15" height="15"><rect width="15" height="15" fill="#e0ecf4"/></svg> `#e0ecf4` |
+| Outwash, Pasture, Moderate   | 11           | <svg width="15" height="15"><rect width="15" height="15" fill="#9ebcda"/></svg> `#9ebcda` |
+| Outwash, Pasture, Steep      | 12           | <svg width="15" height="15"><rect width="15" height="15" fill="#8856a7"/></svg> `#8856a7` |
+| Outwash, Lawn , Flat         | 20           | <svg width="15" height="15"><rect width="15" height="15" fill="#e0f3db"/></svg> `#e0f3db` |
+| Outwash, Lawn , Moderate     | 21           | <svg width="15" height="15"><rect width="15" height="15" fill="#a8ddb5"/></svg> `#a8ddb5` |
+| Outwash, Lawn , Steep        | 22           | <svg width="15" height="15"><rect width="15" height="15" fill="#43a2ca"/></svg> `#43a2ca` |
+| Till, Forest, Flat           | 100          | <svg width="15" height="15"><rect width="15" height="15" fill="#ece7f2"/></svg> `#ece7f2` |
+| Till, Forest, Moderate       | 101          | <svg width="15" height="15"><rect width="15" height="15" fill="#a6bddb"/></svg> `#a6bddb` |
+| Till, Forest, Steep          | 102          | <svg width="15" height="15"><rect width="15" height="15" fill="#2b8cbe"/></svg> `#2b8cbe` |
+| Till, Pasture, Flat          | 110          | <svg width="15" height="15"><rect width="15" height="15" fill="#ece2f0"/></svg> `#ece2f0` |
+| Till, Pasture, Moderate      | 111          | <svg width="15" height="15"><rect width="15" height="15" fill="#a6bddb"/></svg> `#a6bddb` |
+| Till, Pasture, Steep         | 112          | <svg width="15" height="15"><rect width="15" height="15" fill="#1c9099"/></svg> `#1c9099` |
+| Till, Lawn , Flat            | 120          | <svg width="15" height="15"><rect width="15" height="15" fill="#e7e1ef"/></svg> `#e7e1ef` |
+| Till, Lawn , Moderate        | 121          | <svg width="15" height="15"><rect width="15" height="15" fill="#c994c7"/></svg> `#c994c7` |
+| Till, Lawn , Steep           | 122          | <svg width="15" height="15"><rect width="15" height="15" fill="#dd1c77"/></svg> `#dd1c77` |
+| Saturated, Forest, Flat      | 200          | <svg width="15" height="15"><rect width="15" height="15" fill="#fde0dd"/></svg> `#fde0dd` |
+| Saturated, Forest, Moderate  | 201          | <svg width="15" height="15"><rect width="15" height="15" fill="#fa9fb5"/></svg> `#fa9fb5` |
+| Saturated, Forest, Steep     | 202          | <svg width="15" height="15"><rect width="15" height="15" fill="#c51b8a"/></svg> `#c51b8a` |
+| Saturated, Pasture, Flat     | 210          | <svg width="15" height="15"><rect width="15" height="15" fill="#edf8b1"/></svg> `#edf8b1` |
+| Saturated, Pasture, Moderate | 211          | <svg width="15" height="15"><rect width="15" height="15" fill="#7fcdbb"/></svg> `#7fcdbb` |
+| Saturated, Pasture, Steep    | 212          | <svg width="15" height="15"><rect width="15" height="15" fill="#2c7fb8"/></svg> `#2c7fb8` |
+| Saturated, Lawn , Flat       | 220          | <svg width="15" height="15"><rect width="15" height="15" fill="#f7fcb9"/></svg> `#f7fcb9` |
+| Saturated, Lawn , Moderate   | 221          | <svg width="15" height="15"><rect width="15" height="15" fill="#addd8e"/></svg> `#addd8e` |
+| Saturated, Lawn , Steep      | 222          | <svg width="15" height="15"><rect width="15" height="15" fill="#31a354"/></svg> `#31a354` |
+| Impervious, Flat             | 250          | <svg width="15" height="15"><rect width="15" height="15" fill="#fee6ce"/></svg> `#fee6ce` |
+| Impervious, Moderate         | 251          | <svg width="15" height="15"><rect width="15" height="15" fill="#fdae6b"/></svg> `#fdae6b` |
+| Impervious, Steep            | 252          | <svg width="15" height="15"><rect width="15" height="15" fill="#e6550d"/></svg> `#e6550d` |
 
 ## Source
 

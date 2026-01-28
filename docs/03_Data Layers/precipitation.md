@@ -78,20 +78,20 @@ Precipitation (mm) (180.5 KB) [download](https://storage.googleapis.com/live_dat
 
 | Colors                                                                 |
 |:-----------------------------------------------------------------------|
-| ![ffffff](https://via.placeholder.com/15/ffffff/000000?text=+)`ffffff` |
-| ![fdef9a](https://via.placeholder.com/15/fdef9a/000000?text=+)`fdef9a` |
-| ![aad85c](https://via.placeholder.com/15/aad85c/000000?text=+)`aad85c` |
-| ![5ab978](https://via.placeholder.com/15/5ab978/000000?text=+)`5ab978` |
-| ![3c9387](https://via.placeholder.com/15/3c9387/000000?text=+)`3c9387` |
-| ![206e8b](https://via.placeholder.com/15/206e8b/000000?text=+)`206e8b` |
-| ![14439c](https://via.placeholder.com/15/14439c/000000?text=+)`14439c` |
-| ![2a186c](https://via.placeholder.com/15/2a186c/000000?text=+)`2a186c` |
-| ![4a1486](https://via.placeholder.com/15/4a1486/000000?text=+)`4a1486` |
-| ![6a51a3](https://via.placeholder.com/15/6a51a3/000000?text=+)`6a51a3` |
-| ![807dba](https://via.placeholder.com/15/807dba/000000?text=+)`807dba` |
-| ![9e9ac8](https://via.placeholder.com/15/9e9ac8/000000?text=+)`9e9ac8` |
-| ![bcbddc](https://via.placeholder.com/15/bcbddc/000000?text=+)`bcbddc` |
-| ![dadaeb](https://via.placeholder.com/15/dadaeb/000000?text=+)`dadaeb` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#ffffff"/></svg> `#ffffff` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#fdef9a"/></svg> `#fdef9a` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#aad85c"/></svg> `#aad85c` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#5ab978"/></svg> `#5ab978` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#3c9387"/></svg> `#3c9387` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#206e8b"/></svg> `#206e8b` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#14439c"/></svg> `#14439c` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#2a186c"/></svg> `#2a186c` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#4a1486"/></svg> `#4a1486` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#6a51a3"/></svg> `#6a51a3` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#807dba"/></svg> `#807dba` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#9e9ac8"/></svg> `#9e9ac8` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#bcbddc"/></svg> `#bcbddc` |
+| <svg width="15" height="15"><rect width="15" height="15" fill="#dadaeb"/></svg> `#dadaeb` |
 
 **Minimum:** 500 mm/year
 
