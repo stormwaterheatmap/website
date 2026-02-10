@@ -1,4 +1,4 @@
-Hydrologic Response Units
+# Hydrologic Response Units
 ================
 
 *Units of common soils, land cover, and slope used in continuous simulation modeling.*

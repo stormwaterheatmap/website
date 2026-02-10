@@ -1,4 +1,4 @@
-Flow Duration Index
+# Flow Duration Index
 ================
 
 *Dimensionless index indicating level of flow control needed to match forest hydrology.*

@@ -1,4 +1,4 @@
-Precipitation
+# Precipitation
 ================
 
 *Mean annual precipitation (1970-1999)*

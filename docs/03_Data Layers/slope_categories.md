@@ -1,4 +1,4 @@
-Slope Categories
+# Slope Categories
 ================
 
 *Categorized ground surface slope*

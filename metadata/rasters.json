@@ -1,367 +1,638 @@
-{
-    "Age of Imperviousness": {
-        "discrete": "TRUE",
-        "labels": ["2000–2014", "1990–2000", "Before 1990"],
-        "sourceName": "The Nature Conservancy; Columbia University,  Center for International Earth Science Information Network",
-        "sourceUrl": "http://doi.org/10.2905/jrc-ghsl-10007",
-        "units": "epoch",
-        "scale": 30,
-        "values": ["3", "4", "5"],
-        "vizType": "barChart",
-        "default_reduction": "Category",
-        "description": "Impervious surface by estimated date of conversion",
-        "docs_link": "docs/API/image_layers/Age%20of%20Development",
-        "safe_name": "age_of_imperviousness",
-        "layer": {
-            "eeObject": "eeObject",
-            "name": "Age of Imperviousness",
-            "visParams": {
-                "min": 3,
-                "max": 5,
-                "palette": ["009E73", "F0E442", "CC6677"],
-                "opacity": 0.8,
-                "_row": "Age of Imperviousness"
-            }
-        }
+[
+  {
+    "name": "Age of Imperviousness",
+    "discrete": true,
+    "labels": [
+      "2000–2014",
+      "1990–2000",
+      "Before 1990"
+    ],
+    "units": "epoch",
+    "scale": 30,
+    "values": [
+      3,
+      4,
+      5
+    ],
+    "vizType": "barChart",
+    "default_reduction": "Category",
+    "short_description": "Impervious surface by estimated date of conversion",
+    "description": "This layer provides multi-temporal information on the presence of built-up surfaces derived from global Landsat satellite data collected from 1975 to 2014. The base image data collections were prepared by the Global Land Survey and the Joint Research Center. The data was processed by fully automatic and reproducible methods based on statistical learning (Symbolic Machine Learning. The source product was developed with a spatial resolution of 30 meters. To provide a finer resolution for the stormwater heatmap, the source product was masked by 1-meter resolution imperviousness data developed by the Nature Conservancy.",
+    "docs_link": "docs/API/image_layers/Age%20of%20Development",
+    "safe_name": "age_of_imperviousness",
+    "layer": {
+      "visParams": {
+        "min": 3,
+        "max": 5,
+        "palette": [
+          "009E73",
+          "F0E442",
+          "CC6677"
+        ],
+        "opacity": 0.8
+      }
     },
-    "Flow Duration Index": {
-        "discrete": "FALSE",
-        "sourceName": "The Nature Conservancy",
-        "units": "index",
-        "scale": 10,
-        "vizType": "bigNumberMean",
-        "default_reduction": "mean",
-        "description": "Dimensionless index indicating level of flow control needed to match forest hydrology.",
-        "docs_link": "docs/API/image_layers/Flow%20Duration%20Index",
-        "safe_name": "flow_duration_index",
-        "layer": {
-            "eeObject": "eeObject",
-            "name": "Flow Duration Index",
-            "visParams": {
-                "min": 1,
-                "max": 10,
-                "palette": ["f0f9e8", "a8ddb5", "7bccc4", "43a2ca", "0868ac"],
-                "opacity": 0.8,
-                "_row": "Flow Duration Index"
-            }
-        }
-    },
-    "HSPF Land Cover Type": {
-        "discrete": "TRUE",
-        "labels": ["Forest/Trees", "Pasture", "Grass", "Water", "Impervious-roof", "Impervious-nonRoof"],
-        "sourceName": "The Nature Conservancy",
-        "units": "Land Cover Type",
-        "scale": 10,
-        "values": ["0", "1", "2", "3", "4", "5"],
-        "vizType": "barChart",
-        "default_reduction": "Category",
-        "description": "Land cover classified by categories used in HSPF/WWHM",
-        "safe_name": "hspf_land_cover_type",
-        "layer": {
-            "eeObject": "eeObject",
-            "name": "HSPF Land Cover Type",
-            "visParams": {
-                "min": 0,
-                "max": 5,
-                "palette": ["#55775e", "#dacd7f", "#7e9e87", "#b3caff", "#844c8b", "#ead1ff"],
-                "opacity": 0.8,
-                "_row": "HSPF Land Cover Type"
-            }
-        }
-    },
-    "Hydrologic Response Units": {
-        "discrete": "TRUE",
-        "labels": ["Outwash, Forest, Flat", "Outwash,  Forest,  Moderate", "Outwash, Forest,  Steep", "Outwash,  Pasture,  Flat", "Outwash,  Pasture,  Moderate", "Outwash,  Pasture,  Steep", "Outwash,  Lawn ,  Flat", "Outwash,  Lawn ,  Moderate", "Outwash,  Lawn ,  Steep", "Till,  Forest,  Flat", "Till,  Forest,  Moderate", "Till,  Forest,  Steep", "Till,  Pasture,  Flat", "Till,  Pasture,  Moderate", "Till,  Pasture,  Steep", "Till,  Lawn ,  Flat", "Till,  Lawn ,  Moderate", "Till,  Lawn ,  Steep", "Saturated,  Forest,  Flat", "Saturated,  Forest,  Moderate", "Saturated,  Forest,  Steep", "Saturated,  Pasture,  Flat", "Saturated,  Pasture,  Moderate", "Saturated,  Pasture,  Steep", "Saturated,  Lawn ,  Flat", "Saturated,  Lawn ,  Moderate", "Saturated,  Lawn ,  Steep", "Impervious,   Flat", "Impervious,  Moderate", "Impervious,  Steep"],
-        "sourceName": "The Nature Conservancy",
-        "units": "HRU",
-        "scale": 10,
-        "values": ["0", "1", "2", "10", "11", "12", "20", "21", "22", "100", "101", "102", "110", "111", "112", "120", "121", "122", "200", "201", "202", "210", "211", "212", "220", "221", "222", "250", "251", "252"],
-        "vizType": "bigNumberMean",
-        "default_reduction": "Category",
-        "description": "Units of common soils, land cover, and slope used in continuous simulation modeling.",
-        "docs_link": "docs/API/image_layers/Flow%20Duration%20Index",
-        "safe_name": "hydrologic_response_units",
-        "layer": {
-            "eeObject": "eeObject",
-            "name": "Hydrologic Response Units",
-            "visParams": {
-                "min": 0,
-                "max": 252,
-                "palette": ["#e5f5f9", "#99d8c9", "#2ca25f", "#e0ecf4", "#9ebcda", "#8856a7", "#e0f3db", "#a8ddb5", "#43a2ca", "#ece7f2", "#a6bddb", "#2b8cbe", "#ece2f0", "#a6bddb", "#1c9099", "#e7e1ef", "#c994c7", "#dd1c77", "#fde0dd", "#fa9fb5", "#c51b8a", "#edf8b1", "#7fcdbb", "#2c7fb8", "#f7fcb9", "#addd8e", "#31a354", "#fee6ce", "#fdae6b", "#e6550d"],
-                "opacity": 0.8,
-                "_row": "Hydrologic Response Units"
-            }
-        }
-    },
-    "Imperviousness": {
-        "discrete": "FALSE",
-        "sourceName": "The Nature Conservancy",
-        "units": "Percent",
-        "scale": 1,
-        "values": ["0", "1"],
-        "vizType": "bigNumberPercent",
-        "default_reduction": "mean",
-        "description": "Percent impervious land cover",
-        "safe_name": "imperviousness",
-        "layer": {
-            "eeObject": "eeObject",
-            "name": "Imperviousness",
-            "visParams": {
-                "min": 0,
-                "max": 100,
-                "palette": [
-  "#0C0405",
-  "#2E1D3D",
-  "#423D7B",
-  "#38659E",
-  "#358FA7",
-  "#41B7AD",
-  "#8AD9B1",
-  "#DEF5E5"
-  ],
-                "opacity": 0.8,
-                "_row": "Imperviousness"
-            }
-        }
-    },
-    "Land Cover": {
-        "discrete": "TRUE",
-        "labels": ["No data", "Grass/Low Vegetation", "Shrub/Medium Vegetation", "Trees/Forest", "Bare soil", "Water", "Impervious", "Impervious - Roofs "],
-        "sourceName": "The Nature Conservancy",
-        "units": "Land Cover Type",
-        "scale": 1,
-        "values": ["0", "1", "2", "3", "4", "5", "6", "7"],
-        "default_reduction": "Category",
-        "description": "1-meter resolution land cover classification",
-        "safe_name": "land_cover",
-        "layer": {
-            "eeObject": "eeObject",
-            "name": "Land Cover",
-            "visParams": {
-                "min": 0,
-                "max": 7,
-                "palette": ["#ffffff", "#3ead63", "#96ca6e", "#26532b", "#a39171", "#476b9d", "#adacb5", "#d8d5db"],
-                "opacity": 0.8,
-                "_row": "Land Cover"
-            }
-        }
-    },
-    "Land Use": {
-        "discrete": "TRUE",
-        "labels": ["Undesignated", "Agricultural", "Tribal", "Forest Lands", "Intensive Urban", "Rural Character Residential", "Water", "Right of Way", "Active Open Space and Recreation", "Urban Character Residential", "Industrial", "Public", "Natural Preservation", "Military", "Mineral Resource Area"],
-        "sourceName": "Puget Sound Mapping Project",
-        "sourceUrl": "https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project/",
-        "units": "Land Use type",
-        "scale": 5,
-        "values": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"],
-        "default_reduction": "Category",
-        "description": "Department of Commerce Master Land Use Category",
-        "safe_name": "land_use",
-        "layer": {
-            "eeObject": "eeObject",
-            "name": "Land Use",
-            "visParams": {
-                "min": 0,
-                "max": 14,
-                "palette": ["#394B59", "#669C42", "#EFD09E", "#14774C", "#9E2B0E", "#F4A691",
-                "#2778AC", "#6E8387", "#8EB8B3", "#D17257", "#7C497B", "#554180", "#66CDAB",
-                "#9FABA2", "#BF93BE"],
-                "opacity": 0.8,
-                "_row": "Land Use"
-            }
-        }
-    },
-    "Population Density": {
-        "discrete": "FALSE",
-        "sourceName": "2010 US Census Blocks",
-        "sourceUrl": "https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2010/TGRSHP10SF1.pdf",
-        "units": "Population per ha",
-        "scale": 100,
-        "default_reduction": "mean",
-        "description": "2010 Census, population density",
-        "safe_name": "population_density",
-        "layer": {
-            "eeObject": "eeObject",
-            "name": "Population Density",
-            "visParams": {
-                "min": 5,
-                "max": 45,
-                "palette": [
-                    "#03051A",
-                    "#36193E",
-                    "#701F57",
-                    "#AE1B59",
-                    "#E03342",
-                    "#F27651",
-                    "#F6B48E",
-                    "#FAEBDD"
-                ],
-                "opacity": 0.8,
-                "_row": "Population Density"
-            }
-        }
-    },
-    "Precipitation (mm)": {
-        "discrete": "FALSE",
-        "sourceName": "Salathé et al 2019",
-        "sourceUrl": "https://cig.uw.edu/our-work/applied-research/heavy-precip-and-stormwater/",
-        "units": "mm/year",
-        "scale": 2500,
-        "default_reduction": "mean",
-        "description": "Mean annual precipitation (1970-1999)",
-        "safe_name": "precipitation_mm",
-        "layer": {
-            "eeObject": "eeObject",
-            "name": "Precipitation (mm)",
-            "visParams": {
-                "min": 500,
-                "max": 3800,
-                "palette": [
-                    "ffffff",
-                    "8eb2ff",
-                    "6370f8",
-                    "009e1e",
-                    "3cbc3d",
-                    "b3d16e",
-                    "b9f96e",
-                    "fff913",
-                    "ffa309",
-                    "e50000",
-                    "bd0000",
-                    "810000",
-                    "000000"
-                ],
-                "opacity": 0.8,
-                "_row": "Precipitation (mm)"
-            }
-        }
-    },
-    "Runoff (mm)": {
-        "discrete": "FALSE",
-        "sourceName": "The Nature Conservancy",
-        "units": "mm/year",
-        "scale": 10,
-        "default_reduction": "mean",
-        "description": "Mean annual runoff calculated through continuous simulation for the period 1970-1999.",
-        "safe_name": "runoff_mm",
-        "layer": {
-            "eeObject": "data.mean_annual_runoff.rename('mean_annual_runoff_mm')",
-            "name": "Runoff (mm)",
-            "visParams": {
-                "min": 25,
-                "max": 1016,
-                "palette": ["eafdfd", "9cd4da", "61a8c7", "427bb7", "3f4b96", "292851", "040613"],
-                "opacity": 0.8,
-                "_row": "Runoff (mm)"
-            }
-        }
-    },
-    "Slope": {
-        "discrete": "FALSE",
-        "sourceName": "USGS National Elevation Dataset 1/3 Arc-Second",
-        "sourceUrl": "https://nationalmap.gov/elevation.html",
-        "units": "Percent",
-        "scale": 10,
-        "default_reduction": "mean",
-        "description": "Continuous ground surface slope in degrees",
-        "safe_name": "slope",
-        "layer": {
-            "eeObject": "eeObject",
-            "name": "Slope",
-            "visParams": {
-                "min": 2,
-                "max": 20,
-                "palette": ["#3f60ae", "#539eb6", "#6db388", "#cab843", "#e78532", "#d92120"],
-                "opacity": 0.8,
-                "_row": "Slope"
-            }
-        }
-    },
-    "Slope Categories": {
-        "discrete": "TRUE",
-        "labels": ["Flat", "Moderate", "Steep"],
-        "sourceName": "The Nature Conservancy",
-        "units": "Category",
-        "scale": 10,
-        "values": ["0", "1", "2"],
-        "vizType": "barChart",
-        "default_reduction": "Category",
-        "description": "Categorized ground surface slope",
-        "safe_name": "slope_categories",
-        "layer": {
-            "eeObject": "eeObject",
-            "name": "Slope Categories",
-            "visParams": {
-                "min": 0,
-                "max": 2,
-                "palette": ["#009B9E", "#F1F1F1", "#C75DAB"],
-                "opacity": 0.8,
-                "_row": "Slope Categories"
-            }
-        }
-    },
-    "Soils": {
-        "discrete": "TRUE",
-        "labels": ["Outwash", "Till", "Saturated", "Water"],
-        "sourceName": "The Nature Conservancy",
-        "units": "Hydrologic Soil Group",
-        "scale": 5,
-        "values": ["1", "2", "3", "4"],
-        "vizType": "barChart",
-        "default_reduction": "Category",
-        "description": "Hydrologic Soil Group",
-        "safe_name": "soils",
-        "layer": {
-            "eeObject": "eeObject",
-            "name": "Soils",
-            "visParams": {
-                "min": 1,
-                "max": 4,
-                "palette": ["#69995D", "#564138", "#F06543", "#b3caff"],
-                "opacity": 0.8,
-                "_row": "Soils"
-            }
-        }
-    },
-    "Traffic": {
-        "discrete": "FALSE",
-        "sourceName": "The Nature Conservancy",
-        "units": "Average Annual Daily Trips",
-        "scale": 10,
-        "vizType": "bigNumberMean",
-        "default_reduction": "mean",
-        "description": "Mean Annual Average Daily Trips",
-        "safe_name": "traffic",
-        "layer": {
-            "eeObject": "eeObject",
-            "name": "Traffic",
-            "visParams": {
-                "min": 0,
-                "max": 100000,
-                "palette":
-                    [
-                        "000000",
-                        "3B7CB8",
-                        "5EBAD1",
-                        "ABE5D4",
-                        "DEEAB4",
-                        "E0DD86",
-                        "CBB64D",
-                        "BF9D39",
-                        "B99333",
-                        "AF7E28",
-                        "AB7424",
-                        "A5691F",
-                        "9B5516",
-                        "964B12",
-                        "91400E",
-                        "8A3308",
-                        "842705",
-                        "7F1900"
-                    ],
-                "opacity": 0.8,
-                "_row": "Traffic"
-            }
-        }
+    "source": {
+      "name": "The Nature Conservancy; Columbia University, Center for International Earth Science Information Network",
+      "url": "http://doi.org/10.2905/jrc-ghsl-10007"
     }
-}
+  },
+  {
+    "name": "Flow Duration Index",
+    "discrete": false,
+    "units": "index",
+    "scale": 10,
+    "vizType": "bigNumberMean",
+    "default_reduction": "mean",
+    "short_description": "Dimensionless index indicating level of flow control needed to match forest hydrology.",
+    "description": "Ecology Stormwater Guidance includes flow-related performance standards to protect receiving waters from degradation caused by changes in the hydrologic regime due to development. These performance standards rely on flow-duration matching, whereby flow durations from developed land are required to match pre-developed flow-durations for a range of discharge values. The flow duration standard is intended to prevent flashy flows in receiving stream channels.\n\nWe developed an index representing the magnitude of change to the flow-duration curve between flow thresholds. Thresholds were chosen based on Ecology's LID and Flow Control Standards (Department of Ecology, 2014), which require flow-duration matching over the range between 8 percent of the 2-year peak discharge (lower threshold of the LID standard) up to the 50-year peak discharge (upper threshold of the flow-control standard).\n\nThe flow discharge index is calculated by summing the discharge over the simulation period between a high-flow and low-flow threshold. This index is then applied to hru/grid combinations in the stormwater heatmap to produce a spatially explicit mapping of flow alteration.\n\nMore information, including verification of results can be found in the technical reference.",
+    "docs_link": "docs/API/image_layers/Flow%20Duration%20Index",
+    "safe_name": "flow_duration_index",
+    "layer": {
+      "visParams": {
+        "min": 1,
+        "max": 10,
+        "palette": [
+          "f0f9e8",
+          "a8ddb5",
+          "7bccc4",
+          "43a2ca",
+          "0868ac"
+        ],
+        "opacity": 0.8
+      }
+    },
+    "source": {
+      "name": "The Nature Conservancy",
+      "url": null
+    }
+  },
+  {
+    "name": "HSPF Land Cover Type",
+    "discrete": true,
+    "labels": [
+      "Forest/Trees",
+      "Pasture",
+      "Grass",
+      "Water",
+      "Impervious-roof",
+      "Impervious-nonRoof"
+    ],
+    "units": "Land Cover Type",
+    "scale": 10,
+    "values": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "vizType": "barChart",
+    "default_reduction": "Category",
+    "short_description": "Land cover classified by categories used in HSPF/WWHM",
+    "safe_name": "hspf_land_cover_type",
+    "layer": {
+      "visParams": {
+        "min": 0,
+        "max": 5,
+        "palette": [
+          "#55775e",
+          "#dacd7f",
+          "#7e9e87",
+          "#b3caff",
+          "#844c8b",
+          "#ead1ff"
+        ],
+        "opacity": 0.8
+      }
+    },
+    "source": {
+      "name": "The Nature Conservancy",
+      "url": null
+    }
+  },
+  {
+    "name": "Hydrologic Response Units",
+    "discrete": true,
+    "labels": [
+      "Outwash, Forest, Flat",
+      "Outwash,  Forest,  Moderate",
+      "Outwash, Forest,  Steep",
+      "Outwash,  Pasture,  Flat",
+      "Outwash,  Pasture,  Moderate",
+      "Outwash,  Pasture,  Steep",
+      "Outwash,  Lawn ,  Flat",
+      "Outwash,  Lawn ,  Moderate",
+      "Outwash,  Lawn ,  Steep",
+      "Till,  Forest,  Flat",
+      "Till,  Forest,  Moderate",
+      "Till,  Forest,  Steep",
+      "Till,  Pasture,  Flat",
+      "Till,  Pasture,  Moderate",
+      "Till,  Pasture,  Steep",
+      "Till,  Lawn ,  Flat",
+      "Till,  Lawn ,  Moderate",
+      "Till,  Lawn ,  Steep",
+      "Saturated,  Forest,  Flat",
+      "Saturated,  Forest,  Moderate",
+      "Saturated,  Forest,  Steep",
+      "Saturated,  Pasture,  Flat",
+      "Saturated,  Pasture,  Moderate",
+      "Saturated,  Pasture,  Steep",
+      "Saturated,  Lawn ,  Flat",
+      "Saturated,  Lawn ,  Moderate",
+      "Saturated,  Lawn ,  Steep",
+      "Impervious,   Flat",
+      "Impervious,  Moderate",
+      "Impervious,  Steep"
+    ],
+    "units": "HRU",
+    "scale": 10,
+    "values": [
+      0,
+      1,
+      2,
+      10,
+      11,
+      12,
+      20,
+      21,
+      22,
+      100,
+      101,
+      102,
+      110,
+      111,
+      112,
+      120,
+      121,
+      122,
+      200,
+      201,
+      202,
+      210,
+      211,
+      212,
+      220,
+      221,
+      222,
+      250,
+      251,
+      252
+    ],
+    "vizType": "bigNumberMean",
+    "default_reduction": "Category",
+    "short_description": "Units of common soils, land cover, and slope used in continuous simulation modeling.",
+    "description": "Hydrologic response units (HRUs) are discretized landscape units based on common soils, land cover, and slope characteristics. The HRU approach provides a computationally efficient method of pre-computing hydrologic response for later use. Results for a particular watershed can be calculated by summing or averaging the results for individual HRUs.\n\nEach combination of parameters was modeled in separate batched simulations. HRUs were designated by a three-digit number according to the following convention:\n\nFirst digit: Hydrologic Soil Group Number (0 = A/B, 1 = C, 2 = Saturated)\nSecond digit: Land cover (0=Forest, 1=Pasture, 2=Lawn, 5=Impervious)\nThird Digit: Slope (0=Flat, 1=Mod, 2=Steep)\n\nFor example, a site with Type C soils, with forested land cover, on a moderate slope would be represented by 101. This schema allowed for HRUs to be stored as an eight-bit unsigned integer on a Puget-Sound wide raster, minimizing storage size.",
+    "docs_link": "docs/API/image_layers/Flow%20Duration%20Index",
+    "safe_name": "hydrologic_response_units",
+    "layer": {
+      "visParams": {
+        "min": 0,
+        "max": 252,
+        "palette": [
+          "#e5f5f9",
+          "#99d8c9",
+          "#2ca25f",
+          "#e0ecf4",
+          "#9ebcda",
+          "#8856a7",
+          "#e0f3db",
+          "#a8ddb5",
+          "#43a2ca",
+          "#ece7f2",
+          "#a6bddb",
+          "#2b8cbe",
+          "#ece2f0",
+          "#a6bddb",
+          "#1c9099",
+          "#e7e1ef",
+          "#c994c7",
+          "#dd1c77",
+          "#fde0dd",
+          "#fa9fb5",
+          "#c51b8a",
+          "#edf8b1",
+          "#7fcdbb",
+          "#2c7fb8",
+          "#f7fcb9",
+          "#addd8e",
+          "#31a354",
+          "#fee6ce",
+          "#fdae6b",
+          "#e6550d"
+        ],
+        "opacity": 0.8
+      }
+    },
+    "source": {
+      "name": "The Nature Conservancy",
+      "url": null
+    }
+  },
+  {
+    "name": "Imperviousness",
+    "discrete": false,
+    "units": "Percent",
+    "scale": 1,
+    "values": [
+      0,
+      1
+    ],
+    "vizType": "bigNumberPercent",
+    "default_reduction": "mean",
+    "short_description": "Percent impervious land cover",
+    "description": "This layer is a pixel-wise imperviousness derived from the Nature Conservancy's high-resolution land cover data set. It is a binary classification of imperviousness (1 = impervious, 0 = not impervious)",
+    "safe_name": "imperviousness",
+    "layer": {
+      "visParams": {
+        "min": 0,
+        "max": 100,
+        "palette": [
+          "#0C0405",
+          "#2E1D3D",
+          "#423D7B",
+          "#38659E",
+          "#358FA7",
+          "#41B7AD",
+          "#8AD9B1",
+          "#DEF5E5"
+        ],
+        "opacity": 0.8
+      }
+    },
+    "source": {
+      "name": "The Nature Conservancy",
+      "url": null
+    }
+  },
+  {
+    "name": "Land Cover",
+    "discrete": true,
+    "labels": [
+      "No data",
+      "Grass/Low Vegetation",
+      "Shrub/Medium Vegetation",
+      "Trees/Forest",
+      "Bare soil",
+      "Water",
+      "Impervious",
+      "Impervious - Roofs "
+    ],
+    "units": "Land Cover Type",
+    "scale": 1,
+    "values": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "default_reduction": "Category",
+    "short_description": "1-meter resolution land cover classification",
+    "description": "This layer provides automatically-derived land cover classifications of the Puget Sound trough below 1,500 meters elevation. A six-class 1-meter land cover layer was developed using the Naïve Bayes classifier and trained using a 10-meter land cover product from NOAA Coastal Change Analysis Program (C-CAP). Other data combined with this analysis includes water body and river polygons (Washington Department of Natural Resources), shoreline polygons (Esri), over-water structure polygons (Washington Department of Natural Resources), road polygons buffered from centerlines (U.S. Census Bureau, 2016), and building rooftops polygons (Microsoft, 2019). Accuracy was validated with an observed land cover point dataset from the Washington Department of Fish & Wildlife.",
+    "safe_name": "land_cover",
+    "layer": {
+      "visParams": {
+        "min": 0,
+        "max": 7,
+        "palette": [
+          "#ffffff",
+          "#3ead63",
+          "#96ca6e",
+          "#26532b",
+          "#a39171",
+          "#476b9d",
+          "#adacb5",
+          "#d8d5db"
+        ],
+        "opacity": 0.8
+      }
+    },
+    "source": {
+      "name": "The Nature Conservancy",
+      "url": null
+    }
+  },
+  {
+    "name": "Land Use",
+    "discrete": true,
+    "labels": [
+      "Undesignated",
+      "Agricultural",
+      "Tribal",
+      "Forest Lands",
+      "Intensive Urban",
+      "Rural Character Residential",
+      "Water",
+      "Right of Way",
+      "Active Open Space and Recreation",
+      "Urban Character Residential",
+      "Industrial",
+      "Public",
+      "Natural Preservation",
+      "Military",
+      "Mineral Resource Area"
+    ],
+    "units": "Land Use type",
+    "scale": 5,
+    "values": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "default_reduction": "Category",
+    "short_description": "Department of Commerce Master Land Use Category",
+    "description": "The Puget Sound Mapping Project provides land-use designations of the urban areas that drain into Puget Sound. Data is derived from zoning and land-use data from 113 cities in 12 counties. Land use categories include: Intensive Urban, Industrial, Urban Character Residential, Rural Character Residential, Mining, Forest Lands, Agricultural Areas, Active Open Space, Natural Open Space, Tribal, Military, ROW, Water, and Undesignated.",
+    "safe_name": "land_use",
+    "layer": {
+      "visParams": {
+        "min": 0,
+        "max": 14,
+        "palette": [
+          "#394B59",
+          "#669C42",
+          "#EFD09E",
+          "#14774C",
+          "#9E2B0E",
+          "#F4A691",
+          "#2778AC",
+          "#6E8387",
+          "#8EB8B3",
+          "#D17257",
+          "#7C497B",
+          "#554180",
+          "#66CDAB",
+          "#9FABA2",
+          "#BF93BE"
+        ],
+        "opacity": 0.8
+      }
+    },
+    "source": {
+      "name": "Puget Sound Mapping Project",
+      "url": "https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project/"
+    }
+  },
+  {
+    "name": "Population Density",
+    "discrete": false,
+    "units": "Population per ha",
+    "scale": 100,
+    "default_reduction": "mean",
+    "short_description": "2010 Census, population density",
+    "description": "Population density from the 2010 census, reported by census block.",
+    "safe_name": "population_density",
+    "layer": {
+      "visParams": {
+        "min": 5,
+        "max": 45,
+        "palette": [
+          "#03051A",
+          "#36193E",
+          "#701F57",
+          "#AE1B59",
+          "#E03342",
+          "#F27651",
+          "#F6B48E",
+          "#FAEBDD"
+        ],
+        "opacity": 0.8
+      }
+    },
+    "source": {
+      "name": "2010 US Census Blocks",
+      "url": "https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2010/TGRSHP10SF1.pdf"
+    }
+  },
+  {
+    "name": "Precipitation (mm)",
+    "discrete": false,
+    "units": "mm/year",
+    "scale": 2500,
+    "default_reduction": "mean",
+    "short_description": "Mean annual precipitation (1970-1999)",
+    "description": "A region-wide, simulated precipitation dataset was provided by the University of Washington Climate Impacts Group. This dataset contains modeled hourly precipitation using the GFDL CM3 global climate model and the Representative Concentration Pathways (RCP) 8.5 scenario.\n\nThe GFDL model was chosen by CIG due to its ability to accurately model winter storm drivers, important for stormwater applications. Combined with the higher emissions scenario, this modeling scenario represents the upper end of expected future climate changes effects.\n\nCIG downscaled GCM results using a statistical-dynamical approach to capture the anticipated changes in extreme events as well as the different drivers of rainfall that affect the Puget Sound Region. Regional simulations were performed using the Weather Research and Forecasting community mesoscale model. This resulted in hourly rainfall predictions at an approximately 12 km grid size across Puget Sound. Predictions were bias-corrected on a quantile-mapping basis.\n\nMean annual precipitation was calculated on a per-grid basis for the period between 1970 and 1999. Grid cells were resampled using bicubic interpolation.",
+    "safe_name": "precipitation_mm",
+    "layer": {
+      "visParams": {
+        "min": 500,
+        "max": 3800,
+        "palette": [
+          "ffffff",
+          "8eb2ff",
+          "6370f8",
+          "009e1e",
+          "3cbc3d",
+          "b3d16e",
+          "b9f96e",
+          "fff913",
+          "ffa309",
+          "e50000",
+          "bd0000",
+          "810000",
+          "000000"
+        ],
+        "opacity": 0.8
+      }
+    },
+    "source": {
+      "name": "Salathé et al 2019",
+      "url": "https://cig.uw.edu/our-work/applied-research/heavy-precip-and-stormwater/"
+    }
+  },
+  {
+    "name": "Runoff (mm)",
+    "discrete": false,
+    "units": "mm/year",
+    "scale": 10,
+    "default_reduction": "mean",
+    "short_description": "Mean annual runoff calculated through continuous simulation for the period 1970-1999.",
+    "description": "Continuous hydrology simulation was performed using regional pre-calibrated parameters. Batched simulations were run for combinations of land cover, soils, and slopes across the Puget Sound domain.\n\nTo allow for parallel computations, a python adaption of HSPF (PyHSPF) developed by David Lambert with funding from the United States Department of Energy was used to model rainfall-runoff responses. Regional calibration factors for the Puget Lowlands Ecoregion were used as developed by Dinicola (1990) and Clear Creek Solutions (Department of Ecology, 2014).\n\nHSPF calculates discharge for three flow-paths: surface flow, interflow, and groundwater flow, referred to as SURO, INFW, and AGWO respectively. We report only SURO, INFW, consistent with Ecology Guidance.",
+    "safe_name": "runoff_mm",
+    "layer": {
+      "visParams": {
+        "min": 25,
+        "max": 1016,
+        "palette": [
+          "eafdfd",
+          "9cd4da",
+          "61a8c7",
+          "427bb7",
+          "3f4b96",
+          "292851",
+          "040613"
+        ],
+        "opacity": 0.8
+      }
+    },
+    "source": {
+      "name": "The Nature Conservancy",
+      "url": null
+    }
+  },
+  {
+    "name": "Slope",
+    "discrete": false,
+    "units": "Percent",
+    "scale": 10,
+    "default_reduction": "mean",
+    "short_description": "Continuous ground surface slope in degrees",
+    "description": "Slope values were calculated from the USGS National Elevation Dataset. Elevations were provided in 1/3 arc-second resolution (approximately 10-meters). Slope was calculated using the 4-connected neighbors of each pixel and reported in degrees.\n\nThe NED is derived from diverse source data that are processed to a common coordinate system and unit of vertical measure. NED data are distributed in conformance with the North American Datum of 1983 (NAD 83). All elevation values are referenced to the North American Vertical Datum of 1988 (NAVD 88).",
+    "safe_name": "slope",
+    "layer": {
+      "visParams": {
+        "min": 2,
+        "max": 20,
+        "palette": [
+          "#3f60ae",
+          "#539eb6",
+          "#6db388",
+          "#cab843",
+          "#e78532",
+          "#d92120"
+        ],
+        "opacity": 0.8
+      }
+    },
+    "source": {
+      "name": "USGS National Elevation Dataset 1/3 Arc-Second",
+      "url": "https://nationalmap.gov/elevation.html"
+    }
+  },
+  {
+    "name": "Slope Categories",
+    "discrete": true,
+    "labels": [
+      "Flat",
+      "Moderate",
+      "Steep"
+    ],
+    "units": "Category",
+    "scale": 10,
+    "values": [
+      0,
+      1,
+      2
+    ],
+    "vizType": "barChart",
+    "default_reduction": "Category",
+    "short_description": "Categorized ground surface slope",
+    "description": "Categorized ground surface slope. Slope values were calculated from the USGS National Elevation Dataset. Elevations were provided in 1/3 arc-second resolution (approximately 10-meters). Slope was calculated using the 4-connected neighbors of each pixel and classified into the following categories, consistent with Ecology guidance: Flat (< 5%), Moderate (5-15%), Steep (> 15%).\n\nThe NED is derived from diverse source data that are processed to a common coordinate system and unit of vertical measure. NED data are distributed in conformance with the North American Datum of 1983 (NAD 83). All elevation values are referenced to the North American Vertical Datum of 1988 (NAVD 88).",
+    "safe_name": "slope_categories",
+    "layer": {
+      "visParams": {
+        "min": 0,
+        "max": 2,
+        "palette": [
+          "#009B9E",
+          "#F1F1F1",
+          "#C75DAB"
+        ],
+        "opacity": 0.8
+      }
+    },
+    "source": {
+      "name": "The Nature Conservancy",
+      "url": null
+    }
+  },
+  {
+    "name": "Soils",
+    "discrete": true,
+    "labels": [
+      "Outwash",
+      "Till",
+      "Saturated",
+      "Water"
+    ],
+    "units": "Hydrologic Soil Group",
+    "scale": 5,
+    "values": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "vizType": "barChart",
+    "default_reduction": "Category",
+    "short_description": "Hydrologic Soil Group",
+    "description": "The primary source of soils data was the Gridded Soil Survey Geographic Database (gSSURGO). The gridded soils database contains 10-meter rasterized coverage of surface soils derived from National Cooperate Soil Survey (NCSS) maps. These maps are generally drawn at 1:24000 scale. NCSS designates soils by a map-unit name, which can be joined with other attribute data. Map units in the study area were joined with the soils component table, containing hydrologic-soil group designations. NCSS classifies hydrologic soil groups according to estimates of runoff potential. Soils are assigned to four groups (A, B, C, and D) and three dual classes (A/D, B/D, and C/D).\n\nIn areas where gSSURGO data were not available, the Global Hydrologic Soil Groups (HYSOGs250m) for Curve Number-Based Runoff Modeling developed by Oak Ridge National Laboratory was used. To account for wetlands and saturated soils not included in the above datasets, the USGS GAP/LANDFIRE National Terrestrial Ecosystems data set was used.",
+    "safe_name": "soils",
+    "layer": {
+      "visParams": {
+        "min": 1,
+        "max": 4,
+        "palette": [
+          "#69995D",
+          "#564138",
+          "#F06543",
+          "#b3caff"
+        ],
+        "opacity": 0.8
+      }
+    },
+    "source": {
+      "name": "The Nature Conservancy",
+      "url": null
+    }
+  },
+  {
+    "name": "Traffic",
+    "discrete": false,
+    "units": "Average Annual Daily Trips",
+    "scale": 10,
+    "vizType": "bigNumberMean",
+    "default_reduction": "mean",
+    "short_description": "Mean Annual Average Daily Trips",
+    "description": "High-resolution raster dataset of Annual Daily Traffic across road surface areas in the Puget Sound trough during 2016 and 2018. A continuous, high spatial resolution Average Daily Traffic (ADT) raster dataset covering the Puget Sound trough was produced for modeling water quality used in the Puget Sound Stormwater Heatmap. Input data sources included 2018 ADT point locations (Kalibrate Technologies, 2019) and year 2016 road lines with traffic and lane attributes (Messager et al., 2021), produced from 2016 US Census TIGER Lines spatial data joined with tabular data from the 2017 U.S. Department of Transportation National Transportation Atlas Database Highway Performance Monitoring System.",
+    "safe_name": "traffic",
+    "layer": {
+      "visParams": {
+        "min": 0,
+        "max": 100000,
+        "palette": [
+          "000000",
+          "3B7CB8",
+          "5EBAD1",
+          "ABE5D4",
+          "DEEAB4",
+          "E0DD86",
+          "CBB64D",
+          "BF9D39",
+          "B99333",
+          "AF7E28",
+          "AB7424",
+          "A5691F",
+          "9B5516",
+          "964B12",
+          "91400E",
+          "8A3308",
+          "842705",
+          "7F1900"
+        ],
+        "opacity": 0.8
+      }
+    },
+    "source": {
+      "name": "The Nature Conservancy",
+      "url": null
+    }
+  }
+]

@@ -1,4 +1,4 @@
-Land Cover
+# Land Cover
 ================
 
 *1-meter resolution land cover classification*
