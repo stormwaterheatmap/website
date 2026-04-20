@@ -1,4 +1,4 @@
-#HSPF Land Cover Type
+# HSPF Land Cover Type
 ================
 
 *Land cover classified by categories used in HSPF/WWHM*
