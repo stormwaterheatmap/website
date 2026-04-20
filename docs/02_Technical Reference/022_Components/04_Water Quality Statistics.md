@@ -106,7 +106,6 @@ In order to employ a consistent analysis across different monitored
 watersheds we extracted land use data from the Washington Department of
 
 Commerce Land Use: [Puget Sound Mapping Project](https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project).
-=======
 
 Land use classes (also listed in Table 4.2) include:
 
@@ -514,11 +513,11 @@ $$\epsilon_{ijk} = \sigma^2_j * \exp^{2\delta * rain_{ik}}$$
  
  
 
-<!-- $$
+{/* $$
 
 
 \epsilon_{ijk} = \sigma^2_j * \exp^{2\delta * rain_{ik}}
-$$ -->
+$$ */}
 
 The second best fit allows residual variation to differ by agency j:
 

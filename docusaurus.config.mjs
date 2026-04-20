@@ -1,68 +1,54 @@
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import {createRequire} from 'module';
+const require = createRequire(import.meta.url);
+
 const linkout_svg =
 '<svg width="10" height="10" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_3JMu"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>'
 
 const linkout_svg_footer =
 '<svg width="10" height="10" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_3JMu"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>'
 
-import remarkMath from 'remark-math';
-import rehypeKatex from 'rehype-katex';
-
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 
-module.exports = {
+export default {
     title: 'The Nature Conservancy StormwaterHeatmap',
     tagline: 'Explore your watersheds. get data, and make informed decisions.',
     url: 'https://stormwaterheatmap.dev',
     baseUrl: '/',
     onBrokenLinks: 'warn',
-    onBrokenMarkdownLinks: 'warn',
+    markdown: {
+        hooks: {
+            onBrokenMarkdownLinks: 'warn',
+        },
+    },
     favicon: 'img/favicon.ico',
     organizationName: 'The Nature Conservancy',
     projectName: 'website',
-    // plugins: ['@docusaurus/plugin-google-gtag'],
-    
-    themeConfig: {
-        metadata: [{name: 'Clarity', content: 'Microsoft Clarity'}],
-        headTags: [
-          {
-            tagName: 'script',
-            attributes: {
-              type: 'text/javascript',
-            },
-            innerHTML: `(function(c,l,a,r,i,t,y){
-              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/YOUR_PROJECT_ID";
-              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "YOUR_PROJECT_ID");`,
-          },
-        ],
+    plugins: [
+        ...(process.env.DOCUSAURUS_GOOGLE_MEASUREMENT_ID
+            ? [['@docusaurus/plugin-google-gtag', { trackingID: process.env.DOCUSAURUS_GOOGLE_MEASUREMENT_ID }]]
+            : []),
+    ],
 
-        // gtag: {
-        //     // You can also use your "G-" Measurement ID here.
-        //     trackingID: 'G-NY607SJH9G',
-        //     // Optional fields.
-        //     anonymizeIP: false, // Should IPs be anonymized?
-        // },
+    themeConfig: {
         colorMode: {
             defaultMode: 'light',
             disableSwitch: false
         },
         announcementBar: {
-            id: 'announcementBar-dev', 
-            
-            content: `<strong>Full-extent data layer downloads are now available!</strong> Read more on our blog  
+            id: 'announcementBar-dev',
+
+            content: `<strong>Full-extent data layer downloads are now available!</strong> Read more on our blog
             <a target="_blank" rel="noopener noreferrer" href="https://www.stormwaterheatmap.org/blog/feature-announcement-ago"> here.</a>${linkout_svg}`,
 
             backgroundColor: '#003F35',
-            // '#2b7126',
 
             textColor: '#f5f6f7',
             isCloseable: true
         },
         navbar: {
             hideOnScroll: true,
-
-            //title: 'StormwaterHeatmap.Org',
 
             logo: {
                 alt: 'TNC Logo',
@@ -79,23 +65,8 @@ module.exports = {
                 }, {
                     position: 'left',
                     label: 'Analyze Watersheds',
-                    //items: [
-                        // {
-                        //     label: 'Analyze Single Watershed',
-                        //     
-                        to: "single_watershed"
-                        //}, {
-                    //         label: 'Compare Watersheds',
-                    //         to: "compare_watersheds"
-                    //     }
-                    // ]
-                }, 
-                // {
-                //     position: 'left',
-                    
-                //     label: 'Technical Reference',
-                //             to: 'docs/Technical Reference/overview'
-                // }, 
+                    to: 'single_watershed',
+},
                 {
                     label: 'Documentation',
                     position: 'left',
@@ -106,7 +77,7 @@ module.exports = {
                         }, {
                             label: 'Layer Reference',
                             to: 'docs/category/DataLayers/'
-                        }, 
+                        },
                         {
                             label: 'Resources',
                             to: "docs/category/resources"
@@ -116,29 +87,29 @@ module.exports = {
                             href: 'https://github.com/stormwaterheatmap'
                         }
                     ]
-                }, 
+                },
                 {
                     label: 'Blog',
                     position: 'left',
                     to: 'blog'
-                }, 
+                },
                 {
                     position: 'left',
                     label: 'Get Data',
                     to: 'docs/get_data'
-                    
-                }, 
+
+                },
                 {
                     position: 'right',
                     label: 'Contact',
                     items: [
                         {
-                            label: "Get in touch", 
+                            label: "Get in touch",
                             to: "contact"
                         },
                         {
-                            label: "Share your Story", 
-                            to: "user_stories", 
+                            label: "Share your Story",
+                            to: "user_stories",
 
                         }
 
@@ -150,8 +121,8 @@ module.exports = {
             logo: {
                 src: 'img/tnc-logo-white.svg'
             },
-            copyright: 
-            `Copyright © ${new Date().getFullYear()} The Nature Conservancy. ${ "<br>"} 
+            copyright:
+            `Copyright © ${new Date().getFullYear()} The Nature Conservancy. ${ "<br>"}
       ${ "<small>"}Developed by Geosyntec Consultants, Inc.${"</small>"}`,
             links: [
                 {
@@ -163,21 +134,14 @@ module.exports = {
                         }, {
                             label: 'Layer Reference',
                             to: '/docs/category/DataLayers/'
-                        }, 
+                        },
                     ]
                 },
-                // title: 'Docs', items: [{
-                //
-                //   },   {    ',   },   {     label: 'Github',     to: '/docs/intro',   }, ],
-
-                // {title: "Contact",
-                //  items:[
-                //     {label: 'Contact form', to: 'docs/contact'}]}, 
                 {title: "Get Involved",
 
                 items: [
                     {
-                        label: 'Contact us', 
+                        label: 'Contact us',
                         to: 'docs/contact'
                     },
                     {
@@ -187,30 +151,28 @@ module.exports = {
                 ]
             },
 
-                
+
                 {title: "Resources",
-                
-                    
+
+
                     items: [
-                        
+
                         {
                             label: `Background`,
                             to: `about_stormwater`
-                        }, 
+                        },
                         {
-                            label: `Links`, 
-                            // ${linkout_svg_footer}`,
+                            label: `Links`,
                             to: `docs/links`
                         },
                     ]},
-                
+
                 {title: "More",
                 items:[
                     {
-                        label: `License & Terms`, 
-                        // ${linkout_svg_footer}`,
+                        label: `License & Terms`,
                         to: `docs/license`
-                        
+
                     }
 
                 ]}
@@ -226,30 +188,29 @@ module.exports = {
                     remarkPlugins: [remarkMath],
                     rehypePlugins: [rehypeKatex],
                     sidebarPath: require.resolve('./sidebars.js'),
-                    // Please change this to your
-                    // repo.https://github.com/stormwaterheatmap/website.git
                     editUrl: 'https://github.com/stormwaterheatmap/website/tree/main/'
                 },
+                ...(process.env.DOCUSAURUS_GOOGLE_MEASUREMENT_ID ? {
                 gtag: {
-                    // You can also use your "G-" Measurement ID here.
-                    trackingID: 'G-NY607SJH9G',
-                    // Optional fields.
-                    anonymizeIP: false, // Should IPs be anonymized?
-                  },
-                // blog: {   showReadingTime: true,   // Please change this to your repo.
-                // editUrl: 'https://github.com/stormwaterheatmap/website/edit/main/', },
+                    trackingID: process.env.DOCUSAURUS_GOOGLE_MEASUREMENT_ID,
+                    anonymizeIP: false,
+                },
+                } : {}),
+                blog: {
+                    onUntruncatedBlogPosts: 'ignore',
+                },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css')
-                }, 
+                },
 
-            }, 
-        ], 
-    ], 
+            },
+        ],
+    ],
     stylesheets: [
         {
-          href: 'https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css',
+          href: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css',
           integrity:
-            'sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc',
+            'sha384-n8MVuj4nber5hLgLEQnQb3oP5Po6YExyjslPNXYOKHB3aNsgASc7sNrPcn1OZHGB',
           crossorigin: 'anonymous',
         },
       ],
