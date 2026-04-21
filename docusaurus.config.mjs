@@ -25,12 +25,6 @@ export default {
     favicon: 'img/favicon.ico',
     organizationName: 'The Nature Conservancy',
     projectName: 'website',
-    plugins: [
-        ...(process.env.DOCUSAURUS_GOOGLE_MEASUREMENT_ID
-            ? [['@docusaurus/plugin-google-gtag', { trackingID: process.env.DOCUSAURUS_GOOGLE_MEASUREMENT_ID }]]
-            : []),
-    ],
-
     themeConfig: {
         colorMode: {
             defaultMode: 'light',
