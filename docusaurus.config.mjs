@@ -190,12 +190,10 @@ export default {
                     sidebarPath: require.resolve('./sidebars.js'),
                     editUrl: 'https://github.com/stormwaterheatmap/website/tree/main/'
                 },
-                ...(process.env.DOCUSAURUS_GOOGLE_MEASUREMENT_ID ? {
-                gtag: {
-                    trackingID: process.env.DOCUSAURUS_GOOGLE_MEASUREMENT_ID,
-                    anonymizeIP: false,
-                },
-                } : {}),
+                      gtag: {
+        trackingID: 'G-WS0E1W7LBB',   // your tag
+        anonymizeIP: false,
+      },
                 blog: {
                     onUntruncatedBlogPosts: 'ignore',
                 },
