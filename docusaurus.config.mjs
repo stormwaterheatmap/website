@@ -25,6 +25,38 @@ export default {
     favicon: 'img/favicon.ico',
     organizationName: 'The Nature Conservancy',
     projectName: 'website',
+
+    headTags: [
+        {
+            tagName: 'meta',
+            attributes: {
+                name: 'description',
+                content: 'Interactive stormwater data layers and watershed analysis tools for the Puget Sound region. Developed by The Nature Conservancy and Geosyntec Consultants.',
+            },
+        },
+        {
+            tagName: 'meta',
+            attributes: {
+                property: 'og:type',
+                content: 'website',
+            },
+        },
+        {
+            tagName: 'meta',
+            attributes: {
+                property: 'og:site_name',
+                content: 'Stormwater Heatmap',
+            },
+        },
+        {
+            tagName: 'meta',
+            attributes: {
+                name: 'twitter:card',
+                content: 'summary_large_image',
+            },
+        },
+    ],
+
     themeConfig: {
         colorMode: {
             defaultMode: 'light',
@@ -185,17 +217,28 @@ export default {
                     editUrl: 'https://github.com/stormwaterheatmap/website/tree/main/'
                 },
                       gtag: {
-        trackingID: 'G-WS0E1W7LBB',   // your tag
+        trackingID: 'G-WS0E1W7LBB',   
         anonymizeIP: false,
       },
                 blog: {
                     onUntruncatedBlogPosts: 'ignore',
+                },
+                sitemap: {
+                    changefreq: 'weekly',
+                    priority: 0.5,
+                    filename: 'sitemap.xml',
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css')
                 },
 
             },
+        ],
+    ],
+    plugins: [
+        [
+            "@gracefullight/docusaurus-plugin-microsoft-clarity",
+            { projectId: "wf84tzxkf3" },
         ],
     ],
     stylesheets: [

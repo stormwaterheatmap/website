@@ -1,8 +1,9 @@
 ---
 id: intro
 title: "Background"
+description: "Learn how the Stormwater Heatmap helps Puget Sound communities prioritize pollution reduction through machine learning, hydrology modeling, and water quality data."
 sidebar_location: 1
-tags: 
+tags:
     - Resources
 ---
 

@@ -1,6 +1,7 @@
 ---
 id: What_is_the_stormwater_heatmap
 title: "What is the Stormwater Heatmap"
+description: "An interactive mapping tool that visualizes stormwater pollution hotspots across the Puget Sound watershed with downloadable data layers."
 sidebar_location: 1
 ---
 

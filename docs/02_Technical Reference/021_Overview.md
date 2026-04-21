@@ -1,6 +1,7 @@
 ---
 id: overview
 title: Overview
+description: "Technical overview of the Stormwater Heatmap methodology, including land cover classification, hydrology modeling, and water quality statistics."
 # sidebar_location: 2
 ---
 
