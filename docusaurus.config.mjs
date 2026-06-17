@@ -169,7 +169,7 @@ export default {
                 items: [
                     {
                         label: 'Contact us',
-                        to: 'docs/contact'
+                        to: 'contact'
                     },
                     {
                         label: 'Github Repo',
