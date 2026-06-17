@@ -45,7 +45,7 @@ jobs:
 
       # 2. Your framework uses the Pages metadata while building
       - name: Build Project
-        run: SITE_URL="stormwaterheatmap.github.io" SITE_BASE_URL="/website/" npm run build
+        run: SITE_URL="https://stormwaterheatmap.github.io" SITE_BASE_URL="/website/" npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
