@@ -1,0 +1,893 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-Technical Reference/Components/Water Quality Statistics" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Water Quality Statistics | The Nature Conservancy StormwaterHeatmap</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://stormwaterheatmap.org/img/stormwater-default-share.jpg"><meta data-rh="true" name="twitter:image" content="https://stormwaterheatmap.org/img/stormwater-default-share.jpg"><meta data-rh="true" property="og:url" content="https://stormwaterheatmap.org/docs/Technical Reference/Components/Water Quality Statistics"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Water Quality Statistics | The Nature Conservancy StormwaterHeatmap"><meta data-rh="true" name="description" content="We developed a series of linear mixed effects models to estimate"><meta data-rh="true" property="og:description" content="We developed a series of linear mixed effects models to estimate"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://stormwaterheatmap.org/docs/Technical Reference/Components/Water Quality Statistics"><link data-rh="true" rel="alternate" href="https://stormwaterheatmap.org/docs/Technical Reference/Components/Water Quality Statistics" hreflang="en"><link data-rh="true" rel="alternate" href="https://stormwaterheatmap.org/docs/Technical Reference/Components/Water Quality Statistics" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Methodology","item":"https://stormwaterheatmap.org/docs/category/methods"},{"@type":"ListItem","position":2,"name":"Water Quality Statistics","item":"https://stormwaterheatmap.org/docs/Technical Reference/Components/Water Quality Statistics"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="The Nature Conservancy StormwaterHeatmap RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="The Nature Conservancy StormwaterHeatmap Atom Feed">
+
+<link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WS0E1W7LBB"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-WS0E1W7LBB",{})</script>
+
+
+
+<link rel="preconnect" href="https://www.clarity.ms">
+<script>!function(t,e,n,c,a,r,s){t[n]=t[n]||function(){(t[n].q=t[n].q||[]).push(arguments)},(r=e.createElement(c)).async=1,r.src="https://www.clarity.ms/tag/wf84tzxkf3",(s=e.getElementsByTagName(c)[0]).parentNode.insertBefore(r,s)}(window,document,"clarity","script")</script>
+<meta name="description" content="Interactive stormwater data layers and watershed analysis tools for the Puget Sound region. Developed by The Nature Conservancy and Geosyntec Consultants.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stormwater Heatmap">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVuj4nber5hLgLEQnQb3oP5Po6YExyjslPNXYOKHB3aNsgASc7sNrPcn1OZHGB" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.2080da50.css">
+<script src="/assets/js/runtime~main.0bb67a40.js" defer="defer"></script>
+<script src="/assets/js/main.ae62cad0.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const a=new URLSearchParams(window.location.search).entries();for(var[t,e]of a)if(t.startsWith("docusaurus-data-")){var n=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(n,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><div class="theme-announcement-bar announcementBar_mb4j" style="background-color:#003F35;color:#f5f6f7" role="banner"><div class="announcementBarPlaceholder_vyr4"></div><div class="content_knG7 announcementBarContent_xLdY"><strong>Full-extent data layer downloads are now available!</strong> Read more on our blog
+            <a target="_blank" rel="noopener noreferrer" href="https://www.stormwaterheatmap.org/blog/feature-announcement-ago"> here.</a><svg width="10" height="10" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_3JMu"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></div><button type="button" aria-label="Close" class="clean-btn close closeButton_CVFx announcementBarClose_gvF7"><svg viewBox="0 0 15 15" width="14" height="14"><g stroke="currentColor" stroke-width="3.1"><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path></g></svg></button></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_m1mJ"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/tnc-logo-white.svg" alt="TNC Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/tnc-logo-white.svg" alt="TNC Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/">🏠 View Data Layers</a><a class="navbar__item navbar__link" href="/single_watershed">Analyze Watersheds</a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">Documentation</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/category/methods">Methodology</a></li><li><a class="dropdown__link" href="/docs/category/DataLayers/">Layer Reference</a></li><li><a class="dropdown__link" href="/docs/category/resources">Resources</a></li><li><a href="https://github.com/stormwaterheatmap" target="_blank" rel="noopener noreferrer" class="dropdown__link">Github Repo<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><a class="navbar__item navbar__link" href="/blog">Blog</a><a class="navbar__item navbar__link" href="/docs/get_data">Get Data</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">Contact</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/contact">Get in touch</a></li><li><a class="dropdown__link" href="/user_stories">Share your Story</a></li></ul></div><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd sidebarWithHideableNavbar_wUlq"><a tabindex="-1" class="sidebarLogo_isFc" href="/"><img src="/img/tnc-logo-white.svg" alt="TNC Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/tnc-logo-white.svg" alt="TNC Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></a><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG menuWithAnnouncementBar_GW3s"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/docs/category/methods"><span title="Methodology" class="categoryLinkLabel_W154">Methodology</span></a><button aria-label="Collapse sidebar category &#x27;Methodology&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/Technical Reference/overview"><span title="Overview" class="linkLabel_WmDU">Overview</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/Technical Reference/Components/High-resolution Land Cover"><span title="Land Cover" class="linkLabel_WmDU">Land Cover</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/Technical Reference/Components/Hydrology"><span title="Hydrology" class="linkLabel_WmDU">Hydrology</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/Technical Reference/Components/Water Quality Statistics"><span title="Water Quality Statistics" class="linkLabel_WmDU">Water Quality Statistics</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/Technical Reference/Components/Additional Information/References"><span title="References" class="linkLabel_WmDU">References</span></a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/docs/category/methods"><span>Methodology</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Water Quality Statistics</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Water Quality Statistics</h1></header>
+<p>We developed a series of linear mixed effects models to estimate
+concentrations for constituents of concern (COCs) in Puget Sound urban
+stormwater. Spatial covariates in the models included various landscape
+predictors, rainfall, seasonal components, and in some models, percent
+land use (commercial, industrial, residential).</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="data-sources">Data Sources<a href="#data-sources" class="hash-link" aria-label="Direct link to Data Sources" title="Direct link to Data Sources" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="outfall-data">Outfall Data<a href="#outfall-data" class="hash-link" aria-label="Direct link to Outfall Data" title="Direct link to Outfall Data" translate="no">​</a></h3>
+<p>The primary source of measured stormwater data is the S8.D Municipal
+Stormwater Permit Outfall Data (referred to as the S8 Data in this
+document) provided by the Washington Department of Ecology (Hobbs et
+al., 2015). Special Condition S8.D of the 2007-2012 Phase I Municipal
+Stormwater Permit required permittees to collect and analyze data to
+evaluate pollutant loads in stormwater discharged from different land
+uses: high density (HD) residential, low density (LD) residential,
+commercial, and industrial. Phase I Permittees[1] collected water
+quality and flow data, sediment data, and toxicity information from
+stormwater discharges during storm events. Stormwater data collected
+from a total of 16 outfalls by six Phase I Permittees was utilized in
+this modeling study.</p>
+<p>The stormwater outfall data are available from Ecology via an open-data
+api at:
+<a href="https://data.wa.gov/Natural-Resources-Environment/Municipal-Stormwater-%20Permit-Outfall-Data/d958-q2ci.%20" target="_blank" rel="noopener noreferrer" class="">https://data.wa.gov/Natural-Resources-Environment/Municipal-Stormwater-
+Permit-Outfall-Data/d958-q2ci.</a></p>
+<p>COCs analyzed in this study are:</p>
+<ul>
+<li class="">
+<p>Copper – Total</p>
+</li>
+<li class="">
+<p>Total Suspended Solids (TSS)</p>
+</li>
+<li class="">
+<p>Phosphorus – Total</p>
+</li>
+<li class="">
+<p>Zinc - Total</p>
+</li>
+<li class="">
+<p>Total Kjeldahl Nitrogen (TKN)</p>
+</li>
+</ul>
+<p>We extracted data for these COCs, and performed minimal data cleaning.
+We filtered out rejected data (values with a R or REJ flag), removed
+replicates, and removed one data point for TKN that was an outlier (an
+order of magnitude higher than the majority of the data). Figure 4.1
+shows data before removal of the outlier.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/COC all data with outliers Fig 4_1-5316f096b3eb1495d7ce9da2ddcfcc94.bmp" width="1025" height="757" class="img_ev3q"></p>
+<p><strong>Figure 4.1</strong> All observations with outlier in place for Total Kjeldahl
+nitrogen (TKN)</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="censored-non-detect-data">Censored (Non-Detect) Data<a href="#censored-non-detect-data" class="hash-link" aria-label="Direct link to Censored (Non-Detect) Data" title="Direct link to Censored (Non-Detect) Data" translate="no">​</a></h3>
+<p>Nearly all COCs had non-detect (left-censored) data present (Table 4.1).
+Ecology flagged non-detect data and provided the reporting limit for
+each non-detect value. Most COCs had a very small percentage of data
+that were non-detect (2% or less); one COC, TKN, had a higher level of
+non-detect data (just over 10%). For all COCs, non-detect values were
+substituted with one-half of the reporting limit. Models using censored
+methods were compared to linear models for TKN to verify that data
+substitution on linear mixed effects models generated suitable results.</p>
+<p><strong>Table 4.1</strong> Percentage of data points that were left-censored
+(non-detect) for each chemical of concern</p>
+<table><thead><tr><th>C hemical of Concern</th><th>Ce nsored Data Perc entage</th><th>Notes</th></tr></thead><tbody><tr><td>Total Copper</td><td>0%</td><td>4 samples were field blanks misclassified as ND’s. Censored data percentage was calculated following removal of these 4 field blanks.</td></tr><tr><td>Total K jeldahl N itrogen</td><td>9.76%</td><td></td></tr><tr><td>Total Pho sphorus</td><td>1.17%</td><td>3 samples with high results were classified as ND’s, but should have been flagged as “estimated”. Censored data percentage was calculated following reclassification of these 3 data points.</td></tr><tr><td>Total Su spended Solids</td><td>0.83%</td><td></td></tr><tr><td>Total Zinc</td><td>0%</td><td>4 samples were field blanks misclassified as ND’s. Censored data percentage was calculated following removal of these 4 field blanks</td></tr></tbody></table>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="transformation-of-outfall-data">Transformation of outfall data<a href="#transformation-of-outfall-data" class="hash-link" aria-label="Direct link to Transformation of outfall data" title="Direct link to Transformation of outfall data" translate="no">​</a></h3>
+<p>Each COC was then evaluated for its underlying distribution, to
+determine whether transformation would be beneficial prior to running a
+linear mixed effects model on the results. Quantile-quantile plots (QQ
+plots) using a normal distribution, gamma distribution, square-root
+transformed distribution, and log-transformed distribution were visually
+analyzed. For all COC’s, log-transformation was deemed an appropriate
+data transformation prior to model analysis (Fig. 4.2).</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/QQ plots all COCs fig 4_2-f733f3882f9e6e2bb819d90f93667cfe.bmp" width="1025" height="757" class="img_ev3q"></p>
+<p><strong>Figure 4.2</strong> Quantile-quantile plots of COCs using a natural-log (ln)
+scale. Red line shows the QQ-line.</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="spatial-data">Spatial Data<a href="#spatial-data" class="hash-link" aria-label="Direct link to Spatial Data" title="Direct link to Spatial Data" translate="no">​</a></h2>
+<p>For this study, we did not rely on the permittee’s self-reported land
+use type to run regression models predicting pollution loading from land
+use. A visual scan of our land cover data layer versus self-reported
+land use types revealed little agreement among permittee definitions of
+the four land use types (high density residential, low density
+residential, commercial, industrial). Therefore, we compiled a suite of
+continuous datasets from which to run chemical loading models. We divide
+these into land use and landscape data.</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="land-use">Land Use<a href="#land-use" class="hash-link" aria-label="Direct link to Land Use" title="Direct link to Land Use" translate="no">​</a></h3>
+<p>In order to employ a consistent analysis across different monitored
+watersheds we extracted land use data from the Washington Department of</p>
+<p>Commerce Land Use: <a href="https://www.commerce.wa.gov/serving-communities/growth-management/puget-sound-mapping-project" target="_blank" rel="noopener noreferrer" class="">Puget Sound Mapping Project</a>.</p>
+<p>Land use classes (also listed in Table 4.2) include:</p>
+<ul>
+<li class="">
+<p>Intensive urban (includes commercial areas, apartment buildings)</p>
+</li>
+<li class="">
+<p>Urban residential (includes the majority of urban and suburban
+single-family dwellings)</p>
+</li>
+<li class="">
+<p>Rural residential</p>
+</li>
+<li class="">
+<p>Industrial</p>
+</li>
+</ul>
+<p>In addition, we combined some land use classes to generate additional
+land use classes:</p>
+<ul>
+<li class="">
+<p>Total residential (urban residential + rural residential)</p>
+</li>
+<li class="">
+<p>Intensive Urban + Industrial; the industrial land use category did
+not have many non-zero data points</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="landscape-data">Landscape Data<a href="#landscape-data" class="hash-link" aria-label="Direct link to Landscape Data" title="Direct link to Landscape Data" translate="no">​</a></h3>
+<p>For each watershed contained in the S8 dataset, potentially relevant
+landscape data were extracted from the following sources (Table 4.2):</p>
+<p><strong>Table 4.2</strong>: Sources of landscape spatial predictor data used to
+develop statistical models.</p>
+<table><thead><tr><th><strong>Layer</strong></th><th><strong>ID</strong></th><th><strong>Source</strong></th></tr></thead><tbody><tr><td>urban residential</td><td>urbRES</td><td>Washington State Department of Commerce, Puget Sound Mapping Project</td></tr><tr><td>rural residential</td><td>ruRES</td><td></td></tr><tr><td>total residential (urban + rural)</td><td>totRES</td><td></td></tr><tr><td>intensive urban</td><td>intURB</td><td></td></tr><tr><td>industrial</td><td>IND</td><td></td></tr><tr><td>intensive urban + industrial</td><td>intURB_IND</td><td></td></tr><tr><td>impervious surfaces</td><td>impervious</td><td></td></tr><tr><td>paved surfaces</td><td>paved</td><td></td></tr><tr><td>rooftop density</td><td>roofs</td><td></td></tr><tr><td>urban residential rooftops</td><td>r oof_urbRES</td><td>rooftop density applied to Washington State Department of Commerce, Puget Sound Mapping Project data</td></tr><tr><td>total residential rooftops</td><td>r oof_totRES</td><td></td></tr><tr><td>intensive urban rooftops</td><td>r oof_intURB</td><td></td></tr><tr><td>intensive urban + industrial rooftops</td><td>roof_ intURB_IND</td><td></td></tr><tr><td>grass &amp; low vegetation</td><td>grass</td><td></td></tr><tr><td>tree cover</td><td>trees</td><td></td></tr><tr><td>total vegetative cover</td><td>greenery</td><td></td></tr><tr><td>undeveloped areas</td><td>nodev</td><td></td></tr><tr><td>traffic</td><td>traffic</td><td></td></tr><tr><td>population</td><td>popn</td><td></td></tr><tr><td>particulate matter 2.5um</td><td>pm25_na</td><td></td></tr><tr><td>particulate surface area</td><td>partSA</td><td></td></tr><tr><td>NO2</td><td>no2</td><td></td></tr><tr><td>carbon emissions, commercial</td><td>CO2_com</td><td>Vulcan Carbon Dioxide Emissions data set</td></tr><tr><td>carbon emissions, residential</td><td>CO2_res</td><td></td></tr><tr><td>carbon emissions, road</td><td>CO2_road</td><td></td></tr><tr><td>carbon emissions, nonroad</td><td>C O2_nonroad</td><td></td></tr><tr><td>carbon emissions, total</td><td>CO2_tot</td><td></td></tr><tr><td>slope</td><td>slope</td><td></td></tr><tr><td>age of development</td><td>devAge</td><td>Calculated value based on year of development</td></tr></tbody></table>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="pre-processing-of-spatial-data">Pre-processing of spatial data<a href="#pre-processing-of-spatial-data" class="hash-link" aria-label="Direct link to Pre-processing of spatial data" title="Direct link to Pre-processing of spatial data" translate="no">​</a></h3>
+<p>In order to use the landscape data at an appropriate scale across the
+study area, spatial predictors were stacked and then convolved with a
+100-meter gaussian kernel. This resulted in “fuzzy” predictors that
+could apply across dataset boundaries. These values were then extracted
+for each monitored watershed.</p>
+<p>Prior to use, spatial data were plotted and visually assessed for
+outliers (Fig. 4.3). Square-root transformation was performed on spatial
+data sets with outliers that were higher than the rest of the
+predictor’s values: popn, traffic, slope, CO2_res, CO2_com, CO2_road,
+CO2_nonroad, CO2_tot. The devAge spatial predictor had a low data
+outlier; devAge values were squared to address the low outlier. Figure
+4.4 shows the spatial data following transformation.</p>
+<p>Prior to use in models, spatial data sets were scaled and centered using
+the mean and standard deviation from the 14 watersheds in this study.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/untransformed predictors fig_4_3-34bd27744795dd954fd7d77198d15e24.bmp" width="1100" height="880" class="img_ev3q"></p>
+<p><strong>Figure 4.3</strong> Raw spatial data</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/transformed predictors fig_4_4-ac369931cbe2933d3120b3103a8f02fa.bmp" width="1094" height="291" class="img_ev3q"></p>
+<p><strong>Figure 4.4</strong> Spatial data following transformation</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="precipitation-data">Precipitation Data<a href="#precipitation-data" class="hash-link" aria-label="Direct link to Precipitation Data" title="Direct link to Precipitation Data" translate="no">​</a></h3>
+<p>Daily rainfall data were obtained from the <a href="https://daymet.ornl.gov" target="_blank" rel="noopener noreferrer" class="">DayMet website operated by
+NASA</a>. Daily data were obtained for years</p>
+<p>2009 to 2013, and cumulative one day, three day, and seven day, 14-day,
+21-day and 28-day antecedent precipitation were calculated for each
+sampling date. For example, for a sampling date of March 22, cumulative
+three-day precipitation would include precipitation occurring on March
+20, 21 and 22. For each COC, <em>ln</em>-transformed chemical concentrations
+were plotted against each precipitation measurement, and the plots were
+visually assessed to select the most appropriate time scale for
+precipitation. Cumulative 21-day precipitation was selected for copper
+and phosphorus, while 1-day precipitation was selected for TSS.</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="model-construction-and-selection">Model Construction and Selection<a href="#model-construction-and-selection" class="hash-link" aria-label="Direct link to Model Construction and Selection" title="Direct link to Model Construction and Selection" translate="no">​</a></h2>
+<p>Selection of the best model for each COC was performed using the
+methodology of Zuur al. (2009), as outlined in the steps below.
+Statistical analyses and model fitting were performed in R (R Core Team,
+2021).</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="step-1-select-strong-potential-landscape-predictors">Step 1. Select strong potential landscape predictors<a href="#step-1-select-strong-potential-landscape-predictors" class="hash-link" aria-label="Direct link to Step 1. Select strong potential landscape predictors" title="Direct link to Step 1. Select strong potential landscape predictors" translate="no">​</a></h3>
+<p>The initial step was to find a suitable set of potential landscape
+predictors for the COC in question. Single-predictor linear models were
+constructed for the relationship between <em>ln</em>-transformed chemical
+concentration and each landscape predictor, in turn. Plots were visually
+assessed to determine candidate predictors for linear mixed effects
+models. We looked for slopes with a p-value of &lt; 0.05, and for data
+points to fall roughly along the best fit model line. If prior knowledge
+indicated the importance of certain predictors, those were also included
+in the set of candidate predictors.</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="step-2-construct-a-beyond-optimal-model-controlling-for-collinearity">Step 2. Construct a beyond-optimal model, controlling for collinearity<a href="#step-2-construct-a-beyond-optimal-model-controlling-for-collinearity" class="hash-link" aria-label="Direct link to Step 2. Construct a beyond-optimal model, controlling for collinearity" title="Direct link to Step 2. Construct a beyond-optimal model, controlling for collinearity" translate="no">​</a></h3>
+<p>The starting point of our model selection process was a “beyond-optimal”
+model, where the fixed component of the mixed effects model contained as
+many strong landscape predictors as possible. To prevent using highly
+correlated landscape predictors together in statistical models, we
+calculated calculated the correlation coefficient for each coefficient
+pair of landscape predictors, and eliminated select predictors to reduce
+correlation. We then constructed a generalized leas squared (gls) model
+in R (nlme package, Pinheiro et al., 2021) using the beyond-optimal set
+of fixed effects, and utilizing restricted maximum likelihood estimation
+(REML).</p>
+<p>Throughout the model selection process, highly correlated landscape
+predictors (correlation coefficient ≥0.85) were not used together in any
+models.</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="step-3-control-for-heterogeneity-heteroskedasticity">Step 3. Control for heterogeneity (heteroskedasticity)<a href="#step-3-control-for-heterogeneity-heteroskedasticity" class="hash-link" aria-label="Direct link to Step 3. Control for heterogeneity (heteroskedasticity)" title="Direct link to Step 3. Control for heterogeneity (heteroskedasticity)" translate="no">​</a></h3>
+<p>Normalized residuals from the “beyond-optimal” gls model were plotted
+against the model’s fitted values, and examined for heteroskedasticity.
+We also plotted residuals against agency, year, season, land use,
+precipitation, antecedent dry days, and all potential predictors, to
+look for patterns in residuals. If residual plots showed evidence of
+heteroskedasticity, we tried a series of gls models (fitted with REML)
+with different variance structures that utilized agency, season, and
+precipitation as variance covariates. Variance structure for each COC
+was selected based on the lowest Akaike information criterion (AIC) and
+Bayesian information criterion (BIC) scores.</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="step-4-find-the-proper-random-effects-structure">Step 4. Find the proper random effects structure<a href="#step-4-find-the-proper-random-effects-structure" class="hash-link" aria-label="Direct link to Step 4. Find the proper random effects structure" title="Direct link to Step 4. Find the proper random effects structure" translate="no">​</a></h3>
+<p>Next, we used the beyond-optimal model with the correct variance
+structure to find the proper random effects structure. The
+beyond-optimal gls model was compared to a linear mixed effects (lme)
+-random intercept model (nlme package, Pinheiro et al., 2021) fitted
+with REML, where the intercept was allowed to change per agency. Because
+the gls model and the random intercept model are nested, the two models
+were compared using a likelihood ratio test to see if one model was
+significantly better than the other (p-value &lt; 0.05). The best-fit
+model was then selected based on the lowest AIC value. For all COCs, the
+random intercept model fit the data better than the gls model with no
+random effects.</p>
+<p>A random intercept for agency is suitable for the stormwater data
+because there were opportunities for each agency to differ slightly in
+sample collection methodologies. Selection of lab for sample analysis,
+timing of sample collection once a storm began, and any biases in
+selection of representative watersheds by each agency are possible
+factors that could lead to unintended differences in COC results. These
+unintended differences can be captured in the random component of the
+model.</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="step-5-check-for-temporal-and-spatial-correlation">Step 5. Check for temporal and spatial correlation<a href="#step-5-check-for-temporal-and-spatial-correlation" class="hash-link" aria-label="Direct link to Step 5. Check for temporal and spatial correlation" title="Direct link to Step 5. Check for temporal and spatial correlation" translate="no">​</a></h3>
+<p>The beyond-optimal model with the correct variance structure and random
+effects structure was then examined for evidence of temporal and spatial
+auto-correlation. Temporal auto-correlation plots were generated and
+visually assessed for indications of correlation between various
+sampling time lags; no evidence of temporal autocorrelation was found
+for any COC.</p>
+<p>To assess for spatial auto-correlation, we used two methods: variograms,
+and spatially-explicit bubble plots of model residuals.</p>
+<p>All tests for temporal and spatial auto-correlation were repeated
+following selection of best-fit models.</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="step-6-find-the-proper-fixed-effects-structure">Step 6. Find the proper fixed effects structure<a href="#step-6-find-the-proper-fixed-effects-structure" class="hash-link" aria-label="Direct link to Step 6. Find the proper fixed effects structure" title="Direct link to Step 6. Find the proper fixed effects structure" translate="no">​</a></h3>
+<p>We used the strong potential landscape predictors from step 1 to
+generate an exhaustive set of fixed-effects formulae with combinations
+of one, two and three potential landscape predictors. Predictors with
+high correlation coefficients (≥0.85) were not allowed to be in formulae
+together.</p>
+<p>A set of models was generated using the fixed effects formulae, along
+with the best-fit random effects and variance structures identified in
+steps 3 and 4. Linear mixed effects models were applied using the nlme
+package (Pinheiro et al, 2021), and fitting with maximum likelhood (ML)
+estimation[2]. Models where the sign (+ or –) of the predictor
+coefficients did not match the coefficient signs from the linear model
+from step 1 were discarded. Models were then sorted according to AIC
+value, and the top 20 models were examined for fit to individual
+predictors. Plots of residuals versus fitted values, agency, location,
+and landscape predictors were also examined. Based on these criteria,
+one to three models were selected for consideration as the best
+landscape predictor model. The top one to three candidate models all had
+low AIC values, decent residual plots, and good fit to individual
+landscape predictors.</p>
+<p>Using knowledge of chemical contaminant mobilization into stormwater, we
+selected the best landscape predictor model for each COC.</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="final-model-comparison">Final model comparison<a href="#final-model-comparison" class="hash-link" aria-label="Direct link to Final model comparison" title="Direct link to Final model comparison" translate="no">​</a></h3>
+<p>Three models were ultimately fitted with REML and compared for each COC:</p>
+<ol>
+<li class="">
+<p><strong>Null Model:</strong> COC concentration is equal to median COC
+concentration over all sampling dates and locations</p>
+</li>
+<li class="">
+<p><strong>Categorical Land Use Model:</strong> COC concentration is modeled as a
+linear mixed effects model, utilizing land use category (HDR, LDR,
+COM, IND), precipitation (rainfall and/or antecedent dry days), and
+season (for COCs where a seasonal trend appeared in the data).</p>
+</li>
+<li class="">
+<p><strong>Landscape Predictor Model:</strong> COC concentration is modeled as a
+linear mixed effects model, utilizing up to three landscape
+predictors, precipitation (rainfall and/or antecedent dry days), and
+season (for COCs where a seasonal trend appeared in the data).</p>
+</li>
+</ol>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="results">Results<a href="#results" class="hash-link" aria-label="Direct link to Results" title="Direct link to Results" translate="no">​</a></h2>
+<p>Results for each COC are provided below.</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="copper">Copper<a href="#copper" class="hash-link" aria-label="Direct link to Copper" title="Direct link to Copper" translate="no">​</a></h3>
+<p>Based on linear models of <em>ln</em>-transformed copper versus individual
+predictors, the strong predictors identified for copper include: totRes,
+intURB, intURB_IND, grass, greenery, impervious, nodev, sqrt_traffic,
+sqrt_popn, pm25_na, sqrt_CO2_tot, sqrt_CO2_com, sqrt_CO2_road,
+sqrt_CO2_nonroad, devAge2, roof_intURB_IND (Fig 4.5).</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Copper strong predictors fig_4_5-fa86057b362a79d840751c3d8014135d.bmp" width="1000" height="750" class="img_ev3q"></p>
+<p><strong>Figure 4.5</strong> Strong predictors for copper, showing linear model fit
+(blue line) for the relationship between ln-transformed copper
+concentration and each predictor in turn.</p>
+<p>The precipitation predictor used for copper was 21-day cumulative
+precipitation. In addition, evidence of higher copper concentrations
+during summer led us to add <em>summer</em> as a categorical predictor to the
+copper model (where <em>summer</em> = 1 during July, August, September, and
+<em>summer</em> = 0 for all other months).</p>
+<p>Residuals plotted against fitted values showed signs of slight
+heterogeneity (Fig 4.6, left plot). Of the variance structures tested,
+the best fit allows residual variation to differ by agency <em>j</em></p>
+<p><img decoding="async" loading="lazy" src="https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&amp;space;%5Cbg_white&amp;space;%0Avar%28%5Cepsilon_j%29%20%3D%20%5Csigma%5E2_j%0A" alt="
+var(\epsilon_j) = \sigma^2_j
+" title="
+var(\epsilon_j) = \sigma^2_j
+" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Copper variance structure plots fig_4_6-a5b021f20027fb29c644aa234c5011eb.bmp" width="844" height="331" class="img_ev3q"></p>
+<p><strong>Figure 4.6</strong> Normalized residuals from beyond-optimal model, with no
+variance structure (left), and with the best fit variance structure
+(right).</p>
+<p>The best model for copper is a random-intercept model, where the
+intercept of the linear model is allowed to shift up or down according
+to agency. No signs of temporal or spatial auto-correlation were
+detected in auto-correlation plots or variograms.</p>
+<p>With the variance structure and random components set, two possible
+models emerged to capture the fixed effects:</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right" columnspacing=""><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mspace></mspace><mi>ln</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>C</mi><mi>o</mi><mi>p</mi><mi>p</mi><mi>e</mi><mi>r</mi><mo stretchy="false">)</mo><mo>∼</mo><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mo>+</mo><mi>s</mi><mi>u</mi><mi>m</mi><mi>m</mi><mi>e</mi><mi>r</mi><mo>+</mo><mi>s</mi><mi>q</mi><mi>r</mi><mi>t</mi><mi mathvariant="normal">.</mi><mi>t</mi><mi>r</mi><mi>a</mi><mi>f</mi><mi>f</mi><mi>i</mi><mi>c</mi><mo>+</mo><mi>t</mi><mi>o</mi><mi>t</mi><mi>R</mi><mi>E</mi><mi>S</mi><mspace></mspace></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned} 
+\allowbreak \ln(Copper) \sim rain + summer + sqrt.traffic + totRES
+\allowbreak 
+\end{aligned}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2em;vertical-align:-0.35em"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.85em"><span style="top:-3.01em"><span class="pstrut" style="height:3em"></span><span class="mord"><span class="mspace allowbreak"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0715em">C</span><span class="mord mathnormal">o</span><span class="mord mathnormal">pp</span><span class="mord mathnormal" style="margin-right:0.0278em">er</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">ain</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">u</span><span class="mord mathnormal">mm</span><span class="mord mathnormal" style="margin-right:0.0278em">er</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal" style="margin-right:0.0359em">q</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">t</span><span class="mord">.</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.1076em">f</span><span class="mord mathnormal" style="margin-right:0.1076em">f</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.0077em">tR</span><span class="mord mathnormal" style="margin-right:0.0576em">E</span><span class="mord mathnormal" style="margin-right:0.0576em">S</span><span class="mspace allowbreak"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.35em"><span></span></span></span></span></span></span></span></span></span></span></span>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mspace></mspace><mi>ln</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>C</mi><mi>o</mi><mi>p</mi><mi>p</mi><mi>e</mi><mi>r</mi><mo stretchy="false">)</mo><mo>∼</mo><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mo>+</mo><mi>s</mi><mi>u</mi><mi>m</mi><mi>m</mi><mi>e</mi><mi>r</mi><mo>+</mo><mi>s</mi><mi>q</mi><mi>r</mi><mi>t</mi><mi mathvariant="normal">.</mi><mi>t</mi><mi>r</mi><mi>a</mi><mi>f</mi><mi>f</mi><mi>i</mi><mi>c</mi><mo>+</mo><mi>d</mi><mi>e</mi><mi>v</mi><mi>A</mi><mi>g</mi><mi>e</mi><mn>2</mn><mo>+</mo><mi>p</mi><mi>m</mi><mn>25.</mn><mi>n</mi><mi>a</mi><mo>+</mo><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mo>:</mo><mi>p</mi><mi>m</mi><mn>25.</mn><mi>n</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">\allowbreak 
+\ln(Copper) \sim rain + summer + sqrt.traffic + devAge2 +  pm25.na + rain:pm25.na</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em"></span><span class="mspace allowbreak"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0715em">C</span><span class="mord mathnormal">o</span><span class="mord mathnormal">pp</span><span class="mord mathnormal" style="margin-right:0.0278em">er</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.7429em;vertical-align:-0.0833em"></span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">ain</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">u</span><span class="mord mathnormal">mm</span><span class="mord mathnormal" style="margin-right:0.0278em">er</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal" style="margin-right:0.0359em">q</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">t</span><span class="mord">.</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.1076em">f</span><span class="mord mathnormal" style="margin-right:0.1076em">f</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.0359em">v</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.0359em">g</span><span class="mord mathnormal">e</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">m</span><span class="mord">25.</span><span class="mord mathnormal">na</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6595em"></span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">ain</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">m</span><span class="mord">25.</span><span class="mord mathnormal">na</span></span></span></span></span>
+<p>The first model’s AIC score was lower than that of the second model
+(AIC=756.3 vs. 781.8, when models were fitted with ML); however, the
+model coefficient for totRES is negative, indicating that increased
+residential zoning results in reduced copper concentrations in
+stormwater. This relationship makes sense for the 14 watersheds in our
+study, but would likely not be appropriate for forested landscapes that
+have low residential zoning (thus should have high copper
+concentrations). As a result, we selected the second model as the most
+suitable for covering the entire area of the stormwater heatmap. Figure
+4.7 shows the model fit for each individual predictor, plotted against
+data points. Correlation between the three predictors was low (maximum
+correlation = 0.4). Figure 4.8 shows the interaction between rain and
+pm25_na, with higher pm25_na values in reds and oranges, and lower
+pm25_na values in blues and purples. This interaction shows that, when
+pm2.5 values are high, increasing amounts of rainfall result in a
+dilution of copper in stormwater.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/copper single predictors fig_4_7-f909c8bcd90e64a769d790aaf290c02e.bmp" width="1100" height="750" class="img_ev3q"></p>
+<p><strong>Figure 4.7</strong> Single-predictor plots for copper, showing fit of the
+Landscape Predictor Model to each predictor in turn. Model fitting was
+performed using maximum likelihood (ML) estimation.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Copper interaction fig 4_8-a64b53f1a153836ba1a5c32432d8a147.bmp" width="795" height="473" class="img_ev3q"></p>
+<p><strong>Figure 4.8</strong> Plot showing the interaction between rain and pm25_na
+that is present in the best fit model. In areas with high pm25_na
+values, increasing amounts of rain result in a dilution of copper in
+stormwater. Model fitting was performed using maximum likelihood (ML)
+estimation.</p>
+<p>Comparisons between the Null Model, Categorical Land Use Model, and
+Landscape Predictor Model can be visualized through residuals (Fig.
+4.9), comparative metrics such as AIC (Table 4.3, and coefficient values
+(Table 4.2; Fig. 4.10). Although the AIC value for the Categorical Land
+Use Model is lower than that of the Landscape Predictor Model, we are
+not confident in the transferability of the Categorical Land Use Model
+to watersheds outside of the 14 in this study. Two of the land use
+categories (Industrial – IND; and Low Density Residential – LDR) each
+have only two watershed representatives in our study. This results in
+good model fit to the data, but not necessarily for all watersheds in
+Puget Sound area.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/copper residual plot for 3 models fig_4_9-082cefbd5263479fc15c3d061a0a352d.bmp" width="1000" height="750" class="img_ev3q"></p>
+<p><strong>Figure 4.9</strong> Copper model residuals for the Null Model, Categorical
+Land Use Model, and Landscape Predictor Models. Each bar represents one
+watershed, with colors representing agencies. Model fitting was
+performed using maximum likelihood (ML) estimation.</p>
+<p><strong>Table 4.3</strong> Coefficient values (standard error in parenthesis) for the
+three copper models. For the Categorical Landuse Model, the baseline
+landuse is LDR; all other land use categories are adjustments from the
+baseline. Final coefficient values for linear mixed effects mdels are
+based on fitting with restricted maximum likelihood (REML) estimation,
+and may differ slightly from those fitted using maximum likelihood (ML)
+estimation.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Copper model parameters table-f7cb31ca5021d8dfe1f994dbcf770e65.png" width="713" height="300" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Copper model parameter values fig_4_10-2f36a1c79fa18aea800e5a5b207cae74.bmp" width="950" height="750" class="img_ev3q"></p>
+<p><strong>Figure 4.10</strong> Model coefficients for the Null Model (green),
+Categorical Land Use Model (blue), and Landscape Predictor Model (red).
+Final coefficient values for linear mixed effects models are based on
+fitting with restricted maximum likelihood (REML) estimation, and may
+differ slightly from those fitted using maximum likelihood (ML)
+estimation.</p>
+<p>The Landscape Predictor Model for total copper, used as the basis for
+the Stormwater Heatmap total copper layer, is:</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>l</mi><mi>n</mi><mo stretchy="false">(</mo><mi>C</mi><mi>o</mi><mi>p</mi><mi>p</mi><mi>e</mi><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><mn>2.22</mn><mo>−</mo><mn>0.14</mn><mo>∗</mo><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mo>+</mo><mn>0.41</mn><mo>∗</mo><mi>s</mi><mi>u</mi><mi>m</mi><mi>m</mi><mi>e</mi><mi>r</mi><mo>+</mo><mn>0.34</mn><mo>∗</mo><mi>s</mi><mi>q</mi><mi>r</mi><mi>t</mi><mi mathvariant="normal">.</mi><mi>t</mi><mi>r</mi><mi>a</mi><mi>f</mi><mi>f</mi><mi>i</mi><mi>c</mi><mo>+</mo><mn>0.56</mn><mo>∗</mo><mi>d</mi><mi>e</mi><mi>v</mi><mi>A</mi><mi>g</mi><mi>e</mi><mn>2</mn><mo>+</mo><mn>0.75</mn><mo>∗</mo><mi>p</mi><mi>m</mi><mn>25.</mn><mi>n</mi><mi>a</mi><mo>−</mo><mn>0.07</mn><mo>∗</mo><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mo>:</mo><mi>p</mi><mi>m</mi><mn>25.</mn><mi>n</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">ln(Copper) = 2.22 - 0.14*rain + 0.41*summer + 0.34*sqrt.traffic + 0.56*devAge2 + 0.75*pm25.na - 0.07*rain:pm25.na</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mord mathnormal" style="margin-right:0.0197em">l</span><span class="mord mathnormal">n</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0715em">C</span><span class="mord mathnormal">o</span><span class="mord mathnormal">pp</span><span class="mord mathnormal" style="margin-right:0.0278em">er</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em"></span><span class="mord">2.22</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">0.14</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.7429em;vertical-align:-0.0833em"></span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">ain</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">0.41</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">u</span><span class="mord mathnormal">mm</span><span class="mord mathnormal" style="margin-right:0.0278em">er</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">0.34</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal" style="margin-right:0.0359em">q</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">t</span><span class="mord">.</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.1076em">f</span><span class="mord mathnormal" style="margin-right:0.1076em">f</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">0.56</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.0359em">v</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.0359em">g</span><span class="mord mathnormal">e</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">0.75</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">m</span><span class="mord">25.</span><span class="mord mathnormal">na</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">0.07</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6595em"></span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">ain</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">m</span><span class="mord">25.</span><span class="mord mathnormal">na</span></span></span></span></span>
+<p>where rain is 21-day cumulative precipitation, and summer is a factor
+with value = 1 for July, August, September, and value = 0 for all other
+months. Note that all predictors (except summer) were first transformed
+if necessary (e.g. traffic was square-root transformed, devAge was
+squared to make devAge2), then standardized prior to use.</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="total-suspended-solids">Total Suspended Solids<a href="#total-suspended-solids" class="hash-link" aria-label="Direct link to Total Suspended Solids" title="Direct link to Total Suspended Solids" translate="no">​</a></h3>
+<p>Based on linear models of <em>ln</em>-transformed TSS versus individual
+predictors, the strong predictors identified for TSS include: totRES,
+sqrt_traffic, sqrt_popn, sqrt_CO2_res, sqrt_CO2_tot, sqrt_CO2_com,
+sqrt_CO2_road, devAge2 (Fig 4.11). Paved was added to the list because
+it was a strong predictor for an older version of the model, and paved
+areas are associated with elevated TSS in stormwater.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/TSS best predictors linear models-c275f7120cd6be02b2db12b6e56503be.bmp" width="995" height="567" class="img_ev3q"></p>
+<p><strong>Figure 4.11</strong> Strong predictors for TSS, showing linear model fit
+(blue line) for the relationship between <em>ln</em>-transformed TSS
+concentration and each predictor in turn. Although it wasn’t as
+compelling on its own, the predictor paved was added to the list of
+strong predictors because it was a strong predictor in a previous model.</p>
+<p>The precipitation predictor used for TSS was 1-day cumulative
+precipitation. There was no evidence of seasonal patterns to TSS in
+stormwater.</p>
+<p>Residuals plotted against fitted values showed signs of slight
+heterogeneity (Fig 4.12, top left plot). Of the variance structures
+tested, the best fit was for a combination of two variance structures,
+where residual variation differs by agency <em>j</em>, and also by rainfall at
+each location <em>i</em> and date <em>k</em>:
+Residuals plotted against fitted values showed signs of slight heterogeneity (Fig 4.12, top left plot). Of the variance structures tested, the best fit was for a combination of two variance structures, where residual variation differs by agency j, and also by rainfall at each location i and date k:</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ϵ</mi><mrow><mi>i</mi><mi>j</mi><mi>k</mi></mrow></msub><mo>=</mo><msubsup><mi>σ</mi><mi>j</mi><mn>2</mn></msubsup><mo>∗</mo><msup><mrow><mi>exp</mi><mo>⁡</mo></mrow><mrow><mn>2</mn><mi>δ</mi><mo>∗</mo><mi>r</mi><mi>a</mi><mi>i</mi><msub><mi>n</mi><mrow><mi>i</mi><mi>k</mi></mrow></msub></mrow></msup></mrow><annotation encoding="application/x-tex">\epsilon_{ijk} = \sigma^2_j * \exp^{2\delta * rain_{ik}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em"></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.0572em">ij</span><span class="mord mathnormal mtight" style="margin-right:0.0315em">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:1.2089em;vertical-align:-0.3948em"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8141em"><span style="top:-2.4413em;margin-left:-0.0359em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0572em">j</span></span></span><span style="top:-3.063em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3948em"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:1.0435em;vertical-align:-0.1944em"></span><span class="mop"><span class="mop">exp</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em"><span style="top:-3.063em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathnormal mtight" style="margin-right:0.0379em">δ</span><span class="mbin mtight">∗</span><span class="mord mathnormal mtight" style="margin-right:0.0278em">r</span><span class="mord mathnormal mtight">ai</span><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em"><span style="top:-2.3488em;margin-left:0em;margin-right:0.0714em"><span class="pstrut" style="height:2.5em"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.0315em">ik</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1512em"><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<!-- -->
+<p>The second best fit allows residual variation to differ by agency j:</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ϵ</mi><mi>j</mi></msub><mo>=</mo><msubsup><mi>σ</mi><mi>j</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\epsilon_j = \sigma^2_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em"></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0572em">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:1.2089em;vertical-align:-0.3948em"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8141em"><span style="top:-2.4413em;margin-left:-0.0359em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0572em">j</span></span></span><span style="top:-3.063em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3948em"><span></span></span></span></span></span></span></span></span></span></p>
+<p>Visual inspection of residuals generated using the two candidate
+variance structures did not indicate a strong benefit to using the more
+complex variance structure. As a result, we used the simpler variance
+structure with only agency as a variance covariate.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/TSS variance structure-70f77a01045adcd5ecd7ef3322ddce48.bmp" width="950" height="720" class="img_ev3q"></p>
+<p><strong>Figure 4.12</strong> Normalized residuals from beyond-optimal model, with no
+variance structure (top left), agency as a variance covariate (top
+right) and the best fit variance structure with agency and rain as
+variance covariates (bottom left).</p>
+<p>The best model for TSS is a random-intercept model, where the intercept
+of the linear model is allowed to shift up or down according to agency.
+No signs of temporal or spatial auto-correlation were detected in
+auto-correlation plots or variograms.</p>
+<p>With the variance structure and random components set, two possible
+models emerged to capture the fixed effects:</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>ln</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>T</mi><mi>S</mi><mi>S</mi><mo stretchy="false">)</mo><mo>∼</mo><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mo>+</mo><mi>s</mi><mi>q</mi><mi>r</mi><mi>t</mi><mi mathvariant="normal">.</mi><mi>t</mi><mi>r</mi><mi>a</mi><mi>f</mi><mi>f</mi><mi>i</mi><mi>c</mi><mo>+</mo><mi>t</mi><mi>o</mi><mi>t</mi><mi>R</mi><mi>E</mi><mi>S</mi></mrow><annotation encoding="application/x-tex">\ln(TSS) \sim rain + sqrt.traffic + totRES</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em">T</span><span class="mord mathnormal" style="margin-right:0.0576em">S</span><span class="mord mathnormal" style="margin-right:0.0576em">S</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.7429em;vertical-align:-0.0833em"></span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">ain</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal" style="margin-right:0.0359em">q</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">t</span><span class="mord">.</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.1076em">f</span><span class="mord mathnormal" style="margin-right:0.1076em">f</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6833em"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.0077em">tR</span><span class="mord mathnormal" style="margin-right:0.0576em">E</span><span class="mord mathnormal" style="margin-right:0.0576em">S</span></span></span></span></span>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>ln</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>T</mi><mi>S</mi><mi>S</mi><mo stretchy="false">)</mo><mo>∼</mo><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mo>+</mo><mi>s</mi><mi>q</mi><mi>r</mi><mi>t</mi><mi mathvariant="normal">.</mi><mi>t</mi><mi>r</mi><mi>a</mi><mi>f</mi><mi>f</mi><mi>i</mi><mi>c</mi><mo>+</mo><mi>p</mi><mi>a</mi><mi>v</mi><mi>e</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">\ln(TSS) \sim rain + sqrt.traffic + paved</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em">T</span><span class="mord mathnormal" style="margin-right:0.0576em">S</span><span class="mord mathnormal" style="margin-right:0.0576em">S</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.7429em;vertical-align:-0.0833em"></span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">ain</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal" style="margin-right:0.0359em">q</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">t</span><span class="mord">.</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.1076em">f</span><span class="mord mathnormal" style="margin-right:0.1076em">f</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.0359em">v</span><span class="mord mathnormal">e</span><span class="mord mathnormal">d</span></span></span></span></span>
+<p>The AIC score for these two models was very close, with the first
+model’s AIC score slightly lower (AIC=1253.5 vs. 1255.8, when models
+were fitted with ML). In the first model, the coefficient for totRES is
+negative, indicating that increased residential zoning results in
+reduced TSS in stormwater. This relationship makes sense for the 14
+watersheds in our study, but would likely not be appropriate for
+forested landscapes that have low residential zoning (thus should have
+high TSS concentrations). As a result, we selected the second model as
+the most suitable for covering the entire area of the stormwater
+heatmap. Figure 4.13 shows the model fit for each individual predictor,
+plotted against data points. Correlation between the two predictors was
+low (correlation coefficient &lt; 0.1).</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/TSS single predictor plots-1a3c8ac3a7dd0428697e89d226751491.bmp" width="1094" height="380" class="img_ev3q"></p>
+<p><strong>Figure 4.13</strong> Single-predictor plots for TSS, showing fit of the
+Landscape Predictor Model to each predictor. Model fitting was performed
+using maximum likelihood (ML) estimation.</p>
+<p>Comparisons between the Null Model, Categorical Land Use Model, and
+Landscape Predictor Model can be visualized through residuals (Fig.
+4.14) comparative metrics such as AIC and BIC (Table 4.4), and
+coefficient values (Table 4.4; Fig. 4.15). The AIC value is slightly
+lower for the Categorical Landuse Model than for the Landscape Predictor
+Model, but the BIC metric is opposite, with the Landscape Predictor
+Model indicated as the best model. While the two models may have similar
+statistical test metrics, we are not confident in the transferability of
+the Categorical Landuse Model to watersheds outside of the 14 in this
+study. Two of the land use categories (Industrial - IND; and Low Density
+Residential - LDR) each have only two watershed representatives in our
+study, resulting in good model fit to the data, but not necessarily for
+all watersheds in Puget Sound area.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/TSS residual plot for 3 models-8fd29f25254ad2653ba4ca26e802a977.bmp" width="1000" height="750" class="img_ev3q"></p>
+<p><strong>Figure 4.14</strong> TSS model residuals for the Null Model, Categorical Land
+Use Model, and Landscape Predictor Models. Each bar represents one
+watershed, with colors representing agencies.</p>
+<p><strong>Table 4.4</strong> Coefficient values (standard error in parenthesis) for the
+three TSS models. For the Categorical Landuse Model, the baseline
+landuse is LDR; all other land use categories are adjustments from the
+baseline. Final coefficient values for linear mixed effects. Final
+coefficient values for linear mixed effects models are based on fitting
+with restricted maximum likelihood (REML) estimation, and may differ
+slightly from those fitted using maximum likelihood (ML) estimation.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/TSS Table of Model Values-01-74a1f36de5898baf1c02535a0a534180.png" width="719" height="246" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/TSS coefficient values-7adabe2838d994b1500937fee883b9ac.bmp" width="800" height="600" class="img_ev3q"></p>
+<p><strong>Figure 4.15</strong> Model coefficients for the Null Model (green),
+Categorical Land Use Model (blue), and Landscape Predictor Model
+(red).Final coefficient values for linear mixed effects models are based
+on fitting with restricted maximum likelihood (REML) estimation, and may
+differ slightly from those fitted using maximum likelihood (ML)
+estimation.</p>
+<p>The final Landscale Predictor Model for TSS, used as the basis of the
+Stormwater heatmap TSS layer, is:</p>
+<p><img decoding="async" loading="lazy" src="https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&amp;space;%5Cbg_white&amp;space;%0A%5Cln%28TSS%29%20%3D%2010.17%20%2B%200.19%2Arain%20%2B%200.26%2Asqrt.traffic%20%2B%200.30%2Apaved%0A" alt="
+\ln(TSS) = 10.17 + 0.19*rain + 0.26*sqrt.traffic + 0.30*paved
+" title="
+\ln(TSS) = 10.17 + 0.19*rain + 0.26*sqrt.traffic + 0.30*paved
+" class="img_ev3q"></p>
+<p>where rain is 1-day cumulative precipitation. Note that all predictors
+were standardized prior to use.</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="phosphorus">Phosphorus<a href="#phosphorus" class="hash-link" aria-label="Direct link to Phosphorus" title="Direct link to Phosphorus" translate="no">​</a></h3>
+<p>Based on linear models of <em>ln</em>-transformed phosphorus versus individual
+predictors, the strong predictors identified for phosphorus include:
+sqrt_traffic, sqrt_popn, sqrt_slope, sqrt_CO2_res, sqrt_CO2_tot,
+sqrt_CO2_road and devAge2 (Fig 4.16). Paved and grass were added to the
+list because they were strong predictors for an older version of the
+model, and both are associated with elevated phosphorus in stormwater.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Phosphorus strong predictors-01-e553f849ba8aa625c906d532d39c3994.bmp" width="997" height="564" class="img_ev3q"></p>
+<p><strong>Figure 4.16</strong> Strong predictors for phosphorus, showing linear model
+fit (blue line) for the relationship between ln-transformed phosphorus
+concentration and each predictor in turn. Although they weren’t
+compelling on their own, the predictors grass and paved were added to
+the list of strong predictors because they were strong predictors in a
+previous model.</p>
+<p>The precipitation predictor used for phosphorus was 21-day cumulative
+precipitation. In addition, evidence of higher phosphorus concentrations
+during summer led us to add <em>summer</em> as a categorical predictor to the
+phosphorus model (where <em>summer</em> = 1 during July, August, September, and
+<em>summer</em> = 0 for all other months).</p>
+<p>Residuals plotted against fitted values showed signs of slight
+heterogeneity (Fig 4.17, left plot). Of the variance structures tested,
+the best fit allows residual variation to differ by agency <em>j</em>:</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>v</mi><mi>a</mi><mi>r</mi><mo stretchy="false">(</mo><msub><mi>ϵ</mi><mi>j</mi></msub><mo stretchy="false">)</mo><mo>=</mo><msubsup><mi>σ</mi><mi>j</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">var(\epsilon_j) = \sigma^2_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0361em;vertical-align:-0.2861em"></span><span class="mord mathnormal" style="margin-right:0.0359em">v</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0572em">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:1.2472em;vertical-align:-0.3831em"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8641em"><span style="top:-2.453em;margin-left:-0.0359em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0572em">j</span></span></span><span style="top:-3.113em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3831em"><span></span></span></span></span></span></span></span></span></span></span>
+<p><img decoding="async" loading="lazy" src="/assets/images/Phosphorus variance structure-2dc9d66febe2c65b44a312cc550b8d39.bmp" width="743" height="308" class="img_ev3q"></p>
+<p><strong>Figure 4.17</strong> Normalized residuals from beyond-optimal model, with no
+variance structure (left), and with the best fit variance structure
+(right).</p>
+<p>The best model for phosphorus is a random-intercept model, where the
+intercept of the linear model is allowed to shift up or down according
+to agency. No signs of temporal or spatial auto-correlation were
+detected in auto-correlation plots or variograms.</p>
+<p>With the variance structure and random components set, two possible
+models emerged to capture the fixed effects:</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ln</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>P</mi><mi>h</mi><mi>o</mi><mi>s</mi><mi>p</mi><mi>h</mi><mi>o</mi><mi>r</mi><mi>u</mi><mi>s</mi><mo stretchy="false">)</mo><mo>∼</mo><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mo>+</mo><mi>s</mi><mi>u</mi><mi>m</mi><mi>m</mi><mi>e</mi><mi>r</mi><mo>+</mo><mi>g</mi><mi>r</mi><mi>a</mi><mi>s</mi><mi>s</mi><mo>+</mo><mi>p</mi><mi>a</mi><mi>v</mi><mi>e</mi><mi>d</mi><mo>+</mo><mi>s</mi><mi>q</mi><mi>r</mi><mi>t</mi><mi mathvariant="normal">.</mi><mi>C</mi><mi>O</mi><mn>2.</mn><mi>r</mi><mi>o</mi><mi>a</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">\ln(Phosphorus) \sim rain + summer + grass + paved + sqrt.CO2.road</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em">P</span><span class="mord mathnormal">h</span><span class="mord mathnormal">os</span><span class="mord mathnormal">p</span><span class="mord mathnormal">h</span><span class="mord mathnormal" style="margin-right:0.0278em">or</span><span class="mord mathnormal">u</span><span class="mord mathnormal">s</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.7429em;vertical-align:-0.0833em"></span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">ain</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">u</span><span class="mord mathnormal">mm</span><span class="mord mathnormal" style="margin-right:0.0278em">er</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em"></span><span class="mord mathnormal" style="margin-right:0.0359em">g</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal">ss</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.0359em">v</span><span class="mord mathnormal">e</span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal" style="margin-right:0.0359em">q</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">t</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.0715em">C</span><span class="mord mathnormal" style="margin-right:0.0278em">O</span><span class="mord">2.</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">a</span><span class="mord mathnormal">d</span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ln</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>P</mi><mi>h</mi><mi>o</mi><mi>s</mi><mi>p</mi><mi>h</mi><mi>o</mi><mi>r</mi><mi>u</mi><mi>s</mi><mo stretchy="false">)</mo><mo>∼</mo><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mo>+</mo><mi>s</mi><mi>u</mi><mi>m</mi><mi>m</mi><mi>e</mi><mi>r</mi><mo>+</mo><mi>g</mi><mi>r</mi><mi>a</mi><mi>s</mi><mi>s</mi><mo>+</mo><mi>p</mi><mi>a</mi><mi>v</mi><mi>e</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">\ln(Phosphorus) \sim rain + summer + grass + paved</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em">P</span><span class="mord mathnormal">h</span><span class="mord mathnormal">os</span><span class="mord mathnormal">p</span><span class="mord mathnormal">h</span><span class="mord mathnormal" style="margin-right:0.0278em">or</span><span class="mord mathnormal">u</span><span class="mord mathnormal">s</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.7429em;vertical-align:-0.0833em"></span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">ain</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">u</span><span class="mord mathnormal">mm</span><span class="mord mathnormal" style="margin-right:0.0278em">er</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em"></span><span class="mord mathnormal" style="margin-right:0.0359em">g</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal">ss</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.0359em">v</span><span class="mord mathnormal">e</span><span class="mord mathnormal">d</span></span></span></span></p>
+<p>The AIC score for these two models was close, with the first model’s AIC
+score lower than that of the second model (AIC=830.3 vs. 839.8, when
+models were fitted with ML). As a result, we selected the first model.
+Figure 4.18 shows the model fit for each individual predictor, plotted
+against data points. Correlation between grass and paved was relatively
+high (-0.8), while the other correlation coefficients were lower (-0.4,
+-0.1). While this model fit the 14 watersheds in our study, the high
+negative correlation betweeen paved and grass indicates the need for
+caution with this model. There is good evidence to support a positive
+relationship between phosphorous concentration and both residential
+lawns (fertilizer) and paved roadways. For example, Waschbusch et al.
+(1999) found that lawns and roads contributed ~80% of total and
+dissolved phosphorous loading. Land use affects the contribution from
+different sources, with lawns and leaf litter being more important in
+residential areas and roads being more important in commercial and
+industrial areas.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Phosphorus single predictor plots-bbb30cca252ec54cbe8b81791c2a1896.bmp" width="1317" height="758" class="img_ev3q"></p>
+<p><strong>Figure 4.18</strong> Single-predictor plots for phosphorus, showing fit of
+the Landscape Predictor Model to each predictor. Model fitting was
+performed using maximum likelihood (ML) estimation.</p>
+<p>Comparisons between the Null Model, Categorical Land Use Model, and
+Landscape Predictor Model can be visualized through residuals (Fig.
+4.19), comparative metrics such as AIC (Table 4.5), and coefficient
+values (Table 4.5; Fig. 4.20). The lowest AIC value is for the Landscape
+Predictor Model, indicating best fit to the phosphorus data of these
+three models.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Phosphorus residuals of 3 models-edaaa3a79426d25c79d642cf44e5e61f.bmp" width="1000" height="750" class="img_ev3q"></p>
+<p><strong>Figure 4.19</strong> Phosphorus model residuals for the Null Model,
+Categorical Land Use Model, and Landscape Predictor Models. Each bar
+represents one watershed, with colors representing agencies. Model
+fitting was performed using maximum likelihood (ML) estimation.</p>
+<p><strong>Table 4.5</strong> Coefficient values (standard error in parenthesis) for the
+three phosphorus models. For the Categorical Landuse Model, the baseline
+landuse is LDR; all other land use categories are adjustments from the
+baseline. Final coefficient values for linear mixed effects models are
+based on fitting with restricted maximum likelihood (REML) estimation,
+and may differ slightly from those fitted using maximum likelihood (ML)
+estimation.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Phosphorus Table of Model Values-7be50522cbd3cebb2630e4d2e26b6c95.png" width="900" height="360" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Phosphorus coefficient values-61d2cd1e62849c902a5c475a008b5f74.bmp" width="750" height="500" class="img_ev3q"></p>
+<p><strong>Figure 4.20</strong> Model coefficients for the Null Model (green),
+Categorical Land Use Model (blue), and Landscape Predictor Model (red).
+Final coefficient values for linear mixed effects models are based on
+fitting with restricted maximum likelihood (REML) estimation, and may
+differ slightly from those fitted using maximum likelihood (ML)
+estimation.</p>
+<p>The Landscape Predictor Model for phosphorous, used as the basis for the
+Stormwater Heatmap phosphorous layer, is:</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ln</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>P</mi><mi>h</mi><mi>o</mi><mi>s</mi><mi>p</mi><mi>h</mi><mi>o</mi><mi>r</mi><mi>u</mi><mi>s</mi><mo stretchy="false">)</mo><mo>=</mo><mn>4.38</mn><mo>−</mo><mn>0.09</mn><mo>∗</mo><mi>r</mi><mi>o</mi><mi>a</mi><mi>d</mi><mo>+</mo><mn>0.60</mn><mo>∗</mo><mi>s</mi><mi>u</mi><mi>m</mi><mi>m</mi><mi>e</mi><mi>r</mi><mo>+</mo><mn>0.83</mn><mo>∗</mo><mi>g</mi><mi>r</mi><mi>a</mi><mi>s</mi><mi>s</mi><mo>+</mo><mn>0.97</mn><mo>∗</mo><mi>p</mi><mi>a</mi><mi>v</mi><mi>e</mi><mi>d</mi><mo>+</mo><mn>0.20</mn><mo>∗</mo><mi>s</mi><mi>q</mi><mi>r</mi><mi>t</mi><mi mathvariant="normal">.</mi><mi>C</mi><mi>O</mi><mn>2.</mn><mi>r</mi><mi>o</mi><mi>a</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">\ln(Phosphorus) = 4.38 - 0.09*road + 0.60*summer + 0.83*grass + 0.97*paved + 0.20*sqrt.CO2.road</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em">P</span><span class="mord mathnormal">h</span><span class="mord mathnormal">os</span><span class="mord mathnormal">p</span><span class="mord mathnormal">h</span><span class="mord mathnormal" style="margin-right:0.0278em">or</span><span class="mord mathnormal">u</span><span class="mord mathnormal">s</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em"></span><span class="mord">4.38</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">0.09</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em"></span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">a</span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">0.60</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">u</span><span class="mord mathnormal">mm</span><span class="mord mathnormal" style="margin-right:0.0278em">er</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">0.83</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em"></span><span class="mord mathnormal" style="margin-right:0.0359em">g</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal">ss</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">0.97</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.0359em">v</span><span class="mord mathnormal">e</span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">0.20</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal" style="margin-right:0.0359em">q</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">t</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.0715em">C</span><span class="mord mathnormal" style="margin-right:0.0278em">O</span><span class="mord">2.</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">a</span><span class="mord mathnormal">d</span></span></span></span></p>
+<p>where rain is 21-day cumulative precipitation, and summer is a factor
+with value = 1 for July, August, and September, and value = 0 for all
+other months. Note that all predictors (except summer) were first
+transformed if necessary (the square root was taken of CO2_road to
+generate sqrt_CO2_road), then standardized prior to use.</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="total-zinc">Total Zinc<a href="#total-zinc" class="hash-link" aria-label="Direct link to Total Zinc" title="Direct link to Total Zinc" translate="no">​</a></h3>
+<p>Based on linear models of ln-transformed total zinc versus individual
+predictors, the strong predictors identified for total zinc include:
+totRES, intURB_IND, grass, greenery, paved, impervious, trees,
+sqrt_traffic, pm25_na, sqrt_CO2_tot, sqrt_CO2_com, sqrt_CO2_nonroad,
+roof_intURB_IND (Fig 4.21).</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Total Zinc strong predictors plot-399f6faf3768377bc619a63a6e37d66b.bmp" width="1000" height="750" class="img_ev3q"></p>
+<p><strong>Figure 4.21</strong> Strong predictors for total zinc, showing linear model
+fit (blue line) for the relationsihp between <em>ln</em>-transformed total
+zince concentration and each predictor in turn.</p>
+<p>The precipitation predictor used for total zinc was 14-day cumulative
+precipitation. In addition, evidence of higher total zinc concentrations
+during summer led us to add <em>summer</em> as a categorical predictor to the
+total zinc model (where <em>summer</em> = 1 during July, August, and September,
+and <em>summer</em>= 0 for all other months).</p>
+<p>Residuals plotted against fitted values showed a pattern, indicating a
+chance of slight heteroskedasticity (Fig. 4.22, left plot). Of the
+variance structures tested, the best fit allows residual variation to
+differ by agency <em>j</em>.</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mi>a</mi><mi>r</mi><mo stretchy="false">(</mo><msub><mi>ϵ</mi><mi>j</mi></msub><mo stretchy="false">)</mo><mo>=</mo><msubsup><mi>σ</mi><mi>j</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">var(\epsilon_j) = \sigma^2_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0361em;vertical-align:-0.2861em"></span><span class="mord mathnormal" style="margin-right:0.0359em">v</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0572em">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:1.2089em;vertical-align:-0.3948em"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8141em"><span style="top:-2.4413em;margin-left:-0.0359em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0572em">j</span></span></span><span style="top:-3.063em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3948em"><span></span></span></span></span></span></span></span></span></span></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Total Zinc variance structure plot-f8a1a57b77db8c85d4895bde07957d5b.bmp" width="940" height="386" class="img_ev3q"><strong>Figure
+4.22</strong> Normalized residuals from beyond-optimal model, with no variance
+structure (left), and with the best fit variance structure (right).</p>
+<p>The best model for total zinc is a random-intercept model, where the
+intercept of the linear model is allowed to shift up or down according
+to agency. No signs of temporal or spatial auto-correlation were
+detected in auto-correlation plots or variograms.</p>
+<p>With the variance structure and random components set, three possible
+models emerged to capture the fixed effects:</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow></mrow><annotation encoding="application/x-tex"></annotation></semantics></math></span><span class="katex-html" aria-hidden="true"></span></span></span>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ln</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>t</mi><mi>o</mi><mi>t</mi><mi>a</mi><mi>l</mi><mi mathvariant="normal">.</mi><mi>z</mi><mi>i</mi><mi>n</mi><mi>c</mi><mo stretchy="false">)</mo><mo>∼</mo><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mo>+</mo><mi>s</mi><mi>u</mi><mi>m</mi><mi>m</mi><mi>e</mi><mi>r</mi><mo>+</mo><mi>s</mi><mi>q</mi><mi>r</mi><mi>t</mi><mi mathvariant="normal">.</mi><mi>t</mi><mi>r</mi><mi>a</mi><mi>f</mi><mi>f</mi><mi>i</mi><mi>c</mi><mo>+</mo><mi>p</mi><mi>m</mi><mn>25.</mn><mi>n</mi><mi>a</mi><mo>+</mo><mi>g</mi><mi>r</mi><mi>e</mi><mi>e</mi><mi>n</mi><mi>e</mi><mi>r</mi><mi>y</mi><mo>+</mo><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mo>:</mo><mi>p</mi><mi>m</mi><mn>25.</mn><mi>n</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">\ln(total.zinc) \sim rain + summer + sqrt.traffic + pm25.na + greenery + rain:pm25.na</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mord mathnormal">o</span><span class="mord mathnormal">t</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.0197em">l</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.044em">z</span><span class="mord mathnormal">in</span><span class="mord mathnormal">c</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.7429em;vertical-align:-0.0833em"></span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">ain</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">u</span><span class="mord mathnormal">mm</span><span class="mord mathnormal" style="margin-right:0.0278em">er</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal" style="margin-right:0.0359em">q</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">t</span><span class="mord">.</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.1076em">f</span><span class="mord mathnormal" style="margin-right:0.1076em">f</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">m</span><span class="mord">25.</span><span class="mord mathnormal">na</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em"></span><span class="mord mathnormal" style="margin-right:0.0359em">g</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">ee</span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.0278em">er</span><span class="mord mathnormal" style="margin-right:0.0359em">y</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6595em"></span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">ain</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">m</span><span class="mord">25.</span><span class="mord mathnormal">na</span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ln</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>t</mi><mi>o</mi><mi>t</mi><mi>a</mi><mi>l</mi><mi mathvariant="normal">.</mi><mi>z</mi><mi>i</mi><mi>n</mi><mi>c</mi><mo stretchy="false">)</mo><mo>∼</mo><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mo>+</mo><mi>s</mi><mi>u</mi><mi>m</mi><mi>m</mi><mi>e</mi><mi>r</mi><mo>+</mo><mi>t</mi><mi>r</mi><mi>e</mi><mi>e</mi><mi>s</mi><mo>+</mo><mi>p</mi><mi>m</mi><mn>25.</mn><mi>n</mi><mi>a</mi><mo>+</mo><mi>i</mi><mi>n</mi><mi>t</mi><mi>U</mi><mi>R</mi><mi>B</mi><mi mathvariant="normal">.</mi><mi>I</mi><mi>N</mi><mi>D</mi><mo>+</mo><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mo>:</mo><mi>p</mi><mi>m</mi><mn>25.</mn><mi>n</mi><mi>a</mi><mo>+</mo><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mo>:</mo><mi>i</mi><mi>n</mi><mi>t</mi><mi>U</mi><mi>R</mi><mi>B</mi><mi mathvariant="normal">.</mi><mi>I</mi><mi>N</mi><mi>D</mi></mrow><annotation encoding="application/x-tex">\ln(total.zinc) \sim rain + summer + trees + pm25.na + intURB.IND + rain:pm25.na + rain:intURB.IND</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mord mathnormal">o</span><span class="mord mathnormal">t</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.0197em">l</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.044em">z</span><span class="mord mathnormal">in</span><span class="mord mathnormal">c</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.7429em;vertical-align:-0.0833em"></span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">ain</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">u</span><span class="mord mathnormal">mm</span><span class="mord mathnormal" style="margin-right:0.0278em">er</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6984em;vertical-align:-0.0833em"></span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">ees</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">m</span><span class="mord">25.</span><span class="mord mathnormal">na</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em"></span><span class="mord mathnormal">in</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.109em">U</span><span class="mord mathnormal" style="margin-right:0.0077em">R</span><span class="mord mathnormal" style="margin-right:0.0502em">B</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.0785em">I</span><span class="mord mathnormal" style="margin-right:0.109em">N</span><span class="mord mathnormal" style="margin-right:0.0278em">D</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6595em"></span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">ain</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">m</span><span class="mord">25.</span><span class="mord mathnormal">na</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6595em"></span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">ain</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.6833em"></span><span class="mord mathnormal">in</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.109em">U</span><span class="mord mathnormal" style="margin-right:0.0077em">R</span><span class="mord mathnormal" style="margin-right:0.0502em">B</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.0785em">I</span><span class="mord mathnormal" style="margin-right:0.109em">N</span><span class="mord mathnormal" style="margin-right:0.0278em">D</span></span></span></span></p>
+<p>The AIC scores for these three models were close, with the first model’s
+AIC score lower than that of the second or third models (AIC=784.6 vs.
+788.1 and 792.1, when models were fitted with ML). As a result, we
+selected the first model. Figure 4.23 shows the model fit for each
+individual predictor, plotted against data points. Correlation between
+the three predictors was low (maximum correlation coefficient = 0.5).
+Figure 4.24 shows the interaction between rain and pm25_na, with higher
+pm25_na values in reds and oranges, and lower pm25_na values in blues
+and purples. This interaction shows that, when pm2.5 values are high,
+increasing amounts of rainfall result in a dilution of zinc in
+stormwater.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Total Zinc single predictor plots-5bb96122b652d65db2eba67eb3111d09.bmp" width="1000" height="750" class="img_ev3q"></p>
+<p><strong>Figure 4.23</strong> Single-predictor plots for total zinc, showing fit of
+the Landscape Predictor Model to each predictor. Model fitting was
+performed using maximum likelihood (ML) estimation.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Total Zinc interaction plot rain and pm25-01-c42c68cb4ebb9a00135abcfbecc4a2d6.bmp" width="935" height="740" class="img_ev3q"></p>
+<p><strong>Figure 4.24</strong> Plot showing the interaction between rain and pm25_na
+that is present in the best fit model. In areas with high pm25_na
+values, increasing amounts of rain result in a dilution of copper in
+stormwater. Model fitting was performed using maximum likelihood (ML)
+estimation.</p>
+<p>Comparisons between the Null Model, Categorical Land Use Model, and
+Landscape Predictor Model can be visualized through residuals (Fig.
+4.25) and also coefficient values (Table 4.6; Fig. 4.26). The lowest AIC
+value is for the Landscape Predictor Model, indicating best fit to the
+total zinc data of these three models.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Total Zinc residual plot for 3 models-2e936dc1a629d385a6de156a4a209f33.bmp" width="950" height="750" class="img_ev3q"><strong>Figure
+4.25</strong> Total zinc model residuals for the Null Model, Categorical Land
+Use Model, and Landscape Predictor Models. Each bar represents one
+watershed, with colors representing agencies. Model fitting was
+performed using maximum likelihood (ML) estimation.</p>
+<p><strong>Table 4.6</strong> Coefficient values (standard error in parenthesis) for the
+three total zinc models. For the Categorical Landuse Model, the baseline
+landuse is LDR; all other land use categories are adjustments from the
+baseline. Final coefficient values for linear mixed effects models are
+based on fitting with REML, and may differ slightly from coefficient
+values based on fitting with ML.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Total Zinc Table of Model Values-2433ef794ca92232072001e81b06e88e.png" width="715" height="302" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Total Zinc model coefficients-ce64bf3658168bf9817ce35542d98d03.bmp" width="850" height="650" class="img_ev3q"><strong>Figure 4.26</strong> Model
+coefficients for the Null Model (green), Categorical Land Use Model
+(blue), and Landscape Predictor Model (red). Final coefficient values
+for linear mixed effects models are based on fitting with REML, and may
+differ slightly from coefficient values based on fitting with ML.</p>
+<p>The landscape predictor model for total zinc, used as the basis for the
+Stormwater Heat Map total zinc layer, is:</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ln</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>t</mi><mi>o</mi><mi>t</mi><mi>a</mi><mi>l</mi><mi mathvariant="normal">.</mi><mi>z</mi><mi>i</mi><mi>n</mi><mi>c</mi><mo stretchy="false">)</mo><mo>=</mo><mn>4.09</mn><mo>−</mo><mn>0.13</mn><mo>∗</mo><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mo>+</mo><mn>0.43</mn><mo>∗</mo><mi>s</mi><mi>u</mi><mi>m</mi><mi>m</mi><mi>e</mi><mi>r</mi><mo>+</mo><mn>0.30</mn><mo>∗</mo><mi>s</mi><mi>q</mi><mi>r</mi><mi>t</mi><mi mathvariant="normal">.</mi><mi>t</mi><mi>r</mi><mi>a</mi><mi>f</mi><mi>f</mi><mi>i</mi><mi>c</mi><mo>+</mo><mn>0.38</mn><mo>∗</mo><mi>p</mi><mi>m</mi><mn>25.</mn><mi>n</mi><mi>a</mi><mo>+</mo><mn>0.57</mn><mo>∗</mo><mi>p</mi><mi>a</mi><mi>v</mi><mi>e</mi><mi>d</mi><mo>−</mo><mn>0.10</mn><mo>∗</mo><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mo>:</mo><mi>p</mi><mi>m</mi><mn>25.</mn><mi>n</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">\ln(total.zinc) = 4.09 - 0.13*rain + 0.43*summer + 0.30*sqrt.traffic + 0.38*pm25.na + 0.57*paved - 0.10*rain:pm25.na</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mord mathnormal">o</span><span class="mord mathnormal">t</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.0197em">l</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.044em">z</span><span class="mord mathnormal">in</span><span class="mord mathnormal">c</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em"></span><span class="mord">4.09</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">0.13</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.7429em;vertical-align:-0.0833em"></span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">ain</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">0.43</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">u</span><span class="mord mathnormal">mm</span><span class="mord mathnormal" style="margin-right:0.0278em">er</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">0.30</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal" style="margin-right:0.0359em">q</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">t</span><span class="mord">.</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.1076em">f</span><span class="mord mathnormal" style="margin-right:0.1076em">f</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">0.38</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">m</span><span class="mord">25.</span><span class="mord mathnormal">na</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">0.57</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.0359em">v</span><span class="mord mathnormal">e</span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">0.10</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6595em"></span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">ain</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">m</span><span class="mord">25.</span><span class="mord mathnormal">na</span></span></span></span></p>
+<p>where rain is 14-day cumulative precipitation, and summer is a factor
+with value=1 for July, August, September, and value=0 for all other
+months. Note that all predictors (except summer) were were first
+transformed if necessary (the square root was taken of traffic to
+generate sqrt_traffic), then standardized prior to use.</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="total-kjeldahl-nitrogen">Total Kjeldahl Nitrogen<a href="#total-kjeldahl-nitrogen" class="hash-link" aria-label="Direct link to Total Kjeldahl Nitrogen" title="Direct link to Total Kjeldahl Nitrogen" translate="no">​</a></h3>
+<p>Out of 420 Total Kjeldahl nitrogen (TKN) samples, 41 samples (9.8%) were
+flagged as non-detects, with a variety of detection limits ranging from
+30 to 500. The majority of non-detect samples came from three agencies:
+Pierce County, Port of Tacoma, and Snohomish County (Fig. 4.27). High
+detection limits in Pierce County and Port of Tacoma strongly truncated
+the lower half of these data sets.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Kjeldahl Nitrogen non-detects-07fbbfd51e80410f44428a1dca7baafc.png" width="900" height="731" class="img_ev3q"><strong>Figure 4.27</strong>
+Concentrations of total Kjeldahl nitrogen in samples collected by
+agency. Red dots indicate detected values, while blue dots indicate the
+detection limit for samples flagged as non-detect.</p>
+<p>Based on linear models of <em>ln</em>-transformed TKN versus individual
+predictors, the strong predictors identified for TKN include: roofs,
+nodev, traffic, sqrt_popn, sqrt_CO2_res, sqrt_CO2_tot, sqrt_CO2_road,
+devAge2, roof_inURB and roof_intURB_IND (Fig. 4.28).</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Kjeldahl Nitrogen strong predictors plot-04bedf4cf904e9cf2d2c5a806ef8cd7d.bmp" width="991" height="569" class="img_ev3q"><strong>Figure
+4.28</strong> Strong predictors for total Kjeldahl nitrogen (TKN), showing
+linear model fit (blue line) for the relationship between
+<em>ln</em>-transformed TKN concentration and each predictor in turn.</p>
+<p>The precipitation predictor used for TKN was 14-day cumulative
+precipitation. In addition, evidence of higher TKN concentrations during
+summer led us to add summer as a categorical predictor to the TKN model
+(where summer = 1 during July, August, September, and summer = 0 for all
+other months).</p>
+<p>Residuals plotted against fitted values showed signs of slight
+heterogeneity (Fig. 4.29, left plot). Of the variance structures tested,
+the best fit allows residual variation to differ by agency j.</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>v</mi><mi>a</mi><mi>r</mi><mo stretchy="false">(</mo><msub><mi>ϵ</mi><mi>j</mi></msub><mo stretchy="false">)</mo><mo>=</mo><msubsup><mi>σ</mi><mi>j</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">var(\epsilon_j)=\sigma^2_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0361em;vertical-align:-0.2861em"></span><span class="mord mathnormal" style="margin-right:0.0359em">v</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0572em">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:1.2472em;vertical-align:-0.3831em"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8641em"><span style="top:-2.453em;margin-left:-0.0359em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0572em">j</span></span></span><span style="top:-3.113em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3831em"><span></span></span></span></span></span></span></span></span></span></span>
+<p><img decoding="async" loading="lazy" src="/assets/images/Kjeldahl Nitrogen variance structure plot-ea6bfd723b96c32d2675e8ce05aad42e.bmp" width="928" height="387" class="img_ev3q"><strong>Figure
+4.29</strong> Normalized residuals from beyond-optimal model, with no variance
+structure (left), and with the best fit variance structure (right).</p>
+<p>The best model for TKN is a random-intercept model, where the intercept
+of the linear model is allowed to shift up or down according to agency.
+No signs of temporal or spatial auto-correlation were detected in
+auto-correlation plots or variograms. With the variance structure and
+random components set, three possible models emerged to capture the
+fixed effects:</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ln</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>T</mi><mi>K</mi><mi>N</mi><mo stretchy="false">)</mo><mo>∼</mo><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mo>+</mo><mi>s</mi><mi>u</mi><mi>m</mi><mi>m</mi><mi>e</mi><mi>r</mi><mo>+</mo><mi>s</mi><mi>q</mi><mi>r</mi><mi>t</mi><mi mathvariant="normal">.</mi><mi>t</mi><mi>r</mi><mi>a</mi><mi>f</mi><mi>f</mi><mi>i</mi><mi>c</mi><mo>+</mo><mi>d</mi><mi>e</mi><mi>v</mi><mi>A</mi><mi>g</mi><mi>e</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\ln(TKN) \sim rain + summer + sqrt.traffic + devAge2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em">T</span><span class="mord mathnormal" style="margin-right:0.0715em">K</span><span class="mord mathnormal" style="margin-right:0.109em">N</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.7429em;vertical-align:-0.0833em"></span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">ain</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">u</span><span class="mord mathnormal">mm</span><span class="mord mathnormal" style="margin-right:0.0278em">er</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal" style="margin-right:0.0359em">q</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">t</span><span class="mord">.</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.1076em">f</span><span class="mord mathnormal" style="margin-right:0.1076em">f</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.0359em">v</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.0359em">g</span><span class="mord mathnormal">e</span><span class="mord">2</span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ln</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>T</mi><mi>K</mi><mi>N</mi><mo stretchy="false">)</mo><mo>∼</mo><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mo>+</mo><mi>s</mi><mi>u</mi><mi>m</mi><mi>m</mi><mi>e</mi><mi>r</mi><mo>+</mo><mi>s</mi><mi>q</mi><mi>r</mi><mi>t</mi><mi mathvariant="normal">.</mi><mi>C</mi><mi>O</mi><mn>2.</mn><mi>r</mi><mi>o</mi><mi>a</mi><mi>d</mi><mo>+</mo><mi>d</mi><mi>e</mi><mi>v</mi><mi>A</mi><mi>g</mi><mi>e</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\ln(TKN) \sim rain + summer + sqrt.CO2.road + devAge2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em">T</span><span class="mord mathnormal" style="margin-right:0.0715em">K</span><span class="mord mathnormal" style="margin-right:0.109em">N</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.7429em;vertical-align:-0.0833em"></span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">ain</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">u</span><span class="mord mathnormal">mm</span><span class="mord mathnormal" style="margin-right:0.0278em">er</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal" style="margin-right:0.0359em">q</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">t</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.0715em">C</span><span class="mord mathnormal" style="margin-right:0.0278em">O</span><span class="mord">2.</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">a</span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.0359em">v</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.0359em">g</span><span class="mord mathnormal">e</span><span class="mord">2</span></span></span></span></p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>ln</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>T</mi><mi>K</mi><mi>N</mi><mo stretchy="false">)</mo><mo>∼</mo><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mo>+</mo><mi>s</mi><mi>u</mi><mi>m</mi><mi>m</mi><mi>e</mi><mi>r</mi><mo>+</mo><mi>s</mi><mi>q</mi><mi>r</mi><mi>t</mi><mi mathvariant="normal">.</mi><mi>t</mi><mi>r</mi><mi>a</mi><mi>f</mi><mi>f</mi><mi>i</mi><mi>c</mi><mo>+</mo><mi>n</mi><mi>o</mi><mi>d</mi><mi>e</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">\ln(TKN) \sim rain + summer + sqrt.traffic + nodev</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em">T</span><span class="mord mathnormal" style="margin-right:0.0715em">K</span><span class="mord mathnormal" style="margin-right:0.109em">N</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.7429em;vertical-align:-0.0833em"></span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">ain</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">u</span><span class="mord mathnormal">mm</span><span class="mord mathnormal" style="margin-right:0.0278em">er</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord mathnormal">s</span><span class="mord mathnormal" style="margin-right:0.0359em">q</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">t</span><span class="mord">.</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.1076em">f</span><span class="mord mathnormal" style="margin-right:0.1076em">f</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6944em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.0359em">v</span></span></span></span></span>
+<p>Each of these models captures two major contributors to total nitrogen:
+vehicles and amount/age of development. The AIC scores for all three
+models were close, with the models ordered from lowest to highest AIC
+score (907.8, 912.2, 915.8, when models were fitted using ML).</p>
+<p>We selected the second model, with landscape predictors sqrt_CO2_road +
+devAge2. While all models fit the data reasonably well, we opted to use
+the slightly coarser-scale predictor sqrt_CO2_road rather than
+sqrt_traffic. The amount of traffic on Puget Sound freeways exceeds the
+traffic in our dataset by an order of magnitude, and the TKN vs.
+sqrt_traffic relationship may lose its linear shape at high traffic
+levels. In contrast, the CO2_road values in our dataset range from about
+150 to 7900, while the range of pixel values for the entire Puget Sound
+region is 0 to 12,700. Less than 0.3% of pixels exceed 7900. This lends
+greater confidence to the TKN model with sqrt_CO2_road as a predictor.
+Figure 4.30 shows the model fit for each individual predictor, plotted
+against data points. Correlation between the two predictors was low
+(correlation coefficient = 0.4).</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Kjeldahl Nitrogen single predictors-41591d1d121cb97ab5f6c6fc5a513bf5.bmp" width="1196" height="387" class="img_ev3q"><strong>Figure 4.30</strong>
+Single-predictor plots for total Kjeldahl nitrogen, showing fit of the
+Landscape Predictor Model to each predictor. Model fitting was performed
+using maximum likelihood (ML) estimation.</p>
+<p>Comparisons between the Null Model, Categorical Land Use Model, and
+Landscape Predictor Model can be visualized through residuals (Fig.
+4.31), comparative metrics such as AIC (Table 4.7), and coefficient
+values (Table 4.7; Fig. 4.32). Although the AIC value for the
+Categorical Land Use Model is lower than that of the Landscape Predictor
+Model, we are not confident in the transferability of the Categorical
+Land Use Model to watersheds outside of the 14 in this study. Two of the
+land use categories (Industrial – IND; and Low Density Residential –
+LDR) each have only two watershed representatives in our study. This
+results in good model fit to the data, but not necessarily for all
+watersheds in Puget Sound area.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Kjeldahl Nitrogen residuals of 3 models-89c3cea4a46ca9ac4112e3046f3443f3.bmp" width="1000" height="757" class="img_ev3q"><strong>Figure
+4.31</strong> Total Kjeldahl nitrogen model residuals for the Null Model,
+Categorical Land Use Model, and Landscape Predictor Models. Each bar
+represents one watershed, with colors representing agencies. Model
+fitting was performed using maximum likelihood (ML) estimation.</p>
+<p><strong>Table 4.7</strong> Coefficient values (standard error in parenthesis) for the
+three total Kjeldahl nitrogen models. For the Categorical Landuse Model,
+the baseline landuse is LDR; all other land use categories are
+adjustments from the baseline. Final coefficient values for linear mixed
+effects models are based on fitting with restricted maximum likelihood
+(REML) estimation, and may differ slightly from those fitted using
+maximum likelihood (ML) estimation.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Kjeldahl Nitrogen Table of Model Values-379996e9efd886ca49cd0b482a51fe1b.png" width="705" height="264" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/Kjeldahl Nitrogen coefficient values-1d4d5d995919ee5bf5f6cfda78ca0860.bmp" width="943" height="727" class="img_ev3q"><strong>Figure
+4.32</strong> Model coefficients for the Null Model (green), Categorical Land
+Use Model (blue), and Landscape Predictor Model (red). Final coefficient
+values for linear mixed effects models are based on fitting with
+restricted maximum likelihood (REML) estimation, and may differ slightly
+from those fitted using maximum likelihood (ML) estimation.</p>
+<p>Censored data made up 9.7% of the TKN sample results. Although the EPA
+allows substitution of (0.5 x detection limit) for censored values when
+&lt; 15% of samples are non-detect (USEPA, 2009), we wanted to verify that
+substitution did not have a large effect on the parameter values for our
+dataset. Censored methods have not yet been developed for mixed effects
+models; as a result, we performed the (0.5 x detection limit)
+substitution for the TKN data, and fit a simple linear model using the
+predictors: 14-day rainfall, summer, sqrt_CO2_road and devAge2. We
+compared the parameter values to a censored data model using the NADA
+package in R (Lee, 2020), and found that the two models had very similar
+parameter values (Table 4.8). This confirmed that the TKN data with (0.5
+x detection limit) substitution could be used to generate valid models
+using mixed effects techniques.</p>
+<p><strong>Table 4.8</strong> Comparison of parameter values (standard error in
+parenthesis) generated by simplified linear models using two different
+methods to account for censored values.</p>
+<table><thead><tr><th> </th><th>non-detects replaced with (0.5 * detection limit)</th><th>censored model</th></tr></thead><tbody><tr><td>(Intercept)</td><td>6.57 (0.04)</td><td>6.60 (0.04)</td></tr><tr><td>rain (14-day std)</td><td>-0.16 (0.04)</td><td>-0.16 (0.04)</td></tr><tr><td>summer</td><td>0.67 (0.14)</td><td>0.65 (0.13)</td></tr><tr><td>sqrt_CO2_road</td><td>0.25 (0.04)</td><td>0.24 (0.04)</td></tr><tr><td>devAge2</td><td>0.22 (0.04)</td><td>0.21 (0.04)</td></tr></tbody></table>
+<p>The Landscape Predictor Model for TKN, used as the basis for the
+Stormwater Heat Map TKN layer, is:</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>ln</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>T</mi><mi>K</mi><mi>N</mi><mo stretchy="false">)</mo><mo>=</mo><mn>6.52</mn><mo>−</mo><mn>0.15</mn><mo stretchy="false">(</mo><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mo stretchy="false">)</mo><mo>+</mo><mn>0.60</mn><mo stretchy="false">(</mo><mi>s</mi><mi>u</mi><mi>m</mi><mi>m</mi><mi>e</mi><mi>r</mi><mo stretchy="false">)</mo><mo>+</mo><mspace linebreak="newline"></mspace><mn>0.28</mn><mo stretchy="false">(</mo><mi>s</mi><mi>q</mi><mi>r</mi><mi>t</mi><mi mathvariant="normal">.</mi><mi>C</mi><mi>O</mi><mn>2.</mn><mi>r</mi><mi>o</mi><mi>a</mi><mi>d</mi><mo stretchy="false">)</mo><mo>+</mo><mn>0.22</mn><mo stretchy="false">(</mo><mi>d</mi><mi>e</mi><mi>v</mi><mi>A</mi><mi>g</mi><mi>e</mi><mn>2</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\ln(TKN) = 6.52 - 0.15 (rain) + 0.60(summer) + \\
+0.28(sqrt.CO2.road) + 0.22(devAge2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em">T</span><span class="mord mathnormal" style="margin-right:0.0715em">K</span><span class="mord mathnormal" style="margin-right:0.109em">N</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em"></span><span class="mord">6.52</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mord">0.15</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">ain</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mord">0.60</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mord mathnormal">u</span><span class="mord mathnormal">mm</span><span class="mord mathnormal" style="margin-right:0.0278em">er</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mord">0.28</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mord mathnormal" style="margin-right:0.0359em">q</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">t</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.0715em">C</span><span class="mord mathnormal" style="margin-right:0.0278em">O</span><span class="mord">2.</span><span class="mord mathnormal" style="margin-right:0.0278em">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">a</span><span class="mord mathnormal">d</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mord">0.22</span><span class="mopen">(</span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.0359em">v</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.0359em">g</span><span class="mord mathnormal">e</span><span class="mord">2</span><span class="mclose">)</span></span></span></span></span>
+<p>where rain is 14-day cumulative precipitation, and summer is a factor
+with value=1 for July, August, September, and value=0 for all other
+months. Note that all predictors (except summer) were first transformed
+if necessary (the square root was taken of CO2_road to generate
+sqrt_CO2_road; devAge was squared to generate devAge2), then
+standardized prior to use.</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="translating-equations-to-the-stormwater-heatmap">Translating Equations to the Stormwater Heatmap<a href="#translating-equations-to-the-stormwater-heatmap" class="hash-link" aria-label="Direct link to Translating Equations to the Stormwater Heatmap" title="Direct link to Translating Equations to the Stormwater Heatmap" translate="no">​</a></h2>
+<p>The process of translating statistical equations for chemical
+contaminants to the Stormwater heatmap involved manipulation of the grid
+and equations.</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="convolving-the-base-map">Convolving the Base Map<a href="#convolving-the-base-map" class="hash-link" aria-label="Direct link to Convolving the Base Map" title="Direct link to Convolving the Base Map" translate="no">​</a></h3>
+<p>The first step of translating COC equations to the Stormwater Heatmap
+was to convolve each grid on the base map. Following convolution of the
+map, regression equations were applied to each grid box to predict the
+concentration of contaminants expected for that grid box.</p>
+<p>For COCs with traffic as a predictor (copper, TSS, zinc), the maximum
+traffic level in the grid map was clamped to 31,000 AADT. This upper
+limit corresponds to the maximum level of traffic found in the
+watersheds that provided data used for generating statistical equations.
+On freeways, which were not analyzed in this study, traffic
+conventrations can reach 240,000 AADT. By clamping traffic, we avoid
+extrapolating beyond the range of our data. This is a conservative
+approach because landscape predictors may not behave in a linear fashion
+at values beyond our range. Indeed, when the traffic level is clamped at
+31,000 AADT for TSS, predicted TSS values on freeways are in the same
+range as those found on freeways across the country (data from USGS
+Highway Runoff Database). This suggests that, for some COCs, traffic may
+be a linear predictor over the values found in our data, but may reach
+an asymptote at higher values.</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="applying-mixed-effects-equations-to-the-stormwater-heatmap">Applying Mixed Effects Equations to the Stormwater Heatmap<a href="#applying-mixed-effects-equations-to-the-stormwater-heatmap" class="hash-link" aria-label="Direct link to Applying Mixed Effects Equations to the Stormwater Heatmap" title="Direct link to Applying Mixed Effects Equations to the Stormwater Heatmap" translate="no">​</a></h3>
+<p>Utilizing a mixed effects model structure, along with a variance
+structure to account for heteroskedasticity, allowed us to obtain the
+best parameter values for each COC. The difference in parameter values
+generated by equations with and without random effects and/or variance
+structure illustrates how parameter values change according to the
+equation structure. For example, for total Kjeldahl nitrogen (TKN),
+regression values for each parameter can be compared for four models: 1)
+full model with random effects and variance structure, 2) random effects
+only (no variance structure), 3) variance structure only (no random
+effects), and 4) no random effects and no variance structure (Table
+4.9). By specifying the correct random effects (i.e. random effects by
+agency) and variance structure (i.e. variance co-variate = agency) for
+TKN, we find the most appropriate fit to the data for the relationship
+between this COC and the suite of predictors.</p>
+<p>With respect to translating mixed effects model equations to the
+Stormwater Heatmap to generate predictions for each grid box, the model
+becomes simplified. This is because we are interested in predicted COC
+values for the entire Puget Sound region, rather than the COC values
+that would be generated by the collection timing, analysis protocol, or
+biases of a specific agency. As such, we can largely ignore the
+agency-specific intercepts. We thus utilize the fitted value of the
+intercept for <em>all</em> watersheds and agencies in the Stormwater Heatmap,
+and do not adjust the intercept up or down according to agency. This
+allows us to predict COC values for the entire Puget Sound model domain,
+which is comprehensive of watersheds <em>outside</em> the agency boundaries for
+which we have monitoring data.</p>
+<p>When it comes applying the variance structure to the full model domain
+of the heatmap, these effects have already been incorporated into the
+best fit model (Table 4.8). We accounted for the mild heteroskedasticity
+evident in COCs by specifying the variance structure to properly weigh
+the impact of each data point on the best fit model. No further
+extension of the variable structure is necessary for generating model
+predictions on the Stormwater Heatmap.</p>
+<p><strong>Table 4.9</strong> Parameter values for four models of total Kjeldahl
+nitorgen: 1) full model with random effects and variance structure;
+2)random effects only (no variance structure); 3) variance structure
+only (no random effects); 4) no random effects, no variance structure.
+Models are for illustrative purposes only, to show the effect of
+variance stucture and random effects on parameter values for predictor
+variables.</p>
+<table><thead><tr><th></th><th><strong>Full Model</strong></th><th><strong>Random effects only</strong></th><th><strong>Variance structure only</strong></th></tr></thead><tbody><tr><td>intercept</td><td>6.523</td><td>6.521</td><td>6.642</td></tr><tr><td>rain</td><td>-0.149</td><td>-0.157</td><td>-0.148</td></tr><tr><td>summer</td><td>0.603</td><td>0.675</td><td>0.606</td></tr><tr><td>sqrt CO2 road</td><td>0.276</td><td>0.276</td><td>0.277</td></tr><tr><td>devAge2</td><td>0.220</td><td>0.240</td><td>0.203</td></tr></tbody></table>
+<p><strong>Citations:</strong></p>
+<p>Faraway, Julian J, 2006. Extending the Linear Model with R: Generalized
+Linear, Mixed Effects and Nonparametric Regression Models. Boca Raton
+(FL): Chapman &amp; Hall/CRC</p>
+<p>Hobbs, W., B. Lubliner, N. Kale, and E. Newell, 2015. Western Washington
+NPDES Phase 1 Stormwater Permit: Final Data Characterization 2009-2013.
+Washington State Department of Ecology, Olympia, WA. Publication No.
+15-03-001.</p>
+<p>Lee, Lopaka, 2020. NADA: Nondetects and Data Analysis for Environmental
+Data. R package version 1.6-1.1.</p>
+<p>Pinheiro J, Bates D, DebRoy S, Sarkar D, R Core Team, 2021. nlme: Linear
+and Nonlinear Mixed Effects Models. R package version 3.1-152.</p>
+<p>R Core Team, 2021. R: A language and environment for statistical
+computing. R Foundation for Statistical Computing, Vienna, Austria.</p>
+<p>U.S. Environmental Protection Agency, 2009, Statistical analysis of
+groundwater monitoring data at RCRA facilities, Unified guidance, EPA
+530-R-09-007.</p>
+<p>USGS Highway Runoff DataBase. Website visited 11/01/2021.</p>
+<p>Waschbusch, R.J., W.R. Selbig, and R.T. Bannerman, 1999. Sources of
+Phosphorus in Stormwater and Street Dirt from Two Urban Residential
+Basins In Madison, Wisconsin, 1994–95. U.S. Geological Survey
+Water-Resources Investigations Report 99–4021.</p>
+<p>Zuur AF, Ieno EN, Walker NJ, Saveliev AA, Smith GM. 2009. Mixed Effects
+Models and Extensions in Ecology with R. New York (NY): Springer</p>
+<p>[1] Phase I Permittees include: cities of Tacoma and Seattle; King,
+Snohomish, Pierce and Clark counties; Ports of Tacoma and Seattle.  For
+this study, all data were used with the exception of those from Clark
+County (outside of the Puget Sound region) and Port of Seattle (too
+different from all other Puget Sound watersheds).</p>
+<p>[2] As described in Faraway (2006), pg 156, REML estimation should not
+be used to compare models with different fixed effects because REML
+estimates the random effects by considering linear combinations of the
+data that remove the fixed effects. If the fixed effects change, the
+likelihoods of the two models will not be directly comparable. However,
+REML is generally considered to give better estimates for the random
+effects, so final models were fitted with REML</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/stormwaterheatmap/website/tree/main/docs/02_Technical Reference/022_Components/04_Water Quality Statistics.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/Technical Reference/Components/Hydrology"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Hydrology</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/Technical Reference/Components/Additional Information/References"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">References</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#data-sources" class="table-of-contents__link toc-highlight">Data Sources</a><ul><li><a href="#outfall-data" class="table-of-contents__link toc-highlight">Outfall Data</a></li><li><a href="#censored-non-detect-data" class="table-of-contents__link toc-highlight">Censored (Non-Detect) Data</a></li><li><a href="#transformation-of-outfall-data" class="table-of-contents__link toc-highlight">Transformation of outfall data</a></li></ul></li><li><a href="#spatial-data" class="table-of-contents__link toc-highlight">Spatial Data</a><ul><li><a href="#land-use" class="table-of-contents__link toc-highlight">Land Use</a></li><li><a href="#landscape-data" class="table-of-contents__link toc-highlight">Landscape Data</a></li><li><a href="#pre-processing-of-spatial-data" class="table-of-contents__link toc-highlight">Pre-processing of spatial data</a></li><li><a href="#precipitation-data" class="table-of-contents__link toc-highlight">Precipitation Data</a></li></ul></li><li><a href="#model-construction-and-selection" class="table-of-contents__link toc-highlight">Model Construction and Selection</a><ul><li><a href="#step-1-select-strong-potential-landscape-predictors" class="table-of-contents__link toc-highlight">Step 1. Select strong potential landscape predictors</a></li><li><a href="#step-2-construct-a-beyond-optimal-model-controlling-for-collinearity" class="table-of-contents__link toc-highlight">Step 2. Construct a beyond-optimal model, controlling for collinearity</a></li><li><a href="#step-3-control-for-heterogeneity-heteroskedasticity" class="table-of-contents__link toc-highlight">Step 3. Control for heterogeneity (heteroskedasticity)</a></li><li><a href="#step-4-find-the-proper-random-effects-structure" class="table-of-contents__link toc-highlight">Step 4. Find the proper random effects structure</a></li><li><a href="#step-5-check-for-temporal-and-spatial-correlation" class="table-of-contents__link toc-highlight">Step 5. Check for temporal and spatial correlation</a></li><li><a href="#step-6-find-the-proper-fixed-effects-structure" class="table-of-contents__link toc-highlight">Step 6. Find the proper fixed effects structure</a></li><li><a href="#final-model-comparison" class="table-of-contents__link toc-highlight">Final model comparison</a></li></ul></li><li><a href="#results" class="table-of-contents__link toc-highlight">Results</a><ul><li><a href="#copper" class="table-of-contents__link toc-highlight">Copper</a></li><li><a href="#total-suspended-solids" class="table-of-contents__link toc-highlight">Total Suspended Solids</a></li><li><a href="#phosphorus" class="table-of-contents__link toc-highlight">Phosphorus</a></li><li><a href="#total-zinc" class="table-of-contents__link toc-highlight">Total Zinc</a></li><li><a href="#total-kjeldahl-nitrogen" class="table-of-contents__link toc-highlight">Total Kjeldahl Nitrogen</a></li></ul></li><li><a href="#translating-equations-to-the-stormwater-heatmap" class="table-of-contents__link toc-highlight">Translating Equations to the Stormwater Heatmap</a><ul><li><a href="#convolving-the-base-map" class="table-of-contents__link toc-highlight">Convolving the Base Map</a></li><li><a href="#applying-mixed-effects-equations-to-the-stormwater-heatmap" class="table-of-contents__link toc-highlight">Applying Mixed Effects Equations to the Stormwater Heatmap</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/category/methods">Methodology</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/category/DataLayers/">Layer Reference</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Get Involved</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/contact">Contact us</a></li><li class="footer__item"><a href="https://github.com/stormwaterheatmap/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Github Repo<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Resources</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/about_stormwater">Background</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/links">Links</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/license">License &amp; Terms</a></li></ul></div></div><div class="footer__bottom text--center"><div class="margin-bottom--sm"><img src="/img/tnc-logo-white.svg" class="footer__logo themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/tnc-logo-white.svg" class="footer__logo themedComponent_mlkZ themedComponent--dark_xIcU"></div><div class="footer__copyright">Copyright © 2026 The Nature Conservancy. <br>
+      <small>Developed by Geosyntec Consultants, Inc.</small></div></div></div></footer></div>
+</body>
+</html>
