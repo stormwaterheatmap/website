@@ -1,4 +1,0 @@
-dist: trusty
-language: node_js
-node_js:
-  - 12.22.5
