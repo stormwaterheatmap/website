@@ -2,6 +2,8 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import {createRequire} from 'module';
 const require = createRequire(import.meta.url);
+// One place for the data catalog location; also read by scripts/gen-layers.mjs.
+const swhm = require('./swhm.config.json');
 
 const linkout_svg =
 '<svg width="10" height="10" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_3JMu"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>'
@@ -25,6 +27,10 @@ export default {
     favicon: 'img/favicon.ico',
     organizationName: 'The Nature Conservancy',
     projectName: 'website',
+    customFields: {
+        catalogUrl: swhm.catalogUrl,
+        stacBrowser: swhm.stacBrowser,
+    },
 
     headTags: [
         {
@@ -104,6 +110,10 @@ export default {
                         }, {
                             label: 'Layer Reference',
                             to: 'docs/category/DataLayers/'
+                        },
+                        {
+                            label: 'Data Catalog',
+                            to: 'catalog'
                         },
                         {
                             label: 'Resources',
