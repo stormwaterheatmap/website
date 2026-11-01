@@ -107,7 +107,7 @@ export default {
                         },
                         {
                             label: 'Resources',
-                            to: "docs/category/resources"
+                            to: "docs/category/Resources"
                         },
                         {
                             label: 'Github Repo',
