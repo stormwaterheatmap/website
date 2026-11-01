@@ -65,7 +65,6 @@
       },
       items: [
         "Data Layers/age_of_imperviousness",
-        "Data Layers/flow_duration_index",
         "Data Layers/hspf_land_cover_type",
         "Data Layers/hydrologic_response_units",
         "Data Layers/imperviousness",
