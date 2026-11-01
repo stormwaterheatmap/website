@@ -1,0 +1,40 @@
+---
+title: How to Get Data
+description: Browse, download, or analyze the Stormwater Heatmap data layers.
+---
+
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
+export const CatalogJsonLink = () => {
+  const { siteConfig } = useDocusaurusContext();
+  const url = siteConfig.customFields.catalogUrl;
+  return <a href={url}><code>{url}</code></a>;
+};
+
+# How to Get Data
+
+:::tip
+All data is freely available under [an open source license](/docs/license).
+:::
+
+Every layer is published as a Cloud-Optimized GeoTIFF with a STAC record that describes it. Pick the route that fits what you want to do.
+
+## Browse and download: the Data Catalog
+
+The [Data Catalog](/catalog) lists every published layer with its extent, resolution, units, class values, and a direct download link. Open a layer and use the download link on the right; the files open in QGIS, ArcGIS Pro, GDAL, or rasterio without any conversion.
+
+Scripts and tools that speak STAC can read the catalog directly from <CatalogJsonLink />.
+
+## Understand a layer: the Layer Reference
+
+Each page in the [Layer Reference](/docs/category/DataLayers) explains how a layer was made, shows its legend, and links its catalog entry, its download, and its Earth Engine asset. Layers that have not yet been added to the catalog still offer a full-extent GeoTIFF from the previous release on their reference page.
+
+## Analyze in Earth Engine
+
+Every layer page includes the JavaScript to load that layer in the [Earth Engine Code Editor](https://developers.google.com/earth-engine/guides/playground) and an "open" link to the asset's details. An Earth Engine account is required.
+
+To clip layers to an area of interest without writing code, use the [data extraction app](/get_spatial_data).
+
+## Previous release on ArcGIS Online
+
+The full-extent GeoTIFFs from the 2023 release remain cross-posted on ArcGIS Online as [Stormwaterheatmap.org Data Layers](https://tnc.maps.arcgis.com/home/item.html?id=01c5aecf684e4d739048acdcf8e898af). The catalog above is the current source.
