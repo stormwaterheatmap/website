@@ -12,9 +12,13 @@ sidebar_label: "Slope"
 | | |
 |---|---|
 | **Earth Engine asset** | `Slope` ([open](https://code.earthengine.google.com/?asset=projects/swhm-prod/assets/production_layers/Slope)) |
+| **Period** | released 2026-11-02 |
 | **Units** | Percent |
 | **Data type** | Continuous |
-| **Download** | [GeoTIFF (full extent, WGS 84)](https://storage.googleapis.com/live_data_layers/rasters/Slope.tif) (9 GB) |
+| **Pixel size** | 9.6 m (EPSG:3857) |
+| **Pixel type** | uint8 |
+| **Download** | [Cloud-Optimized GeoTIFF](https://storage.googleapis.com/swhm-ee/production/image/slope.tif) (236.0 MB) |
+| **Catalog entry** | [STAC item](https://stormwaterheatmap.github.io/swhm-stac-browser/#/external/storage.googleapis.com/swhm-ee/production/stac/slope.json) |
 
 ## Description
 
@@ -53,14 +57,10 @@ Map.addLayer(raw_image, {}, 'Slope')
 
 ## Visualization
 
-
+<div style={{height:16,borderRadius:4,background:'linear-gradient(to right, rgb(48,18,59), rgb(70,107,227), rgb(40,188,234), rgb(51,242,151), rgb(165,251,60), rgb(237,208,58), rgb(251,127,33), rgb(208,47,5), rgb(122,4,3))'}} />
 
 Colormap `turbo`, from 2 to 40 Percent.
 
 ## Source
 
 - [USGS National Elevation Dataset 1/3 Arc-Second](https://nationalmap.gov/elevation.html)
-
-:::note
-This layer is not yet in the data catalog. The download above is the full-extent GeoTIFF from the previous release.
-:::
