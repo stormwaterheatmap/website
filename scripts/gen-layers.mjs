@@ -2,19 +2,24 @@
 /**
  * Generate the Layer Reference pages (docs/03_Data Layers/<page>.mdx).
  *
- * Inputs, all named in swhm.config.json:
- *   - the published data dictionary (prose, labels, units, app-facing fields)
- *   - the production STAC catalog (files, sizes, bands, classes, renders, dates)
+ * Two independent inputs, each with its own URL in swhm.config.json:
+ *   - the production STAC catalog (`catalogUrl`: files, sizes, bands, classes,
+ *     renders, dates), walked from its root through `child` links to every `item`
+ *   - the published data dictionary (`dataDict`: prose, labels, units,
+ *     app-facing fields)
  *
  * One page per distinct `docs_link` in the dictionary. Records that share a
  * docs_link (precipitation ensembles, runoff ensembles, pollutant
- * concentrations) render on one page with a per-record table. Dictionary and
- * catalog join on `assetId.toLowerCase()` === STAC item id.
+ * concentrations and loads) render on one page with a per-record table.
+ * Dictionary and catalog join on `assetId.toLowerCase()` === STAC item id.
+ *
+ * Any fetch failure throws, so a build never ships pages made from partial data.
  *
  * Usage:
- *   node scripts/gen-layers.mjs                 # fetch catalog, write pages
- *   node scripts/gen-layers.mjs --stac-dir DIR  # read item JSON from DIR (offline)
- *   node scripts/gen-layers.mjs --dry-run       # print what would be written
+ *   node scripts/gen-layers.mjs             # fetch catalog and dictionary, write pages
+ *   node scripts/gen-layers.mjs --dry-run   # print what would be written
+ *   SWHM_DATA_DICT=../swhm-io/published/data_dict_published.json node scripts/gen-layers.mjs
+ *                                           # preview an unpublished dictionary (path or URL)
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -28,29 +33,51 @@ export async function loadConfig(root = ROOT) {
   return JSON.parse(await fs.readFile(path.join(root, 'swhm.config.json'), 'utf8'));
 }
 
-export async function loadDict(config, root = ROOT) {
-  const p = path.resolve(root, config.dataDict);
-  return JSON.parse(await fs.readFile(p, 'utf8'));
+/** GET a JSON document; throws on any non-2xx so partial data never reaches the pages. */
+export async function fetchJson(url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`GET ${url} -> HTTP ${res.status}`);
+  return res.json();
 }
 
-/** Fetch collection + every item it links. Returns {collectionUrl, items: Map<id, item>, itemUrls: Map<id, url>}. */
-export async function loadCatalog(config, { stacDir } = {}) {
-  const collectionUrl = config.catalogUrl;
-  const base = collectionUrl.slice(0, collectionUrl.lastIndexOf('/') + 1);
-  const read = async (name) =>
-    stacDir
-      ? JSON.parse(await fs.readFile(path.join(stacDir, name), 'utf8'))
-      : await (await fetch(base + name)).json();
-  const collection = await read('collection.json');
+/** The dictionary from a URL, or from a local path (the SWHM_DATA_DICT preview override). */
+export async function loadDict(source, { getJson = fetchJson, root = ROOT } = {}) {
+  if (/^https?:\/\//.test(source)) return getJson(source);
+  return JSON.parse(await fs.readFile(path.resolve(root, source), 'utf8'));
+}
+
+/**
+ * Walk the catalog from its root: `child` links lead to catalogs/collections,
+ * `item` links to items. Every href is resolved against the document it
+ * appears in. Returns {rootUrl, items, itemUrls, listedBy}, the last three
+ * keyed by item id: the item, its URL, and the URL of the collection that links it.
+ */
+export async function loadCatalog(config, { getJson = fetchJson } = {}) {
+  const rootUrl = config.catalogUrl;
   const items = new Map();
   const itemUrls = new Map();
-  for (const link of collection.links.filter((l) => l.rel === 'item')) {
-    const name = link.href.replace(/^\.\//, '');
-    const item = await read(name);
-    items.set(item.id, item);
-    itemUrls.set(item.id, base + name);
+  const listedBy = new Map();
+  const seen = new Set();
+
+  async function walk(url, doc) {
+    if (seen.has(url)) return;
+    seen.add(url);
+    const links = (doc.links || []).map((l) => ({ ...l, url: new URL(l.href, url).toString() }));
+    await Promise.all(
+      links
+        .filter((l) => l.rel === 'item')
+        .map(async (l) => {
+          const item = await getJson(l.url);
+          items.set(item.id, item);
+          itemUrls.set(item.id, l.url);
+          listedBy.set(item.id, url);
+        }),
+    );
+    for (const l of links.filter((l) => l.rel === 'child')) await walk(l.url, await getJson(l.url));
   }
-  return { collectionUrl, items, itemUrls };
+
+  await walk(rootUrl, await getJson(rootUrl));
+  return { rootUrl, items, itemUrls, listedBy };
 }
 
 // --- model --------------------------------------------------------------------
@@ -72,9 +99,9 @@ export function buildPages(dict, catalog, config) {
       rec,
       item,
       itemUrl: item ? catalog.itemUrls.get(id) : null,
-      download: downloadFor(rec, item, catalog, config),
+      download: downloadFor(item, catalog),
       eeLink: `https://code.earthengine.google.com/?asset=${config.earthEngineAssetRoot}/${rec.assetId}`,
-      catalogLink: item ? catalogEntryLink(config, catalog.itemUrls.get(id)) : null,
+      catalogLink: item ? catalogEntryLink(config, catalog.itemUrls.get(id), catalog.listedBy?.get(id)) : null,
     };
     if (!pages.has(slug)) pages.set(slug, { slug, layers: [] });
     pages.get(slug).layers.push(layer);
@@ -82,9 +109,19 @@ export function buildPages(dict, catalog, config) {
   return [...pages.values()];
 }
 
-export function catalogEntryLink(config, itemUrl) {
-  const noScheme = itemUrl.replace(/^https?:\/\//, '');
-  return `${config.stacBrowser.replace(/\/?$/, '/')}#/external/${noScheme}`;
+/**
+ * Deep link to an item in the STAC Browser. The browser owns its catalog
+ * connection and resolves a hash path against its configured catalog, so the
+ * link carries only the item's path relative to the collection that lists it
+ * ("#/soils.json"). That matches the browser as long as its catalog is the
+ * items' collection, which is how swhm-stac-browser is configured.
+ * Returns null when the item is not below that collection's folder.
+ */
+export function catalogEntryLink(config, itemUrl, listedByUrl) {
+  if (!listedByUrl) return null;
+  const folder = listedByUrl.slice(0, listedByUrl.lastIndexOf('/') + 1);
+  if (!itemUrl.startsWith(folder)) return null;
+  return `${config.stacBrowser.replace(/\/?$/, '/')}#/${itemUrl.slice(folder.length)}`;
 }
 
 export function resolveHref(href, itemUrl) {
@@ -97,25 +134,14 @@ export function formatBytes(n) {
   return `${Math.round(n / 1e3)} KB`;
 }
 
-function downloadFor(rec, item, catalog, config) {
-  if (item) {
-    const a = item.assets.data;
-    return {
-      url: resolveHref(a.href, catalog.itemUrls.get(item.id)),
-      size: a['file:size'] ? formatBytes(a['file:size']) : null,
-      kind: 'Cloud-Optimized GeoTIFF',
-      epsg: item.properties['proj:epsg'],
-      legacy: false,
-    };
-  }
-  const size = config.legacySizes?.[rec.assetId];
-  if (!size) return null;
+function downloadFor(item, catalog) {
+  const a = item?.assets?.data;
+  if (!a) return null;
   return {
-    url: `${config.legacyDownloadBase}${rec.assetId}.tif`,
-    size,
-    kind: 'GeoTIFF (full extent, WGS 84)',
-    epsg: 4326,
-    legacy: true,
+    url: resolveHref(a.href, catalog.itemUrls.get(item.id)),
+    size: a['file:size'] ? formatBytes(a['file:size']) : null,
+    kind: 'Cloud-Optimized GeoTIFF',
+    epsg: item.properties['proj:epsg'],
   };
 }
 
@@ -276,8 +302,8 @@ export function renderPage(page, { hasNotes = false } = {}) {
   if (palettes.trim()) parts.push('## Visualization', '', palettes, '');
   const src = sourceSection(page);
   if (src) parts.push('## Source', '', src, '');
-  if (page.layers.some((l) => l.download?.legacy)) {
-    parts.push(':::note', 'This layer is not yet in the data catalog. The download above is the full-extent GeoTIFF from the previous release.', ':::', '');
+  if (page.layers.some((l) => !l.item)) {
+    parts.push(':::note', 'This layer is not yet in the data catalog, so it has no download link yet.', ':::', '');
   }
   return parts.join('\n');
 }
@@ -314,17 +340,14 @@ function allSamePalette(page) {
 
 export async function main(argv = process.argv.slice(2)) {
   const dryRun = argv.includes('--dry-run');
-  const stacDir = argv.includes('--stac-dir') ? argv[argv.indexOf('--stac-dir') + 1] : undefined;
   const config = await loadConfig();
-  const dictPath = path.resolve(ROOT, config.dataDict);
-  const haveDict = await fs.access(dictPath).then(() => true, () => false);
-  if (!haveDict) {
-    // CI has no sibling swhm-io checkout: the committed pages are the build input there.
-    console.log(`gen-layers: dictionary not found at ${dictPath}; leaving the committed layer pages as they are.`);
-    return;
+  const catalog = await loadCatalog(config);
+  const dictSource = process.env.SWHM_DATA_DICT || config.dataDict;
+  if (!dictSource) {
+    throw new Error('No data dictionary: set "dataDict" in swhm.config.json, or SWHM_DATA_DICT to a path or URL.');
   }
-  const dict = await loadDict(config);
-  const catalog = await loadCatalog(config, { stacDir });
+  const dict = await loadDict(dictSource);
+  console.log(`catalog:    ${catalog.rootUrl}\ndictionary: ${dictSource}${process.env.SWHM_DATA_DICT ? ' (SWHM_DATA_DICT override)' : ''}`);
   const outDir = path.resolve(ROOT, config.layerDocsDir);
   const notesDir = path.join(outDir, '_notes');
   const pages = buildPages(dict, catalog, config);

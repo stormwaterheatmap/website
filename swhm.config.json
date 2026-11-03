@@ -1,19 +1,7 @@
 {
-  "catalogUrl": "https://storage.googleapis.com/swhm-ee/production/stac/collection.json",
-  "dataDict": "../swhm-io/published/data_dict_published.json",
+  "catalogUrl": "https://storage.googleapis.com/swhm-ee/production/stac/catalog.json",
+  "dataDict": "https://storage.googleapis.com/swhm-ee/production/config/data_dict.json",
   "stacBrowser": "https://stormwaterheatmap.github.io/swhm-stac-browser/",
   "earthEngineAssetRoot": "projects/swhm-prod/assets/production_layers",
-  "layerDocsDir": "docs/03_Data Layers",
-  "legacyDownloadBase": "https://storage.googleapis.com/live_data_layers/rasters/",
-  "legacySizes": {
-    "Age_of_Imperviousness": "11.3 MB",
-    "HSPF_Land_Cover_Type": "43.9 MB",
-    "Hydrologic_Response_Units": "99.4 MB",
-    "Land_Cover": "2.4 GB",
-    "Land_Use": "279.2 MB",
-    "Population_Density": "11.4 MB",
-    "Slope": "9 GB",
-    "Slope_Categories": "1.1 GB",
-    "Traffic": "102.9 MB"
-  }
+  "layerDocsDir": "docs/03_Data Layers"
 }

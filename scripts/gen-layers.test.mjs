@@ -1,13 +1,14 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { buildPages, renderPage, catalogEntryLink, resolveHref, formatBytes, pageOf, itemIdOf, titleFor, subtitleFor } from './gen-layers.mjs';
+import {
+  buildPages, renderPage, catalogEntryLink, resolveHref, formatBytes, pageOf, itemIdOf, titleFor, subtitleFor,
+  loadCatalog, loadDict,
+} from './gen-layers.mjs';
 
 const config = {
-  catalogUrl: 'https://example.org/stac/collection.json',
+  catalogUrl: 'https://example.org/stac/catalog.json',
   stacBrowser: 'https://example.org/browser/',
   earthEngineAssetRoot: 'projects/p/assets/layers',
-  legacyDownloadBase: 'https://legacy.example.org/rasters/',
-  legacySizes: { Land_Cover: '2.4 GB' },
 };
 
 const dict = {
@@ -73,7 +74,7 @@ const item = (id, extra = {}) => ({
   },
   assets: {
     data: {
-      href: `../image/${id}.tif?v=abc`,
+      href: `../../image/${id}.tif?v=abc`,
       'file:size': 58010820,
       'raster:bands': [{ data_type: 'uint8', spatial_resolution: 4.78 }],
       ...extra.asset,
@@ -81,17 +82,23 @@ const item = (id, extra = {}) => ({
   },
 });
 
+const LAYERS = 'https://example.org/stac/layers/collection.json';
 const catalog = {
-  collectionUrl: config.catalogUrl,
+  rootUrl: config.catalogUrl,
   items: new Map([
     ['soils', item('soils', { asset: { 'classification:classes': [{ value: 1, title: 'Outwash', color_hint: '69995D' }] } })],
     ['runoff_mm', item('runoff_mm')],
     ['climate_ensemble_2040-2070_runoff_mm', item('climate_ensemble_2040-2070_runoff_mm', { properties: { datetime: null, start_datetime: '2040-01-01T00:00:00Z', end_datetime: '2069-12-31T23:59:59Z' } })],
   ]),
   itemUrls: new Map([
-    ['soils', 'https://example.org/stac/soils.json'],
-    ['runoff_mm', 'https://example.org/stac/runoff_mm.json'],
-    ['climate_ensemble_2040-2070_runoff_mm', 'https://example.org/stac/climate_ensemble_2040-2070_runoff_mm.json'],
+    ['soils', 'https://example.org/stac/layers/soils.json'],
+    ['runoff_mm', 'https://example.org/stac/layers/runoff_mm.json'],
+    ['climate_ensemble_2040-2070_runoff_mm', 'https://example.org/stac/layers/climate_ensemble_2040-2070_runoff_mm.json'],
+  ]),
+  listedBy: new Map([
+    ['soils', LAYERS],
+    ['runoff_mm', LAYERS],
+    ['climate_ensemble_2040-2070_runoff_mm', LAYERS],
   ]),
 };
 
@@ -99,7 +106,10 @@ test('helpers', () => {
   assert.equal(pageOf(dict.Soils), 'soils');
   assert.equal(itemIdOf(dict['Runoff (mm) GCM Ensemble 2040-2070']), 'climate_ensemble_2040-2070_runoff_mm');
   assert.equal(resolveHref('../image/soils.tif?v=1', 'https://example.org/stac/soils.json'), 'https://example.org/image/soils.tif?v=1');
-  assert.equal(catalogEntryLink(config, 'https://example.org/stac/soils.json'), 'https://example.org/browser/#/external/example.org/stac/soils.json');
+  // browser-relative: the browser resolves the hash path against its own catalog
+  assert.equal(catalogEntryLink(config, 'https://example.org/stac/layers/soils.json', LAYERS), 'https://example.org/browser/#/soils.json');
+  assert.equal(catalogEntryLink(config, 'https://other.org/soils.json', LAYERS), null, 'item outside its collection folder: no link');
+  assert.equal(catalogEntryLink(config, 'https://example.org/stac/layers/soils.json', undefined), null);
   assert.equal(formatBytes(58010820), '58.0 MB');
   assert.equal(formatBytes(2_400_000_000), '2.4 GB');
 });
@@ -120,7 +130,8 @@ test('single categorical page: key facts, palette from classification classes, E
   assert.match(md, /\*\*Download\*\* \| \[Cloud-Optimized GeoTIFF\]\(https:\/\/example\.org\/image\/soils\.tif\?v=abc\) \(58\.0 MB\)/);
   assert.match(md, /code\.earthengine\.google\.com\/\?asset=projects\/p\/assets\/layers\/Soils\)/);
   assert.match(md, /\| Outwash \| 1 \| <span style=\{\{[^}]*background:'#69995D'/);
-  assert.match(md, /\[STAC item\]\(https:\/\/example\.org\/browser\/#\/external\/example\.org\/stac\/soils\.json\)/);
+  assert.match(md, /\[STAC item\]\(https:\/\/example\.org\/browser\/#\/soils\.json\)/);
+  assert.doesNotMatch(md, /#\/external\//, 'never override the browser catalog');
   assert.doesNotMatch(md, /:::note/, 'no legacy note when the item exists');
 });
 
@@ -136,13 +147,69 @@ test('grouped page: layer table, per-record descriptions, period from start/end 
   assert.match(md, /Colormap `ice_r`, from 25 to 1016 mm\/year\./);
 });
 
-test('no STAC item: legacy download, dictionary palette, note', () => {
+test('no STAC item: no download, palette from the dictionary, note', () => {
   const page = buildPages(dict, catalog, config).find((p) => p.slug === 'land_cover');
   const md = renderPage(page);
-  assert.match(md, /\[GeoTIFF \(full extent, WGS 84\)\]\(https:\/\/legacy\.example\.org\/rasters\/Land_Cover\.tif\) \(2\.4 GB\)/);
+  assert.doesNotMatch(md, /\*\*Download\*\*/);
   assert.match(md, /\| Grass \| 1 \| <span style=\{\{[^}]*background:'#ffffff'/);
-  assert.match(md, /:::note/);
+  assert.match(md, /:::note\nThis layer is not yet in the data catalog/);
   assert.doesNotMatch(md, /Catalog entry/);
+});
+
+test('loadCatalog walks root -> child collection -> items, and fetches nothing else', async () => {
+  const docs = {
+    'https://example.org/stac/catalog.json': {
+      links: [
+        { rel: 'root', href: './catalog.json' },
+        { rel: 'child', href: './layers/collection.json' },
+        { rel: 'version-history', href: './releases.json' },
+      ],
+    },
+    'https://example.org/stac/layers/collection.json': {
+      links: [
+        { rel: 'root', href: '../catalog.json' },
+        { rel: 'parent', href: '../catalog.json' },
+        { rel: 'item', href: './soils.json' },
+        { rel: 'item', href: './runoff_mm.json' },
+      ],
+    },
+    'https://example.org/stac/layers/soils.json': { id: 'soils', links: [] },
+    'https://example.org/stac/layers/runoff_mm.json': { id: 'runoff_mm', links: [] },
+  };
+  const fetched = [];
+  const getJson = async (url) => {
+    fetched.push(url);
+    if (!(url in docs)) throw new Error(`unexpected fetch ${url}`);
+    return docs[url];
+  };
+  const cat = await loadCatalog(config, { getJson });
+  assert.equal('dictUrl' in cat, false, 'the catalog carries no dictionary; it is a separate input');
+  assert.deepEqual([...cat.items.keys()].sort(), ['runoff_mm', 'soils']);
+  assert.equal(cat.itemUrls.get('soils'), 'https://example.org/stac/layers/soils.json');
+  assert.equal(cat.listedBy.get('soils'), 'https://example.org/stac/layers/collection.json');
+  assert.equal(fetched.filter((u) => u.endsWith('catalog.json')).length, 1, 'root/parent links are not re-fetched');
+  // a COG href two levels up from the item resolves to the bucket's image folder
+  assert.equal(resolveHref('../../image/soils.tif', cat.itemUrls.get('soils')), 'https://example.org/image/soils.tif');
+});
+
+test('loadCatalog propagates fetch failures instead of returning partial data', async () => {
+  const getJson = async (url) => {
+    if (url.endsWith('catalog.json')) return { links: [{ rel: 'child', href: './layers/collection.json' }] };
+    throw new Error(`GET ${url} -> HTTP 404`);
+  };
+  await assert.rejects(loadCatalog(config, { getJson }), /HTTP 404/);
+});
+
+test('loadDict fetches URLs and reads local paths', async () => {
+  const fromUrl = await loadDict('https://example.org/config/data_dict.json', { getJson: async () => ({ A: { assetId: 'A' } }) });
+  assert.deepEqual(fromUrl, { A: { assetId: 'A' } });
+  const fs = await import('node:fs/promises');
+  const os = await import('node:os');
+  const path = await import('node:path');
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'gen-layers-'));
+  await fs.writeFile(path.join(dir, 'dd.json'), JSON.stringify({ B: { assetId: 'B' } }));
+  assert.deepEqual(await loadDict('dd.json', { root: dir }), { B: { assetId: 'B' } });
+  await fs.rm(dir, { recursive: true });
 });
 
 test('notes partial is imported and placed after the description', () => {
