@@ -27,6 +27,7 @@ function HomepageHeader() {
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
+  const {earthEngineApps} = siteConfig.customFields;
   return (
     <Layout
       title={`${siteConfig.title}`}
@@ -41,7 +42,7 @@ export default function Home() {
   <div class="aspect-ratio__inner-wrapper">
         <iframe class="ee_embed" 
         // width="100%" height="800"  */}
-        src="https://swhm-prod.projects.earthengine.app/view/landing"
+        src={earthEngineApps.landing}
          frameborder="0" ></iframe>
   </div>
 {/* </div> */}

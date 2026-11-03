@@ -30,6 +30,7 @@ export default {
     customFields: {
         catalogUrl: swhm.catalogUrl,
         stacBrowser: swhm.stacBrowser,
+        earthEngineApps: swhm.earthEngineApps,
     },
 
     headTags: [

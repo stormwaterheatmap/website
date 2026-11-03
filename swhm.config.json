@@ -2,6 +2,12 @@
   "catalogUrl": "https://storage.googleapis.com/swhm-ee/production/stac/catalog.json",
   "dataDict": "https://storage.googleapis.com/swhm-ee/production/config/data_dict.json",
   "stacBrowser": "https://stormwaterheatmap.github.io/swhm-stac-browser/",
+  "earthEngineApps": {
+    "landing": "https://swhm-prod.projects.earthengine.app/view/landing",
+    "singleWatershed": "https://stormwaterheatmap.users.earthengine.app/view/singlewatershed",
+    "compareWatersheds": "https://stormwaterheatmap.users.earthengine.app/view/comparewatersheds",
+    "downloadLayers": "https://stormwaterheatmap.users.earthengine.app/view/downloadlayers"
+  },
   "earthEngineAssetRoot": "projects/swhm-prod/assets/production_layers",
   "layerDocsDir": "docs/03_Data Layers"
 }

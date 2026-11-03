@@ -1,8 +1,10 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 
 function placeholder_page() {
+  const {earthEngineApps} = useDocusaurusContext().siteConfig.customFields;
   return (
     <Layout title="Analyze Single Watershed">
       <div>
@@ -14,7 +16,7 @@ function placeholder_page() {
   <div class="aspect-ratio__inner-wrapper">
         <iframe class="ee_embed" 
         //  width="100%" height="800"  
-         src="https://stormwaterheatmap.users.earthengine.app/view/singlewatershed"
+         src={earthEngineApps.singleWatershed}
           frameborder="0" >
             </iframe> 
    </div> 
