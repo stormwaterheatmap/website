@@ -15,7 +15,7 @@ const linkout_svg_footer =
 
 export default {
     title: 'The Nature Conservancy StormwaterHeatmap',
-    tagline: 'Explore your watersheds. get data, and make informed decisions.',
+    tagline: 'Explore your watershed, get data, and make informed decisions.',
     url: process.env.SITE_URL || 'https://stormwaterheatmap.org',
     baseUrl: process.env.SITE_BASE_URL || '/',
     onBrokenLinks: 'warn',
@@ -68,7 +68,9 @@ export default {
         image: 'img/stormwater-default-share.jpg',
         colorMode: {
             defaultMode: 'light',
-            disableSwitch: false
+            disableSwitch: false,
+            // Follow the visitor's OS light/dark setting on first visit; the navbar toggle still overrides it.
+            respectPrefersColorScheme: true,
         },
         announcementBar: {
             id: 'announcementBar-dev',
