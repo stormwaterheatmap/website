@@ -3,10 +3,8 @@
   "dataDict": "https://stormwaterheatmap-data.org/config/data_dict.json",
   "stacBrowser": "https://stormwaterheatmap.github.io/swhm-stac-browser/",
   "earthEngineApps": {
-    "landing": "https://swhm-prod.projects.earthengine.app/view/landing",
-    "singleWatershed": "https://swhm-prod.projects.earthengine.app/view/analyze-watershed",
-    "compareWatersheds": "https://stormwaterheatmap.users.earthengine.app/view/comparewatersheds",
-    "downloadLayers": "https://stormwaterheatmap.users.earthengine.app/view/downloadlayers"
+    "view_data": "https://swhm-prod.projects.earthengine.app/view/view-data",
+    "analyze_watershed": "https://swhm-prod.projects.earthengine.app/view/analyze-watershed"
   },
   "earthEngineAssetRoot": "projects/swhm-prod/assets/production_layers",
   "layerDocsDir": "docs/03_Data Layers"
