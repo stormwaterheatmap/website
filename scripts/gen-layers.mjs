@@ -49,14 +49,13 @@ export async function loadDict(source, { getJson = fetchJson, root = ROOT } = {}
 /**
  * Walk the catalog from its root: `child` links lead to catalogs/collections,
  * `item` links to items. Every href is resolved against the document it
- * appears in. Returns {rootUrl, items, itemUrls, listedBy}, the last three
- * keyed by item id: the item, its URL, and the URL of the collection that links it.
+ * appears in. Returns {rootUrl, items, itemUrls}, the last two keyed by item
+ * id: the item and its URL.
  */
 export async function loadCatalog(config, { getJson = fetchJson } = {}) {
   const rootUrl = config.catalogUrl;
   const items = new Map();
   const itemUrls = new Map();
-  const listedBy = new Map();
   const seen = new Set();
 
   async function walk(url, doc) {
@@ -70,14 +69,13 @@ export async function loadCatalog(config, { getJson = fetchJson } = {}) {
           const item = await getJson(l.url);
           items.set(item.id, item);
           itemUrls.set(item.id, l.url);
-          listedBy.set(item.id, url);
         }),
     );
     for (const l of links.filter((l) => l.rel === 'child')) await walk(l.url, await getJson(l.url));
   }
 
   await walk(rootUrl, await getJson(rootUrl));
-  return { rootUrl, items, itemUrls, listedBy };
+  return { rootUrl, items, itemUrls };
 }
 
 // --- model --------------------------------------------------------------------
@@ -101,7 +99,7 @@ export function buildPages(dict, catalog, config) {
       itemUrl: item ? catalog.itemUrls.get(id) : null,
       download: downloadFor(item, catalog),
       eeLink: `https://code.earthengine.google.com/?asset=${config.earthEngineAssetRoot}/${rec.assetId}`,
-      catalogLink: item ? catalogEntryLink(config, catalog.itemUrls.get(id), catalog.listedBy?.get(id)) : null,
+      catalogLink: item ? catalogEntryLink(config, catalog.itemUrls.get(id)) : null,
     };
     if (!pages.has(slug)) pages.set(slug, { slug, layers: [] });
     pages.get(slug).layers.push(layer);
@@ -110,16 +108,17 @@ export function buildPages(dict, catalog, config) {
 }
 
 /**
- * Deep link to an item in the STAC Browser. The browser owns its catalog
- * connection and resolves a hash path against its configured catalog, so the
- * link carries only the item's path relative to the collection that lists it
- * ("#/soils.json"). That matches the browser as long as its catalog is the
- * items' collection, which is how swhm-stac-browser is configured.
- * Returns null when the item is not below that collection's folder.
+ * Deep link to an item in the STAC Browser, which opens in a new tab off the
+ * site (Docusaurus adds target=_blank to external links). The browser owns its
+ * catalog connection and resolves a hash path against its configured catalog,
+ * so the link carries only the item's path relative to the catalog root's
+ * folder ("#/layers/soils.json"). This assumes the site's `catalogUrl` and the
+ * browser's `catalogUrl` (swhm-stac-browser config.js) are the same document.
+ * Returns null when the item is not below the catalog root's folder.
  */
-export function catalogEntryLink(config, itemUrl, listedByUrl) {
-  if (!listedByUrl) return null;
-  const folder = listedByUrl.slice(0, listedByUrl.lastIndexOf('/') + 1);
+export function catalogEntryLink(config, itemUrl) {
+  const root = config.catalogUrl;
+  const folder = root.slice(0, root.lastIndexOf('/') + 1);
   if (!itemUrl.startsWith(folder)) return null;
   return `${config.stacBrowser.replace(/\/?$/, '/')}#/${itemUrl.slice(folder.length)}`;
 }
@@ -365,7 +364,10 @@ export async function main(argv = process.argv.slice(2)) {
     }
   }
   const unused = [...catalog.items.keys()].filter((id) => !Object.values(dict).some((r) => itemIdOf(r) === id));
-  if (unused.length) console.log(`catalog items with no dictionary record (skipped): ${unused.join(', ')}`);
+  if (unused.length) {
+    const sample = unused.slice(0, 5).join(', ');
+    console.log(`catalog items with no dictionary record (skipped): ${unused.length} (${sample}${unused.length > 5 ? ', …' : ''})`);
+  }
   console.log(`${pages.length} pages from ${Object.keys(dict).length} records and ${catalog.items.size} catalog items.`);
 }
 

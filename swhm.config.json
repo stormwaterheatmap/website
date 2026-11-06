@@ -1,5 +1,5 @@
 {
-  "catalogUrl": "https://stormwaterheatmap-data.org/stac/layers/collection.json",
+  "catalogUrl": "https://stormwaterheatmap-data.org/stac/catalog.json",
   "dataDict": "https://stormwaterheatmap-data.org/config/data_dict.json",
   "stacBrowser": "https://stormwaterheatmap.github.io/swhm-stac-browser/",
   "earthEngineApps": {
