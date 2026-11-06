@@ -29,7 +29,7 @@ The generator reads two independent inputs from the production bucket, each at i
 - **The STAC catalog** (`catalogUrl`). The generator walks it from the root `catalog.json` through its `child` collections to every item. File links, sizes, pixel details, class colors, dates.
 - **The data dictionary** (`dataDict`). Prose (`long_description`), units, class labels, Earth Engine asset ids, and each layer's page (`docs_link`). The catalog does not reference it.
 
-The Data Catalog page embeds the STAC Browser at its root and passes no catalog. The browser owns its catalog connection (`catalogUrl` in the `swhm-stac-browser` repo). The "Catalog entry" links on layer pages are browser-relative paths such as `#/soils.json`, which the browser resolves against its own catalog. They match as long as the browser's catalog is the layers collection.
+The Data Catalog page embeds the STAC Browser at its root and passes no catalog. The browser owns its catalog connection (`catalogUrl` in the `swhm-stac-browser` repo). The "Catalog entry" links on layer pages go out to the STAC Browser in a new tab, so visitors share the browser's own URL. They are browser-relative paths such as `#/layers/soils.json`, computed from the folder of the site's `catalogUrl`, which the browser resolves against its own catalog. Keep the site's `catalogUrl` and the browser's `catalogUrl` pointing at the same document (currently `stac/catalog.json`), or these links break.
 
 The two are joined on the lowercased `assetId`. Records that share a `docs_link` (the precipitation and runoff ensembles, the pollutant concentrations, the pollutant loads) render on one page. A dictionary record with no catalog item gets a page without a download link and a note saying so.
 

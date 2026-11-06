@@ -82,7 +82,6 @@ const item = (id, extra = {}) => ({
   },
 });
 
-const LAYERS = 'https://example.org/stac/layers/collection.json';
 const catalog = {
   rootUrl: config.catalogUrl,
   items: new Map([
@@ -95,21 +94,15 @@ const catalog = {
     ['runoff_mm', 'https://example.org/stac/layers/runoff_mm.json'],
     ['climate_ensemble_2040-2070_runoff_mm', 'https://example.org/stac/layers/climate_ensemble_2040-2070_runoff_mm.json'],
   ]),
-  listedBy: new Map([
-    ['soils', LAYERS],
-    ['runoff_mm', LAYERS],
-    ['climate_ensemble_2040-2070_runoff_mm', LAYERS],
-  ]),
 };
 
 test('helpers', () => {
   assert.equal(pageOf(dict.Soils), 'soils');
   assert.equal(itemIdOf(dict['Runoff (mm) GCM Ensemble 2040-2070']), 'climate_ensemble_2040-2070_runoff_mm');
   assert.equal(resolveHref('../image/soils.tif?v=1', 'https://example.org/stac/soils.json'), 'https://example.org/image/soils.tif?v=1');
-  // browser-relative: the browser resolves the hash path against its own catalog
-  assert.equal(catalogEntryLink(config, 'https://example.org/stac/layers/soils.json', LAYERS), 'https://example.org/browser/#/soils.json');
-  assert.equal(catalogEntryLink(config, 'https://other.org/soils.json', LAYERS), null, 'item outside its collection folder: no link');
-  assert.equal(catalogEntryLink(config, 'https://example.org/stac/layers/soils.json', undefined), null);
+  // browser-relative, from the catalog root's folder: the browser resolves the hash path against its own catalog root
+  assert.equal(catalogEntryLink(config, 'https://example.org/stac/layers/soils.json'), 'https://example.org/browser/#/layers/soils.json');
+  assert.equal(catalogEntryLink(config, 'https://other.org/soils.json'), null, 'item outside the catalog folder: no link');
   assert.equal(formatBytes(58010820), '58.0 MB');
   assert.equal(formatBytes(2_400_000_000), '2.4 GB');
 });
@@ -130,7 +123,7 @@ test('single categorical page: key facts, palette from classification classes, E
   assert.match(md, /\*\*Download\*\* \| \[Cloud-Optimized GeoTIFF\]\(https:\/\/example\.org\/image\/soils\.tif\?v=abc\) \(58\.0 MB\)/);
   assert.match(md, /code\.earthengine\.google\.com\/\?asset=projects\/p\/assets\/layers\/Soils\)/);
   assert.match(md, /\| Outwash \| 1 \| <span style=\{\{[^}]*background:'#69995D'/);
-  assert.match(md, /\[STAC item\]\(https:\/\/example\.org\/browser\/#\/soils\.json\)/);
+  assert.match(md, /\[STAC item\]\(https:\/\/example\.org\/browser\/#\/layers\/soils\.json\)/);
   assert.doesNotMatch(md, /#\/external\//, 'never override the browser catalog');
   assert.doesNotMatch(md, /:::note/, 'no legacy note when the item exists');
 });
@@ -186,7 +179,6 @@ test('loadCatalog walks root -> child collection -> items, and fetches nothing e
   assert.equal('dictUrl' in cat, false, 'the catalog carries no dictionary; it is a separate input');
   assert.deepEqual([...cat.items.keys()].sort(), ['runoff_mm', 'soils']);
   assert.equal(cat.itemUrls.get('soils'), 'https://example.org/stac/layers/soils.json');
-  assert.equal(cat.listedBy.get('soils'), 'https://example.org/stac/layers/collection.json');
   assert.equal(fetched.filter((u) => u.endsWith('catalog.json')).length, 1, 'root/parent links are not re-fetched');
   // a COG href two levels up from the item resolves to the bucket's image folder
   assert.equal(resolveHref('../../image/soils.tif', cat.itemUrls.get('soils')), 'https://example.org/image/soils.tif');
