@@ -23,9 +23,9 @@ sidebar_label: "Soils"
 ## Description
 
 The primary source of soils data was the Gridded Soil Survey Geographic
-Database (gSSURGO), (SoilSurveyStaff, 2018). The gridded soils database
+Database (gSSURGO), (Soil Survey Staff 2018). The gridded soils database
 contains 10-meter rasterized coverage of surface soils derived from
-National Cooperate Soil Survey (NCSS) maps. These maps are generally
+National Cooperative Soil Survey (NCSS) maps. These maps are generally
 drawn at 1:24000 scale. NCSS designates soils by a “map-unit name,”
 which can be joined with other attribute data. Map units in the study
 area were joined with the soils component table, containing
@@ -58,12 +58,14 @@ If a soil is assigned to a dual hydrologic group (A/D, B/D, or C/D), the
 first letter is for drained areas and the second is for undrained areas.
 Only the soils that in their natural condition are in group D are
 assigned to dual classes. In certain locations, data were augmented with
-the SSURGO Value added tables (SoilSurveyStaff, 2016) using the
-Potential wetland soil landscapes field.
+the SSURGO Value Added Tables (Soil Survey Staff 2016) using the
+Potential Wetland Soil Landscapes field.
+
+In this layer, Groups A and B (outwash-derived soils) are shown as Outwash and Groups C and D (till-derived soils) as Till; these are the dominant classifications in the Puget Sound lowlands.
 
 In areas where gSSURGO data were not available, we used the Global
 Hydrologic Soil Groups (HYSOGs250m) for Curve Number-Based Runoff
-Modeling developed by Oak Ridge National Laboratory. This dataset
+Modeling developed by Oak Ridge National Laboratory ([Ross et al. 2018](https://doi.org/10.3334/ORNLDAAC/1566)). This dataset
 contains world-wide hydrologic soils groups derived at a 250 meter
 resolution from machine learning predictions. Hydrologic soil groups
 were given the same designation as the SSURGO data above.

@@ -1,0 +1,19 @@
+## How runoff was simulated
+
+All four runoff layers above come from the same continuous simulation setup; only the precipitation input changes.
+
+Continuous hydrology simulation was performed using regional
+pre-calibrated parameters. Batched simulations were run for combinations
+of land cover, soils, and slopes across the Puget Sound domain.
+
+To allow for parallel computations, [HSP2](https://github.com/respec/HSPsquared) (Hydrologic Simulation Program–Python), an open-source Python implementation of HSPF developed by RESPEC (RESPEC 2026), was used to model rainfall-runoff responses. Regional calibration factors for the Puget Lowlands Ecoregion were used as developed by Dinicola (1990) and updated by Clear Creek Solutions for the Western Washington Hydrology Model (Department of Ecology 2024).
+
+HSPF calculates discharge for three flow-paths: surface flow,
+interflow, and groundwater flow, referred to as `SURO`, `IFWO`, and
+`AGWO` respectively. We report only `SURO` and `IFWO`, consistent with
+Ecology guidance.
+
+Areas classified as water are not modeled, and their runoff is set to zero.
+
+More information, including verification of results can be found in the
+[technical reference.](/docs/Technical%20Reference/Components/Hydrology)

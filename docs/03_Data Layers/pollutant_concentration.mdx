@@ -1,6 +1,6 @@
 ---
 title: "Pollutant Concentration"
-description: "5 layers: Total Suspended Solids Concentration, Total Copper Concentration, Total Phosphorus Concentration, Total Zinc Concentration, Total Kjeldahl Nitrogen Concentration"
+description: "5 layers: Total Copper Concentration, Total Kjeldahl Nitrogen Concentration, Total Phosphorus Concentration, Total Suspended Solids Concentration, Total Zinc Concentration"
 sidebar_label: "Pollutant Concentration"
 ---
 
@@ -9,21 +9,21 @@ sidebar_label: "Pollutant Concentration"
 
 import Notes from './_notes/pollutant_concentration.mdx';
 
-*5 layers: Total Suspended Solids Concentration, Total Copper Concentration, Total Phosphorus Concentration, Total Zinc Concentration, Total Kjeldahl Nitrogen Concentration*
+*5 layers: Total Copper Concentration, Total Kjeldahl Nitrogen Concentration, Total Phosphorus Concentration, Total Suspended Solids Concentration, Total Zinc Concentration*
 
 ## Layers
 
 | Layer | Period | Units | Earth Engine | Download | Catalog |
 |---|---|---|---|---|---|
-| Total Suspended Solids Concentration | released 2026-11-02 | mg/L | [`Total_Suspended_Solids_Concentration`](https://code.earthengine.google.com/?asset=projects/swhm-prod/assets/production_layers/Total_Suspended_Solids_Concentration) | [728.3 MB](https://stormwaterheatmap-data.org/image/total_suspended_solids_concentration.tif) | [item](https://stormwaterheatmap.github.io/swhm-stac-browser/#/layers/total_suspended_solids_concentration.json) |
 | Total Copper Concentration | released 2026-11-02 | mcg/L | [`Total_Copper_Concentration`](https://code.earthengine.google.com/?asset=projects/swhm-prod/assets/production_layers/Total_Copper_Concentration) | [738.5 MB](https://stormwaterheatmap-data.org/image/total_copper_concentration.tif) | [item](https://stormwaterheatmap.github.io/swhm-stac-browser/#/layers/total_copper_concentration.json) |
-| Total Phosphorus Concentration | released 2026-11-02 | mcg/L | [`Total_Phosphorus_Concentration`](https://code.earthengine.google.com/?asset=projects/swhm-prod/assets/production_layers/Total_Phosphorus_Concentration) | [254.8 MB](https://stormwaterheatmap-data.org/image/total_phosphorus_concentration.tif) | [item](https://stormwaterheatmap.github.io/swhm-stac-browser/#/layers/total_phosphorus_concentration.json) |
-| Total Zinc Concentration | released 2026-11-02 | mcg/L | [`Total_Zinc_Concentration`](https://code.earthengine.google.com/?asset=projects/swhm-prod/assets/production_layers/Total_Zinc_Concentration) | [682.3 MB](https://stormwaterheatmap-data.org/image/total_zinc_concentration.tif) | [item](https://stormwaterheatmap.github.io/swhm-stac-browser/#/layers/total_zinc_concentration.json) |
 | Total Kjeldahl Nitrogen Concentration | released 2026-11-02 | mcg/L | [`Total_Kjeldahl_Nitrogen_Concentration`](https://code.earthengine.google.com/?asset=projects/swhm-prod/assets/production_layers/Total_Kjeldahl_Nitrogen_Concentration) | [600.5 MB](https://stormwaterheatmap-data.org/image/total_kjeldahl_nitrogen_concentration.tif) | [item](https://stormwaterheatmap.github.io/swhm-stac-browser/#/layers/total_kjeldahl_nitrogen_concentration.json) |
+| Total Phosphorus Concentration | released 2026-11-02 | mcg/L | [`Total_Phosphorus_Concentration`](https://code.earthengine.google.com/?asset=projects/swhm-prod/assets/production_layers/Total_Phosphorus_Concentration) | [254.8 MB](https://stormwaterheatmap-data.org/image/total_phosphorus_concentration.tif) | [item](https://stormwaterheatmap.github.io/swhm-stac-browser/#/layers/total_phosphorus_concentration.json) |
+| Total Suspended Solids Concentration | released 2026-11-02 | mg/L | [`Total_Suspended_Solids_Concentration`](https://code.earthengine.google.com/?asset=projects/swhm-prod/assets/production_layers/Total_Suspended_Solids_Concentration) | [728.3 MB](https://stormwaterheatmap-data.org/image/total_suspended_solids_concentration.tif) | [item](https://stormwaterheatmap.github.io/swhm-stac-browser/#/layers/total_suspended_solids_concentration.json) |
+| Total Zinc Concentration | released 2026-11-02 | mcg/L | [`Total_Zinc_Concentration`](https://code.earthengine.google.com/?asset=projects/swhm-prod/assets/production_layers/Total_Zinc_Concentration) | [682.3 MB](https://stormwaterheatmap-data.org/image/total_zinc_concentration.tif) | [item](https://stormwaterheatmap.github.io/swhm-stac-browser/#/layers/total_zinc_concentration.json) |
 
 ## Description
 
-Pollutant concentrations have been derived from a series of linear mixed-effects models using spatial covariates. Regressions were performed on outfall stormwater measurements from the Washington State Department of Ecology's S8.D Municipal Stormwater Permit Outfall Data. The stormwater outfall data is available via an open-data api at: [https://data.wa.gov/Natural-Resources-Environment/Municipal-Stormwater-> Permit-Outfall-Data/d958-q2ci.](https://data.wa.gov/Natural-Resources-Environment/Municipal-Stormwater-%20Permit-Outfall-Data/d958-q2ci.%20)
+Pollutant concentrations have been derived from a series of linear mixed-effects models using spatial covariates. Regressions were performed on outfall stormwater measurements from the Washington State Department of Ecology's S8.D Municipal Stormwater Permit Outfall Data. The stormwater outfall data is available via an open-data api at: [https://data.wa.gov/Natural-Resources-Environment/Municipal-Stormwater-Permit-Outfall-Data/d958-q2ci](https://data.wa.gov/Natural-Resources-Environment/Municipal-Stormwater-Permit-Outfall-Data/d958-q2ci).
 
 Heatmap layers have been developed for five constituents of concern:
 
@@ -41,7 +41,7 @@ For more details on methodology, see the [Water Quality Statistics documentation
 
 The JavaScript below loads this layer in the [Earth Engine Code Editor](https://developers.google.com/earth-engine/guides/playground). An Earth Engine account is required. The "open" links above show each asset's details in the Code Editor.
 
-This page covers 5 layers: "Total Suspended Solids Concentration", "Total Copper Concentration", "Total Phosphorus Concentration", "Total Zinc Concentration", "Total Kjeldahl Nitrogen Concentration".
+This page covers 5 layers: "Total Copper Concentration", "Total Kjeldahl Nitrogen Concentration", "Total Phosphorus Concentration", "Total Suspended Solids Concentration", "Total Zinc Concentration".
 
 ```javascript
 // Import the layer data dictionary
@@ -51,23 +51,17 @@ var data = require('users/stormwaterheatmap/apps:data/public')
 print('Data:', data)
 
 // Get this layer from the layer data dictionary:
-var layer_name = data.rasters["Total Suspended Solids Concentration"]
+var layer_name = data.rasters["Total Copper Concentration"]
 
 // Add the styled layer to the map:
 Map.addLayer(layer_name.layer)
 
 // Raw image for analysis:
 var raw_image = layer_name.layer.eeObject
-Map.addLayer(raw_image, {}, 'Total Suspended Solids Concentration')
+Map.addLayer(raw_image, {}, 'Total Copper Concentration')
 ```
 
 ## Visualization
-
-### Total Suspended Solids Concentration
-
-<div style={{height:16,borderRadius:4,background:'linear-gradient(to right, rgb(4,35,51), rgb(110,71,148), rgb(185,98,126), rgb(238,124,84), rgb(252,165,60), rgb(248,205,68), rgb(235,243,87), rgb(243,253,168), rgb(255,255,255))'}} />
-
-Colormap `thermal+white` (log scale), from 9.03 to 60.3 mg/L.
 
 ### Total Copper Concentration
 
@@ -75,23 +69,29 @@ Colormap `thermal+white` (log scale), from 9.03 to 60.3 mg/L.
 
 Colormap `thermal+white` (log scale), from 1.82 to 34.8 mcg/L.
 
+### Total Kjeldahl Nitrogen Concentration
+
+<div style={{height:16,borderRadius:4,background:'linear-gradient(to right, rgb(4,35,51), rgb(81,57,158), rgb(149,86,138), rgb(209,106,112), rgb(246,137,71), rgb(251,181,61), rgb(242,226,78), rgb(239,252,145), rgb(255,255,255))'}} />
+
+Colormap `thermal+white` (log scale), from 365 to 1210 mcg/L.
+
 ### Total Phosphorus Concentration
 
 <div style={{height:16,borderRadius:4,background:'linear-gradient(to right, rgb(4,35,51), rgb(63,52,159), rgb(130,79,143), rgb(189,99,124), rgb(237,123,85), rgb(252,165,60), rgb(245,215,72), rgb(237,251,127), rgb(255,255,255))'}} />
 
 Colormap `thermal+white` (log scale), from 49.4 to 110 mcg/L.
 
+### Total Suspended Solids Concentration
+
+<div style={{height:16,borderRadius:4,background:'linear-gradient(to right, rgb(4,35,51), rgb(110,71,148), rgb(185,98,126), rgb(238,124,84), rgb(252,165,60), rgb(248,205,68), rgb(235,243,87), rgb(243,253,168), rgb(255,255,255))'}} />
+
+Colormap `thermal+white` (log scale), from 9.03 to 60.3 mg/L.
+
 ### Total Zinc Concentration
 
 <div style={{height:16,borderRadius:4,background:'linear-gradient(to right, rgb(4,35,51), rgb(199,102,118), rgb(248,143,67), rgb(251,187,62), rgb(244,220,75), rgb(233,247,89), rgb(240,252,151), rgb(248,254,209), rgb(255,255,255))'}} />
 
 Colormap `thermal+white` (log scale), from 5.47 to 257 mcg/L.
-
-### Total Kjeldahl Nitrogen Concentration
-
-<div style={{height:16,borderRadius:4,background:'linear-gradient(to right, rgb(4,35,51), rgb(81,57,158), rgb(149,86,138), rgb(209,106,112), rgb(246,137,71), rgb(251,181,61), rgb(242,226,78), rgb(239,252,145), rgb(255,255,255))'}} />
-
-Colormap `thermal+white` (log scale), from 365 to 1210 mcg/L.
 
 ## Source
 
