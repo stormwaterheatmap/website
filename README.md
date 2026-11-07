@@ -26,8 +26,10 @@ The layer pages are generated. Do not edit the `.mdx` files in `docs/03_Data Lay
 
 The generator reads two independent inputs from the production bucket, each at its own URL in `swhm.config.json`:
 
-- **The STAC catalog** (`catalogUrl`). The generator walks it from the root `catalog.json` through its `child` collections to every item. File links, sizes, pixel details, class colors, dates.
-- **The data dictionary** (`dataDict`). Prose (`long_description`), units, class labels, Earth Engine asset ids, and each layer's page (`docs_link`). The catalog does not reference it.
+- **The STAC catalog** (`catalogUrl`). The generator walks it from the root `catalog.json` through its `child` collections and fetches only the items the dictionary references (item files are named `<id>.json`), so the timeseries collection's hundreds of items cost no requests. File links, sizes, pixel details, class colors, dates.
+- **The data dictionary** (`dataDict`). Prose (`long_description`), units, class labels, Earth Engine asset ids, and each layer's page (`docs_link`). The published file is an envelope, `{ "layers": { … }, "meta": { "built", "commit", "source" } }`; the generator logs the commit and build time. A flat file of records is accepted too, for `SWHM_DATA_DICT` previews. The catalog does not reference the dictionary.
+
+Network errors and server errors are retried twice before the generator gives up and fails the build.
 
 The Data Catalog page embeds the STAC Browser at its root and passes no catalog. The browser owns its catalog connection (`catalogUrl` in the `swhm-stac-browser` repo). The "Catalog entry" links on layer pages go out to the STAC Browser in a new tab, so visitors share the browser's own URL. They are browser-relative paths such as `#/layers/soils.json`, computed from the folder of the site's `catalogUrl`, which the browser resolves against its own catalog. Keep the site's `catalogUrl` and the browser's `catalogUrl` pointing at the same document (currently `stac/catalog.json`), or these links break.
 
@@ -40,8 +42,10 @@ The generator runs before every `npm start` and `npm run build`, including in CI
 To preview an unpublished dictionary, point `SWHM_DATA_DICT` at a local file or another URL:
 
 ```bash
-SWHM_DATA_DICT=../swhm-io/published/data_dict_published.json npm run gen:layers
+SWHM_DATA_DICT=../swhm-io/data_dict/data_dict.json npm run gen:layers
 ```
+
+Pages previewed from swhm-io's source file are close to, but not identical with, what CI generates: the published copy adds expanded palettes and lists records alphabetically, which changes row order on shared pages. Regenerate from the published dictionary before committing pages.
 
 ### Release checklist for a data change
 

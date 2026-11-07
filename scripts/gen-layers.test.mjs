@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   buildPages, renderPage, catalogEntryLink, resolveHref, formatBytes, pageOf, itemIdOf, titleFor, subtitleFor,
-  loadCatalog, loadDict,
+  loadCatalog, loadDict, fetchJson,
 } from './gen-layers.mjs';
 
 const config = {
@@ -182,6 +182,38 @@ test('loadCatalog walks root -> child collection -> items, and fetches nothing e
   assert.equal(fetched.filter((u) => u.endsWith('catalog.json')).length, 1, 'root/parent links are not re-fetched');
   // a COG href two levels up from the item resolves to the bucket's image folder
   assert.equal(resolveHref('../../image/soils.tif', cat.itemUrls.get('soils')), 'https://example.org/image/soils.tif');
+
+  // with `wanted`, only the items the dictionary references are fetched
+  fetched.length = 0;
+  const some = await loadCatalog(config, { getJson, wanted: new Set(['soils']) });
+  assert.deepEqual([...some.items.keys()], ['soils']);
+  assert.equal(some.skipped, 1);
+  assert.equal(fetched.some((u) => u.endsWith('runoff_mm.json')), false, 'unreferenced item not requested');
+});
+
+test('fetchJson retries network errors and 5xx, but not 4xx', async () => {
+  const ok = { ok: true, status: 200, json: async () => ({ fine: true }) };
+  let calls = 0;
+  const flaky = async () => {
+    calls++;
+    if (calls < 3) throw Object.assign(new Error('fetch failed'), { cause: { code: 'UND_ERR_CONNECT_TIMEOUT' } });
+    return ok;
+  };
+  assert.deepEqual(await fetchJson('https://x/a.json', { fetchImpl: flaky, delayMs: 0 }), { fine: true });
+  assert.equal(calls, 3);
+
+  calls = 0;
+  const down = async () => { calls++; throw Object.assign(new Error('fetch failed'), { cause: { code: 'ECONNRESET' } }); };
+  await assert.rejects(fetchJson('https://x/a.json', { fetchImpl: down, delayMs: 0 }), /failed after 3 attempts: ECONNRESET/);
+
+  calls = 0;
+  const missing = async () => { calls++; return { ok: false, status: 404 }; };
+  await assert.rejects(fetchJson('https://x/a.json', { fetchImpl: missing, delayMs: 0 }), /HTTP 404/);
+  assert.equal(calls, 1, '4xx is not retried');
+
+  calls = 0;
+  const busy = async () => { calls++; return calls < 2 ? { ok: false, status: 503 } : ok; };
+  assert.deepEqual(await fetchJson('https://x/a.json', { fetchImpl: busy, delayMs: 0 }), { fine: true });
 });
 
 test('loadCatalog propagates fetch failures instead of returning partial data', async () => {
@@ -192,15 +224,19 @@ test('loadCatalog propagates fetch failures instead of returning partial data', 
   await assert.rejects(loadCatalog(config, { getJson }), /HTTP 404/);
 });
 
-test('loadDict fetches URLs and reads local paths', async () => {
-  const fromUrl = await loadDict('https://example.org/config/data_dict.json', { getJson: async () => ({ A: { assetId: 'A' } }) });
-  assert.deepEqual(fromUrl, { A: { assetId: 'A' } });
+test('loadDict unwraps the published envelope and also reads flat files', async () => {
+  const meta = { built: '2026-11-06T19:16:15Z', commit: '32f0051', source: 'data_dict/data_dict.json' };
+  const fromUrl = await loadDict('https://example.org/config/data_dict.json', {
+    getJson: async () => ({ layers: { A: { assetId: 'A' } }, meta }),
+  });
+  assert.deepEqual(fromUrl, { records: { A: { assetId: 'A' } }, meta });
+
   const fs = await import('node:fs/promises');
   const os = await import('node:os');
   const path = await import('node:path');
   const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'gen-layers-'));
   await fs.writeFile(path.join(dir, 'dd.json'), JSON.stringify({ B: { assetId: 'B' } }));
-  assert.deepEqual(await loadDict('dd.json', { root: dir }), { B: { assetId: 'B' } });
+  assert.deepEqual(await loadDict('dd.json', { root: dir }), { records: { B: { assetId: 'B' } }, meta: null }, 'flat local copy');
   await fs.rm(dir, { recursive: true });
 });
 

@@ -102,11 +102,23 @@ export default {
           position: "left",
           label: "🏠 View Data Layers",
           to: "/",
+          // Without this, "/" prefix-matches every path and the item is always active.
+          activeBaseRegex: "^/$",
         },
         {
           position: "left",
           label: "Analyze Watershed",
           to: "analyze_watershed",
+        },
+        {
+          position: "left",
+          label: "Get Data",
+          to: "docs/get_data",
+        },
+        {
+          label: "Data Catalog",
+          position: "left",
+          to: "catalog",
         },
         {
           label: "Documentation",
@@ -138,16 +150,6 @@ export default {
           label: "Blog",
           position: "left",
           to: "blog",
-        },
-        {
-          position: "left",
-          label: "Get Data",
-          to: "docs/get_data",
-        },
-        {
-          label: "Data Catalog",
-          position: "left",
-          to: "catalog",
         },
         {
           position: "right",
