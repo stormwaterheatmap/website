@@ -1,0 +1,5 @@
+## How the GCM ensemble layers were made
+
+The projections dynamically downscale CMIP5 global climate models (GCMs) with the Weather Research and Forecasting (WRF) mesoscale model under the RCP 8.5 emissions scenario. The Heatmap uses 11 of these projections; each gives hourly precipitation for 1970–2099. CIG bias-corrected each projection with the percentile-delta method against PRISM daily precipitation and provided it on the same 6 km grid as the historical WRF-NARR dataset (the WRF projections ran at 12 km). The method keeps the relative changes simulated by each model and anchors the corrected distribution to the observed PRISM climatology.
+
+The ensemble value is the mean of the annual precipitation totals across the 11 ensemble members.
