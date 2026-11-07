@@ -18,7 +18,7 @@
  * Usage:
  *   node scripts/gen-layers.mjs             # fetch catalog and dictionary, write pages
  *   node scripts/gen-layers.mjs --dry-run   # print what would be written
- *   SWHM_DATA_DICT=../swhm-io/published/data_dict_published.json node scripts/gen-layers.mjs
+ *   SWHM_DATA_DICT=../swhm-io/data_dict/data_dict.json node scripts/gen-layers.mjs
  *                                           # preview an unpublished dictionary (path or URL)
  */
 import fs from 'node:fs/promises';
@@ -33,49 +33,83 @@ export async function loadConfig(root = ROOT) {
   return JSON.parse(await fs.readFile(path.join(root, 'swhm.config.json'), 'utf8'));
 }
 
-/** GET a JSON document; throws on any non-2xx so partial data never reaches the pages. */
-export async function fetchJson(url) {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`GET ${url} -> HTTP ${res.status}`);
-  return res.json();
+/**
+ * GET a JSON document. Network errors and 5xx responses are retried (a CI
+ * build should not fail on one dropped connection); any other non-2xx, or a
+ * final failure, throws, so partial data never reaches the pages.
+ */
+export async function fetchJson(url, { fetchImpl = fetch, retries = 2, delayMs = 750 } = {}) {
+  for (let attempt = 0; ; attempt++) {
+    let res;
+    try {
+      res = await fetchImpl(url);
+    } catch (err) {
+      if (attempt < retries) {
+        await new Promise((r) => setTimeout(r, delayMs * (attempt + 1)));
+        continue;
+      }
+      throw new Error(`GET ${url} failed after ${attempt + 1} attempts: ${err.cause?.code || err.message}`);
+    }
+    if (res.ok) return res.json();
+    if (res.status >= 500 && attempt < retries) {
+      await new Promise((r) => setTimeout(r, delayMs * (attempt + 1)));
+      continue;
+    }
+    throw new Error(`GET ${url} -> HTTP ${res.status}`);
+  }
 }
 
-/** The dictionary from a URL, or from a local path (the SWHM_DATA_DICT preview override). */
+/**
+ * The dictionary from a URL, or from a local path (the SWHM_DATA_DICT preview
+ * override). Returns {records, meta}. The published file is an envelope
+ * `{layers: {<display name>: record}, meta: {built, commit, source}}`; a flat
+ * `{<display name>: record}` file is accepted too, with meta null.
+ */
 export async function loadDict(source, { getJson = fetchJson, root = ROOT } = {}) {
-  if (/^https?:\/\//.test(source)) return getJson(source);
-  return JSON.parse(await fs.readFile(path.resolve(root, source), 'utf8'));
+  const raw = /^https?:\/\//.test(source)
+    ? await getJson(source)
+    : JSON.parse(await fs.readFile(path.resolve(root, source), 'utf8'));
+  const enveloped = raw && typeof raw.layers === 'object' && typeof raw.meta === 'object';
+  return enveloped ? { records: raw.layers, meta: raw.meta } : { records: raw, meta: null };
 }
+
+/** STAC item files are named `<item id>.json` (swhm-io convention). */
+const itemIdFromHref = (href) => decodeURIComponent(href.split('/').pop().replace(/\.json$/i, ''));
 
 /**
  * Walk the catalog from its root: `child` links lead to catalogs/collections,
  * `item` links to items. Every href is resolved against the document it
- * appears in. Returns {rootUrl, items, itemUrls}, the last two keyed by item
- * id: the item and its URL.
+ * appears in. With `wanted` (a Set of item ids), only items whose file name
+ * matches are fetched; the timeseries collection's ~700 items are skipped
+ * without a request. Returns {rootUrl, items, itemUrls, skipped}: items and
+ * their URLs keyed by item id, and the count of item links not fetched.
  */
-export async function loadCatalog(config, { getJson = fetchJson } = {}) {
+export async function loadCatalog(config, { getJson = fetchJson, wanted } = {}) {
   const rootUrl = config.catalogUrl;
   const items = new Map();
   const itemUrls = new Map();
   const seen = new Set();
+  let skipped = 0;
 
   async function walk(url, doc) {
     if (seen.has(url)) return;
     seen.add(url);
     const links = (doc.links || []).map((l) => ({ ...l, url: new URL(l.href, url).toString() }));
+    const itemLinks = links.filter((l) => l.rel === 'item');
+    const toFetch = wanted ? itemLinks.filter((l) => wanted.has(itemIdFromHref(l.href))) : itemLinks;
+    skipped += itemLinks.length - toFetch.length;
     await Promise.all(
-      links
-        .filter((l) => l.rel === 'item')
-        .map(async (l) => {
-          const item = await getJson(l.url);
-          items.set(item.id, item);
-          itemUrls.set(item.id, l.url);
-        }),
+      toFetch.map(async (l) => {
+        const item = await getJson(l.url);
+        items.set(item.id, item);
+        itemUrls.set(item.id, l.url);
+      }),
     );
     for (const l of links.filter((l) => l.rel === 'child')) await walk(l.url, await getJson(l.url));
   }
 
   await walk(rootUrl, await getJson(rootUrl));
-  return { rootUrl, items, itemUrls };
+  return { rootUrl, items, itemUrls, skipped };
 }
 
 // --- model --------------------------------------------------------------------
@@ -340,13 +374,16 @@ function allSamePalette(page) {
 export async function main(argv = process.argv.slice(2)) {
   const dryRun = argv.includes('--dry-run');
   const config = await loadConfig();
-  const catalog = await loadCatalog(config);
   const dictSource = process.env.SWHM_DATA_DICT || config.dataDict;
   if (!dictSource) {
     throw new Error('No data dictionary: set "dataDict" in swhm.config.json, or SWHM_DATA_DICT to a path or URL.');
   }
-  const dict = await loadDict(dictSource);
-  console.log(`catalog:    ${catalog.rootUrl}\ndictionary: ${dictSource}${process.env.SWHM_DATA_DICT ? ' (SWHM_DATA_DICT override)' : ''}`);
+  const { records: dict, meta } = await loadDict(dictSource);
+  const wanted = new Set(Object.values(dict).map(itemIdOf));
+  const catalog = await loadCatalog(config, { wanted });
+  const dictInfo = meta?.commit ? ` (commit ${meta.commit}, built ${meta.built})` : '';
+  console.log(`catalog:    ${catalog.rootUrl}`);
+  console.log(`dictionary: ${dictSource}${dictInfo}${process.env.SWHM_DATA_DICT ? ' [SWHM_DATA_DICT override]' : ''}`);
   const outDir = path.resolve(ROOT, config.layerDocsDir);
   const notesDir = path.join(outDir, '_notes');
   const pages = buildPages(dict, catalog, config);
@@ -363,12 +400,10 @@ export async function main(argv = process.argv.slice(2)) {
       console.log(`wrote ${path.relative(ROOT, out)}${note}`);
     }
   }
-  const unused = [...catalog.items.keys()].filter((id) => !Object.values(dict).some((r) => itemIdOf(r) === id));
-  if (unused.length) {
-    const sample = unused.slice(0, 5).join(', ');
-    console.log(`catalog items with no dictionary record (skipped): ${unused.length} (${sample}${unused.length > 5 ? ', …' : ''})`);
-  }
-  console.log(`${pages.length} pages from ${Object.keys(dict).length} records and ${catalog.items.size} catalog items.`);
+  console.log(
+    `${pages.length} pages from ${Object.keys(dict).length} records and ${catalog.items.size} catalog items` +
+      ` (${catalog.skipped} other catalog items not referenced by the dictionary, not fetched).`,
+  );
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

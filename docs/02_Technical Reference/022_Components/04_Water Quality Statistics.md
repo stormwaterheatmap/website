@@ -996,8 +996,10 @@ methods to account for censored values.
 The Landscape Predictor Model for TKN, used as the basis for the
 Stormwater Heat Map TKN layer, is:
  $$
-\ln(TKN) = 6.52 - 0.15 (rain) + 0.60(summer) + \\
- 0.28(sqrt.CO2.road) + 0.22(devAge2)
+\begin{aligned}
+\ln(TKN) = {} & 6.52 - 0.15(rain) + 0.60(summer) \\
+              & + 0.28(sqrt.CO2.road) + 0.22(devAge2)
+\end{aligned}
 $$
 
 where rain is 14-day cumulative precipitation, and summer is a factor
